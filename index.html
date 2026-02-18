@@ -207,7 +207,13 @@
     .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.9s 0.65s forwards; }
     .btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 14px 30px; background: var(--accent); color: var(--btn-text); font-family: var(--sans); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 100px; border: none; cursor: pointer; transition: all 0.35s var(--ease); }
     .btn-primary:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 12px 32px var(--accent-dim); }
-    .btn-primary .wa-icon { font-size: 1.1rem; }
+    .btn-icon { width: 18px; height: 18px; flex-shrink: 0; }
+    .btn-icon-sm { width: 14px; height: 14px; flex-shrink: 0; }
+    .trust-icon-svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .toggle-svg { width: 12px; height: 12px; }
+    .badge-icon { width: 14px; height: 14px; vertical-align: -2px; margin-right: 2px; }
+    .arrow-icon { width: 20px; height: 20px; }
+    .testimonial-stars svg { width: 14px; height: 14px; }
     .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: var(--bg-card); color: var(--text-muted); font-family: var(--sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 100px; border: 1.5px solid var(--border); transition: all 0.3s; }
     .btn-secondary:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
     .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 14px 20px; color: var(--text-dim); font-family: var(--sans); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
@@ -222,7 +228,7 @@
     .trust-bar { padding: 0 40px 56px; max-width: 1200px; margin: 0 auto; }
     .trust-inner { display: flex; gap: 36px; align-items: center; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
     .trust-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
-    .trust-icon { font-size: 0.85rem; color: var(--accent); }
+    .trust-icon-svg { width: 16px; height: 16px; flex-shrink: 0; }
     .trust-text { font-size: 0.76rem; font-weight: 600; color: var(--text-dim); }
 
     .section-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
@@ -427,10 +433,10 @@
       <li><a href="#about">About</a></li>
       <li>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <span class="toggle-icons"><span>&#9788;</span><span>&#9790;</span></span>
+          <span class="toggle-icons"><svg class="toggle-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="toggle-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
         </button>
       </li>
-      <li><a href="#start" class="nav-cta-pill">Let's Talk</a></li>
+      <li><a href="https://wa.me/15089349709?text=Hi%20Sydney!%20I'd%20love%20to%20chat%20about%20a%20project." target="_blank" class="nav-cta-pill">Let's Talk</a></li>
     </ul>
   </nav>
 
@@ -447,18 +453,18 @@
       From full-stack platforms with payments, dashboards, and real-time data to polished websites — hand-coded, thoughtfully designed, and built to perform.
     </p>
     <div class="hero-actions">
-      <a href="#start" class="btn-primary"><span class="wa-icon">&#9993;</span> Tell Me About Your Project</a>
-      <a href="#work" class="btn-ghost">See the work <span class="arrow">&rarr;</span></a>
+      <a href="https://wa.me/15089349709?text=Hi%20Sydney!%20I'd%20love%20to%20chat%20about%20a%20project." target="_blank" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Me</a>
+      <a href="#work" class="btn-ghost">See the work <svg class="btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </section>
 
   <div class="trust-bar reveal">
     <div class="trust-inner">
-      <div class="trust-item"><span class="trust-icon">&#9889;</span><span class="trust-text">Lightning-fast load times</span></div>
-      <div class="trust-item"><span class="trust-icon">&#9998;</span><span class="trust-text">100% hand-coded</span></div>
-      <div class="trust-item"><span class="trust-icon">&#9733;</span><span class="trust-text">Websites to full-stack platforms</span></div>
-      <div class="trust-item"><span class="trust-icon">&#9741;</span><span class="trust-text">Beautiful on every device</span></div>
-      <div class="trust-item"><span class="trust-icon">&#10003;</span><span class="trust-text">No templates. Ever.</span></div>
+      <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span class="trust-text">Lightning-fast load times</span></div>
+      <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span class="trust-text">100% hand-coded</span></div>
+      <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="trust-text">Platforms to polished sites</span></div>
+      <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg><span class="trust-text">Beautiful on every device</span></div>
+      <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="trust-text">No templates. Ever.</span></div>
     </div>
   </div>
 
@@ -493,7 +499,7 @@
       <!-- 2. TukTuk Tournament -->
       <a href="https://tuktuktournament.vercel.app" target="_blank" class="project-card reveal reveal-d1">
         <div class="project-preview-wrap gradient-preview tuktuk">
-          <div class="app-badge">&#9670; Next.js App</div>
+          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Next.js App</div>
           <div class="stack-row">
             <span class="stack-tag">Next.js 16</span>
             <span class="stack-tag">React 19</span>
@@ -518,7 +524,7 @@
       <!-- 3. Co-Pilot -->
       <a href="https://copilotthetravelbrand.com" target="_blank" class="project-card reveal">
         <div class="project-preview-wrap gradient-preview copilot">
-          <div class="app-badge">&#9670; Shopify Store</div>
+          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Shopify Store</div>
           <div class="stack-row">
             <span class="stack-tag">Shopify</span>
             <span class="stack-tag">Liquid</span>
@@ -562,7 +568,7 @@
       <!-- 5. Tropic Sip -->
       <a href="https://tropicsip.com" target="_blank" class="project-card reveal reveal-d2">
         <div class="project-preview-wrap gradient-preview tropic">
-          <div class="app-badge">&#9670; Next.js + Supabase</div>
+          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Next.js + Supabase</div>
           <div class="stack-row">
             <span class="stack-tag">Next.js</span>
             <span class="stack-tag">Supabase</span>
@@ -606,7 +612,7 @@
       <!-- 7. Ignite Legacy -->
       <a href="https://ignite-legacy-app.vercel.app" target="_blank" class="project-card reveal reveal-d1">
         <div class="project-preview-wrap gradient-preview ignite">
-          <div class="app-badge">&#9670; Full-Stack Platform</div>
+          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Full-Stack Platform</div>
           <div class="stack-row">
             <span class="stack-tag">Next.js</span>
             <span class="stack-tag">Supabase</span>
@@ -683,7 +689,7 @@
           <span class="t-label">Before</span>
           <span class="t-text">100+ ambassador DMs every day asking "where's my referral?"</span>
         </div>
-        <span class="t-arrow">&#10132;</span>
+        <span class="t-arrow"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         <div class="t-after">
           <span class="t-label">After</span>
           <span class="t-text">Ambassadors self-serve from their own dashboard — zero DMs needed</span>
@@ -695,7 +701,7 @@
           <span class="t-label">Before</span>
           <span class="t-text">No website — relying on Instagram and word of mouth</span>
         </div>
-        <span class="t-arrow">&#10132;</span>
+        <span class="t-arrow"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         <div class="t-after">
           <span class="t-label">After</span>
           <span class="t-text">Professional booking site bringing in guests directly — no third parties</span>
@@ -707,7 +713,7 @@
           <span class="t-label">Before</span>
           <span class="t-text">5+ tools that don't talk to each other, data everywhere</span>
         </div>
-        <span class="t-arrow">&#10132;</span>
+        <span class="t-arrow"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         <div class="t-after">
           <span class="t-label">After</span>
           <span class="t-text">One unified platform — auth, payments, video, dashboards, admin</span>
@@ -719,7 +725,7 @@
           <span class="t-label">Before</span>
           <span class="t-text">Product idea with no way to capture demand</span>
         </div>
-        <span class="t-arrow">&#10132;</span>
+        <span class="t-arrow"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         <div class="t-after">
           <span class="t-label">After</span>
           <span class="t-text">Live waitlist capturing signups in real-time with a Supabase backend</span>
@@ -735,7 +741,7 @@
         <h3>Whether it's a site or a <span class="accent">full platform</span></h3>
         <p>I'd love to learn about what you're building and show you what's possible. Tell me about your project and let's figure it out together.</p>
       </div>
-      <a href="#start" class="btn-primary"><span class="wa-icon">&#9993;</span> Start a Project</a>
+      <a href="https://wa.me/15089349709?text=Hi%20Sydney!%20I'd%20love%20to%20chat%20about%20a%20project." target="_blank" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Start a Project</a>
     </div>
   </div>
 
@@ -747,7 +753,7 @@
     </div>
     <div class="testimonial-grid">
       <div class="testimonial-card reveal">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testimonial-stars"><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg></div>
         <p class="testimonial-quote">"She took a scattered mess of tools and turned it into one platform that does everything. My ambassadors stopped DMing me overnight. I got my mornings back."</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">A</div>
@@ -758,7 +764,7 @@
         </div>
       </div>
       <div class="testimonial-card reveal reveal-d1">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testimonial-stars"><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg></div>
         <p class="testimonial-quote">"I sent her a rough idea and she came back with a site that looked better than anything I could have imagined. The attention to detail is unreal."</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">A</div>
@@ -769,7 +775,7 @@
         </div>
       </div>
       <div class="testimonial-card reveal reveal-d2">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testimonial-stars"><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg></div>
         <p class="testimonial-quote">"She built our Shopify store, our supplement brand site, AND a custom waitlist platform. Doesn't matter how complex the ask — she just figures it out."</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">S</div>
@@ -882,7 +888,7 @@
           <textarea id="fdetails" rows="3" placeholder="What's the vision? What problem are you solving? Any details help..."></textarea>
         </div>
         <div class="form-submit">
-          <button type="submit" class="btn-primary"><span class="wa-icon">&#9993;</span> Send via WhatsApp</button>
+          <button type="submit" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Send via WhatsApp</button>
         </div>
       </form>
     </div>
@@ -898,8 +904,8 @@
         Prefer to skip the form? Reach out directly — I'd love to hear from you.
       </p>
       <div class="contact-actions">
-        <a href="https://wa.me/15089349709?text=Hi%20Sydney!%20I'd%20love%20to%20chat%20about%20a%20project." target="_blank" class="btn-primary"><span class="wa-icon">&#9993;</span> Message on WhatsApp</a>
-        <a href="mailto:sydneyzuckerman@gmail.com" class="btn-secondary">Email Me</a>
+        <a href="https://wa.me/15089349709?text=Hi%20Sydney!%20I'd%20love%20to%20chat%20about%20a%20project." target="_blank" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Message on WhatsApp</a>
+        <a href="mailto:sydneyzuckerman@gmail.com" class="btn-secondary"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email Me</a>
       </div>
       <div class="contact-detail">
         <a href="tel:+15089349709">+1 (508) 934-9709</a> &nbsp;&middot;&nbsp; <a href="mailto:sydneyzuckerman@gmail.com">sydneyzuckerman@gmail.com</a>
