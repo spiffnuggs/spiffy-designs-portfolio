@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ignite — Current Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo+Black&family=Anton&family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Alex+Brush&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0f0f0f;
+    color: #e8e0d4;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    padding: 80px 40px 60px;
+    border-bottom: 1px solid rgba(184, 150, 62, 0.2);
+  }
+  .header h1 {
+    font-family: 'Europa Grotesk Nr 2 SH', 'Archivo Black', 'Anton', sans-serif;
+    font-size: 4.5rem;
+    color: #fff;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .header .tagline {
+    font-family: 'Alex Brush', cursive;
+    font-size: 1.8rem;
+    color: #b8963e;
+  }
+  .header .subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+  }
+
+  /* ── Sections ── */
+  section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 70px 40px;
+  }
+  section + section {
+    border-top: 1px solid rgba(184, 150, 62, 0.12);
+  }
+  .section-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    color: #b8963e;
+    margin-bottom: 30px;
+  }
+
+  /* ── Color Palette ── */
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+  }
+  .swatch {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .swatch-color {
+    height: 120px;
+    position: relative;
+  }
+  .swatch-info {
+    padding: 14px 16px;
+  }
+  .swatch-name {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .swatch-hex {
+    font-size: 0.75rem;
+    color: #888;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+
+  /* ── Typography ── */
+  .type-row {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .type-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .type-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .type-tag {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    background: rgba(184, 150, 62, 0.12);
+    color: #b8963e;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+  .type-sample-hero {
+    font-family: 'Europa Grotesk Nr 2 SH', 'Archivo Black', 'Anton', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+  }
+  .type-sample-serif {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    line-height: 1.3;
+  }
+  .type-sample-serif span {
+    color: #b8963e;
+  }
+  .type-sample-script {
+    font-family: 'Alex Brush', cursive;
+    font-size: 2.8rem;
+    color: #b8963e;
+    line-height: 1.3;
+  }
+  .type-sample-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: #ccc;
+    max-width: 540px;
+    line-height: 1.75;
+  }
+  .type-note {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 10px;
+  }
+
+  /* ── Vibe ── */
+  .vibe-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .vibe-word {
+    padding: 14px 28px;
+    border: 1px solid rgba(184, 150, 62, 0.3);
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #e8e0d4;
+    letter-spacing: 0.08em;
+    transition: all 0.3s;
+  }
+  .vibe-word:hover {
+    background: rgba(184, 150, 62, 0.1);
+    border-color: #b8963e;
+    color: #fff;
+  }
+
+  /* ── Buttons ── */
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+  }
+  .btn-primary {
+    background: #8b2520;
+    color: #fff;
+  }
+  .btn-primary:hover { background: #a12d27; }
+  .btn-gold {
+    background: #b8963e;
+    color: #0f0f0f;
+  }
+  .btn-gold:hover { background: #cca84a; }
+  .btn-outline {
+    background: transparent;
+    color: #b8963e;
+    border: 1.5px solid #b8963e;
+  }
+  .btn-outline:hover { background: rgba(184, 150, 62, 0.1); }
+
+  /* ── Combo Preview ── */
+  .preview-card {
+    background: linear-gradient(135deg, #1a1410 0%, #0f0f0f 50%, #1a1410 100%);
+    border: 1px solid rgba(184, 150, 62, 0.2);
+    border-radius: 16px;
+    padding: 60px 50px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .preview-card .script {
+    font-family: 'Alex Brush', cursive;
+    font-size: 1.8rem;
+    color: #b8963e;
+    margin-bottom: 6px;
+  }
+  .preview-card h2 {
+    font-family: 'Europa Grotesk Nr 2 SH', 'Archivo Black', 'Anton', sans-serif;
+    font-size: 2.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+  .preview-card p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: #aaa;
+    max-width: 440px;
+    margin: 0 auto 30px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 50px 40px;
+    border-top: 1px solid rgba(184, 150, 62, 0.12);
+    font-size: 0.7rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Ignite</h1>
+  <div class="tagline">Current Brand Guide</div>
+  <div class="subtitle">Aubrey &middot; The Ignite Vault &middot; As-Is</div>
+</div>
+
+<!-- ── COLORS ── -->
+<section>
+  <div class="section-label">Color Palette</div>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #0f0f0f;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Black</div>
+        <div class="swatch-hex">#0F0F0F</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #1a1a1a;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Charcoal</div>
+        <div class="swatch-hex">#1A1A1A</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #b8963e;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ignite Gold</div>
+        <div class="swatch-hex">#B8963E</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #d4b15a;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Light Gold</div>
+        <div class="swatch-hex">#D4B15A</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #8b2520;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ember Red</div>
+        <div class="swatch-hex">#8B2520</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #ffffff;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">White</div>
+        <div class="swatch-hex">#FFFFFF</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TYPOGRAPHY ── -->
+<section>
+  <div class="section-label">Typography</div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <span class="type-tag">Headlines</span>
+      <span class="type-tag">Europa Grotesk Nr 2 SH Ultra Bold</span>
+    </div>
+    <div class="type-sample-hero">Earn 100%<br>Commissions</div>
+    <div class="type-note">All caps &middot; Ultra bold condensed &middot; High impact &middot; Used for primary headlines</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <span class="type-tag">Serif Headings</span>
+      <span class="type-tag">Playfair Display</span>
+    </div>
+    <div class="type-sample-serif">The vision of <span>building a business</span> that gives you <span>freedom</span></div>
+    <div class="type-note">Bold italic &middot; Gold for emphasis words &middot; Used for mid-level headings &amp; long-form sections</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <span class="type-tag">Accent Script</span>
+      <span class="type-tag">Alex Brush</span>
+    </div>
+    <div class="type-sample-script">full access &middot; done for you &middot; perfect space</div>
+    <div class="type-note">Lowercase script &middot; Gold color &middot; Paired above bold headlines on feature cards</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <span class="type-tag">Body</span>
+      <span class="type-tag">Clean Sans-Serif</span>
+    </div>
+    <div class="type-sample-body">Being an Ignite Reseller is about having a simple, duplicatable way to grow your business, one that feels good, converts easily, and pays you 100% commissions.</div>
+    <div class="type-note">Light weight &middot; Generous line-height &middot; Warm, approachable tone</div>
+  </div>
+</section>
+
+<!-- ── VIBE ── -->
+<section>
+  <div class="section-label">The Vibe</div>
+  <div class="vibe-grid">
+    <div class="vibe-word">Bold</div>
+    <div class="vibe-word">Luxe</div>
+    <div class="vibe-word">Empowering</div>
+    <div class="vibe-word">Warm</div>
+    <div class="vibe-word">Premium</div>
+    <div class="vibe-word">Freedom</div>
+    <div class="vibe-word">Fire</div>
+    <div class="vibe-word">Confident</div>
+  </div>
+</section>
+
+<!-- ── BUTTONS ── -->
+<section>
+  <div class="section-label">Buttons &amp; CTAs</div>
+  <div class="button-row">
+    <a class="btn btn-primary">Join Here</a>
+    <a class="btn btn-gold">Access Ignite Now</a>
+    <a class="btn btn-outline">I'm Ready!</a>
+  </div>
+</section>
+
+<!-- ── COMBO PREVIEW ── -->
+<section>
+  <div class="section-label">Putting It Together</div>
+  <div class="preview-card">
+    <div class="script">the secret framework</div>
+    <h2>Turn Your Phone Into<br>High Ticket Income</h2>
+    <p>Built with intention and sales psychology infused every step of the way.</p>
+    <a class="btn btn-primary">I Need This!</a>
+  </div>
+</section>
+
+<div class="footer">Ignite Brand Guide &middot; 2026</div>
+
+</body>
+</html>

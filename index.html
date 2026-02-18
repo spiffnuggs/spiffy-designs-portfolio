@@ -307,7 +307,7 @@
     .t-text { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
     .t-after .t-text { color: var(--text); font-weight: 500; }
     .t-arrow { color: var(--sage); font-size: 1.1rem; display: flex; align-items: center; }
-    .t-project { margin-top: 6px; font-size: 0.62rem; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; }
+    .t-project { margin-top: auto; font-family: var(--script); font-style: italic; font-size: 0.78rem; font-weight: 300; color: var(--sage); text-align: right; letter-spacing: 0.02em; }
 
     /* MID CTA */
     .mid-cta { padding: 52px 40px; }
@@ -353,7 +353,7 @@
     .stat-card:hover { border-color: var(--border-hover); }
     .stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 4px; }
     .stat-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
-    .services-list { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .services-list { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
     .service-chip { padding: 11px 14px; background: var(--bg-subtle); border-radius: var(--radius-sm); font-size: 0.78rem; font-weight: 600; color: var(--text-muted); text-align: center; transition: all 0.3s; }
     .service-chip:hover { background: var(--accent-dim); color: var(--accent); }
 
@@ -682,20 +682,20 @@
       </a>
 
       <!-- Tropic Sip — Open Sans -->
-      <a href="https://tropicsip.com" target="_blank" class="project-card reveal reveal-d1 font-opensans narrow">
+      <a href="https://tropicsip-fullsite.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-opensans narrow">
         <div class="project-preview-wrap">
-          <img src="screenshots/tropic-sip.jpg" alt="Tropic Sip platform" loading="lazy">
+          <img src="screenshots/tropic-sip.jpg" alt="Tropic Sip — Bali's premium electrolytes" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">F&B / Beverage</span>
             <h3 class="hover-title">Tropic Sip</h3>
-            <p class="hover-desc">Bali's first electrolyte brand. Order automation platform with auto-text optimized driver routes — eliminating the coordination role entirely.</p>
+            <p class="hover-desc">Bali's #1 electrolyte brand. Full marketing site with product showcase, brand storytelling, and conversion-focused layout. Order automation app in progress.</p>
             <span class="hover-link">Visit Site <span class="arrow">&rarr;</span></span>
           </div>
         </div>
         <div class="project-bar">
           <div class="project-bar-info">
             <span class="project-bar-name">Tropic Sip</span>
-            <span class="project-bar-result">Automated orders + driver routes, eliminated a full coordination role</span>
+            <span class="project-bar-result">Brand site + order automation platform eliminating a full coordination role</span>
           </div>
           <span class="project-bar-tag">F&B</span>
         </div>
@@ -758,6 +758,26 @@
             <span class="project-bar-result">3 donation paths to maximize giving</span>
           </div>
           <span class="project-bar-tag">Nonprofit</span>
+        </div>
+      </a>
+
+      <!-- Branding — Cormorant Garamond -->
+      <a href="branding/ignite-brand-guide.html" target="_blank" class="project-card reveal reveal-d1 font-cormorant">
+        <div class="project-preview-wrap">
+          <img src="screenshots/branding.jpg" alt="Ignite Legacy brand guide" loading="lazy">
+          <div class="project-hover">
+            <span class="hover-category">Branding & Identity</span>
+            <h3 class="hover-title">Ignite Legacy Branding</h3>
+            <p class="hover-desc">Full brand identity: color systems, typography selection, font pairing tools, and a living brand guide. From initial exploration to final system.</p>
+            <span class="hover-link">View Brand Guide <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Ignite Legacy Branding</span>
+            <span class="project-bar-result">Color system, typography, and brand guide from scratch</span>
+          </div>
+          <span class="project-bar-tag">Branding</span>
         </div>
       </a>
 
@@ -1022,7 +1042,7 @@
           I'm <span class="coral">Sydney Zuckerman</span>. I work closely with every client to understand their business, their customers, and what's actually slowing them down — then build personalized solutions that change how they acquire customers and run their day-to-day.
         </p>
         <p>
-          From surf retreats in Morocco to Shopify brands, ambassador platforms, and order automation — every project is custom-priced, reasonably priced, and built to <span class="highlight">make your life easier, less expensive, and genuinely better</span>.
+          From surf retreats in Morocco to Shopify brands, ambassador platforms, branding, and order automation — every project is custom-priced, reasonably priced, and built to <span class="highlight">make your life easier, less expensive, and genuinely better</span>.
         </p>
       </div>
       <div class="about-right reveal reveal-d2">
@@ -1034,7 +1054,9 @@
           <div class="service-chip">Web Design</div>
           <div class="service-chip">Full-Stack Platforms</div>
           <div class="service-chip">E-commerce</div>
+          <div class="service-chip">Branding & Identity</div>
           <div class="service-chip">Custom Dashboards</div>
+          <div class="service-chip">Brand Revamps</div>
         </div>
       </div>
     </div>
@@ -1070,6 +1092,7 @@
             <option value="E-commerce store">An e-commerce store</option>
             <option value="Full platform (auth, payments, dashboards)">A full platform (auth, payments, dashboards)</option>
             <option value="Redesign of existing site">Redesign of an existing site</option>
+            <option value="Branding / identity">Branding or brand revamp</option>
             <option value="Not sure yet">Not sure yet — let's talk</option>
           </select>
         </div>
