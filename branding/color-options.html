@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Legacy — Color Options v2</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;color:#fff}
+
+.picker{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,10,14,.95);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.08);padding:14px 0;text-align:center;
+}
+.picker-label{font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:#888;margin-bottom:10px}
+.picker-btns{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:0 20px}
+.picker-btn{
+  padding:10px 20px;border-radius:30px;border:1.5px solid rgba(255,255,255,.15);
+  background:transparent;color:#aaa;font-size:13px;font-weight:600;
+  cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;
+  display:flex;align-items:center;gap:8px;
+}
+.picker-btn .swatch{width:14px;height:14px;border-radius:50%;border:1px solid rgba(255,255,255,.2)}
+.picker-btn.active{background:#fff;color:#111;border-color:#fff;box-shadow:0 2px 16px rgba(255,255,255,.15)}
+.picker-btn:hover:not(.active){border-color:rgba(255,255,255,.4);color:#fff}
+
+.section{display:none}
+.section.active{display:block}
+
+/* Shared structure */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-logo{font-family:'Marcellus',serif;font-size:26px;font-weight:400;font-style:italic;letter-spacing:2px}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:14px;font-weight:600;text-decoration:none}
+.nav-btn{padding:8px 18px;border-radius:6px;font-size:13px;font-weight:700;border:none;text-transform:uppercase;letter-spacing:.05em;font-family:'DM Sans',sans-serif;cursor:pointer}
+
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
+.hero::before,.hero::after{content:'';position:absolute;pointer-events:none;border-radius:50%}
+.container{max-width:1100px;margin:0 auto;padding:0 48px;position:relative;z-index:1}
+.hero-content{max-width:660px}
+
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border-radius:30px;padding:8px 14px;font-size:12px;margin-bottom:20px;font-weight:700;
+}
+.badge .dot{width:6px;height:6px;border-radius:50%}
+
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,60px);font-weight:400;line-height:1.15;margin-bottom:20px;color:#fff}
+.hero-body{font-size:clamp(15px,1.8vw,18px);line-height:1.8;margin-bottom:28px}
+
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn-main{padding:16px 32px;border-radius:8px;font-size:15px;font-weight:700;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:.05em;font-family:'DM Sans',sans-serif}
+.btn-ghost{padding:16px 32px;border-radius:8px;font-size:15px;font-weight:600;background:transparent;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.note{font-size:12px;margin-top:14px}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border-radius:12px;overflow:hidden}
+.stat{text-align:center;padding:20px 8px}
+.stat-num{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400}
+.stat-label{font-size:11px;margin-top:4px}
+
+.content-section{padding:80px 0}
+.content-section .label{font-size:11px;text-transform:uppercase;letter-spacing:.3em;margin-bottom:12px;text-align:center}
+.content-section h2{font-family:'DM Serif Display',serif;font-size:clamp(24px,3.5vw,40px);color:#fff;text-align:center;margin-bottom:12px}
+.content-section .desc{font-size:16px;text-align:center;max-width:540px;margin:0 auto 40px;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{border-radius:12px;padding:28px 24px}
+.card-emoji{font-size:28px;margin-bottom:12px}
+.card h3{font-size:17px;color:#fff;margin-bottom:8px}
+.card p{font-size:14px;line-height:1.6}
+
+.color-tag{
+  position:absolute;top:16px;right:48px;font-size:11px;text-transform:uppercase;letter-spacing:.25em;
+  padding:6px 14px;border-radius:20px;z-index:5;
+}
+
+/* ════════════════════════════════════════════
+   OPTION 1: Electric Violet — Linear/Stripe energy
+   ════════════════════════════════════════════ */
+.opt1{background:#09090B}
+.opt1 .nav{background:rgba(9,9,11,.95)}
+.opt1 .nav-logo{color:#A78BFA}
+.opt1 .nav-links a{color:#8B8B9E}
+.opt1 .nav-btn{background:linear-gradient(135deg,#A78BFA,#818CF8);color:#fff}
+.opt1 .hero{background:linear-gradient(180deg,#09090B 0%,#0C0A1A 40%,#110E24 100%)}
+.opt1 .hero::before{top:-15%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(167,139,250,.12) 0%,transparent 60%)}
+.opt1 .hero::after{bottom:-10%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(129,140,248,.08) 0%,transparent 60%)}
+.opt1 .badge{background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25);color:#A78BFA}
+.opt1 .badge .dot{background:#A78BFA;box-shadow:0 0 8px rgba(167,139,250,.6)}
+.opt1 .hero h1 .accent{color:#A78BFA}
+.opt1 .hero-body{color:#9898AE}
+.opt1 .btn-main{background:linear-gradient(135deg,#A78BFA,#818CF8);color:#fff;box-shadow:0 4px 24px rgba(167,139,250,.35)}
+.opt1 .btn-ghost{color:#8B8B9E}
+.opt1 .note{color:#5A5A6E}
+.opt1 .stats{background:rgba(167,139,250,.04);border:1.5px solid rgba(167,139,250,.1)}
+.opt1 .stat:not(:last-child){border-right:1px solid rgba(167,139,250,.1)}
+.opt1 .stat-num{color:#A78BFA}
+.opt1 .stat-label{color:#5A5A6E}
+.opt1 .content-section{background:#0C0A1A}
+.opt1 .content-section .label{color:#818CF8}
+.opt1 .content-section .desc{color:#9898AE}
+.opt1 .card{background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.08)}
+.opt1 .card p{color:#9898AE}
+.opt1 .color-tag{color:#A78BFA;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25)}
+
+/* ════════════════════════════════════════════
+   OPTION 5: Electric Ocean — Violet energy, ocean soul
+   ════════════════════════════════════════════ */
+.opt5{background:#060A12}
+.opt5 .nav{background:rgba(6,10,18,.95)}
+.opt5 .nav-logo{color:#00D4FF}
+.opt5 .nav-links a{color:#7A8FA8}
+.opt5 .nav-btn{background:linear-gradient(135deg,#00D4FF,#0088FF);color:#fff}
+.opt5 .hero{background:linear-gradient(180deg,#060A12 0%,#08101E 40%,#0A1628 100%)}
+.opt5 .hero::before{top:-15%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(0,212,255,.12) 0%,transparent 60%)}
+.opt5 .hero::after{bottom:-10%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(0,136,255,.08) 0%,transparent 60%)}
+.opt5 .badge{background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);color:#00D4FF}
+.opt5 .badge .dot{background:#00D4FF;box-shadow:0 0 8px rgba(0,212,255,.6)}
+.opt5 .hero h1 .accent{color:#00D4FF}
+.opt5 .hero-body{color:#8A9DB4}
+.opt5 .btn-main{background:linear-gradient(135deg,#00D4FF,#0088FF);color:#fff;box-shadow:0 4px 24px rgba(0,212,255,.35)}
+.opt5 .btn-ghost{color:#7A8FA8}
+.opt5 .note{color:#4A6078}
+.opt5 .stats{background:rgba(0,212,255,.04);border:1.5px solid rgba(0,212,255,.1)}
+.opt5 .stat:not(:last-child){border-right:1px solid rgba(0,212,255,.1)}
+.opt5 .stat-num{color:#00D4FF}
+.opt5 .stat-label{color:#4A6078}
+.opt5 .content-section{background:#08101E}
+.opt5 .content-section .label{color:#0088FF}
+.opt5 .content-section .desc{color:#8A9DB4}
+.opt5 .card{background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.08)}
+.opt5 .card p{color:#8A9DB4}
+.opt5 .color-tag{color:#00D4FF;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25)}
+
+/* ════════════════════════════════════════════
+   OPTION 2: Sunset Gradient — Ocean meets horizon
+   ════════════════════════════════════════════ */
+.opt2{background:#0A0E1A}
+.opt2 .nav{background:rgba(10,14,26,.95)}
+.opt2 .nav-logo{background:linear-gradient(135deg,#F0836D,#E8B468);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.opt2 .nav-links a{color:#8A94A8}
+.opt2 .nav-btn{background:linear-gradient(135deg,#F0836D,#E8B468);color:#0A0E1A}
+.opt2 .hero{background:linear-gradient(180deg,#0A0E1A 0%,#0E1424 40%,#121A30 100%)}
+.opt2 .hero::before{top:-15%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(240,131,109,.1) 0%,transparent 60%)}
+.opt2 .hero::after{bottom:-10%;left:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(232,180,104,.06) 0%,transparent 60%)}
+.opt2 .badge{background:rgba(240,131,109,.08);border:1px solid rgba(240,131,109,.2);color:#F0836D}
+.opt2 .badge .dot{background:#F0836D;box-shadow:0 0 8px rgba(240,131,109,.5)}
+.opt2 .hero h1 .accent{background:linear-gradient(135deg,#F0836D,#E8B468);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.opt2 .hero-body{color:#8A94A8}
+.opt2 .btn-main{background:linear-gradient(135deg,#F0836D,#E8B468);color:#0A0E1A;box-shadow:0 4px 24px rgba(240,131,109,.3)}
+.opt2 .btn-ghost{color:#8A94A8}
+.opt2 .note{color:#4E5A6E}
+.opt2 .stats{background:rgba(240,131,109,.03);border:1.5px solid rgba(240,131,109,.1)}
+.opt2 .stat:not(:last-child){border-right:1px solid rgba(240,131,109,.1)}
+.opt2 .stat-num{background:linear-gradient(135deg,#F0836D,#E8B468);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.opt2 .stat-label{color:#4E5A6E}
+.opt2 .content-section{background:#0E1424}
+.opt2 .content-section .label{color:#E8B468}
+.opt2 .content-section .desc{color:#8A94A8}
+.opt2 .card{background:rgba(240,131,109,.03);border:1px solid rgba(240,131,109,.07)}
+.opt2 .card p{color:#8A94A8}
+.opt2 .color-tag{color:#F0836D;background:rgba(240,131,109,.08);border:1px solid rgba(240,131,109,.2)}
+
+/* ════════════════════════════════════════════
+   OPTION 3: True Black + White + Blue spark
+   ════════════════════════════════════════════ */
+.opt3{background:#000000}
+.opt3 .nav{background:rgba(0,0,0,.95)}
+.opt3 .nav-logo{color:#FFFFFF}
+.opt3 .nav-links a{color:#777}
+.opt3 .nav-btn{background:#fff;color:#000}
+.opt3 .hero{background:linear-gradient(180deg,#000000 0%,#050508 40%,#0A0A10 100%)}
+.opt3 .hero::before{top:-10%;right:-5%;width:600px;height:600px;background:radial-gradient(circle,rgba(56,136,255,.06) 0%,transparent 50%)}
+.opt3 .hero::after{bottom:-15%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(56,136,255,.04) 0%,transparent 50%)}
+.opt3 .badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff}
+.opt3 .badge .dot{background:#3888FF;box-shadow:0 0 8px rgba(56,136,255,.8)}
+.opt3 .hero h1{color:#fff}
+.opt3 .hero h1 .accent{color:#3888FF}
+.opt3 .hero-body{color:#888}
+.opt3 .btn-main{background:#fff;color:#000;box-shadow:0 4px 24px rgba(255,255,255,.12)}
+.opt3 .btn-ghost{color:#666}
+.opt3 .note{color:#555}
+.opt3 .stats{background:rgba(255,255,255,.03);border:1.5px solid rgba(255,255,255,.08)}
+.opt3 .stat:not(:last-child){border-right:1px solid rgba(255,255,255,.08)}
+.opt3 .stat-num{color:#fff}
+.opt3 .stat-label{color:#555}
+.opt3 .content-section{background:#050508}
+.opt3 .content-section .label{color:#3888FF}
+.opt3 .content-section .desc{color:#888}
+.opt3 .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.opt3 .card p{color:#888}
+.opt3 .color-tag{color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+
+/* ════════════════════════════════════════════
+   OPTION 4: Deep Ocean + Teal & Gold dual accent
+   ════════════════════════════════════════════ */
+.opt4{background:#070D18}
+.opt4 .nav{background:rgba(7,13,24,.95)}
+.opt4 .nav-logo{color:#2AE8C8}
+.opt4 .nav-links a{color:#7A9AAA}
+.opt4 .nav-btn{background:linear-gradient(135deg,#2AE8C8,#1ABFA8);color:#070D18}
+.opt4 .hero{background:linear-gradient(180deg,#070D18 0%,#0B1826 40%,#0E2030 100%)}
+.opt4 .hero::before{top:-15%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(42,232,200,.1) 0%,transparent 55%)}
+.opt4 .hero::after{bottom:-10%;left:0;width:400px;height:400px;background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 55%)}
+.opt4 .badge{background:rgba(42,232,200,.08);border:1px solid rgba(42,232,200,.2);color:#2AE8C8}
+.opt4 .badge .dot{background:#2AE8C8;box-shadow:0 0 8px rgba(42,232,200,.6)}
+.opt4 .hero h1 .accent{color:#2AE8C8}
+.opt4 .hero-body{color:#8AAAB8}
+.opt4 .btn-main{background:linear-gradient(135deg,#2AE8C8,#1ABFA8);color:#070D18;box-shadow:0 4px 24px rgba(42,232,200,.3)}
+.opt4 .btn-ghost{color:#C9A84C}
+.opt4 .note{color:#5A7A88}
+.opt4 .stats{background:rgba(42,232,200,.03);border:1.5px solid rgba(42,232,200,.1)}
+.opt4 .stat:not(:last-child){border-right:1px solid rgba(42,232,200,.1)}
+.opt4 .stat-num{color:#C9A84C}
+.opt4 .stat-label{color:#5A7A88}
+.opt4 .content-section{background:#0B1826}
+.opt4 .content-section .label{color:#C9A84C}
+.opt4 .content-section .desc{color:#8AAAB8}
+.opt4 .card{background:rgba(42,232,200,.03);border:1px solid rgba(42,232,200,.06)}
+.opt4 .card h3{color:#E8E0D0}
+.opt4 .card p{color:#8AAAB8}
+.opt4 .color-tag{color:#2AE8C8;background:rgba(42,232,200,.08);border:1px solid rgba(42,232,200,.2)}
+
+/* ════════════════════════════════════════════
+   OPTION 6: Light Electric Blue — airy + electric
+   ════════════════════════════════════════════ */
+.opt6{background:#F0F7FF}
+.opt6 .nav{background:rgba(240,247,255,.95);border-bottom-color:rgba(0,120,220,.08)}
+.opt6 .nav-logo{color:#0077DD}
+.opt6 .nav-links a{color:#6B8099}
+.opt6 .nav-btn{background:linear-gradient(135deg,#00B8FF,#0077DD);color:#fff}
+.opt6 .hero{background:linear-gradient(180deg,#F0F7FF 0%,#E4F0FF 40%,#DBF0FF 100%)}
+.opt6 .hero::before{top:-15%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(0,140,255,.08) 0%,transparent 60%)}
+.opt6 .hero::after{bottom:-10%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(0,200,255,.06) 0%,transparent 60%)}
+.opt6 .badge{background:rgba(0,136,255,.08);border:1px solid rgba(0,136,255,.2);color:#0077DD}
+.opt6 .badge .dot{background:#00B8FF;box-shadow:0 0 8px rgba(0,184,255,.5)}
+.opt6 .hero h1{color:#1A2B40}
+.opt6 .hero h1 .accent{color:#0088FF}
+.opt6 .hero-body{color:#6B8099}
+.opt6 .btn-main{background:linear-gradient(135deg,#00B8FF,#0077DD);color:#fff;box-shadow:0 4px 24px rgba(0,136,255,.3)}
+.opt6 .btn-ghost{color:#6B8099}
+.opt6 .note{color:#8A9AB0}
+.opt6 .stats{background:rgba(0,136,255,.04);border:1.5px solid rgba(0,136,255,.12)}
+.opt6 .stat:not(:last-child){border-right:1px solid rgba(0,136,255,.1)}
+.opt6 .stat-num{color:#0088FF}
+.opt6 .stat-label{color:#8A9AB0}
+.opt6 .content-section{background:#E8F2FF}
+.opt6 .content-section .label{color:#0077DD}
+.opt6 .content-section h2{color:#1A2B40}
+.opt6 .content-section .desc{color:#6B8099}
+.opt6 .card{background:#fff;border:1px solid rgba(0,136,255,.1)}
+.opt6 .card h3{color:#1A2B40}
+.opt6 .card p{color:#6B8099}
+.opt6 .color-tag{color:#0077DD;background:rgba(0,136,255,.08);border:1px solid rgba(0,136,255,.2)}
+
+/* ════════════════════════════════════════════
+   OPTION 7: Ignite Red — warm light + fire accent
+   ════════════════════════════════════════════ */
+.opt7{background:#FFF6F4}
+.opt7 .nav{background:rgba(255,246,244,.95);border-bottom-color:rgba(217,64,64,.08)}
+.opt7 .nav-logo{color:#D94040}
+.opt7 .nav-links a{color:#8A6E68}
+.opt7 .nav-btn{background:linear-gradient(135deg,#E84040,#CC3030);color:#fff}
+.opt7 .hero{background:linear-gradient(180deg,#FFF6F4 0%,#FFE8E4 40%,#FFE0DA 100%)}
+.opt7 .hero::before{top:-15%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(220,60,50,.07) 0%,transparent 60%)}
+.opt7 .hero::after{bottom:-10%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,120,80,.05) 0%,transparent 60%)}
+.opt7 .badge{background:rgba(217,64,64,.07);border:1px solid rgba(217,64,64,.18);color:#D94040}
+.opt7 .badge .dot{background:#E84040;box-shadow:0 0 8px rgba(232,64,64,.5)}
+.opt7 .hero h1{color:#2D1A1A}
+.opt7 .hero h1 .accent{color:#D94040}
+.opt7 .hero-body{color:#8A6E68}
+.opt7 .btn-main{background:linear-gradient(135deg,#E84040,#CC3030);color:#fff;box-shadow:0 4px 24px rgba(217,64,64,.3)}
+.opt7 .btn-ghost{color:#8A6E68}
+.opt7 .note{color:#B09088}
+.opt7 .stats{background:rgba(217,64,64,.04);border:1.5px solid rgba(217,64,64,.1)}
+.opt7 .stat:not(:last-child){border-right:1px solid rgba(217,64,64,.08)}
+.opt7 .stat-num{color:#D94040}
+.opt7 .stat-label{color:#B09088}
+.opt7 .content-section{background:#FFE8E4}
+.opt7 .content-section .label{color:#CC3030}
+.opt7 .content-section h2{color:#2D1A1A}
+.opt7 .content-section .desc{color:#8A6E68}
+.opt7 .card{background:#fff;border:1px solid rgba(217,64,64,.1)}
+.opt7 .card h3{color:#2D1A1A}
+.opt7 .card p{color:#8A6E68}
+.opt7 .color-tag{color:#D94040;background:rgba(217,64,64,.07);border:1px solid rgba(217,64,64,.18)}
+</style>
+</head>
+<body>
+
+<div class="picker">
+  <div class="picker-label">Ignite Legacy — Color Options</div>
+  <div class="picker-btns">
+    <button class="picker-btn" onclick="show(0)"><span class="swatch" style="background:linear-gradient(135deg,#A78BFA,#818CF8)"></span>Electric Violet</button>
+    <button class="picker-btn active" onclick="show(4)"><span class="swatch" style="background:linear-gradient(135deg,#00D4FF,#0088FF)"></span>Electric Ocean</button>
+    <button class="picker-btn" onclick="show(1)"><span class="swatch" style="background:linear-gradient(135deg,#F0836D,#E8B468)"></span>Sunset Gradient</button>
+    <button class="picker-btn" onclick="show(2)"><span class="swatch" style="background:#fff;border-color:#3888FF"></span>Black + White + Blue</button>
+    <button class="picker-btn" onclick="show(3)"><span class="swatch" style="background:linear-gradient(135deg,#2AE8C8,#C9A84C)"></span>Teal & Gold</button>
+    <button class="picker-btn" onclick="show(5)"><span class="swatch" style="background:linear-gradient(135deg,#00B8FF,#0077DD)"></span>Light Electric Blue</button>
+    <button class="picker-btn" onclick="show(6)"><span class="swatch" style="background:linear-gradient(135deg,#E84040,#CC3030)"></span>Ignite Red</button>
+  </div>
+</div>
+
+<!-- ═══ OPTION 1: Electric Violet ═══ -->
+<div class="section opt1" id="s0">
+  <div class="nav">
+    <div class="nav-logo">Blue Legacy</div>
+    <div class="nav-links"><a>Is This You?</a><a>How It Works</a><a>Stories</a><button class="nav-btn">Start Your Journey</button></div>
+  </div>
+  <section class="hero">
+    <div class="color-tag">Electric Violet</div>
+    <div class="container"><div class="hero-content">
+      <div class="badge"><span class="dot"></span> 2,847 people already building their legacy</div>
+      <h1>Your first step to<br><span class="accent">real freedom.</span></h1>
+      <p class="hero-body">You've been thinking about this for a while. Building something of your own. Creating income on your terms. Blue Legacy is the clear path &mdash; one course, one community, one system that works whether you have 15 minutes or 2 hours.</p>
+      <div class="cta-row"><button class="btn-main">Start Your Journey &mdash; $99</button><button class="btn-ghost">Watch the Story</button></div>
+      <div class="note">&#128338; Go at your own pace. 15 minutes a day is all you need.</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">2,847</div><div class="stat-label">Members</div></div>
+        <div class="stat"><div class="stat-num">$2.4M</div><div class="stat-label">Earned by Members</div></div>
+        <div class="stat"><div class="stat-num">4.9/5</div><div class="stat-label">Member Rating</div></div>
+      </div>
+    </div></div>
+  </section>
+  <div class="content-section">
+    <div class="container">
+      <div class="label">Sound Familiar?</div>
+      <h2>Is This You?</h2>
+      <p class="desc">If any of these hit home, you're in the right place.</p>
+      <div class="cards">
+        <div class="card"><div class="card-emoji">&#128564;</div><h3>Stuck in the 9-to-5 loop</h3><p>Trading your time for money, knowing there has to be a better way.</p></div>
+        <div class="card"><div class="card-emoji">&#128548;</div><h3>Wanting financial freedom</h3><p>Every "opportunity" feels overwhelming or like you need to already be an expert.</p></div>
+        <div class="card"><div class="card-emoji">&#129300;</div><h3>Ready to build something</h3><p>Something you can grow from anywhere, on your own schedule.</p></div>
+        <div class="card"><div class="card-emoji">&#128553;</div><h3>Overwhelmed by the tech?</h3><p>You just need a clear path that actually works.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OPTION 2: Sunset Gradient ═══ -->
+<div class="section opt2" id="s1">
+  <div class="nav">
+    <div class="nav-logo">Blue Legacy</div>
+    <div class="nav-links"><a>Is This You?</a><a>How It Works</a><a>Stories</a><button class="nav-btn">Start Your Journey</button></div>
+  </div>
+  <section class="hero">
+    <div class="color-tag">Sunset Gradient</div>
+    <div class="container"><div class="hero-content">
+      <div class="badge"><span class="dot"></span> 2,847 people already building their legacy</div>
+      <h1>Your first step to<br><span class="accent">real freedom.</span></h1>
+      <p class="hero-body">You've been thinking about this for a while. Building something of your own. Creating income on your terms. Blue Legacy is the clear path &mdash; one course, one community, one system that works whether you have 15 minutes or 2 hours.</p>
+      <div class="cta-row"><button class="btn-main">Start Your Journey &mdash; $99</button><button class="btn-ghost">Watch the Story</button></div>
+      <div class="note">&#128338; Go at your own pace. 15 minutes a day is all you need.</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">2,847</div><div class="stat-label">Members</div></div>
+        <div class="stat"><div class="stat-num">$2.4M</div><div class="stat-label">Earned by Members</div></div>
+        <div class="stat"><div class="stat-num">4.9/5</div><div class="stat-label">Member Rating</div></div>
+      </div>
+    </div></div>
+  </section>
+  <div class="content-section">
+    <div class="container">
+      <div class="label">Sound Familiar?</div>
+      <h2>Is This You?</h2>
+      <p class="desc">If any of these hit home, you're in the right place.</p>
+      <div class="cards">
+        <div class="card"><div class="card-emoji">&#128564;</div><h3>Stuck in the 9-to-5 loop</h3><p>Trading your time for money, knowing there has to be a better way.</p></div>
+        <div class="card"><div class="card-emoji">&#128548;</div><h3>Wanting financial freedom</h3><p>Every "opportunity" feels overwhelming or like you need to already be an expert.</p></div>
+        <div class="card"><div class="card-emoji">&#129300;</div><h3>Ready to build something</h3><p>Something you can grow from anywhere, on your own schedule.</p></div>
+        <div class="card"><div class="card-emoji">&#128553;</div><h3>Overwhelmed by the tech?</h3><p>You just need a clear path that actually works.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OPTION 3: Black + White + Blue ═══ -->
+<div class="section opt3" id="s2">
+  <div class="nav">
+    <div class="nav-logo">Blue Legacy</div>
+    <div class="nav-links"><a>Is This You?</a><a>How It Works</a><a>Stories</a><button class="nav-btn">Start Your Journey</button></div>
+  </div>
+  <section class="hero">
+    <div class="color-tag">Black + White + Blue</div>
+    <div class="container"><div class="hero-content">
+      <div class="badge"><span class="dot"></span> 2,847 people already building their legacy</div>
+      <h1>Your first step to<br><span class="accent">real freedom.</span></h1>
+      <p class="hero-body">You've been thinking about this for a while. Building something of your own. Creating income on your terms. Blue Legacy is the clear path &mdash; one course, one community, one system that works whether you have 15 minutes or 2 hours.</p>
+      <div class="cta-row"><button class="btn-main">Start Your Journey &mdash; $99</button><button class="btn-ghost">Watch the Story</button></div>
+      <div class="note">&#128338; Go at your own pace. 15 minutes a day is all you need.</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">2,847</div><div class="stat-label">Members</div></div>
+        <div class="stat"><div class="stat-num">$2.4M</div><div class="stat-label">Earned by Members</div></div>
+        <div class="stat"><div class="stat-num">4.9/5</div><div class="stat-label">Member Rating</div></div>
+      </div>
+    </div></div>
+  </section>
+  <div class="content-section">
+    <div class="container">
+      <div class="label">Sound Familiar?</div>
+      <h2>Is This You?</h2>
+      <p class="desc">If any of these hit home, you're in the right place.</p>
+      <div class="cards">
+        <div class="card"><div class="card-emoji">&#128564;</div><h3>Stuck in the 9-to-5 loop</h3><p>Trading your time for money, knowing there has to be a better way.</p></div>
+        <div class="card"><div class="card-emoji">&#128548;</div><h3>Wanting financial freedom</h3><p>Every "opportunity" feels overwhelming or like you need to already be an expert.</p></div>
+        <div class="card"><div class="card-emoji">&#129300;</div><h3>Ready to build something</h3><p>Something you can grow from anywhere, on your own schedule.</p></div>
+        <div class="card"><div class="card-emoji">&#128553;</div><h3>Overwhelmed by the tech?</h3><p>You just need a clear path that actually works.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OPTION 4: Teal & Gold ═══ -->
+<div class="section opt4" id="s3">
+  <div class="nav">
+    <div class="nav-logo">Blue Legacy</div>
+    <div class="nav-links"><a>Is This You?</a><a>How It Works</a><a>Stories</a><button class="nav-btn">Start Your Journey</button></div>
+  </div>
+  <section class="hero">
+    <div class="color-tag">Teal &amp; Gold</div>
+    <div class="container"><div class="hero-content">
+      <div class="badge"><span class="dot"></span> 2,847 people already building their legacy</div>
+      <h1>Your first step to<br><span class="accent">real freedom.</span></h1>
+      <p class="hero-body">You've been thinking about this for a while. Building something of your own. Creating income on your terms. Blue Legacy is the clear path &mdash; one course, one community, one system that works whether you have 15 minutes or 2 hours.</p>
+      <div class="cta-row"><button class="btn-main">Start Your Journey &mdash; $99</button><button class="btn-ghost">Watch the Story</button></div>
+      <div class="note">&#128338; Go at your own pace. 15 minutes a day is all you need.</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">2,847</div><div class="stat-label">Members</div></div>
+        <div class="stat"><div class="stat-num">$2.4M</div><div class="stat-label">Earned by Members</div></div>
+        <div class="stat"><div class="stat-num">4.9/5</div><div class="stat-label">Member Rating</div></div>
+      </div>
+    </div></div>
+  </section>
+  <div class="content-section">
+    <div class="container">
+      <div class="label">Sound Familiar?</div>
+      <h2>Is This You?</h2>
+      <p class="desc">If any of these hit home, you're in the right place.</p>
+      <div class="cards">
+        <div class="card"><div class="card-emoji">&#128564;</div><h3>Stuck in the 9-to-5 loop</h3><p>Trading your time for money, knowing there has to be a better way.</p></div>
+        <div class="card"><div class="card-emoji">&#128548;</div><h3>Wanting financial freedom</h3><p>Every "opportunity" feels overwhelming or like you need to already be an expert.</p></div>
+        <div class="card"><div class="card-emoji">&#129300;</div><h3>Ready to build something</h3><p>Something you can grow from anywhere, on your own schedule.</p></div>
+        <div class="card"><div class="card-emoji">&#128553;</div><h3>Overwhelmed by the tech?</h3><p>You just need a clear path that actually works.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OPTION 5: Electric Ocean ═══ -->
+<div class="section active opt5" id="s4">
+  <div class="nav">
+    <div class="nav-logo">Blue Legacy</div>
+    <div class="nav-links"><a>Is This You?</a><a>How It Works</a><a>Stories</a><button class="nav-btn">Start Your Journey</button></div>
+  </div>
+  <section class="hero">
+    <div class="color-tag">Electric Ocean</div>
+    <div class="container"><div class="hero-content">
+      <div class="badge"><span class="dot"></span> 2,847 people already building their legacy</div>
+      <h1>Your first step to<br><span class="accent">real freedom.</span></h1>
+      <p class="hero-body">You've been thinking about this for a while. Building something of your own. Creating income on your terms. Blue Legacy is the clear path &mdash; one course, one community, one system that works whether you have 15 minutes or 2 hours.</p>
+      <div class="cta-row"><button class="btn-main">Start Your Journey &mdash; $99</button><button class="btn-ghost">Watch the Story</button></div>
+      <div class="note">&#128338; Go at your own pace. 15 minutes a day is all you need.</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">2,847</div><div class="stat-label">Members</div></div>
+        <div class="stat"><div class="stat-num">$2.4M</div><div class="stat-label">Earned by Members</div></div>
+        <div class="stat"><div class="stat-num">4.9/5</div><div class="stat-label">Member Rating</div></div>
+      </div>
+    </div></div>
+  </section>
+  <div class="content-section">
+    <div class="container">
+      <div class="label">Sound Familiar?</div>
+      <h2>Is This You?</h2>
+      <p class="desc">If any of these hit home, you're in the right place.</p>
+      <div class="cards">
+        <div class="card"><div class="card-emoji">&#128564;</div><h3>Stuck in the 9-to-5 loop</h3><p>Trading your time for money, knowing there has to be a better way.</p></div>
+        <div class="card"><div class="card-emoji">&#128548;</div><h3>Wanting financial freedom</h3><p>Every "opportunity" feels overwhelming or like you need to already be an expert.</p></div>
+        <div class="card"><div class="card-emoji">&#129300;</div><h3>Ready to build something</h3><p>Something you can grow from anywhere, on your own schedule.</p></div>
+        <div class="card"><div class="card-emoji">&#128553;</div><h3>Overwhelmed by the tech?</h3><p>You just need a clear path that actually works.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OPTION 6: Light Electric Blue ═══ -->
+<div class="section opt6" id="s5">
+  <div class="nav">
+    <div class="nav-logo">Ignite Legacy</div>
+    <div class="nav-links"><a>Is This You?</a><a>How It Works</a><a>Stories</a><button class="nav-btn">Start Your Journey</button></div>
+  </div>
+  <section class="hero">
+    <div class="color-tag">Light Electric Blue</div>
+    <div class="container"><div class="hero-content">
+      <div class="badge"><span class="dot"></span> 2,847 people already building their legacy</div>
+      <h1>Your first step to<br><span class="accent">real freedom.</span></h1>
+      <p class="hero-body">You've been thinking about this for a while. Building something of your own. Creating income on your terms. Ignite Legacy is the clear path &mdash; one course, one community, one system that works whether you have 15 minutes or 2 hours.</p>
+      <div class="cta-row"><button class="btn-main">Start Your Journey &mdash; $99</button><button class="btn-ghost">Watch the Story</button></div>
+      <div class="note">&#128338; Go at your own pace. 15 minutes a day is all you need.</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">2,847</div><div class="stat-label">Members</div></div>
+        <div class="stat"><div class="stat-num">$2.4M</div><div class="stat-label">Earned by Members</div></div>
+        <div class="stat"><div class="stat-num">4.9/5</div><div class="stat-label">Member Rating</div></div>
+      </div>
+    </div></div>
+  </section>
+  <div class="content-section">
+    <div class="container">
+      <div class="label">Sound Familiar?</div>
+      <h2>Is This You?</h2>
+      <p class="desc">If any of these hit home, you're in the right place.</p>
+      <div class="cards">
+        <div class="card"><div class="card-emoji">&#128564;</div><h3>Stuck in the 9-to-5 loop</h3><p>Trading your time for money, knowing there has to be a better way.</p></div>
+        <div class="card"><div class="card-emoji">&#128548;</div><h3>Wanting financial freedom</h3><p>Every "opportunity" feels overwhelming or like you need to already be an expert.</p></div>
+        <div class="card"><div class="card-emoji">&#129300;</div><h3>Ready to build something</h3><p>Something you can grow from anywhere, on your own schedule.</p></div>
+        <div class="card"><div class="card-emoji">&#128553;</div><h3>Overwhelmed by the tech?</h3><p>You just need a clear path that actually works.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OPTION 7: Ignite Red ═══ -->
+<div class="section opt7" id="s6">
+  <div class="nav">
+    <div class="nav-logo">Ignite Legacy</div>
+    <div class="nav-links"><a>Is This You?</a><a>How It Works</a><a>Stories</a><button class="nav-btn">Start Your Journey</button></div>
+  </div>
+  <section class="hero">
+    <div class="color-tag">Ignite Red</div>
+    <div class="container"><div class="hero-content">
+      <div class="badge"><span class="dot"></span> 2,847 people already building their legacy</div>
+      <h1>Your first step to<br><span class="accent">real freedom.</span></h1>
+      <p class="hero-body">You've been thinking about this for a while. Building something of your own. Creating income on your terms. Ignite Legacy is the clear path &mdash; one course, one community, one system that works whether you have 15 minutes or 2 hours.</p>
+      <div class="cta-row"><button class="btn-main">Start Your Journey &mdash; $99</button><button class="btn-ghost">Watch the Story</button></div>
+      <div class="note">&#128338; Go at your own pace. 15 minutes a day is all you need.</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">2,847</div><div class="stat-label">Members</div></div>
+        <div class="stat"><div class="stat-num">$2.4M</div><div class="stat-label">Earned by Members</div></div>
+        <div class="stat"><div class="stat-num">4.9/5</div><div class="stat-label">Member Rating</div></div>
+      </div>
+    </div></div>
+  </section>
+  <div class="content-section">
+    <div class="container">
+      <div class="label">Sound Familiar?</div>
+      <h2>Is This You?</h2>
+      <p class="desc">If any of these hit home, you're in the right place.</p>
+      <div class="cards">
+        <div class="card"><div class="card-emoji">&#128564;</div><h3>Stuck in the 9-to-5 loop</h3><p>Trading your time for money, knowing there has to be a better way.</p></div>
+        <div class="card"><div class="card-emoji">&#128548;</div><h3>Wanting financial freedom</h3><p>Every "opportunity" feels overwhelming or like you need to already be an expert.</p></div>
+        <div class="card"><div class="card-emoji">&#129300;</div><h3>Ready to build something</h3><p>Something you can grow from anywhere, on your own schedule.</p></div>
+        <div class="card"><div class="card-emoji">&#128553;</div><h3>Overwhelmed by the tech?</h3><p>You just need a clear path that actually works.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function show(n) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.picker-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('s' + n).classList.add('active');
+  document.querySelectorAll('.picker-btn')[n].classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
