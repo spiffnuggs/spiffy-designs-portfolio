@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spiffy Designs | Sydney Zuckerman</title>
-  <meta name="description" content="Spiffy Designs by Sydney Zuckerman. Hand-coded, thoughtfully designed websites that load fast, build trust, and help your business grow. Web design, development, and e-commerce.">
-  <meta name="keywords" content="web design, web development, hand-coded websites, freelance web designer, Sydney Zuckerman, Spiffy Designs, e-commerce, Shopify, Next.js, custom websites">
+  <meta name="description" content="Spiffy Designs by Sydney Zuckerman. Hand-coded websites and custom platforms that load fast, build trust, and help your business grow. Web design, full-stack development, and e-commerce.">
+  <meta name="keywords" content="web design, web development, hand-coded websites, freelance web designer, Sydney Zuckerman, Spiffy Designs, e-commerce, Shopify, Next.js, custom websites, full-stack platforms, Supabase, Stripe">
   <meta name="author" content="Sydney Zuckerman">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://spiffy-designs-portfolio.vercel.app">
@@ -13,7 +13,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Spiffy Designs | Sydney Zuckerman — Web Design & Development">
-  <meta property="og:description" content="Hand-coded, thoughtfully designed websites that load fast, build trust, and help your business grow.">
+  <meta property="og:description" content="Hand-coded websites and custom platforms that load fast, build trust, and help your business grow.">
   <meta property="og:url" content="https://spiffy-designs-portfolio.vercel.app">
   <meta property="og:site_name" content="Spiffy Designs">
   <meta property="og:locale" content="en_US">
@@ -21,7 +21,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Spiffy Designs | Sydney Zuckerman">
-  <meta name="twitter:description" content="Hand-coded, thoughtfully designed websites that load fast, build trust, and help your business grow.">
+  <meta name="twitter:description" content="Hand-coded websites and custom platforms that load fast, build trust, and help your business grow.">
 
   <!-- Favicon (inline SVG) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
@@ -32,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Spiffy Designs",
-    "description": "Hand-coded, thoughtfully designed websites that load fast, build trust, and help your business grow.",
+    "description": "Hand-coded websites and custom platforms that load fast, build trust, and help your business grow.",
     "url": "https://spiffy-designs-portfolio.vercel.app",
     "founder": {
       "@type": "Person",
@@ -47,7 +47,7 @@
       "contactType": "customer service",
       "availableLanguage": "English"
     },
-    "serviceType": ["Web Design", "Web Development", "E-commerce Development", "Custom Website Development"],
+    "serviceType": ["Web Design", "Web Development", "E-commerce Development", "Custom Website Development", "Full-Stack Platform Development"],
     "areaServed": {
       "@type": "GeoShape",
       "name": "Worldwide (Remote)"
@@ -56,7 +56,7 @@
     "knowsAbout": ["HTML", "CSS", "JavaScript", "Next.js", "React", "Supabase", "Stripe", "Shopify", "Tailwind CSS", "Vercel"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Web Design Services",
+      "name": "Web Design & Development Services",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -79,7 +79,7 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Full-Stack Web Applications",
-            "description": "Custom platforms with authentication, payments, and databases"
+            "description": "Custom platforms with authentication, payments, dashboards, and databases"
           }
         }
       ]
@@ -99,7 +99,7 @@
         "name": "What does Spiffy Designs do?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Spiffy Designs creates hand-coded, custom websites that load fast, build trust, and help businesses grow. Services include web design, development, e-commerce (Shopify), and full-stack web applications using modern technologies like Next.js, React, Supabase, and Stripe."
+          "text": "Spiffy Designs creates hand-coded websites and custom platforms. From marketing sites and e-commerce stores to full-stack applications with authentication, payments, and real-time dashboards. Built with Next.js, React, Supabase, Stripe, and Shopify."
         }
       },
       {
@@ -107,7 +107,7 @@
         "name": "Who is behind Spiffy Designs?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Spiffy Designs is the studio of Sydney Zuckerman, a web designer and developer who creates thoughtful digital experiences across industries including hospitality, e-commerce, healthcare, nonprofits, and more."
+          "text": "Spiffy Designs is the studio of Sydney Zuckerman, a web designer and full-stack developer who creates thoughtful digital experiences across industries including hospitality, e-commerce, healthcare, nonprofits, coaching platforms, and more."
         }
       },
       {
@@ -145,64 +145,28 @@
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* LIGHT (default) — Bloom-inspired warm coral */
     [data-theme="light"] {
-      --bg: #FFF8F0;
-      --bg-elevated: #FFFFFF;
-      --bg-card: #FFFFFF;
-      --bg-subtle: #FFF1E6;
-      --bg-hover: #FEF5EE;
-      --accent: #E07A5F;
-      --accent-light: #E8937D;
-      --accent-dim: rgba(224, 122, 95, 0.1);
-      --accent-glow: rgba(224, 122, 95, 0.08);
-      --rose: #E8B4B8;
-      --sage: #A8C5A0;
-      --lavender: #C4B7D4;
-      --gold: #C9A96E;
-      --text: #3D2B3A;
-      --text-muted: #5C4A58;
-      --text-dim: #8B7B86;
-      --text-light: #B0A3AB;
-      --border: #E8D5C4;
-      --border-hover: rgba(224, 122, 95, 0.3);
-      --shadow-sm: 0 2px 8px rgba(61,43,58,0.04);
-      --shadow-md: 0 8px 28px rgba(61,43,58,0.06);
-      --shadow-hover: 0 16px 44px rgba(61,43,58,0.1);
-      --overlay: rgba(255,248,240,0.88);
-      --nav-bg: rgba(255, 248, 240, 0.92);
-      --toggle-bg: #F5E6D8;
-      --btn-text: #fff;
+      --bg: #FFF8F0; --bg-elevated: #FFFFFF; --bg-card: #FFFFFF; --bg-subtle: #FFF1E6; --bg-hover: #FEF5EE;
+      --accent: #E07A5F; --accent-light: #E8937D; --accent-dim: rgba(224, 122, 95, 0.1); --accent-glow: rgba(224, 122, 95, 0.08);
+      --rose: #E8B4B8; --sage: #A8C5A0; --lavender: #C4B7D4; --gold: #C9A96E;
+      --text: #3D2B3A; --text-muted: #5C4A58; --text-dim: #8B7B86; --text-light: #B0A3AB;
+      --border: #E8D5C4; --border-hover: rgba(224, 122, 95, 0.3);
+      --shadow-sm: 0 2px 8px rgba(61,43,58,0.04); --shadow-md: 0 8px 28px rgba(61,43,58,0.06); --shadow-hover: 0 16px 44px rgba(61,43,58,0.1);
+      --overlay: rgba(255,248,240,0.88); --nav-bg: rgba(255, 248, 240, 0.92); --toggle-bg: #F5E6D8; --btn-text: #fff;
+      --sage-soft: rgba(168,197,160,0.08); --sage-border: rgba(168,197,160,0.35);
+      --red-soft: #D4817A; --red-soft-border: rgba(212,129,122,0.25);
     }
 
-    /* DARK — warm dark variant */
     [data-theme="dark"] {
-      --bg: #1A1215;
-      --bg-elevated: #231A1E;
-      --bg-card: #201820;
-      --bg-subtle: #2A2024;
-      --bg-hover: #2E2428;
-      --accent: #E07A5F;
-      --accent-light: #E8937D;
-      --accent-dim: rgba(224, 122, 95, 0.12);
-      --accent-glow: rgba(224, 122, 95, 0.06);
-      --rose: #E8B4B8;
-      --sage: #A8C5A0;
-      --lavender: #C4B7D4;
-      --gold: #C9A96E;
-      --text: #F0E8E4;
-      --text-muted: #B0A3AB;
-      --text-dim: #6B5B66;
-      --text-light: #4A3B44;
-      --border: rgba(232,180,184,0.1);
-      --border-hover: rgba(224, 122, 95, 0.2);
-      --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
-      --shadow-md: 0 8px 28px rgba(0,0,0,0.3);
-      --shadow-hover: 0 20px 50px rgba(0,0,0,0.4);
-      --overlay: rgba(26,18,21,0.85);
-      --nav-bg: rgba(26, 18, 21, 0.92);
-      --toggle-bg: #3A2A30;
-      --btn-text: #1A1215;
+      --bg: #1A1215; --bg-elevated: #231A1E; --bg-card: #201820; --bg-subtle: #2A2024; --bg-hover: #2E2428;
+      --accent: #E07A5F; --accent-light: #E8937D; --accent-dim: rgba(224, 122, 95, 0.12); --accent-glow: rgba(224, 122, 95, 0.06);
+      --rose: #E8B4B8; --sage: #A8C5A0; --lavender: #C4B7D4; --gold: #C9A96E;
+      --text: #F0E8E4; --text-muted: #B0A3AB; --text-dim: #6B5B66; --text-light: #4A3B44;
+      --border: rgba(232,180,184,0.1); --border-hover: rgba(224, 122, 95, 0.2);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.2); --shadow-md: 0 8px 28px rgba(0,0,0,0.3); --shadow-hover: 0 20px 50px rgba(0,0,0,0.4);
+      --overlay: rgba(26,18,21,0.85); --nav-bg: rgba(26, 18, 21, 0.92); --toggle-bg: #3A2A30; --btn-text: #1A1215;
+      --sage-soft: rgba(168,197,160,0.06); --sage-border: rgba(168,197,160,0.2);
+      --red-soft: #D4817A; --red-soft-border: rgba(212,129,122,0.15);
     }
 
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
@@ -210,13 +174,11 @@
     a { color: inherit; text-decoration: none; }
     h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 400; line-height: 1.2; }
 
-    /* THEME TOGGLE */
     .theme-toggle { width: 44px; height: 26px; background: var(--toggle-bg); border-radius: 100px; border: none; cursor: pointer; position: relative; transition: background 0.3s; flex-shrink: 0; }
     .theme-toggle::after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; transition: transform 0.3s var(--ease-out); }
     [data-theme="dark"] .theme-toggle::after { transform: translateX(18px); }
     .toggle-icons { display: flex; align-items: center; gap: 4px; pointer-events: none; position: absolute; inset: 0; justify-content: space-between; padding: 0 6px; font-size: 11px; line-height: 1; }
 
-    /* SCROLL ANIMATIONS */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-d1 { transition-delay: 0.1s; }
@@ -236,16 +198,12 @@
     .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 130px 40px 80px; max-width: 1200px; margin: 0 auto; position: relative; }
     .hero::before { content: ''; position: absolute; top: -10%; right: -10%; width: 450px; height: 450px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%); pointer-events: none; }
     .hero::after { content: ''; position: absolute; bottom: 5%; left: -5%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(168,197,160,0.08) 0%, transparent 70%); pointer-events: none; }
-
     .hero-top { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; opacity: 0; animation: fadeIn 0.8s 0.2s forwards; }
     .hero-dot { width: 8px; height: 8px; background: var(--sage); border-radius: 50%; animation: pulse 2s infinite; box-shadow: 0 0 8px rgba(168,197,160,0.5); }
     .hero-status { font-size: 0.76rem; font-weight: 600; color: var(--text-dim); letter-spacing: 0.02em; }
-
     .hero h1 { font-size: clamp(2.6rem, 5.5vw, 4.6rem); font-weight: 300; line-height: 1.12; color: var(--text); margin-bottom: 22px; opacity: 0; animation: fadeUp 0.9s 0.35s forwards; }
     .hero h1 .rotate-word { color: var(--accent); font-style: italic; font-weight: 400; display: inline-block; transition: opacity 0.3s, transform 0.3s; }
-
-    .hero-sub { font-size: clamp(0.92rem, 1.4vw, 1.05rem); font-weight: 400; color: var(--text-muted); max-width: 440px; line-height: 1.75; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.9s 0.5s forwards; }
-
+    .hero-sub { font-size: clamp(0.92rem, 1.4vw, 1.05rem); font-weight: 400; color: var(--text-muted); max-width: 480px; line-height: 1.75; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.9s 0.5s forwards; }
     .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.9s 0.65s forwards; }
     .btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 14px 30px; background: var(--accent); color: var(--btn-text); font-family: var(--sans); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 100px; border: none; cursor: pointer; transition: all 0.35s var(--ease); }
     .btn-primary:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 12px 32px var(--accent-dim); }
@@ -261,14 +219,12 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-    /* TRUST BAR */
     .trust-bar { padding: 0 40px 56px; max-width: 1200px; margin: 0 auto; }
     .trust-inner { display: flex; gap: 36px; align-items: center; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
     .trust-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
     .trust-icon { font-size: 0.85rem; color: var(--accent); }
     .trust-text { font-size: 0.76rem; font-weight: 600; color: var(--text-dim); }
 
-    /* SECTION */
     .section-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
     .section-title { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 300; color: var(--text); line-height: 1.2; }
 
@@ -276,12 +232,10 @@
     #work { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
     .work-header { margin-bottom: 44px; }
     .work-header .section-title { margin-bottom: 8px; }
-    .work-subtitle { font-size: 0.88rem; color: var(--text-muted); max-width: 400px; line-height: 1.7; }
-
+    .work-subtitle { font-size: 0.88rem; color: var(--text-muted); max-width: 440px; line-height: 1.7; }
     .projects-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
     .project-card { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); cursor: pointer; transition: transform 0.5s var(--ease-out), border-color 0.4s, box-shadow 0.4s; display: block; }
     .project-card:hover { transform: translateY(-3px); border-color: var(--border-hover); box-shadow: var(--shadow-hover); }
-
     .project-card:nth-child(1) { grid-column: span 7; }
     .project-card:nth-child(2) { grid-column: span 5; }
     .project-card:nth-child(3) { grid-column: span 4; }
@@ -291,10 +245,8 @@
     .project-card:nth-child(7) { grid-column: span 6; }
     .project-card:nth-child(8) { grid-column: span 5; }
     .project-card:nth-child(9) { grid-column: span 7; }
-
     .project-preview-wrap { position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; background: var(--bg-subtle); }
     .project-preview-wrap iframe { width: 1440px; height: 900px; border: none; transform-origin: top left; pointer-events: none; display: block; }
-
     .project-hover { position: absolute; inset: 0; background: var(--overlay); backdrop-filter: blur(6px); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; opacity: 0; transition: opacity 0.35s var(--ease); z-index: 3; }
     .project-card:hover .project-hover { opacity: 1; }
     .hover-category { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
@@ -304,11 +256,12 @@
     .hover-link .arrow { transition: transform 0.3s; }
     .project-card:hover .hover-link .arrow { transform: translateX(4px); }
 
-    .project-bar { padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
+    .project-bar { padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .project-bar-info { display: flex; flex-direction: column; min-width: 0; }
     .project-bar-name { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--text); }
-    .project-bar-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); padding: 3px 10px; border: 1px solid var(--border); border-radius: 100px; }
+    .project-bar-result { font-size: 0.66rem; font-weight: 600; color: var(--sage); margin-top: 2px; }
+    .project-bar-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); padding: 3px 10px; border: 1px solid var(--border); border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
 
-    /* Gradient previews */
     .gradient-preview { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
     .gradient-preview.tuktuk { background: linear-gradient(135deg, #FF6B35 0%, #F7931E 40%, #004E89 100%); }
     .gradient-preview.ignite { background: linear-gradient(135deg, #2a1f35, #1f2a35 50%, #201a15); }
@@ -318,12 +271,44 @@
     .gradient-preview .stack-row { position: relative; z-index: 2; display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
     .gradient-preview .stack-tag { padding: 3px 9px; background: rgba(255,255,255,0.12); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-size: 0.62rem; font-weight: 600; color: rgba(255,255,255,0.9); }
 
+    /* NOW → AFTER */
+    .transform-section { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
+    .transform-header { margin-bottom: 40px; }
+    .transform-header .section-title { margin-bottom: 8px; }
+    .transform-sub { font-size: 0.88rem; color: var(--text-muted); max-width: 500px; line-height: 1.7; }
+    .transform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .transform-card { background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px 24px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; transition: border-color 0.3s; }
+    .transform-card:hover { border-color: var(--border-hover); }
+    .t-before, .t-after { display: flex; flex-direction: column; gap: 4px; }
+    .t-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .t-before .t-label { color: var(--red-soft); }
+    .t-after .t-label { color: var(--sage); }
+    .t-text { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+    .t-after .t-text { color: var(--text); font-weight: 500; }
+    .t-arrow { color: var(--sage); font-size: 1.1rem; }
+    .t-project { margin-top: 6px; font-size: 0.62rem; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; }
+
     /* MID CTA */
     .mid-cta { padding: 52px 40px; }
     .mid-cta-inner { max-width: 1200px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 48px; display: flex; justify-content: space-between; align-items: center; gap: 32px; box-shadow: var(--shadow-sm); }
     .mid-cta-text h3 { font-family: var(--serif); font-size: clamp(1.4rem, 2.5vw, 1.8rem); font-weight: 300; color: var(--text); margin-bottom: 6px; }
     .mid-cta-text h3 .accent { color: var(--accent); font-style: italic; }
     .mid-cta-text p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.7; max-width: 380px; }
+
+    /* TESTIMONIALS */
+    .testimonials { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
+    .testimonials-header { margin-bottom: 40px; }
+    .testimonials-header .section-title { margin-bottom: 8px; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .testimonial-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; transition: border-color 0.3s, transform 0.3s; }
+    .testimonial-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .testimonial-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .testimonial-quote { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; font-style: italic; margin-bottom: 18px; }
+    .testimonial-author { display: flex; align-items: center; gap: 10px; }
+    .testimonial-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-dim); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+    .testimonial-info { display: flex; flex-direction: column; }
+    .testimonial-name { font-size: 0.78rem; font-weight: 600; color: var(--text); }
+    .testimonial-role { font-size: 0.66rem; color: var(--text-dim); }
 
     /* PROCESS */
     #process { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
@@ -347,9 +332,30 @@
     .stat-card:hover { border-color: var(--border-hover); }
     .stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 4px; }
     .stat-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
-    .services-list { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    .services-list { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .service-chip { padding: 11px 14px; background: var(--bg-subtle); border-radius: var(--radius-sm); font-size: 0.78rem; font-weight: 600; color: var(--text-muted); text-align: center; transition: all 0.3s; }
     .service-chip:hover { background: var(--accent-dim); color: var(--accent); }
+
+    /* INTAKE FORM */
+    #start { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
+    .intake-card { background: var(--bg-card); border: 1.5px solid var(--accent); border-radius: 20px; padding: 48px; position: relative; overflow: hidden; box-shadow: var(--shadow-md); }
+    .intake-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--rose)); }
+    .intake-header { text-align: center; margin-bottom: 36px; }
+    .intake-header .section-title { margin-bottom: 8px; }
+    .intake-sub { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+    .intake-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 600px; margin: 0 auto; }
+    .intake-form .full-width { grid-column: span 2; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 12px 16px; background: var(--bg-subtle); border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-family: var(--sans); font-size: 0.85rem; color: var(--text); transition: border-color 0.3s; outline: none; resize: vertical;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-light); }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238B7B86' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+    .form-submit { grid-column: span 2; display: flex; justify-content: center; padding-top: 8px; }
+    .form-submit .btn-primary { padding: 16px 40px; font-size: 0.85rem; }
 
     /* CONTACT */
     #contact { padding: 88px 40px 52px; text-align: center; }
@@ -375,17 +381,26 @@
       .about-grid { grid-template-columns: 1fr; gap: 36px; }
       .mid-cta-inner { flex-direction: column; text-align: center; padding: 36px 24px; }
       .mid-cta-text p { margin: 0 auto; }
+      .transform-grid { grid-template-columns: 1fr; }
+      .testimonial-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
       nav { padding: 12px 20px; }
       .hero { padding: 100px 20px 48px; }
-      #work, #process, #about { padding: 40px 20px; }
+      #work, #process, #about, .transform-section, .testimonials, #start { padding: 40px 20px; }
       .mid-cta { padding: 24px 20px; }
       .projects-grid { grid-template-columns: 1fr; }
       .project-card:nth-child(n) { grid-column: span 1; }
       .process-grid { grid-template-columns: 1fr; gap: 1px; border-radius: var(--radius); }
       .about-right { grid-template-columns: 1fr 1fr; }
       .services-list { grid-template-columns: 1fr; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .transform-card { grid-template-columns: 1fr; gap: 10px; text-align: center; }
+      .t-arrow { display: none; }
+      .intake-card { padding: 28px 20px; }
+      .intake-form { grid-template-columns: 1fr; }
+      .intake-form .full-width { grid-column: span 1; }
+      .form-submit { grid-column: span 1; }
       #contact { padding: 40px 20px; }
       footer { flex-direction: column; gap: 6px; text-align: center; padding: 20px; }
     }
@@ -415,7 +430,7 @@
           <span class="toggle-icons"><span>&#9788;</span><span>&#9790;</span></span>
         </button>
       </li>
-      <li><a href="#contact" class="nav-cta-pill">Let's Talk</a></li>
+      <li><a href="#start" class="nav-cta-pill">Let's Talk</a></li>
     </ul>
   </nav>
 
@@ -425,14 +440,14 @@
       <span class="hero-status">Taking on select clients</span>
     </div>
     <h1>
-      Websites that help you<br>
-      grow your <span class="rotate-word" id="rotateWord">business</span>
+      Websites &amp; platforms<br>
+      that grow your <span class="rotate-word" id="rotateWord">business</span>
     </h1>
     <p class="hero-sub">
-      Hand-coded, thoughtfully designed websites that load fast, build trust, and help your customers find you.
+      From marketing sites to full-stack platforms with payments, dashboards, and real-time data — hand-coded, thoughtfully designed, and built to perform.
     </p>
     <div class="hero-actions">
-      <a href="https://wa.me/15089349709?text=Hi%20Sydney!%20I'd%20love%20to%20chat%20about%20a%20website." target="_blank" class="btn-primary"><span class="wa-icon">&#9993;</span> Message on WhatsApp</a>
+      <a href="#start" class="btn-primary"><span class="wa-icon">&#9993;</span> Tell Me About Your Project</a>
       <a href="#work" class="btn-ghost">See the work <span class="arrow">&rarr;</span></a>
     </div>
   </section>
@@ -441,7 +456,7 @@
     <div class="trust-inner">
       <div class="trust-item"><span class="trust-icon">&#9889;</span><span class="trust-text">Lightning-fast load times</span></div>
       <div class="trust-item"><span class="trust-icon">&#9998;</span><span class="trust-text">100% hand-coded</span></div>
-      <div class="trust-item"><span class="trust-icon">&#9733;</span><span class="trust-text">Designed to convert</span></div>
+      <div class="trust-item"><span class="trust-icon">&#9733;</span><span class="trust-text">Websites to full-stack platforms</span></div>
       <div class="trust-item"><span class="trust-icon">&#9741;</span><span class="trust-text">Beautiful on every device</span></div>
       <div class="trust-item"><span class="trust-icon">&#10003;</span><span class="trust-text">No templates. Ever.</span></div>
     </div>
@@ -451,7 +466,7 @@
     <div class="work-header reveal">
       <div class="section-label">Selected Work</div>
       <h2 class="section-title">Built with care, designed to perform</h2>
-      <p class="work-subtitle">Every project starts with understanding your vision. Here's how we brought these to life.</p>
+      <p class="work-subtitle">From single-page sites to platforms handling payments, auth, and live data — every project gets the same attention to craft.</p>
     </div>
 
     <div class="projects-grid">
@@ -467,7 +482,10 @@
           </div>
         </div>
         <div class="project-bar">
-          <span class="project-bar-name">Berber Waves Morocco</span>
+          <div class="project-bar-info">
+            <span class="project-bar-name">Berber Waves Morocco</span>
+            <span class="project-bar-result">Booking-ready site delivered in 2 weeks</span>
+          </div>
           <span class="project-bar-tag">Hospitality</span>
         </div>
       </a>
@@ -489,7 +507,10 @@
           </div>
         </div>
         <div class="project-bar">
-          <span class="project-bar-name">TukTuk Tournament</span>
+          <div class="project-bar-info">
+            <span class="project-bar-name">TukTuk Tournament</span>
+            <span class="project-bar-result">Full booking flow + multi-country comparison</span>
+          </div>
           <span class="project-bar-tag">Adventure</span>
         </div>
       </a>
@@ -511,7 +532,10 @@
           </div>
         </div>
         <div class="project-bar">
-          <span class="project-bar-name">Co-Pilot Travel Brand</span>
+          <div class="project-bar-info">
+            <span class="project-bar-name">Co-Pilot Travel Brand</span>
+            <span class="project-bar-result">Store live and selling in under 2 weeks</span>
+          </div>
           <span class="project-bar-tag">E-commerce</span>
         </div>
       </a>
@@ -527,7 +551,10 @@
           </div>
         </div>
         <div class="project-bar">
-          <span class="project-bar-name">Wandernest Stays</span>
+          <div class="project-bar-info">
+            <span class="project-bar-name">Wandernest Stays</span>
+            <span class="project-bar-result">Property owners convert from first visit</span>
+          </div>
           <span class="project-bar-tag">Property</span>
         </div>
       </a>
@@ -549,7 +576,10 @@
           </div>
         </div>
         <div class="project-bar">
-          <span class="project-bar-name">Tropic Sip</span>
+          <div class="project-bar-info">
+            <span class="project-bar-name">Tropic Sip</span>
+            <span class="project-bar-result">Real-time waitlist with Supabase backend</span>
+          </div>
           <span class="project-bar-tag">F&B</span>
         </div>
       </a>
@@ -565,7 +595,10 @@
           </div>
         </div>
         <div class="project-bar">
-          <span class="project-bar-name">Bali Dog Rescue</span>
+          <div class="project-bar-info">
+            <span class="project-bar-name">Bali Dog Rescue</span>
+            <span class="project-bar-result">3 donation paths to maximize giving</span>
+          </div>
           <span class="project-bar-tag">Nonprofit</span>
         </div>
       </a>
@@ -588,7 +621,10 @@
           </div>
         </div>
         <div class="project-bar">
-          <span class="project-bar-name">Ignite Legacy</span>
+          <div class="project-bar-info">
+            <span class="project-bar-name">Ignite Legacy</span>
+            <span class="project-bar-result">Eliminated 100+ daily DMs with self-serve dashboards</span>
+          </div>
           <span class="project-bar-tag">Full-Stack</span>
         </div>
       </a>
@@ -604,7 +640,10 @@
           </div>
         </div>
         <div class="project-bar">
-          <span class="project-bar-name">Kanangra Landscapes</span>
+          <div class="project-bar-info">
+            <span class="project-bar-name">Kanangra Landscapes</span>
+            <span class="project-bar-result">Quote requests from day one</span>
+          </div>
           <span class="project-bar-tag">Local Business</span>
         </div>
       </a>
@@ -620,7 +659,10 @@
           </div>
         </div>
         <div class="project-bar">
-          <span class="project-bar-name">Paramount Dental</span>
+          <div class="project-bar-info">
+            <span class="project-bar-name">Paramount Dental</span>
+            <span class="project-bar-result">Premium redesign showcasing smile transformations</span>
+          </div>
           <span class="project-bar-tag">Healthcare</span>
         </div>
       </a>
@@ -628,15 +670,117 @@
     </div>
   </section>
 
+  <!-- NOW → AFTER -->
+  <section class="transform-section" id="results">
+    <div class="transform-header reveal">
+      <div class="section-label">Real Results</div>
+      <h2 class="section-title">What actually changes when we work together</h2>
+      <p class="transform-sub">These aren't hypotheticals — they're outcomes from real projects, showing the before and after.</p>
+    </div>
+    <div class="transform-grid">
+      <div class="transform-card reveal">
+        <div class="t-before">
+          <span class="t-label">Before</span>
+          <span class="t-text">100+ ambassador DMs every day asking "where's my referral?"</span>
+        </div>
+        <span class="t-arrow">&#10132;</span>
+        <div class="t-after">
+          <span class="t-label">After</span>
+          <span class="t-text">Ambassadors self-serve from their own dashboard — zero DMs needed</span>
+          <span class="t-project">Ignite Legacy</span>
+        </div>
+      </div>
+      <div class="transform-card reveal reveal-d1">
+        <div class="t-before">
+          <span class="t-label">Before</span>
+          <span class="t-text">No website — relying on Instagram and word of mouth</span>
+        </div>
+        <span class="t-arrow">&#10132;</span>
+        <div class="t-after">
+          <span class="t-label">After</span>
+          <span class="t-text">Professional booking site bringing in guests directly — no third parties</span>
+          <span class="t-project">Berber Waves Morocco</span>
+        </div>
+      </div>
+      <div class="transform-card reveal">
+        <div class="t-before">
+          <span class="t-label">Before</span>
+          <span class="t-text">5+ tools that don't talk to each other, data everywhere</span>
+        </div>
+        <span class="t-arrow">&#10132;</span>
+        <div class="t-after">
+          <span class="t-label">After</span>
+          <span class="t-text">One unified platform — auth, payments, video, dashboards, admin</span>
+          <span class="t-project">Ignite Legacy</span>
+        </div>
+      </div>
+      <div class="transform-card reveal reveal-d1">
+        <div class="t-before">
+          <span class="t-label">Before</span>
+          <span class="t-text">Product idea with no way to capture demand</span>
+        </div>
+        <span class="t-arrow">&#10132;</span>
+        <div class="t-after">
+          <span class="t-label">After</span>
+          <span class="t-text">Live waitlist capturing signups in real-time with a Supabase backend</span>
+          <span class="t-project">Tropic Sip</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="mid-cta">
     <div class="mid-cta-inner reveal">
       <div class="mid-cta-text">
-        <h3>Ready to elevate your <span class="accent">online presence</span>?</h3>
-        <p>I'd love to learn about your business and show you what's possible. Send me a message and let's start the conversation.</p>
+        <h3>Whether it's a site or a <span class="accent">full platform</span></h3>
+        <p>I'd love to learn about what you're building and show you what's possible. Tell me about your project and let's figure it out together.</p>
       </div>
-      <a href="https://wa.me/15089349709?text=Hi%20Sydney!%20I'd%20love%20to%20chat%20about%20a%20website." target="_blank" class="btn-primary"><span class="wa-icon">&#9993;</span> WhatsApp Me</a>
+      <a href="#start" class="btn-primary"><span class="wa-icon">&#9993;</span> Start a Project</a>
     </div>
   </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-header reveal">
+      <div class="section-label">Kind Words</div>
+      <h2 class="section-title">From the people I've built for</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-quote">"She took a scattered mess of tools and turned it into one platform that does everything. My ambassadors stopped DMing me overnight. I got my mornings back."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">Aubrey</span>
+            <span class="testimonial-role">Ignite Legacy — Coaching Platform</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-d1">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-quote">"I sent her a rough idea and she came back with a site that looked better than anything I could have imagined. The attention to detail is unreal."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">Adeline</span>
+            <span class="testimonial-role">Berber Waves — Surf & Yoga Retreat</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-d2">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-quote">"She built our Shopify store, our supplement brand site, AND a custom waitlist platform. Doesn't matter how complex the ask — she just figures it out."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">Sydney Z.</span>
+            <span class="testimonial-role">Co-Pilot & Tropic Sip — E-commerce</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="process">
     <div class="process-header reveal">
@@ -673,37 +817,88 @@
         <div class="section-label">About</div>
         <h2 class="section-title">Thoughtful design, genuine results</h2>
         <p>
-          <span class="highlight">Spiffy Designs</span> is the studio of <span class="coral">Sydney Zuckerman</span>. I create websites and digital experiences that feel warm, look polished, and help your business grow. Every project gets my full attention and care.
+          <span class="highlight">Spiffy Designs</span> is the studio of <span class="coral">Sydney Zuckerman</span>. I create websites, e-commerce stores, and full-stack platforms that feel warm, look polished, and help your business grow. Every project gets my full attention and care.
         </p>
         <p>
-          From surf retreats in Morocco to e-commerce brands and full-stack platforms, the work spans industries but always comes back to one thing: <span class="highlight">building something you're proud to share</span>.
+          From surf retreats in Morocco to Shopify brands, ambassador platforms with Stripe payments, and Supabase-powered apps — the work spans industries and complexity levels but always comes back to one thing: <span class="highlight">building something that actually moves the needle for your business</span>.
         </p>
       </div>
       <div class="about-right reveal reveal-d2">
         <div class="stat-card"><div class="stat-num">&lt;2s</div><div class="stat-label">Load Times</div></div>
-        <div class="stat-card"><div class="stat-num">9</div><div class="stat-label">Industries</div></div>
+        <div class="stat-card"><div class="stat-num">9+</div><div class="stat-label">Industries</div></div>
         <div class="stat-card"><div class="stat-num">0</div><div class="stat-label">Templates Used</div></div>
         <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Hand-Coded</div></div>
         <div class="services-list">
           <div class="service-chip">Web Design</div>
-          <div class="service-chip">Development</div>
+          <div class="service-chip">Full-Stack Platforms</div>
           <div class="service-chip">E-commerce</div>
+          <div class="service-chip">Custom Dashboards</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- INTAKE FORM -->
+  <section id="start">
+    <div class="intake-card reveal">
+      <div class="intake-header">
+        <div class="section-label">Start a Project</div>
+        <h2 class="section-title">Tell me about what you're building</h2>
+        <p class="intake-sub">Fill this out and I'll reach out on WhatsApp within 24 hours. No commitment, just a conversation.</p>
+      </div>
+      <form class="intake-form" id="intakeForm">
+        <div class="form-group">
+          <label for="fname">Your Name</label>
+          <input type="text" id="fname" placeholder="Jane Smith" required>
+        </div>
+        <div class="form-group">
+          <label for="fbusiness">Business / Brand</label>
+          <input type="text" id="fbusiness" placeholder="Acme Co">
+        </div>
+        <div class="form-group">
+          <label for="ftype">What Do You Need?</label>
+          <select id="ftype">
+            <option value="">Choose one...</option>
+            <option value="Website">A website</option>
+            <option value="E-commerce store">An e-commerce store</option>
+            <option value="Full platform (auth, payments, dashboards)">A full platform (auth, payments, dashboards)</option>
+            <option value="Redesign of existing site">Redesign of an existing site</option>
+            <option value="Not sure yet">Not sure yet — let's talk</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fbudget">Budget Range</label>
+          <select id="fbudget">
+            <option value="">Choose one...</option>
+            <option value="Under $1,000">Under $1,000</option>
+            <option value="$1,000 – $3,000">$1,000 – $3,000</option>
+            <option value="$3,000 – $6,000">$3,000 – $6,000</option>
+            <option value="$6,000+">$6,000+</option>
+            <option value="Let's discuss">Let's discuss</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label for="fdetails">Tell Me More</label>
+          <textarea id="fdetails" rows="3" placeholder="What's the vision? What problem are you solving? Any details help..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary"><span class="wa-icon">&#9993;</span> Send via WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="contact-inner reveal">
-      <div class="section-label">Let's Connect</div>
+      <div class="section-label">Or Just Say Hi</div>
       <h2 class="contact-title">
         Your next chapter starts with a <span class="accent">conversation</span>
       </h2>
       <p class="contact-sub">
-        Tell me about your vision. Whether it's a brand new site or a fresh look for an existing one, I'd love to hear from you.
+        Prefer to skip the form? Reach out directly — I'd love to hear from you.
       </p>
       <div class="contact-actions">
-        <a href="https://wa.me/15089349709?text=Hi%20Sydney!%20I'd%20love%20to%20chat%20about%20a%20website." target="_blank" class="btn-primary"><span class="wa-icon">&#9993;</span> Message on WhatsApp</a>
+        <a href="https://wa.me/15089349709?text=Hi%20Sydney!%20I'd%20love%20to%20chat%20about%20a%20project." target="_blank" class="btn-primary"><span class="wa-icon">&#9993;</span> Message on WhatsApp</a>
         <a href="mailto:sydneyzuckerman@gmail.com" class="btn-secondary">Email Me</a>
       </div>
       <div class="contact-detail">
@@ -739,7 +934,7 @@
     window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40));
 
     // ROTATING WORDS
-    const words = ['business', 'bookings', 'brand', 'audience', 'revenue'];
+    const words = ['business', 'bookings', 'brand', 'platform', 'revenue'];
     const rw = document.getElementById('rotateWord');
     let wi = 0;
     rw.style.transition = 'opacity 0.3s, transform 0.3s';
@@ -747,6 +942,25 @@
       rw.style.opacity = '0'; rw.style.transform = 'translateY(6px)';
       setTimeout(() => { wi = (wi + 1) % words.length; rw.textContent = words[wi]; rw.style.opacity = '1'; rw.style.transform = 'translateY(0)'; }, 280);
     }, 2800);
+
+    // INTAKE FORM → WHATSAPP
+    document.getElementById('intakeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('fname').value.trim();
+      const biz = document.getElementById('fbusiness').value.trim();
+      const type = document.getElementById('ftype').value;
+      const budget = document.getElementById('fbudget').value;
+      const details = document.getElementById('fdetails').value.trim();
+
+      let msg = `Hi Sydney! I'd love to work together.\n\n`;
+      if (name) msg += `Name: ${name}\n`;
+      if (biz) msg += `Business: ${biz}\n`;
+      if (type) msg += `Looking for: ${type}\n`;
+      if (budget) msg += `Budget: ${budget}\n`;
+      if (details) msg += `\nDetails: ${details}`;
+
+      window.open(`https://wa.me/15089349709?text=${encodeURIComponent(msg)}`, '_blank');
+    });
 
     // IFRAMES
     const previews = [
