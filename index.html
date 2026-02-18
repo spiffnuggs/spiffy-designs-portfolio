@@ -130,7 +130,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Serif+Display&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Prompt:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -266,6 +266,24 @@
     .project-bar-name { font-family: var(--script); font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--sage); }
     .project-bar-result { font-size: 0.66rem; font-weight: 600; color: var(--sage); margin-top: 2px; }
     .project-bar-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); padding: 3px 10px; border: 1px solid var(--border); border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
+
+    /* Per-project fonts — title = heading font, desc/result = body font */
+    .font-cormorant .hover-title, .font-cormorant .project-bar-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; }
+    .font-cormorant .hover-desc, .font-cormorant .project-bar-result { font-family: 'Inter', sans-serif; }
+    .font-bebas .hover-title, .font-bebas .project-bar-name { font-family: 'Bebas Neue', sans-serif; font-style: normal; font-weight: 400; letter-spacing: 0.06em; font-size: 1.5rem; }
+    .font-bebas .project-bar-name { font-size: 1.2rem; }
+    .font-bebas .hover-desc, .font-bebas .project-bar-result { font-family: 'Inter', sans-serif; }
+    .font-prompt .hover-title, .font-prompt .project-bar-name { font-family: 'Prompt', sans-serif; font-style: normal; font-weight: 600; }
+    .font-prompt .hover-desc, .font-prompt .project-bar-result { font-family: 'Prompt', sans-serif; font-weight: 400; }
+    .font-playfair .hover-title, .font-playfair .project-bar-name { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; }
+    .font-playfair .hover-desc, .font-playfair .project-bar-result { font-family: 'Inter', sans-serif; }
+    .font-opensans .hover-title, .font-opensans .project-bar-name { font-family: 'Open Sans', sans-serif; font-style: normal; font-weight: 700; }
+    .font-opensans .hover-desc, .font-opensans .project-bar-result { font-family: 'Open Sans', sans-serif; font-weight: 400; }
+    .font-dmserif .hover-title, .font-dmserif .project-bar-name { font-family: 'DM Serif Display', serif; font-style: normal; font-weight: 400; }
+    .font-dmserif .hover-desc, .font-dmserif .project-bar-result { font-family: 'Inter', sans-serif; }
+    .font-inter-bold .hover-title, .font-inter-bold .project-bar-name { font-family: 'Inter', sans-serif; font-style: normal; font-weight: 700; letter-spacing: -0.01em; }
+    .font-montserrat .hover-title, .font-montserrat .project-bar-name { font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: 600; }
+    .font-montserrat .hover-desc, .font-montserrat .project-bar-result { font-family: 'Montserrat', sans-serif; font-weight: 400; }
 
     .gradient-preview { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
     .gradient-preview.tuktuk { background: linear-gradient(135deg, #FF6B35 0%, #F7931E 40%, #004E89 100%); }
@@ -543,8 +561,8 @@
 
     <div class="projects-grid">
 
-      <!-- 1. Berber Waves -->
-      <a href="Adeline/index.html" target="_blank" class="project-card reveal">
+      <!-- 1. Berber Waves — Cormorant Garamond -->
+      <a href="Adeline/index.html" target="_blank" class="project-card reveal font-cormorant">
         <div class="project-preview-wrap" id="preview-1">
           <div class="project-hover">
             <span class="hover-category">Hospitality</span>
@@ -562,8 +580,8 @@
         </div>
       </a>
 
-      <!-- 2. TukTuk Tournament -->
-      <a href="https://tuktuktournament.vercel.app" target="_blank" class="project-card reveal reveal-d1">
+      <!-- 2. TukTuk Tournament — Bebas Neue -->
+      <a href="https://tuktuktournament.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-bebas">
         <div class="project-preview-wrap gradient-preview tuktuk">
           <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Next.js App</div>
           <div class="stack-row">
@@ -587,8 +605,8 @@
         </div>
       </a>
 
-      <!-- 3. Co-Pilot -->
-      <a href="https://copilotthetravelbrand.com" target="_blank" class="project-card reveal">
+      <!-- 3. Co-Pilot — Prompt -->
+      <a href="https://copilotthetravelbrand.com" target="_blank" class="project-card reveal font-prompt">
         <div class="project-preview-wrap gradient-preview copilot">
           <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Shopify Store</div>
           <div class="stack-row">
@@ -612,8 +630,8 @@
         </div>
       </a>
 
-      <!-- 4. Wandernest -->
-      <a href="wandernest/index.html" target="_blank" class="project-card reveal reveal-d1">
+      <!-- 4. Wandernest — Playfair Display -->
+      <a href="wandernest/index.html" target="_blank" class="project-card reveal reveal-d1 font-playfair">
         <div class="project-preview-wrap" id="preview-4">
           <div class="project-hover">
             <span class="hover-category">Property Management</span>
@@ -631,8 +649,8 @@
         </div>
       </a>
 
-      <!-- 5. Tropic Sip -->
-      <a href="https://tropicsip.com" target="_blank" class="project-card reveal reveal-d2">
+      <!-- 5. Tropic Sip — Open Sans -->
+      <a href="https://tropicsip.com" target="_blank" class="project-card reveal reveal-d2 font-opensans">
         <div class="project-preview-wrap gradient-preview tropic">
           <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Next.js + Supabase</div>
           <div class="stack-row">
@@ -656,8 +674,8 @@
         </div>
       </a>
 
-      <!-- 6. Bali Dog Rescue -->
-      <a href="bali-dog-rescue/index.html" target="_blank" class="project-card reveal">
+      <!-- 6. Bali Dog Rescue — DM Serif Display -->
+      <a href="bali-dog-rescue/index.html" target="_blank" class="project-card reveal font-dmserif">
         <div class="project-preview-wrap" id="preview-6">
           <div class="project-hover">
             <span class="hover-category">Nonprofit</span>
@@ -675,8 +693,8 @@
         </div>
       </a>
 
-      <!-- 7. Ignite Legacy -->
-      <a href="https://ignite-legacy-app.vercel.app" target="_blank" class="project-card reveal reveal-d1">
+      <!-- 7. Ignite Legacy — Montserrat -->
+      <a href="https://ignite-legacy-app.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-montserrat">
         <div class="project-preview-wrap gradient-preview ignite">
           <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Full-Stack Platform</div>
           <div class="stack-row">
@@ -701,8 +719,8 @@
         </div>
       </a>
 
-      <!-- 8. Kanangra -->
-      <a href="kanangra-landscapes/index.html" target="_blank" class="project-card reveal">
+      <!-- 8. Kanangra — DM Serif Display -->
+      <a href="kanangra-landscapes/index.html" target="_blank" class="project-card reveal font-dmserif">
         <div class="project-preview-wrap" id="preview-8">
           <div class="project-hover">
             <span class="hover-category">Local Business</span>
@@ -720,8 +738,8 @@
         </div>
       </a>
 
-      <!-- 9. Paramount Dental -->
-      <a href="dental-prospects/mockups/paramount-dental-web.html" target="_blank" class="project-card reveal reveal-d1">
+      <!-- 9. Paramount Dental — Inter Bold -->
+      <a href="dental-prospects/mockups/paramount-dental-web.html" target="_blank" class="project-card reveal reveal-d1 font-inter-bold">
         <div class="project-preview-wrap" id="preview-9">
           <div class="project-hover">
             <span class="hover-category">Healthcare</span>
