@@ -245,7 +245,8 @@
     .project-card.narrow { grid-column: span 5; }
     .project-card.half { grid-column: span 6; }
     .project-preview-wrap { position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; background: var(--bg-subtle); }
-    .project-preview-wrap iframe { width: 1440px; height: 900px; border: none; transform-origin: top left; pointer-events: none; display: block; }
+    .project-preview-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.6s var(--ease-out); }
+    .project-card:hover .project-preview-wrap img { transform: scale(1.03); }
     .project-hover { position: absolute; inset: 0; background: var(--overlay); backdrop-filter: blur(6px); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; opacity: 0; transition: opacity 0.35s var(--ease); z-index: 3; }
     .project-card:hover .project-hover { opacity: 1; }
     .hover-category { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
@@ -565,14 +566,8 @@
 
       <!-- Ignite Legacy — Montserrat -->
       <a href="https://ignite-legacy-app.vercel.app" target="_blank" class="project-card reveal font-montserrat wide">
-        <div class="project-preview-wrap gradient-preview ignite">
-          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Full-Stack Platform</div>
-          <div class="stack-row">
-            <span class="stack-tag">Next.js</span>
-            <span class="stack-tag">Supabase</span>
-            <span class="stack-tag">Stripe</span>
-            <span class="stack-tag">Vimeo</span>
-          </div>
+        <div class="project-preview-wrap">
+          <img src="screenshots/ignite-legacy.jpg" alt="Ignite Legacy platform" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">Web Application</span>
             <h3 class="hover-title">Ignite Legacy</h3>
@@ -591,13 +586,8 @@
 
       <!-- Tropic Sip — Open Sans -->
       <a href="https://tropicsip.com" target="_blank" class="project-card reveal reveal-d1 font-opensans narrow">
-        <div class="project-preview-wrap gradient-preview tropic">
-          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Next.js + Supabase</div>
-          <div class="stack-row">
-            <span class="stack-tag">Next.js</span>
-            <span class="stack-tag">Supabase</span>
-            <span class="stack-tag">Auto-SMS</span>
-          </div>
+        <div class="project-preview-wrap">
+          <img src="screenshots/tropic-sip.jpg" alt="Tropic Sip platform" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">F&B / Beverage</span>
             <h3 class="hover-title">Tropic Sip</h3>
@@ -616,13 +606,8 @@
 
       <!-- TukTuk Tournament — Bebas Neue -->
       <a href="https://tuktuktournament.vercel.app" target="_blank" class="project-card reveal font-bebas">
-        <div class="project-preview-wrap gradient-preview tuktuk">
-          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Next.js App</div>
-          <div class="stack-row">
-            <span class="stack-tag">Next.js 16</span>
-            <span class="stack-tag">React 19</span>
-            <span class="stack-tag">Tailwind</span>
-          </div>
+        <div class="project-preview-wrap">
+          <img src="screenshots/tuktuk.jpg" alt="TukTuk Tournament" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">Adventure / Travel</span>
             <h3 class="hover-title">TukTuk Tournament</h3>
@@ -641,13 +626,8 @@
 
       <!-- Co-Pilot — Prompt -->
       <a href="https://copilotthetravelbrand.com" target="_blank" class="project-card reveal reveal-d1 font-prompt">
-        <div class="project-preview-wrap gradient-preview copilot">
-          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Shopify Store</div>
-          <div class="stack-row">
-            <span class="stack-tag">Shopify</span>
-            <span class="stack-tag">Liquid</span>
-            <span class="stack-tag">Reviews</span>
-          </div>
+        <div class="project-preview-wrap">
+          <img src="screenshots/copilot.jpg" alt="Co-Pilot Travel Brand" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">E-commerce / Wellness</span>
             <h3 class="hover-title">Co-Pilot Travel Brand</h3>
@@ -666,7 +646,8 @@
 
       <!-- Bali Dog Rescue — DM Serif Display -->
       <a href="bali-dog-rescue/index.html" target="_blank" class="project-card reveal font-dmserif">
-        <div class="project-preview-wrap" id="preview-6">
+        <div class="project-preview-wrap">
+          <img src="screenshots/bali-dog-rescue.jpg" alt="Bali Dog Rescue" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">Nonprofit</span>
             <h3 class="hover-title">Bali Dog Rescue</h3>
@@ -688,7 +669,8 @@
 
       <!-- Berber Waves — Cormorant Garamond -->
       <a href="Adeline/index.html" target="_blank" class="project-card reveal font-cormorant wide">
-        <div class="project-preview-wrap" id="preview-1">
+        <div class="project-preview-wrap">
+          <img src="screenshots/berber-waves.jpg" alt="Berber Waves Morocco" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">Hospitality</span>
             <h3 class="hover-title">Berber Waves Morocco</h3>
@@ -707,7 +689,8 @@
 
       <!-- Paramount Dental — Inter Bold -->
       <a href="dental-prospects/mockups/paramount-dental-web.html" target="_blank" class="project-card reveal reveal-d1 font-inter-bold narrow">
-        <div class="project-preview-wrap" id="preview-9">
+        <div class="project-preview-wrap">
+          <img src="screenshots/paramount-dental.jpg" alt="Paramount Dental" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">Healthcare</span>
             <h3 class="hover-title">Paramount Dental</h3>
@@ -726,7 +709,8 @@
 
       <!-- Kanangra — DM Serif Display -->
       <a href="kanangra-landscapes/index.html" target="_blank" class="project-card reveal font-dmserif">
-        <div class="project-preview-wrap" id="preview-8">
+        <div class="project-preview-wrap">
+          <img src="screenshots/kanangra.jpg" alt="Kanangra Landscapes" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">Local Business</span>
             <h3 class="hover-title">Kanangra Landscapes</h3>
@@ -745,7 +729,8 @@
 
       <!-- Wandernest — Playfair Display -->
       <a href="wandernest/index.html" target="_blank" class="project-card reveal reveal-d1 font-playfair">
-        <div class="project-preview-wrap" id="preview-4">
+        <div class="project-preview-wrap">
+          <img src="screenshots/wandernest.jpg" alt="Wandernest Stays" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">Property Management</span>
             <h3 class="hover-title">Wandernest Stays</h3>
@@ -1076,28 +1061,7 @@
       }
     }
 
-    // IFRAMES
-    const previews = [
-      { id: 'preview-1', src: 'Adeline/index.html' },
-      { id: 'preview-4', src: 'wandernest/index.html' },
-      { id: 'preview-6', src: 'bali-dog-rescue/index.html' },
-      { id: 'preview-8', src: 'kanangra-landscapes/index.html' },
-      { id: 'preview-9', src: 'dental-prospects/mockups/paramount-dental-web.html' },
-    ];
-    function initPreviews() {
-      previews.forEach(p => {
-        const c = document.getElementById(p.id); if (!c) return;
-        const f = document.createElement('iframe');
-        f.src = p.src; f.loading = 'lazy';
-        f.setAttribute('sandbox', 'allow-same-origin');
-        f.setAttribute('tabindex', '-1'); f.setAttribute('aria-hidden', 'true');
-        const resize = () => { const s = c.offsetWidth / 1440; f.style.transform = `scale(${s})`; f.style.width = '1440px'; f.style.height = '900px'; };
-        const h = c.querySelector('.project-hover');
-        if (h) c.insertBefore(f, h); else c.appendChild(f);
-        resize(); window.addEventListener('resize', resize);
-      });
-    }
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPreviews); else initPreviews();
+    // Screenshots loaded via <img> tags — no iframes needed
   </script>
 
 </body>
