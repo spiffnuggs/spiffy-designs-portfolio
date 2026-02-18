@@ -377,7 +377,7 @@
     .footer-copy { font-size: 0.68rem; color: var(--text-dim); }
     .footer-brand { font-family: var(--script); font-style: italic; font-size: 1.8rem; font-weight: 300; color: var(--sage); letter-spacing: 0.02em; line-height: 1; }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE — TABLET */
     @media (max-width: 1024px) {
       .projects-grid { grid-template-columns: 1fr 1fr; }
       .project-card:nth-child(n) { grid-column: span 1; }
@@ -389,36 +389,103 @@
       .transform-grid { grid-template-columns: 1fr; }
       .testimonial-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* RESPONSIVE — MOBILE */
     @media (max-width: 768px) {
+      /* Nav: compact, blurred, logo + CTA only at small sizes */
       nav { padding: 12px 20px; }
-      .hero { padding: 100px 20px 48px; }
-      #work, #process, #about, .transform-section, .testimonials, #start { padding: 40px 20px; }
-      .mid-cta { padding: 24px 20px; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .nav-logo { font-size: 1.05rem; }
+      .nav-right { gap: 14px; }
+      .nav-right li:not(:has(.theme-toggle)):not(:has(.nav-cta-pill)) { display: none; }
+      .nav-cta-pill { padding: 7px 16px; font-size: 0.65rem !important; }
+
+      /* Hero: full screen, tighter spacing */
+      .hero { padding: 100px 24px 48px; min-height: calc(100vh - 60px); min-height: calc(100dvh - 60px); }
+      .hero h1 { font-size: 2.4rem; margin-bottom: 16px; }
+      .hero-sub { font-size: 0.9rem; margin-bottom: 28px; max-width: 100%; }
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+      .btn-primary { justify-content: center; padding: 16px 28px; font-size: 0.82rem; }
+      .btn-ghost { justify-content: center; padding: 12px 20px; }
+
+      /* Trust bar: horizontal scroll on mobile */
+      .trust-bar { padding: 0 24px 40px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .trust-inner { flex-wrap: nowrap; gap: 24px; padding: 16px 0; overflow-x: auto; scrollbar-width: none; }
+      .trust-inner::-webkit-scrollbar { display: none; }
+      .trust-item { flex-shrink: 0; }
+
+      /* Projects: single column, taller cards */
+      #work { padding: 48px 24px; }
+      .work-header { margin-bottom: 28px; }
+      .section-title { font-size: 1.6rem; }
+      .projects-grid { grid-template-columns: 1fr; gap: 14px; }
       .project-card:nth-child(n) { grid-column: span 1; }
+      .project-preview-wrap { aspect-ratio: 16/11; }
+      .project-bar { padding: 12px 16px; }
+      .project-bar-name { font-size: 1rem; }
+      .project-bar-result { font-size: 0.62rem; }
+
+      /* Before/After: vertical stack with arrow visible */
+      .transform-section { padding: 48px 24px; }
+      .transform-card { grid-template-columns: 1fr; gap: 0; padding: 0; overflow: hidden; }
+      .t-before, .t-after { padding: 20px 20px; min-height: auto; }
+      .t-before { background: var(--bg-subtle); border-bottom: 1px solid var(--border); }
+      .t-arrow { display: flex; justify-content: center; padding: 8px 0; background: var(--bg-card); }
+      .t-arrow .arrow-icon { width: 16px; height: 16px; transform: rotate(90deg); }
+      .t-project { margin-top: 8px; }
+
+      /* Mid CTA */
+      .mid-cta { padding: 24px; }
+      .mid-cta-inner { padding: 32px 24px; border-radius: var(--radius); text-align: center; flex-direction: column; }
+      .mid-cta-text h3 { font-size: 1.3rem; }
+      .mid-cta-text p { font-size: 0.84rem; max-width: 100%; margin: 0 auto; }
+
+      /* Testimonials: swipeable horizontal scroll */
+      .testimonials { padding: 48px 24px; }
+      .testimonial-grid { grid-template-columns: 1fr; gap: 14px; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 8px; scrollbar-width: none; }
+      .testimonial-grid::-webkit-scrollbar { display: none; }
+      .testimonial-card { min-width: 85vw; scroll-snap-align: start; flex-shrink: 0; }
+
+      /* Process: vertical stack */
+      #process { padding: 48px 24px; }
       .process-grid { grid-template-columns: 1fr; gap: 1px; border-radius: var(--radius); }
-      .about-right { grid-template-columns: 1fr 1fr; }
-      .services-list { grid-template-columns: 1fr; }
-      .testimonial-grid { grid-template-columns: 1fr; }
-      .transform-card { grid-template-columns: 1fr; gap: 10px; text-align: center; }
-      .t-arrow { display: none; }
-      .intake-card { padding: 28px 20px; }
-      .intake-form { grid-template-columns: 1fr; }
+      .process-step { padding: 24px 20px; }
+      .step-num { font-size: 1.3rem; margin-bottom: 8px; }
+
+      /* About */
+      #about { padding: 48px 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-left p { font-size: 0.88rem; }
+      .about-right { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .stat-card { padding: 18px 14px; }
+      .stat-num { font-size: 1.6rem; }
+      .services-list { grid-template-columns: 1fr 1fr; }
+
+      /* Intake form */
+      #start { padding: 48px 24px; }
+      .intake-card { padding: 32px 20px; border-radius: var(--radius); }
+      .intake-form { grid-template-columns: 1fr; max-width: 100%; }
       .intake-form .full-width { grid-column: span 1; }
       .form-submit { grid-column: span 1; }
-      #contact { padding: 40px 20px; }
-      footer { flex-direction: column; gap: 6px; text-align: center; padding: 20px; }
-    }
-    @media (max-width: 480px) {
-      .nav-right a:not(.nav-cta-pill) { display: none; }
-      .nav-right { gap: 10px; }
-      .hero h1 { font-size: 2.2rem; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .btn-primary, .btn-secondary, .btn-ghost { justify-content: center; }
-      .trust-inner { flex-direction: column; gap: 10px; align-items: flex-start; }
-      .about-right { grid-template-columns: 1fr; }
-      .services-list { grid-column: span 1; }
+      .form-submit .btn-primary { width: 100%; justify-content: center; padding: 16px; }
+
+      /* Contact */
+      #contact { padding: 48px 24px 36px; }
+      .contact-title { font-size: 1.8rem; }
       .contact-actions { flex-direction: column; }
+      .contact-actions .btn-primary { width: 100%; justify-content: center; }
+
+      /* Footer */
+      footer { padding: 24px; flex-direction: column-reverse; gap: 8px; align-items: center; text-align: center; }
+      .footer-brand { font-size: 1.5rem; }
+    }
+
+    /* RESPONSIVE — SMALL PHONES */
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-sub { font-size: 0.84rem; }
+      .testimonial-card { min-width: 90vw; }
+      .stat-card { padding: 14px 10px; }
+      .stat-num { font-size: 1.3rem; }
     }
   </style>
 </head>
