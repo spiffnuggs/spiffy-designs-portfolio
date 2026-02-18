@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Rescue Name] — Saving Street Dogs in Bali</title>
+  <meta name="description" content="Help us rescue, rehabilitate, and rehome street dogs in Bali. Every donation saves a life." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sand: #F5F0E8;
+      --sand-dark: #E8E0D0;
+      --warm-white: #FDFBF7;
+      --charcoal: #2C2C2C;
+      --charcoal-light: #4A4A4A;
+      --terra: #C4652A;
+      --terra-dark: #A8531E;
+      --terra-light: #E8915A;
+      --olive: #6B7B4C;
+      --olive-dark: #556340;
+      --ocean: #3A7C8C;
+      --gold: #D4A853;
+      --gold-light: #F0D490;
+      --rose: #C47A7A;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--charcoal);
+      background: var(--warm-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; line-height: 1.2; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== NAVIGATION ========== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(253, 251, 247, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: var(--transition);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--charcoal-light);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--terra); }
+
+    .nav-donate {
+      background: var(--terra);
+      color: white !important;
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-weight: 600 !important;
+      transition: var(--transition);
+    }
+
+    .nav-donate:hover {
+      background: var(--terra-dark) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(196, 101, 42, 0.3);
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      margin: 6px 0;
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      /* REPLACE: Add your hero image here */
+      background: linear-gradient(135deg, #D4A853 0%, #C4652A 40%, #6B7B4C 100%);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.15) 40%,
+        rgba(0,0,0,0.5) 100%
+      );
+    }
+
+    /* When you add a real image, use this class on .hero-bg:
+       background-image: url('images/hero.jpg');
+       and remove the gradient */
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 60px 24px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      color: white;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: rgba(255,255,255,0.9);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--terra);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--terra-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(196, 101, 42, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 2px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.6);
+      transform: translateY(-2px);
+    }
+
+    .hero-stat {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .hero-stat-item {
+      text-align: center;
+    }
+
+    .hero-stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.4rem;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ========== MISSION ========== */
+    .mission {
+      padding: 120px 0;
+      background: var(--warm-white);
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .mission-image {
+      aspect-ratio: 4/5;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mission-image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--charcoal-light);
+      font-size: 0.9rem;
+    }
+
+    .mission-image-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.4;
+    }
+
+    .mission-content .label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--terra);
+      margin-bottom: 16px;
+    }
+
+    .mission-content h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .mission-content p {
+      font-size: 1.05rem;
+      color: var(--charcoal-light);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .mission-content blockquote {
+      border-left: 3px solid var(--terra);
+      padding-left: 20px;
+      margin: 32px 0;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--charcoal);
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    /* ========== IMPACT SECTION ========== */
+    .impact {
+      padding: 120px 0;
+      background: var(--sand);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 64px;
+    }
+
+    .section-header .label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--terra);
+      margin-bottom: 16px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--charcoal-light);
+      line-height: 1.7;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .impact-card {
+      background: var(--warm-white);
+      border-radius: var(--radius-lg);
+      padding: 40px 28px;
+      text-align: center;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--terra-light);
+    }
+
+    .impact-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.8rem;
+    }
+
+    .impact-card:nth-child(1) .impact-icon { background: #FFF0E0; }
+    .impact-card:nth-child(2) .impact-icon { background: #E0F0E8; }
+    .impact-card:nth-child(3) .impact-icon { background: #E8E0F0; }
+    .impact-card:nth-child(4) .impact-icon { background: #F0E0E0; }
+
+    .impact-amount {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--terra);
+      margin-bottom: 8px;
+    }
+
+    .impact-desc {
+      font-size: 0.95rem;
+      color: var(--charcoal-light);
+      line-height: 1.6;
+    }
+
+    /* ========== DOGS GALLERY ========== */
+    .gallery {
+      padding: 120px 0;
+      background: var(--warm-white);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      background: var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--charcoal-light);
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+
+    .gallery-placeholder:hover {
+      background: var(--sand-dark);
+    }
+
+    .gallery-placeholder svg {
+      width: 36px;
+      height: 36px;
+      opacity: 0.35;
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+      color: white;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+    .gallery-item-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+    }
+
+    .gallery-item-story {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+
+    /* ========== DONATE SECTION ========== */
+    .donate {
+      padding: 120px 0;
+      background: var(--charcoal);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .donate::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196, 101, 42, 0.15) 0%, transparent 70%);
+    }
+
+    .donate .section-header h2 { color: white; }
+    .donate .section-header p { color: rgba(255,255,255,0.7); }
+    .donate .section-header .label { color: var(--gold); }
+
+    .donate-methods {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .donate-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      transition: var(--transition);
+    }
+
+    .donate-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-4px);
+    }
+
+    .donate-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 1.5rem;
+    }
+
+    .donate-card:nth-child(1) .donate-card-icon { background: rgba(212, 168, 83, 0.2); }
+    .donate-card:nth-child(2) .donate-card-icon { background: rgba(58, 124, 140, 0.2); }
+    .donate-card:nth-child(3) .donate-card-icon { background: rgba(107, 123, 76, 0.2); }
+
+    .donate-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: white;
+    }
+
+    .donate-card p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .donate-details {
+      background: rgba(0,0,0,0.2);
+      border-radius: var(--radius);
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    .donate-detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .donate-detail-row:last-child { border-bottom: none; }
+
+    .donate-detail-label {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .donate-detail-value {
+      color: rgba(255,255,255,0.9);
+      font-weight: 600;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.88rem;
+    }
+
+    .donate-card .btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .donate-card .btn-primary { background: var(--terra); }
+    .donate-card .btn-primary:hover { background: var(--terra-dark); }
+
+    .donate-card .btn-wise { background: var(--ocean); }
+    .donate-card .btn-wise:hover { background: #2E6370; }
+
+    .donate-card .btn-bank { background: var(--olive); }
+    .donate-card .btn-bank:hover { background: var(--olive-dark); }
+
+    /* Quick donate strip */
+    .quick-donate {
+      margin-top: 48px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quick-donate p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .quick-amounts {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .quick-amount {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .quick-amount:hover {
+      background: var(--terra);
+      border-color: var(--terra);
+      transform: translateY(-2px);
+    }
+
+    /* ========== ABOUT / FOUNDER ========== */
+    .about {
+      padding: 120px 0;
+      background: var(--warm-white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-image {
+      aspect-ratio: 3/4;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .about-content .label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--terra);
+      margin-bottom: 16px;
+    }
+
+    .about-content h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .about-content p {
+      font-size: 1.05rem;
+      color: var(--charcoal-light);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    /* ========== FAQ ========== */
+    .faq {
+      padding: 120px 0;
+      background: var(--sand);
+    }
+
+    .faq-grid {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--sand-dark);
+      padding: 28px 0;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      padding: 0;
+    }
+
+    .faq-question span {
+      transition: var(--transition);
+      font-size: 1.4rem;
+      color: var(--terra);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-top: 16px;
+    }
+
+    .faq-item.active .faq-question span {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer p {
+      font-size: 0.95rem;
+      color: var(--charcoal-light);
+      line-height: 1.8;
+    }
+
+    /* ========== CTA BANNER ========== */
+    .cta-banner {
+      padding: 100px 0;
+      background: var(--terra);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.08);
+    }
+
+    .cta-banner .container { position: relative; z-index: 1; }
+
+    .cta-banner h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .cta-banner p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 540px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .cta-banner .btn {
+      background: white;
+      color: var(--terra);
+    }
+
+    .cta-banner .btn:hover {
+      background: var(--sand);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      padding: 60px 0 40px;
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 32px;
+    }
+
+    .footer-brand .nav-logo { color: white; margin-bottom: 12px; }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      max-width: 320px;
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover { color: white; }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--terra);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.82rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+      .donate-methods { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--warm-white);
+        padding: 24px;
+        gap: 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        box-shadow: var(--shadow-md);
+      }
+      .nav-toggle { display: block; }
+
+      .hero-stat { gap: 24px; flex-wrap: wrap; }
+
+      .mission-grid,
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .mission-image { aspect-ratio: 16/10; }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; aspect-ratio: 16/9; }
+
+      .impact-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .impact-card { padding: 28px 20px; }
+
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-links { flex-direction: column; gap: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .impact-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:nth-child(1) { grid-column: span 1; }
+
+      .hero-stat { flex-direction: column; gap: 20px; }
+
+      .quick-amounts { flex-direction: column; align-items: center; }
+      .quick-amount { width: 100%; max-width: 280px; }
+    }
+
+    /* ========== ANIMATIONS ========== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Sticky donate button (mobile) */
+    .sticky-donate {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 24px;
+      background: rgba(44, 44, 44, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 99;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .sticky-donate .btn {
+      width: 100%;
+      max-width: 400px;
+      justify-content: center;
+      padding: 14px 32px;
+    }
+
+    @media (max-width: 768px) {
+      .sticky-donate { display: block; }
+      footer { padding-bottom: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <div class="container">
+      <!-- TODO: Replace with rescue name -->
+      <a href="#" class="nav-logo">[Rescue Name]</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#mission">Our Mission</a></li>
+        <li><a href="#dogs">The Dogs</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#donate" class="nav-donate">Donate Now</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <!-- TODO: Replace with hero image — ideally a wide shot of him with the dogs -->
+    <!-- To add image: set background-image on .hero-bg in CSS above -->
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-badge">Bali, Indonesia</div>
+      <!-- TODO: Replace with rescue name -->
+      <h1>Every Street Dog<br>Deserves a Second Chance</h1>
+      <!-- TODO: Update with his actual story hook -->
+      <p>One American in Bali. 50 rescued dogs. Zero giving up. Help us keep them safe, fed, and loved.</p>
+      <div class="hero-actions">
+        <a href="#donate" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Donate Now
+        </a>
+        <a href="#mission" class="btn btn-secondary">Our Story</a>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-item">
+          <!-- TODO: Update numbers -->
+          <div class="hero-stat-number">50+</div>
+          <div class="hero-stat-label">Dogs Rescued</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-number">X</div>
+          <div class="hero-stat-label">Years in Bali</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-number">XX</div>
+          <div class="hero-stat-label">Dogs Rehomed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MISSION ===== -->
+  <section class="mission" id="mission">
+    <div class="container">
+      <div class="mission-grid fade-in">
+        <div class="mission-image">
+          <!-- TODO: Replace placeholder with real photo -->
+          <div class="mission-image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Add photo here</span>
+            <span style="font-size: 0.8rem; opacity: 0.6;">Recommended: Him with the dogs</span>
+          </div>
+        </div>
+        <div class="mission-content">
+          <div class="label">Our Mission</div>
+          <!-- TODO: Update with real story -->
+          <h2>A Home for the Forgotten Dogs of Bali</h2>
+          <p>Bali's streets are full of dogs that have been abandoned, injured, or born into hardship. What started as one man helping one dog has grown into a full-time rescue operation caring for over 50 dogs.</p>
+          <p>Every dog gets veterinary care, proper nutrition, shelter, and — most importantly — love. Our goal is to rehabilitate and rehome as many as we can, while providing a permanent sanctuary for those who need it.</p>
+          <blockquote>
+            <!-- TODO: Add his actual quote -->
+            "I came to Bali for a new life. I didn't expect to find my purpose in the eyes of a street dog."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== YOUR IMPACT ===== -->
+  <section class="impact" id="impact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="label">Your Impact</div>
+        <h2>See Where Your Money Goes</h2>
+        <p>Every dollar is stretched as far as possible. Here's what your donation provides:</p>
+      </div>
+      <div class="impact-grid fade-in">
+        <!-- TODO: Update amounts and descriptions with real costs -->
+        <div class="impact-card">
+          <div class="impact-icon">&#x1F35A;</div>
+          <div class="impact-amount">$10</div>
+          <div class="impact-desc">Feeds one dog for a full week with quality nutrition</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">&#x1FA7A;</div>
+          <div class="impact-amount">$25</div>
+          <div class="impact-desc">Covers a full veterinary checkup and basic treatment</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">&#x1F489;</div>
+          <div class="impact-amount">$50</div>
+          <div class="impact-desc">Vaccinates and sterilizes one dog to prevent suffering</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">&#x1F3E0;</div>
+          <div class="impact-amount">$100</div>
+          <div class="impact-desc">Rescues and rehabilitates one dog from the streets</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOG GALLERY ===== -->
+  <section class="gallery" id="dogs">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="label">Meet the Pack</div>
+        <h2>50 Stories. 50 Second Chances.</h2>
+        <p>Every one of these dogs was rescued from Bali's streets. Tap to meet them.</p>
+      </div>
+      <div class="gallery-grid fade-in">
+        <!-- TODO: Replace placeholders with real dog photos -->
+        <!-- To add images: replace the .gallery-placeholder div with an <img> tag -->
+        <!-- and optionally add the .gallery-item-overlay for name/story -->
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Featured dog photo</span>
+          </div>
+          <!-- Example overlay — uncomment and customize per dog:
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-name">Luna</div>
+            <div class="gallery-item-story">Found injured on the roadside, now our happiest girl</div>
+          </div>
+          -->
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Dog photo</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Dog photo</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Dog photo</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Dog photo</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Dog photo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DONATE ===== -->
+  <section class="donate" id="donate">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="label">Support the Rescue</div>
+        <h2>Every Donation Saves a Life</h2>
+        <p>Choose whichever method is easiest for you. Every cent goes directly to the dogs.</p>
+      </div>
+
+      <div class="donate-methods fade-in">
+
+        <!-- PAYPAL / PAYMENT LINK -->
+        <div class="donate-card">
+          <div class="donate-card-icon">&#x1F4B3;</div>
+          <h3>PayPal / Card</h3>
+          <p>Quick and easy — donate with your credit card, debit card, or PayPal balance.</p>
+          <!-- TODO: Replace # with actual PayPal.me link or payment link -->
+          <a href="#" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Donate via PayPal
+          </a>
+        </div>
+
+        <!-- WISE -->
+        <div class="donate-card">
+          <div class="donate-card-icon">&#x1F30D;</div>
+          <h3>Wise (TransferWise)</h3>
+          <p>Low fees for international transfers. Send in any currency — we receive more of your gift.</p>
+          <div class="donate-details">
+            <!-- TODO: Fill in actual Wise details -->
+            <div class="donate-detail-row">
+              <span class="donate-detail-label">Name</span>
+              <span class="donate-detail-value">[Full Name]</span>
+            </div>
+            <div class="donate-detail-row">
+              <span class="donate-detail-label">Email</span>
+              <span class="donate-detail-value">[wise@email.com]</span>
+            </div>
+            <div class="donate-detail-row">
+              <span class="donate-detail-label">Currency</span>
+              <span class="donate-detail-value">USD / IDR</span>
+            </div>
+          </div>
+          <!-- TODO: Replace # with Wise payment link if available -->
+          <a href="#" class="btn btn-wise">Send via Wise</a>
+        </div>
+
+        <!-- INDONESIAN BANK -->
+        <div class="donate-card">
+          <div class="donate-card-icon">&#x1F3E6;</div>
+          <h3>Indonesian Bank Transfer</h3>
+          <p>For local donors or those with IDR. Direct bank transfer with zero platform fees.</p>
+          <div class="donate-details">
+            <!-- TODO: Fill in actual bank details -->
+            <div class="donate-detail-row">
+              <span class="donate-detail-label">Bank</span>
+              <span class="donate-detail-value">[Bank Name]</span>
+            </div>
+            <div class="donate-detail-row">
+              <span class="donate-detail-label">Account #</span>
+              <span class="donate-detail-value">[XXXX-XXXX-XXXX]</span>
+            </div>
+            <div class="donate-detail-row">
+              <span class="donate-detail-label">Account Name</span>
+              <span class="donate-detail-value">[Account Holder]</span>
+            </div>
+            <div class="donate-detail-row">
+              <span class="donate-detail-label">SWIFT</span>
+              <span class="donate-detail-value">[SWIFT Code]</span>
+            </div>
+          </div>
+          <a href="#" class="btn btn-bank">Copy Bank Details</a>
+        </div>
+
+      </div>
+
+      <!-- Quick amounts -->
+      <div class="quick-donate fade-in">
+        <p>Or choose a quick amount via PayPal:</p>
+        <div class="quick-amounts">
+          <!-- TODO: Replace # with amount-specific PayPal links or a single link -->
+          <a href="#" class="quick-amount">$10</a>
+          <a href="#" class="quick-amount">$25</a>
+          <a href="#" class="quick-amount">$50</a>
+          <a href="#" class="quick-amount">$100</a>
+          <a href="#" class="quick-amount">$250</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT THE FOUNDER ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid fade-in">
+        <div class="about-image">
+          <!-- TODO: Replace with photo of him -->
+          <div class="mission-image-placeholder" style="height:100%">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Photo of the founder</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="label">The Man Behind the Mission</div>
+          <!-- TODO: Replace with his real name and story -->
+          <h2>Meet [His Name]</h2>
+          <p>[His story — how he ended up in Bali, what made him start rescuing dogs, what his day-to-day looks like. This is the emotional heart of the page. 2-3 paragraphs.]</p>
+          <p>[Second paragraph about the challenges — the costs, the logistics, why donations matter so much. Be honest and real.]</p>
+          <a href="#donate" class="btn btn-primary" style="margin-top: 12px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Help His Mission
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="label">Questions</div>
+        <h2>Frequently Asked</h2>
+      </div>
+      <div class="faq-grid fade-in">
+        <!-- TODO: Update FAQs with real answers -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Where does my money go?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>100% of donations go directly to the dogs — food, veterinary care, shelter maintenance, and emergency rescues. There are no admin salaries or overhead costs. [Update with specifics.]</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I adopt a dog from Bali?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>[Fill in — is international adoption possible? What's the process? Costs and logistics?]</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I sponsor a specific dog?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>[Fill in — do you offer sponsorships? Monthly amount? Do sponsors get updates/photos?]</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I volunteer?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>[Fill in — do you accept volunteers? What's the process? Any requirements?]</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is this a registered nonprofit?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>[Fill in — registration status, tax deductibility, any legal structure details.]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="container fade-in">
+      <h2>They Can't Ask for Help.<br>But You Can Give It.</h2>
+      <p>50 dogs are counting on people like you. Even a small donation makes a real difference.</p>
+      <a href="#donate" class="btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Donate Now
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <!-- TODO: Replace with rescue name -->
+          <div class="nav-logo">[Rescue Name]</div>
+          <p>Rescuing, rehabilitating, and rehoming Bali's street dogs. Based in Bali, Indonesia.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#mission">Mission</a>
+          <a href="#dogs">The Dogs</a>
+          <a href="#donate">Donate</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-social">
+          <!-- TODO: Add real social links -->
+          <a href="#" aria-label="Instagram">&#x1F4F7;</a>
+          <a href="#" aria-label="Facebook">&#x1F310;</a>
+          <a href="#" aria-label="YouTube">&#x25B6;</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <!-- TODO: Replace with real name/org -->
+        <p>&copy; 2026 [Rescue Name]. All rights reserved. Made with love in Bali.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== STICKY MOBILE DONATE ===== -->
+  <div class="sticky-donate" id="stickyDonate">
+    <a href="#donate" class="btn btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      Donate Now
+    </a>
+  </div>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasActive = item.classList.contains('active');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        // Toggle current
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Show/hide sticky donate on mobile
+    const stickyDonate = document.getElementById('stickyDonate');
+    const donateSection = document.getElementById('donate');
+
+    const stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        stickyDonate.style.transform = entry.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+        stickyDonate.style.transition = 'transform 0.3s ease';
+      });
+    }, { threshold: 0.1 });
+
+    stickyObserver.observe(donateSection);
+
+    // Copy bank details functionality
+    document.querySelector('.btn-bank')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      const details = e.target.closest('.donate-card').querySelectorAll('.donate-detail-value');
+      const text = Array.from(details).map(d => d.textContent).join('\n');
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = e.target.closest('.btn') || e.target;
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      });
+    });
+  </script>
+
+</body>
+</html>

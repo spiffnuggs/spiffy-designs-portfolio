@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wandernest Stays | Premium STR Co-Hosting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2a3d4e;
+            --gold: #d4af74;
+            --light: #f9f7f4;
+            --white: #ffffff;
+            --text: #3a3a3a;
+            --text-light: #6a6a6a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 0.8rem 0;
+        }
+
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: -1rem;
+        }
+
+        .logo img {
+            height: 85px;
+            width: auto;
+        }
+
+        .cta-btn {
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(42, 61, 78, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(42, 61, 78, 0.75), rgba(42, 61, 78, 0.4)),
+                        url('images/livingroom.png') center/cover;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--white);
+            max-width: 1000px;
+            padding: 0 2rem;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1.4rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.1rem;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--white);
+            padding: 1.3rem 3.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.4s ease;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1.3rem 3.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.4s ease;
+            font-size: 1.15rem;
+            border: 2px solid var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Value Prop Section */
+        .value-prop {
+            padding: 6rem 3rem 3rem;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .value-prop h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .value-grid {
+            max-width: 1400px;
+            margin: 4rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .value-item {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .value-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            text-align: center;
+        }
+
+        .value-item p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Image Gallery Section */
+        .gallery {
+            padding: 0;
+            background: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* MODULE 1: Digital Operator Manifesto */
+        .manifesto {
+            padding: 8rem 3rem;
+            background: var(--white);
+        }
+
+        .manifesto-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .manifesto-content h2 {
+            font-size: 3.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            line-height: 1.1;
+            text-align: left;
+        }
+
+        .manifesto-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .manifesto-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .comparison-box {
+            padding: 2rem;
+            border-radius: 20px;
+            background: var(--light);
+            text-align: left;
+        }
+
+        .comparison-box.old {
+            opacity: 0.6;
+        }
+
+        .comparison-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            text-align: left;
+        }
+
+        .comparison-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        .comparison-box.new {
+            background: linear-gradient(135deg, var(--gold), #c49a5a);
+            color: var(--white);
+        }
+
+        .comparison-box.new h4,
+        .comparison-box.new p {
+            color: var(--white);
+        }
+
+        .manifesto-image {
+            position: relative;
+            height: 600px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .manifesto-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 3rem;
+            background: var(--light);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .services-header h2 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .services-header p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+        }
+
+        .services-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .service-card {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            height: 700px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(42, 61, 78, 0.2), rgba(42, 61, 78, 0.9));
+            z-index: 1;
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            padding: 6.5rem 3rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: var(--white);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-content h3 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .service-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.6rem 0;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        /* MODULE 2: Remote-First Framework */
+        .remote-framework {
+            padding: 8rem 3rem;
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .remote-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .remote-header h2 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .remote-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        .remote-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .remote-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 3rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .remote-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-10px);
+        }
+
+        .remote-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .remote-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .remote-card p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .remote-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .remote-card li {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+
+        .remote-card li:before {
+            content: "→";
+            color: var(--gold);
+            margin-right: 0.8rem;
+        }
+
+        /* MODULE 3: Peace of Mind / Pain Points */
+        .peace-of-mind {
+            padding: 8rem 3rem;
+            background: var(--light);
+        }
+
+        .peace-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .peace-header h2 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .peace-header p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+        }
+
+        .pain-points-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .pain-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .pain-section {
+            text-align: left;
+        }
+
+        .pain-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .pain-section p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .arrow-section {
+            font-size: 3rem;
+            color: var(--gold);
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .solution-section {
+            text-align: left;
+        }
+
+        .solution-section h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--gold);
+        }
+
+        .solution-section p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* MODULE 4: Revenue Lab / Showcase */
+        .showcase {
+            padding: 8rem 3rem;
+            background: var(--white);
+        }
+
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .showcase-header h2 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .showcase-header p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+        }
+
+        .showcase-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .showcase-card {
+            background: var(--light);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+
+        .showcase-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .showcase-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .showcase-card:hover .showcase-image img {
+            transform: scale(1.08);
+        }
+
+        .showcase-content {
+            padding: 2.5rem;
+            text-align: left;
+        }
+
+        .showcase-label {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .showcase-content h4 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-align: left;
+        }
+
+        .intervention {
+            background: var(--white);
+            padding: 1.2rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border-left: 3px solid var(--gold);
+            text-align: left;
+        }
+
+        .intervention strong {
+            color: var(--text);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .intervention p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .showcase-result {
+            font-size: 2.2rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-top: 1.5rem;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        /* Big Image CTA */
+        .big-cta {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .big-cta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(42, 61, 78, 0.85), rgba(212, 175, 116, 0.5)),
+                        url('images/patio.png') center/cover;
+            z-index: 0;
+        }
+
+        .big-cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--white);
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .big-cta h2 {
+            font-size: 4.5rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .big-cta p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .manifesto-container {
+                grid-template-columns: 1fr;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-grid,
+            .remote-grid,
+            .pain-points-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Hero Optimization */
+            .hero {
+                height: auto;
+                padding: 6rem 0 4rem;
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 0.7rem;
+                line-height: 1.2;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.4rem;
+                line-height: 1.6;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            /* Value Props - Compact Grid */
+            .value-prop {
+                padding: 3rem 1.5rem 1.5rem;
+            }
+
+            .value-prop h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .value-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin: 0;
+            }
+
+            .value-item {
+                background: var(--light);
+                padding: 1.5rem;
+                border-radius: 20px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .value-item:before {
+                content: attr(data-icon);
+                font-size: 2.5rem;
+                flex-shrink: 0;
+            }
+
+            .value-content {
+                flex: 1;
+                text-align: center;
+            }
+
+            .value-item h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+                text-align: center;
+            }
+
+            .value-item p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                text-align: center;
+            }
+
+            /* Gallery - 2x2 Grid */
+            .gallery {
+                padding: 0;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                padding: 0.5rem;
+            }
+
+            .gallery-item {
+                height: 180px;
+                border-radius: 15px;
+                overflow: hidden;
+            }
+
+            /* Manifesto Mobile */
+            .manifesto {
+                padding: 3rem 1.5rem;
+            }
+
+            .manifesto-content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .manifesto-content p {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .manifesto-comparison {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+
+            .comparison-box {
+                padding: 1.5rem;
+            }
+
+            .comparison-box h4 {
+                font-size: 1.1rem;
+            }
+
+            .comparison-box p {
+                font-size: 0.9rem;
+            }
+
+            .manifesto-image {
+                height: 300px;
+                margin-top: 2rem;
+            }
+
+            /* Services - Stacked Cards */
+            .services {
+                padding: 3rem 1.5rem;
+            }
+
+            .services-header {
+                margin-bottom: 2rem;
+            }
+
+            .services-header h2 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .services-header p {
+                font-size: 1rem;
+            }
+
+            .services-container {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                height: 500px;
+            }
+
+            .service-overlay {
+                background: linear-gradient(to bottom, rgba(42, 61, 78, 0.1), rgba(42, 61, 78, 0.95));
+            }
+
+            .service-content {
+                padding: 2rem 1.5rem;
+                justify-content: flex-end;
+            }
+
+            .service-icon {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .service-content h3 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+                line-height: 1.2;
+            }
+
+            .service-content p {
+                font-size: 0.95rem;
+                margin-bottom: 1.2rem;
+                line-height: 1.5;
+            }
+
+            .service-features {
+                margin-bottom: 1.5rem;
+            }
+
+            .service-features li {
+                font-size: 0.85rem;
+                padding: 0.4rem 0;
+            }
+
+            .btn-primary {
+                padding: 0.9rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            /* Remote Framework - Stacked Expandable Cards */
+            .remote-framework {
+                padding: 3rem 1.5rem;
+            }
+
+            .remote-header {
+                margin-bottom: 2rem;
+            }
+
+            .remote-header h2 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .remote-header p {
+                font-size: 0.95rem;
+            }
+
+            .remote-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin: 0;
+            }
+
+            .remote-card {
+                background: rgba(255, 255, 255, 0.08);
+                padding: 1.2rem;
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .remote-card:hover {
+                background: rgba(255, 255, 255, 0.12);
+            }
+
+            .remote-card-header {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .remote-icon {
+                font-size: 2rem;
+                flex-shrink: 0;
+            }
+
+            .remote-card-title {
+                flex: 1;
+                text-align: left;
+            }
+
+            .remote-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.3rem;
+                line-height: 1.3;
+                font-weight: 600;
+                text-align: left;
+            }
+
+            .remote-card-summary {
+                font-size: 0.85rem;
+                line-height: 1.4;
+                opacity: 0.9;
+                text-align: left;
+            }
+
+            .expand-icon {
+                font-size: 1.2rem;
+                transition: transform 0.3s ease;
+                opacity: 0.7;
+            }
+
+            .remote-card.expanded .expand-icon {
+                transform: rotate(180deg);
+            }
+
+            .remote-card-details {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .remote-card.expanded .remote-card-details {
+                max-height: 300px;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .remote-card ul {
+                list-style: none;
+                text-align: left;
+            }
+
+            .remote-card li {
+                padding: 0.4rem 0;
+                font-size: 0.85rem;
+                opacity: 0.85;
+            }
+
+            .remote-card li:before {
+                content: "→";
+                color: var(--gold);
+                margin-right: 0.8rem;
+            }
+
+            /* Pain Points - Simple Flow */
+            .peace-of-mind {
+                padding: 3rem 1.5rem;
+            }
+
+            .peace-header {
+                margin-bottom: 2rem;
+            }
+
+            .peace-header h2 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+                line-height: 1.2;
+            }
+
+            .peace-header p {
+                font-size: 1rem;
+            }
+
+            .pain-points-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin: 0;
+            }
+
+            .pain-card {
+                padding: 1.5rem;
+                gap: 1.2rem;
+            }
+
+            .pain-section h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .pain-section p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .arrow-section {
+                font-size: 2rem;
+                margin: 0.5rem 0;
+            }
+
+            .solution-section h4 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .solution-section p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            /* Showcase - 2x2 Grid */
+            .showcase {
+                padding: 3rem 1.5rem;
+            }
+
+            .showcase-header {
+                margin-bottom: 2rem;
+            }
+
+            .showcase-header h2 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .showcase-header p {
+                font-size: 1rem;
+            }
+
+            .showcase-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin: 0;
+            }
+
+            .showcase-card {
+                background: var(--light);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+
+            .showcase-image {
+                height: 250px;
+            }
+
+            .showcase-content {
+                padding: 1.2rem;
+                text-align: left;
+            }
+
+            .showcase-label {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.8rem;
+            }
+
+            .showcase-content h4 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+                text-align: left;
+            }
+
+            .intervention {
+                padding: 0.8rem;
+                margin: 0.8rem 0;
+                font-size: 0.85rem;
+                text-align: left;
+            }
+
+            .intervention strong {
+                font-size: 0.8rem;
+                text-align: left;
+            }
+
+            .intervention p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                text-align: left;
+            }
+
+            .showcase-result {
+                font-size: 1.3rem;
+                margin-top: 0.8rem;
+                text-align: left;
+            }
+
+            /* Big CTA Mobile */
+            .big-cta {
+                height: auto;
+                padding: 4rem 1.5rem;
+            }
+
+            .big-cta h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .big-cta p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Nav */
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .cta-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.8rem;
+                white-space: nowrap;
+            }
+
+            .nav-links-menu {
+                flex-shrink: 0;
+            }
+
+            /* Section Spacing */
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+
+        /* Nav Links */
+        .nav-links-menu {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+        }
+
+        /* Floating Email Widget */
+        .floating-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+        }
+
+        .widget-trigger {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), #c49a5a);
+            box-shadow: 0 8px 30px rgba(212, 175, 116, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            animation: pulse 2s infinite;
+        }
+
+        .widget-trigger:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(212, 175, 116, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 8px 30px rgba(212, 175, 116, 0.4);
+            }
+            50% {
+                box-shadow: 0 8px 30px rgba(212, 175, 116, 0.7);
+            }
+        }
+
+        .widget-panel {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            width: 360px;
+            background: var(--white);
+            border-radius: 25px;
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            transform: scale(0);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform-origin: bottom right;
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+
+        .widget-panel.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .widget-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .widget-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .widget-header h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .widget-header p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .widget-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input {
+            padding: 0.9rem;
+            border: 2px solid var(--light);
+            border-radius: 15px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--light);
+        }
+
+        .form-textarea {
+            padding: 0.9rem;
+            border: 2px solid var(--light);
+            border-radius: 15px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--white);
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--light);
+        }
+
+        .widget-button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .widget-button:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .widget-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .widget-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: color 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .widget-close:hover {
+            color: var(--primary);
+        }
+
+        .widget-info {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links-menu {
+                gap: 1rem;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .floating-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .widget-trigger {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .widget-panel {
+                width: calc(100vw - 40px);
+                max-width: 340px;
+                bottom: 80px;
+                left: 50%;
+                right: auto;
+                margin-left: 0;
+                transform: scale(0);
+                transform-origin: center bottom;
+                padding: 1.5rem;
+            }
+
+            .widget-panel.active {
+                transform: scale(1);
+            }
+
+            .widget-form {
+                gap: 0.8rem;
+            }
+
+            .form-input,
+            .form-textarea {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .form-textarea {
+                min-height: 80px;
+            }
+
+            .form-label {
+                font-size: 0.8rem;
+            }
+
+            .widget-header h3 {
+                font-size: 1.3rem;
+            }
+
+            .widget-header p {
+                font-size: 0.85rem;
+            }
+
+            .widget-button {
+                padding: 0.9rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="../sarah/images/logotest.png" alt="Wandernest Stays">
+            </div>
+            <div class="nav-links-menu">
+                <a href="#showcase" class="nav-link">See Our Work</a>
+                <a href="#contact" class="cta-btn">Book Revenue Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Maximize Your STR Revenue</h1>
+            <p>Premium co-hosting & digital optimization for remote property owners worldwide</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Start Earning More</a>
+                <a href="#manifesto" class="btn-secondary">How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Prop -->
+    <section class="value-prop">
+        <h2>Co-Hosting That Actually Works</h2>
+        <div class="value-grid">
+            <div class="value-item" data-icon="📈">
+                <div class="value-content">
+                    <h3>+30% Revenue</h3>
+                    <p>Dynamic pricing algorithms that adjust hourly based on demand, events, and market conditions</p>
+                </div>
+            </div>
+            <div class="value-item" data-icon="💬">
+                <div class="value-content">
+                    <h3>24/7 Support</h3>
+                    <p>Professional guest messaging with sub-5 minute response times. Maintain Superhost status effortlessly.</p>
+                </div>
+            </div>
+            <div class="value-item" data-icon="🌍">
+                <div class="value-content">
+                    <h3>100% Remote</h3>
+                    <p>Full digital operations from anywhere. You keep your local team, we handle the systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/master.png" alt="Master Bedroom">
+            </div>
+            <div class="gallery-item">
+                <img src="images/kitchen.png" alt="Kitchen">
+            </div>
+            <div class="gallery-item">
+                <img src="images/masterbathroom.png" alt="Master Bathroom">
+            </div>
+            <div class="gallery-item">
+                <img src="images/kidsbedroom.png" alt="Kids Bedroom">
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE 1: Digital Operator Manifesto -->
+    <section id="manifesto" class="manifesto">
+        <div class="manifesto-container">
+            <div class="manifesto-content">
+                <h2>Property Management is Evolving. Are You?</h2>
+
+                <div class="manifesto-comparison">
+                    <div class="comparison-box old">
+                        <h4>Traditional Manager</h4>
+                        <p>Reactive maintenance. Local only. Manual processes. Fixed pricing.</p>
+                    </div>
+                    <div class="comparison-box new">
+                        <h4>Digital Operator</h4>
+                        <p>Revenue strategist. Works remotely. Automated systems. Dynamic pricing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="manifesto-image">
+                <img src="images/master2.png" alt="Digital Operator">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="services-header">
+            <h2>Two Service Models</h2>
+            <p>Choose the level of support that fits your property</p>
+        </div>
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-bg" style="background-image: url('images/master2.png');"></div>
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="service-icon">🌍</div>
+                    <h3>Remote Optimization</h3>
+                    <p>For property owners who want the digital brain behind a high-performing STR. You handle the property, we handle the revenue.</p>
+                    <ul class="service-features">
+                        <li>Dynamic pricing optimization</li>
+                        <li>24/7 guest messaging & support</li>
+                        <li>OTA platform management</li>
+                        <li>Automated check-in systems</li>
+                        <li>Performance analytics & reporting</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Get Started</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-bg" style="background-image: url('images/livingroom.png');"></div>
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="service-icon">✨</div>
+                    <h3>Perth Boutique Management</h3>
+                    <p>Exclusive full-service management for premium beachside properties and developer portfolios in Perth.</p>
+                    <ul class="service-features">
+                        <li>Everything in Remote Optimization, plus:</li>
+                        <li>White-glove property management</li>
+                        <li>Premium styling & guest experience</li>
+                        <li>On-site coordination & inspections</li>
+                        <li>Developer-ready multi-unit systems</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE 2: Remote-First Framework -->
+    <section class="remote-framework">
+        <div class="remote-header">
+            <h2>Systems That Scale</h2>
+            <p>Professional-grade tech, managed remotely</p>
+        </div>
+        <div class="remote-grid">
+            <div class="remote-card" onclick="toggleCard(this)">
+                <div class="remote-card-header">
+                    <div class="remote-icon">💬</div>
+                    <div class="remote-card-title">
+                        <h3>24/7 Concierge</h3>
+                        <p class="remote-card-summary">Sub-5 min response times</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="remote-card-details">
+                    <ul>
+                        <li>Instant automated responses to common questions</li>
+                        <li>Human escalation for complex issues</li>
+                        <li>Proactive check-in coordination</li>
+                        <li>Maintain Superhost status effortlessly</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="remote-card" onclick="toggleCard(this)">
+                <div class="remote-card-header">
+                    <div class="remote-icon">🔄</div>
+                    <div class="remote-card-title">
+                        <h3>Remote Operations</h3>
+                        <p class="remote-card-summary">Photo-verified turnovers</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="remote-card-details">
+                    <ul>
+                        <li>Digital checklists with photo proof</li>
+                        <li>Real-time quality control from anywhere</li>
+                        <li>Issues caught before guests arrive</li>
+                        <li>Professional standards maintained remotely</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="remote-card" onclick="toggleCard(this)">
+                <div class="remote-card-header">
+                    <div class="remote-icon">📊</div>
+                    <div class="remote-card-title">
+                        <h3>Live Dashboard</h3>
+                        <p class="remote-card-summary">Track revenue anywhere</p>
+                    </div>
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="remote-card-details">
+                    <ul>
+                        <li>Real-time occupancy and revenue tracking</li>
+                        <li>Performance analytics across all platforms</li>
+                        <li>Transparent reporting and insights</li>
+                        <li>Full visibility from your phone</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE 3: Peace of Mind / Pain Points -->
+    <section class="peace-of-mind">
+        <div class="peace-header">
+            <h2>We Take 2AM Guest Calls,<br>So You Don't Have To</h2>
+            <p>The biggest headaches for STR owners, solved by our Digital Operator model</p>
+        </div>
+        <div class="pain-points-grid">
+            <div class="pain-card">
+                <div class="pain-section">
+                    <h3>Inconsistent Booking Revenue</h3>
+                    <p>Your calendar has gaps. Some months are great, others are terrible. You're leaving thousands on the table.</p>
+                </div>
+
+                <div class="arrow-section">↓</div>
+
+                <div class="solution-section">
+                    <h4>Daily Dynamic Pricing</h4>
+                    <p>Hourly price adjustments based on 200+ market factors. Maximize revenue every single day of the year.</p>
+                </div>
+            </div>
+            <div class="pain-card">
+                <div class="pain-section">
+                    <h3>The 2 AM Guest Message</h3>
+                    <p>WiFi isn't working. Where's the coffee? How do I turn on the heat? Your phone never stops buzzing.</p>
+                </div>
+
+                <div class="arrow-section">↓</div>
+
+                <div class="solution-section">
+                    <h4>Automated AI Support</h4>
+                    <p>24/7 instant responses to common questions. Human escalation only when truly needed. You sleep soundly.</p>
+                </div>
+            </div>
+            <div class="pain-card">
+                <div class="pain-section">
+                    <h3>Cleaning Quality Issues</h3>
+                    <p>You can't be onsite to check every turnover. Sometimes guests arrive to issues. Your reviews suffer.</p>
+                </div>
+
+                <div class="arrow-section">↓</div>
+
+                <div class="solution-section">
+                    <h4>Photo-Verified Checklists</h4>
+                    <p>Digital turnover system with photo proof. Problems caught before guests arrive. Maintain 5-star standards remotely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE 4: Revenue Lab / Showcase -->
+    <section class="showcase">
+        <div class="showcase-header">
+            <h2>The Portfolio:<br>Where Style Meets ROI</h2>
+            <p>Real transformations. Real revenue growth.</p>
+        </div>
+        <div class="showcase-grid">
+            <div class="showcase-card">
+                <div class="showcase-image">
+                    <img src="images/patio.png" alt="Property">
+                </div>
+                <div class="showcase-content">
+                    <span class="showcase-label">BEACHSIDE VILLA</span>
+                    <h4>Cottesloe, WA</h4>
+
+                    <div class="intervention">
+                        <strong>The Intervention:</strong>
+                        <p>Redesigned listing SEO, implemented 365-day dynamic pricing strategy, automated guest communication</p>
+                    </div>
+
+                    <div class="showcase-result">Revenue: $65k → $92k</div>
+                </div>
+            </div>
+            <div class="showcase-card">
+                <div class="showcase-image">
+                    <img src="images/livingroompop.png" alt="Property">
+                </div>
+                <div class="showcase-content">
+                    <span class="showcase-label">REMOTE PORTFOLIO</span>
+                    <h4>8-Unit Portfolio, US-Based</h4>
+
+                    <div class="intervention">
+                        <strong>The Intervention:</strong>
+                        <p>Centralized messaging system, event-based pricing surges, standardized turnover protocols across units</p>
+                    </div>
+
+                    <div class="showcase-result">Occupancy: 62% → 89%</div>
+                </div>
+            </div>
+            <div class="showcase-card">
+                <div class="showcase-image">
+                    <img src="images/masterpop.png" alt="Property">
+                </div>
+                <div class="showcase-content">
+                    <span class="showcase-label">LUXURY ESTATE</span>
+                    <h4>Scarborough, WA</h4>
+
+                    <div class="intervention">
+                        <strong>The Intervention:</strong>
+                        <p>Premium guest experience protocols, personalized concierge service, meticulous quality control</p>
+                    </div>
+
+                    <div class="showcase-result">Rating: 4.99★ for 18 Months</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Big CTA -->
+    <section id="contact" class="big-cta">
+        <div class="big-cta-bg"></div>
+        <div class="big-cta-content">
+            <h2>Ready to Maximize Your Revenue?</h2>
+            <p>Book a free revenue audit and see how much you're leaving on the table</p>
+            <a href="mailto:hello@wanderneststays.com" class="btn-primary">Book Your Free Audit</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Wandernest Stays. Premium STR Co-Hosting & Management.</p>
+    </footer>
+
+    <!-- Floating Email Widget -->
+    <div class="floating-widget">
+        <button class="widget-trigger" onclick="toggleWidget()">✉️</button>
+        <div class="widget-panel" id="widgetPanel">
+            <button class="widget-close" onclick="toggleWidget()">✕</button>
+            <div class="widget-header">
+                <div class="widget-icon">💬</div>
+                <h3>Get Your Free Audit</h3>
+                <p>Let's talk about maximizing your revenue</p>
+            </div>
+            <form class="widget-form" id="contactForm" onsubmit="sendEmail(event)">
+                <div class="form-group">
+                    <label class="form-label">Your Name</label>
+                    <input type="text" class="form-input" name="name" placeholder="Jane Smith" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" name="email" placeholder="jane@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Property Location</label>
+                    <input type="text" class="form-input" name="property" placeholder="e.g., Perth, WA or Remote">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-textarea" name="message" placeholder="Tell us about your property..." required></textarea>
+                </div>
+                <button type="submit" class="widget-button">
+                    📧 Send Message
+                </button>
+            </form>
+            <div class="widget-info">
+                Typical response time: 2 hours
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add scroll effect to nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 5px 30px rgba(0,0,0,0.08)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Toggle expandable cards
+        function toggleCard(card) {
+            card.classList.toggle('expanded');
+        }
+
+        // Toggle floating widget
+        function toggleWidget() {
+            const panel = document.getElementById('widgetPanel');
+            panel.classList.toggle('active');
+        }
+
+        // Close widget when clicking outside
+        document.addEventListener('click', function(event) {
+            const widget = document.querySelector('.floating-widget');
+            const panel = document.getElementById('widgetPanel');
+            const trigger = document.querySelector('.widget-trigger');
+
+            if (panel.classList.contains('active') && !widget.contains(event.target)) {
+                panel.classList.remove('active');
+            }
+        });
+
+        // Send email function
+        function sendEmail(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const name = form.name.value;
+            const email = form.email.value;
+            const property = form.property.value;
+            const message = form.message.value;
+
+            // Create email body
+            const emailBody = `
+Name: ${name}
+Email: ${email}
+Property Location: ${property}
+
+Message:
+${message}
+
+---
+Sent from Wandernest Stays Website Contact Form
+            `.trim();
+
+            // Create mailto link
+            const subject = `Revenue Audit Request from ${name}`;
+            const mailtoLink = `mailto:hello@wanderneststays.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+
+            // Show success message and reset form
+            setTimeout(() => {
+                alert('Thank you! Your email client will open. We\'ll respond within 2 hours.');
+                form.reset();
+                toggleWidget();
+            }, 500);
+        }
+    </script>
+</body>
+</html>
