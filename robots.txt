@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://spiffydesigns.vercel.app/sitemap.xml
+Sitemap: https://spiffy-designs-portfolio.vercel.app/sitemap.xml
