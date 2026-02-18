@@ -292,6 +292,15 @@
     .gradient-preview .stack-row { position: relative; z-index: 2; display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
     .gradient-preview .stack-tag { padding: 3px 9px; background: rgba(255,255,255,0.12); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-size: 0.62rem; font-weight: 600; color: rgba(255,255,255,0.9); }
 
+    /* INTERIOR SHOWCASE */
+    .showcase-strip { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 4px 0 8px; }
+    .showcase-item { position: relative; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); background: var(--bg-card); transition: transform 0.4s var(--ease-out), box-shadow 0.4s; }
+    .showcase-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .showcase-item img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; display: block; }
+    .showcase-label { padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; }
+    .showcase-label span { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+    .showcase-label .showcase-role { color: var(--sage); }
+
     /* NOW → AFTER */
     .transform-section { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
     .transform-header { margin-bottom: 40px; }
@@ -483,6 +492,8 @@
       .project-card { grid-column: span 1 !important; }
       .project-hover { display: none; }
       .work-section-label { margin-top: 16px; font-size: 0.56rem; padding: 16px 0 10px; }
+      .showcase-strip { grid-template-columns: 1fr; gap: 10px; }
+      .showcase-item img { aspect-ratio: 16/9; }
       .project-preview-wrap { aspect-ratio: 16/10; }
       .project-bar { padding: 14px 16px; }
       .project-bar-name { font-size: 1.05rem; }
@@ -680,6 +691,22 @@
           <span class="project-bar-tag">Full-Stack</span>
         </div>
       </a>
+
+      <!-- Ignite Legacy Interior Showcase -->
+      <div class="showcase-strip reveal">
+        <div class="showcase-item">
+          <img src="screenshots/ignite-admin.jpg" alt="Admin dashboard with KPIs, revenue, and pipeline" loading="lazy">
+          <div class="showcase-label"><span>Admin Dashboard</span><span class="showcase-role">Owner View</span></div>
+        </div>
+        <div class="showcase-item">
+          <img src="screenshots/ignite-ambassador.jpg" alt="Ambassador portal with referrals and earnings" loading="lazy">
+          <div class="showcase-label"><span>Ambassador Portal</span><span class="showcase-role">Referral Tracking</span></div>
+        </div>
+        <div class="showcase-item">
+          <img src="screenshots/ignite-dashboard.jpg" alt="Student dashboard with course progress" loading="lazy">
+          <div class="showcase-label"><span>Student Dashboard</span><span class="showcase-role">Course Progress</span></div>
+        </div>
+      </div>
 
       <!-- Tropic Sip — Open Sans -->
       <a href="https://tropicsip-nextjs.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-opensans narrow">
