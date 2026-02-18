@@ -130,13 +130,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Inter', -apple-system, sans-serif;
+      --script: 'Cormorant Garamond', Georgia, serif;
       --radius: 16px;
       --radius-sm: 10px;
       --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -185,7 +186,7 @@
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; transition: all 0.4s ease; }
     nav.scrolled { background: var(--nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm); }
-    .nav-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--accent); letter-spacing: 0.01em; }
+    .nav-logo { font-family: var(--sans); font-size: 0.76rem; font-weight: 600; color: var(--text-dim); letter-spacing: 0.04em; text-transform: uppercase; }
     .nav-right { display: flex; gap: 24px; list-style: none; align-items: center; }
     .nav-right a { font-size: 0.76rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-dim); transition: color 0.3s; }
     .nav-right a:hover { color: var(--accent); }
@@ -281,15 +282,15 @@
     .transform-header .section-title { margin-bottom: 8px; }
     .transform-sub { font-size: 0.88rem; color: var(--text-muted); max-width: 500px; line-height: 1.7; }
     .transform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .transform-card { background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px 24px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; transition: border-color 0.3s; }
+    .transform-card { background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px 24px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: stretch; transition: border-color 0.3s; }
     .transform-card:hover { border-color: var(--border-hover); }
-    .t-before, .t-after { display: flex; flex-direction: column; gap: 4px; }
+    .t-before, .t-after { display: flex; flex-direction: column; gap: 4px; min-height: 80px; }
     .t-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
     .t-before .t-label { color: var(--red-soft); }
     .t-after .t-label { color: var(--sage); }
     .t-text { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
     .t-after .t-text { color: var(--text); font-weight: 500; }
-    .t-arrow { color: var(--sage); font-size: 1.1rem; }
+    .t-arrow { color: var(--sage); font-size: 1.1rem; display: flex; align-items: center; }
     .t-project { margin-top: 6px; font-size: 0.62rem; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; }
 
     /* MID CTA */
@@ -372,9 +373,9 @@
     .contact-detail a { color: var(--text-muted); transition: color 0.3s; }
     .contact-detail a:hover { color: var(--accent); }
 
-    footer { padding: 24px 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-    .footer-brand { font-family: var(--serif); font-size: 0.88rem; color: var(--text-dim); }
+    footer { padding: 32px 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; max-width: 1200px; margin: 0 auto; }
     .footer-copy { font-size: 0.68rem; color: var(--text-dim); }
+    .footer-brand { font-family: var(--script); font-style: italic; font-size: 1.8rem; font-weight: 300; color: var(--sage); letter-spacing: 0.02em; line-height: 1; }
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
@@ -424,7 +425,7 @@
 <body>
 
   <nav id="navbar">
-    <a href="#" class="nav-logo">Spiffy Designs</a>
+    <a href="#" class="nav-logo">Sydney Zuckerman</a>
     <ul class="nav-right">
       <li><a href="#work">Work</a></li>
       <li><a href="#process">Process</a></li>
@@ -736,8 +737,8 @@
   <div class="mid-cta">
     <div class="mid-cta-inner reveal">
       <div class="mid-cta-text">
-        <h3>Whether it's a site or a <span class="accent">full platform</span></h3>
-        <p>I'd love to learn about what you're building and show you what's possible. Tell me about your project and let's figure it out together.</p>
+        <h3>Let's build something <span class="accent">together</span></h3>
+        <p>Every project starts with a conversation. Tell me what's not working and we'll figure out a solution that fits your business and your budget.</p>
       </div>
       <a href="#start" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Start a Project</a>
     </div>
@@ -752,7 +753,7 @@
     <div class="testimonial-grid">
       <div class="testimonial-card reveal">
         <div class="testimonial-stars"><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg></div>
-        <p class="testimonial-quote">"She took a scattered mess of tools and turned it into one platform that does everything. My ambassadors stopped DMing me overnight. I got my mornings back."</p>
+        <p class="testimonial-quote">"She actually listened to what I needed — not what she thought I needed. She turned a scattered mess of tools into one platform that does everything. I got my mornings back."</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">A</div>
           <div class="testimonial-info">
@@ -763,7 +764,7 @@
       </div>
       <div class="testimonial-card reveal reveal-d1">
         <div class="testimonial-stars"><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg></div>
-        <p class="testimonial-quote">"I sent her a rough idea and she came back with a site that looked better than anything I could have imagined. The attention to detail is unreal."</p>
+        <p class="testimonial-quote">"I felt completely seen throughout the whole process. She took my rough idea, asked the right questions, and came back with something better than I could have imagined."</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">A</div>
           <div class="testimonial-info">
@@ -774,7 +775,7 @@
       </div>
       <div class="testimonial-card reveal reveal-d2">
         <div class="testimonial-stars"><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg></div>
-        <p class="testimonial-quote">"She built our Shopify store, our supplement brand site, AND a custom waitlist platform. Doesn't matter how complex the ask — she just figures it out."</p>
+        <p class="testimonial-quote">"She built our Shopify store, our brand site, AND automated our entire order flow. Custom pricing, no bloat, and it genuinely made running the business easier."</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">S</div>
           <div class="testimonial-info">
@@ -819,12 +820,12 @@
     <div class="about-grid">
       <div class="about-left reveal">
         <div class="section-label">About</div>
-        <h2 class="section-title">Thoughtful design, genuine results</h2>
+        <h2 class="section-title">You deserve to feel seen</h2>
         <p>
-          <span class="highlight">Spiffy Designs</span> is the studio of <span class="coral">Sydney Zuckerman</span>. I create websites, e-commerce stores, and full-stack platforms that feel warm, look polished, and help your business grow. Every project gets my full attention and care.
+          I'm <span class="coral">Sydney Zuckerman</span>. I work closely with every client to understand their business, their customers, and what's actually slowing them down — then build personalized solutions that change how they acquire customers and run their day-to-day.
         </p>
         <p>
-          From surf retreats in Morocco to Shopify brands, ambassador platforms with Stripe payments, and Supabase-powered apps — the work spans industries and complexity levels but always comes back to one thing: <span class="highlight">building something that actually moves the needle for your business</span>.
+          From surf retreats in Morocco to Shopify brands, ambassador platforms, and order automation — every project is custom-priced, reasonably priced, and built to <span class="highlight">make your life easier, less expensive, and genuinely better</span>.
         </p>
       </div>
       <div class="about-right reveal reveal-d2">
@@ -916,8 +917,8 @@
   </section>
 
   <footer>
-    <div class="footer-brand">Spiffy Designs</div>
     <div class="footer-copy">&copy; 2026 Sydney Zuckerman</div>
+    <div class="footer-brand">Spiffy Designs</div>
   </footer>
 
   <script>
