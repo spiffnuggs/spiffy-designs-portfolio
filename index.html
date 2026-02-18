@@ -239,17 +239,11 @@
     .work-header .section-title { margin-bottom: 8px; }
     .work-subtitle { font-size: 0.88rem; color: var(--text-muted); max-width: 440px; line-height: 1.7; }
     .projects-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
-    .project-card { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); cursor: pointer; transition: transform 0.5s var(--ease-out), border-color 0.4s, box-shadow 0.4s; display: block; }
+    .project-card { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); cursor: pointer; transition: transform 0.5s var(--ease-out), border-color 0.4s, box-shadow 0.4s; display: block; grid-column: span 4; }
     .project-card:hover { transform: translateY(-3px); border-color: var(--border-hover); box-shadow: var(--shadow-hover); }
-    .project-card:nth-child(1) { grid-column: span 7; }
-    .project-card:nth-child(2) { grid-column: span 5; }
-    .project-card:nth-child(3) { grid-column: span 4; }
-    .project-card:nth-child(4) { grid-column: span 4; }
-    .project-card:nth-child(5) { grid-column: span 4; }
-    .project-card:nth-child(6) { grid-column: span 6; }
-    .project-card:nth-child(7) { grid-column: span 6; }
-    .project-card:nth-child(8) { grid-column: span 5; }
-    .project-card:nth-child(9) { grid-column: span 7; }
+    .project-card.wide { grid-column: span 7; }
+    .project-card.narrow { grid-column: span 5; }
+    .project-card.half { grid-column: span 6; }
     .project-preview-wrap { position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; background: var(--bg-subtle); }
     .project-preview-wrap iframe { width: 1440px; height: 900px; border: none; transform-origin: top left; pointer-events: none; display: block; }
     .project-hover { position: absolute; inset: 0; background: var(--overlay); backdrop-filter: blur(6px); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; opacity: 0; transition: opacity 0.35s var(--ease); z-index: 3; }
@@ -290,6 +284,9 @@
     .gradient-preview.ignite { background: linear-gradient(135deg, #2a1f35, #1f2a35 50%, #201a15); }
     .gradient-preview.copilot { background: linear-gradient(135deg, #1773b0, #4c6762 60%, #2a4a3f); }
     .gradient-preview.tropic { background: linear-gradient(135deg, #00C4E4, #FFE03D 60%, #F6A623); }
+    .gradient-preview.realestate { background: linear-gradient(135deg, #2C3E50, #8E7651 50%, #D4C5A9); }
+    .work-section-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); padding: 20px 0 14px; grid-column: 1 / -1; border-bottom: 1px solid var(--border); margin-top: 28px; }
+    .work-section-label:first-child { margin-top: 0; }
     .gradient-preview .app-badge { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); border-radius: 100px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; }
     .gradient-preview .stack-row { position: relative; z-index: 2; display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
     .gradient-preview .stack-tag { padding: 3px 9px; background: rgba(255,255,255,0.12); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-size: 0.62rem; font-weight: 600; color: rgba(255,255,255,0.9); }
@@ -398,8 +395,9 @@
     /* RESPONSIVE — TABLET */
     @media (max-width: 1024px) {
       .projects-grid { grid-template-columns: 1fr 1fr; }
-      .project-card:nth-child(n) { grid-column: span 1; }
-      .project-card:nth-child(1) { grid-column: span 2; }
+      .project-card { grid-column: span 1 !important; }
+      .project-card.wide { grid-column: span 2 !important; }
+      .work-section-label { margin-top: 20px; }
       .process-grid { grid-template-columns: 1fr 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 36px; }
       .mid-cta-inner { flex-direction: column; text-align: center; padding: 36px 24px; }
@@ -436,7 +434,8 @@
       .work-header { margin-bottom: 28px; }
       .section-title { font-size: 1.6rem; }
       .projects-grid { grid-template-columns: 1fr; gap: 14px; }
-      .project-card:nth-child(n) { grid-column: span 1; }
+      .project-card { grid-column: span 1 !important; }
+      .work-section-label { margin-top: 16px; font-size: 0.58rem; }
       .project-preview-wrap { aspect-ratio: 16/11; }
       .project-bar { padding: 12px 16px; }
       .project-bar-name { font-size: 1rem; }
@@ -561,140 +560,11 @@
 
     <div class="projects-grid">
 
-      <!-- 1. Berber Waves — Cormorant Garamond -->
-      <a href="Adeline/index.html" target="_blank" class="project-card reveal font-cormorant">
-        <div class="project-preview-wrap" id="preview-1">
-          <div class="project-hover">
-            <span class="hover-category">Hospitality</span>
-            <h3 class="hover-title">Berber Waves Morocco</h3>
-            <p class="hover-desc">A surf & yoga retreat website with Moroccan-inspired warmth, scroll animations, and a booking flow designed to turn browsers into guests.</p>
-            <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">Berber Waves Morocco</span>
-            <span class="project-bar-result">Booking-ready site delivered in 2 weeks</span>
-          </div>
-          <span class="project-bar-tag">Hospitality</span>
-        </div>
-      </a>
+      <!-- ═══ SECTION 1: CUSTOM PLATFORMS & APPS ═══ -->
+      <div class="work-section-label">Custom Platforms &amp; Apps</div>
 
-      <!-- 2. TukTuk Tournament — Bebas Neue -->
-      <a href="https://tuktuktournament.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-bebas">
-        <div class="project-preview-wrap gradient-preview tuktuk">
-          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Next.js App</div>
-          <div class="stack-row">
-            <span class="stack-tag">Next.js 16</span>
-            <span class="stack-tag">React 19</span>
-            <span class="stack-tag">Tailwind</span>
-          </div>
-          <div class="project-hover">
-            <span class="hover-category">Adventure / Travel</span>
-            <h3 class="hover-title">TukTuk Tournament</h3>
-            <p class="hover-desc">The world's wildest gamified adventure race. Built a high-energy Next.js site with booking flows, country comparisons, and countdown urgency.</p>
-            <span class="hover-link">View Live App <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">TukTuk Tournament</span>
-            <span class="project-bar-result">Full booking flow + multi-country comparison</span>
-          </div>
-          <span class="project-bar-tag">Adventure</span>
-        </div>
-      </a>
-
-      <!-- 3. Co-Pilot — Prompt -->
-      <a href="https://copilotthetravelbrand.com" target="_blank" class="project-card reveal font-prompt">
-        <div class="project-preview-wrap gradient-preview copilot">
-          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Shopify Store</div>
-          <div class="stack-row">
-            <span class="stack-tag">Shopify</span>
-            <span class="stack-tag">Liquid</span>
-            <span class="stack-tag">Reviews</span>
-          </div>
-          <div class="project-hover">
-            <span class="hover-category">E-commerce / Wellness</span>
-            <h3 class="hover-title">Co-Pilot Travel Brand</h3>
-            <p class="hover-desc">A 9-in-1 travel supplement brand. Clean Shopify store designed to educate on benefits while making checkout effortless.</p>
-            <span class="hover-link">Visit Store <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">Co-Pilot Travel Brand</span>
-            <span class="project-bar-result">Store live and selling in under 2 weeks</span>
-          </div>
-          <span class="project-bar-tag">E-commerce</span>
-        </div>
-      </a>
-
-      <!-- 4. Wandernest — Playfair Display -->
-      <a href="wandernest/index.html" target="_blank" class="project-card reveal reveal-d1 font-playfair">
-        <div class="project-preview-wrap" id="preview-4">
-          <div class="project-hover">
-            <span class="hover-category">Property Management</span>
-            <h3 class="hover-title">Wandernest Stays</h3>
-            <p class="hover-desc">Premium co-hosting platform with luxury positioning and a revenue showcase that builds confidence with property owners.</p>
-            <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">Wandernest Stays</span>
-            <span class="project-bar-result">Property owners convert from first visit</span>
-          </div>
-          <span class="project-bar-tag">Property</span>
-        </div>
-      </a>
-
-      <!-- 5. Tropic Sip — Open Sans -->
-      <a href="https://tropicsip.com" target="_blank" class="project-card reveal reveal-d2 font-opensans">
-        <div class="project-preview-wrap gradient-preview tropic">
-          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Next.js + Supabase</div>
-          <div class="stack-row">
-            <span class="stack-tag">Next.js</span>
-            <span class="stack-tag">Supabase</span>
-            <span class="stack-tag">Waitlist</span>
-          </div>
-          <div class="project-hover">
-            <span class="hover-category">F&B / Beverage</span>
-            <h3 class="hover-title">Tropic Sip</h3>
-            <p class="hover-desc">Bali's first electrolyte brand. Order automation platform with auto-text optimized driver routes — eliminating the coordination role entirely.</p>
-            <span class="hover-link">Visit Site <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">Tropic Sip</span>
-            <span class="project-bar-result">Automated orders + driver routes, eliminated a full coordination role</span>
-          </div>
-          <span class="project-bar-tag">F&B</span>
-        </div>
-      </a>
-
-      <!-- 6. Bali Dog Rescue — DM Serif Display -->
-      <a href="bali-dog-rescue/index.html" target="_blank" class="project-card reveal font-dmserif">
-        <div class="project-preview-wrap" id="preview-6">
-          <div class="project-hover">
-            <span class="hover-category">Nonprofit</span>
-            <h3 class="hover-title">Bali Dog Rescue</h3>
-            <p class="hover-desc">Emotional storytelling paired with multiple donation paths. Designed to turn compassion into action.</p>
-            <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">Bali Dog Rescue</span>
-            <span class="project-bar-result">3 donation paths to maximize giving</span>
-          </div>
-          <span class="project-bar-tag">Nonprofit</span>
-        </div>
-      </a>
-
-      <!-- 7. Ignite Legacy — Montserrat -->
-      <a href="https://ignite-legacy-app.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-montserrat">
+      <!-- Ignite Legacy — Montserrat -->
+      <a href="https://ignite-legacy-app.vercel.app" target="_blank" class="project-card reveal font-montserrat wide">
         <div class="project-preview-wrap gradient-preview ignite">
           <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Full-Stack Platform</div>
           <div class="stack-row">
@@ -719,7 +589,142 @@
         </div>
       </a>
 
-      <!-- 8. Kanangra — DM Serif Display -->
+      <!-- Tropic Sip — Open Sans -->
+      <a href="https://tropicsip.com" target="_blank" class="project-card reveal reveal-d1 font-opensans narrow">
+        <div class="project-preview-wrap gradient-preview tropic">
+          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Next.js + Supabase</div>
+          <div class="stack-row">
+            <span class="stack-tag">Next.js</span>
+            <span class="stack-tag">Supabase</span>
+            <span class="stack-tag">Auto-SMS</span>
+          </div>
+          <div class="project-hover">
+            <span class="hover-category">F&B / Beverage</span>
+            <h3 class="hover-title">Tropic Sip</h3>
+            <p class="hover-desc">Bali's first electrolyte brand. Order automation platform with auto-text optimized driver routes — eliminating the coordination role entirely.</p>
+            <span class="hover-link">Visit Site <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Tropic Sip</span>
+            <span class="project-bar-result">Automated orders + driver routes, eliminated a full coordination role</span>
+          </div>
+          <span class="project-bar-tag">F&B</span>
+        </div>
+      </a>
+
+      <!-- TukTuk Tournament — Bebas Neue -->
+      <a href="https://tuktuktournament.vercel.app" target="_blank" class="project-card reveal font-bebas">
+        <div class="project-preview-wrap gradient-preview tuktuk">
+          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Next.js App</div>
+          <div class="stack-row">
+            <span class="stack-tag">Next.js 16</span>
+            <span class="stack-tag">React 19</span>
+            <span class="stack-tag">Tailwind</span>
+          </div>
+          <div class="project-hover">
+            <span class="hover-category">Adventure / Travel</span>
+            <h3 class="hover-title">TukTuk Tournament</h3>
+            <p class="hover-desc">The world's wildest gamified adventure race. Built a high-energy Next.js site with booking flows, country comparisons, and countdown urgency.</p>
+            <span class="hover-link">View Live App <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">TukTuk Tournament</span>
+            <span class="project-bar-result">Full booking flow + multi-country comparison</span>
+          </div>
+          <span class="project-bar-tag">Adventure</span>
+        </div>
+      </a>
+
+      <!-- Co-Pilot — Prompt -->
+      <a href="https://copilotthetravelbrand.com" target="_blank" class="project-card reveal reveal-d1 font-prompt">
+        <div class="project-preview-wrap gradient-preview copilot">
+          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Shopify Store</div>
+          <div class="stack-row">
+            <span class="stack-tag">Shopify</span>
+            <span class="stack-tag">Liquid</span>
+            <span class="stack-tag">Reviews</span>
+          </div>
+          <div class="project-hover">
+            <span class="hover-category">E-commerce / Wellness</span>
+            <h3 class="hover-title">Co-Pilot Travel Brand</h3>
+            <p class="hover-desc">A 9-in-1 travel supplement brand. Clean Shopify store designed to educate on benefits while making checkout effortless.</p>
+            <span class="hover-link">Visit Store <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Co-Pilot Travel Brand</span>
+            <span class="project-bar-result">Store live and selling in under 2 weeks</span>
+          </div>
+          <span class="project-bar-tag">E-commerce</span>
+        </div>
+      </a>
+
+      <!-- Bali Dog Rescue — DM Serif Display -->
+      <a href="bali-dog-rescue/index.html" target="_blank" class="project-card reveal font-dmserif">
+        <div class="project-preview-wrap" id="preview-6">
+          <div class="project-hover">
+            <span class="hover-category">Nonprofit</span>
+            <h3 class="hover-title">Bali Dog Rescue</h3>
+            <p class="hover-desc">Emotional storytelling paired with multiple donation paths. Designed to turn compassion into action.</p>
+            <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Bali Dog Rescue</span>
+            <span class="project-bar-result">3 donation paths to maximize giving</span>
+          </div>
+          <span class="project-bar-tag">Nonprofit</span>
+        </div>
+      </a>
+
+      <!-- ═══ SECTION 2: FREE MOCKUPS ═══ -->
+      <div class="work-section-label">Free Mockups</div>
+
+      <!-- Berber Waves — Cormorant Garamond -->
+      <a href="Adeline/index.html" target="_blank" class="project-card reveal font-cormorant wide">
+        <div class="project-preview-wrap" id="preview-1">
+          <div class="project-hover">
+            <span class="hover-category">Hospitality</span>
+            <h3 class="hover-title">Berber Waves Morocco</h3>
+            <p class="hover-desc">A surf & yoga retreat website with Moroccan-inspired warmth, scroll animations, and a booking flow designed to turn browsers into guests.</p>
+            <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Berber Waves Morocco</span>
+            <span class="project-bar-result">Booking-ready site delivered in 2 weeks</span>
+          </div>
+          <span class="project-bar-tag">Hospitality</span>
+        </div>
+      </a>
+
+      <!-- Paramount Dental — Inter Bold -->
+      <a href="dental-prospects/mockups/paramount-dental-web.html" target="_blank" class="project-card reveal reveal-d1 font-inter-bold narrow">
+        <div class="project-preview-wrap" id="preview-9">
+          <div class="project-hover">
+            <span class="hover-category">Healthcare</span>
+            <h3 class="hover-title">Paramount Dental</h3>
+            <p class="hover-desc">A cosmetic dental practice redesign that showcases their beautiful transformations with the premium presentation they deserve.</p>
+            <span class="hover-link">View Mockup <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Paramount Dental</span>
+            <span class="project-bar-result">Premium redesign showcasing smile transformations</span>
+          </div>
+          <span class="project-bar-tag">Healthcare</span>
+        </div>
+      </a>
+
+      <!-- Kanangra — DM Serif Display -->
       <a href="kanangra-landscapes/index.html" target="_blank" class="project-card reveal font-dmserif">
         <div class="project-preview-wrap" id="preview-8">
           <div class="project-hover">
@@ -738,22 +743,47 @@
         </div>
       </a>
 
-      <!-- 9. Paramount Dental — Inter Bold -->
-      <a href="dental-prospects/mockups/paramount-dental-web.html" target="_blank" class="project-card reveal reveal-d1 font-inter-bold">
-        <div class="project-preview-wrap" id="preview-9">
+      <!-- Wandernest — Playfair Display -->
+      <a href="wandernest/index.html" target="_blank" class="project-card reveal reveal-d1 font-playfair">
+        <div class="project-preview-wrap" id="preview-4">
           <div class="project-hover">
-            <span class="hover-category">Healthcare</span>
-            <h3 class="hover-title">Paramount Dental</h3>
-            <p class="hover-desc">A cosmetic dental practice redesign that showcases their beautiful transformations with the premium presentation they deserve.</p>
+            <span class="hover-category">Property Management</span>
+            <h3 class="hover-title">Wandernest Stays</h3>
+            <p class="hover-desc">Premium co-hosting platform with luxury positioning and a revenue showcase that builds confidence with property owners.</p>
+            <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Wandernest Stays</span>
+            <span class="project-bar-result">Property owners convert from first visit</span>
+          </div>
+          <span class="project-bar-tag">Property</span>
+        </div>
+      </a>
+
+      <!-- Real Estate Mockup — Playfair Display -->
+      <a href="#" class="project-card reveal font-playfair">
+        <div class="project-preview-wrap gradient-preview realestate">
+          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Mockup</div>
+          <div class="stack-row">
+            <span class="stack-tag">Listings</span>
+            <span class="stack-tag">Virtual Tours</span>
+            <span class="stack-tag">Lead Capture</span>
+          </div>
+          <div class="project-hover">
+            <span class="hover-category">Real Estate</span>
+            <h3 class="hover-title">Luxury Real Estate</h3>
+            <p class="hover-desc">A premium real estate concept with property listings, virtual tour integration, and lead capture designed to convert high-intent buyers.</p>
             <span class="hover-link">View Mockup <span class="arrow">&rarr;</span></span>
           </div>
         </div>
         <div class="project-bar">
           <div class="project-bar-info">
-            <span class="project-bar-name">Paramount Dental</span>
-            <span class="project-bar-result">Premium redesign showcasing smile transformations</span>
+            <span class="project-bar-name">Luxury Real Estate</span>
+            <span class="project-bar-result">Premium listings with built-in lead capture</span>
           </div>
-          <span class="project-bar-tag">Healthcare</span>
+          <span class="project-bar-tag">Real Estate</span>
         </div>
       </a>
 
