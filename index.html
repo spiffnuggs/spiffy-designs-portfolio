@@ -246,6 +246,9 @@
     .project-card.wide { grid-column: span 7; }
     .project-card.narrow { grid-column: span 5; }
     .project-card.half { grid-column: span 6; }
+    .branding-stack { grid-column: span 5; display: flex; flex-direction: column; gap: 18px; }
+    .branding-stack .project-card { grid-column: unset; }
+    .branding-stack .project-preview-wrap { aspect-ratio: 16/8; }
     .project-preview-wrap { position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; background: var(--bg-subtle); }
     .project-preview-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.6s var(--ease-out); }
     .project-card:hover .project-preview-wrap img { transform: scale(1.03); }
@@ -448,6 +451,8 @@
       .project-card.wide { grid-column: span 2 !important; }
       .showcase-strip { grid-column: 1 / -1 !important; }
       .work-section-label { margin-top: 20px; grid-column: 1 / -1 !important; }
+      .branding-stack { grid-column: span 2 !important; }
+      .branding-stack .project-preview-wrap { aspect-ratio: 16/10; }
       .process-grid { grid-template-columns: 1fr 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 36px; }
       .mid-cta-inner { flex-direction: column; text-align: center; padding: 36px 24px; }
@@ -496,6 +501,7 @@
       .work-subtitle { font-size: 0.84rem; }
       .projects-grid { grid-template-columns: 1fr !important; gap: 16px; }
       .project-card { grid-column: span 1 !important; }
+      .branding-stack { grid-column: span 1 !important; }
       .project-hover { display: none; }
       .work-section-label { grid-column: 1 / -1 !important; margin-top: 16px; font-size: 0.56rem; padding: 16px 0 10px; }
       .showcase-strip { grid-column: 1 / -1 !important; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 0; }
@@ -704,6 +710,64 @@
         </div>
       </a>
 
+      <!-- Branding Tools Stack -->
+      <div class="branding-stack">
+        <a href="branding/font-explorer.html" target="_blank" class="project-card reveal font-cormorant">
+          <div class="project-preview-wrap">
+            <img src="screenshots/font-explorer.jpg" alt="Interactive font pairing explorer" loading="lazy">
+            <div class="project-hover">
+              <span class="hover-category">Branding & Identity</span>
+              <h3 class="hover-title">Font Pairing Explorer</h3>
+              <p class="hover-desc">Interactive tool for comparing headline and body font pairings in real time.</p>
+              <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
+            </div>
+          </div>
+          <div class="project-bar">
+            <div class="project-bar-info">
+              <span class="project-bar-name">Font Explorer</span>
+              <span class="project-bar-result">Interactive typography tool</span>
+            </div>
+            <span class="project-bar-tag">Branding</span>
+          </div>
+        </a>
+        <a href="branding/color-palette.html" target="_blank" class="project-card reveal reveal-d1 font-cormorant">
+          <div class="project-preview-wrap">
+            <img src="screenshots/color-palette.jpg" alt="Premium brand palette" loading="lazy">
+            <div class="project-hover">
+              <span class="hover-category">Branding & Identity</span>
+              <h3 class="hover-title">Brand Palette System</h3>
+              <p class="hover-desc">Full color system with multiple palette options and premium dark-mode presentation.</p>
+              <span class="hover-link">Explore Palettes <span class="arrow">&rarr;</span></span>
+            </div>
+          </div>
+          <div class="project-bar">
+            <div class="project-bar-info">
+              <span class="project-bar-name">Brand Palette System</span>
+              <span class="project-bar-result">Premium palette explorer</span>
+            </div>
+            <span class="project-bar-tag">Branding</span>
+          </div>
+        </a>
+        <a href="branding/logo-explorer.html" target="_blank" class="project-card reveal reveal-d2 font-cormorant">
+          <div class="project-preview-wrap">
+            <img src="screenshots/logo-explorer.jpg" alt="Logo and font pairing explorer" loading="lazy">
+            <div class="project-hover">
+              <span class="hover-category">Branding & Identity</span>
+              <h3 class="hover-title">Logo & Font Explorer</h3>
+              <p class="hover-desc">Mix and match logo marks with curated font pairings. Save combos and compare.</p>
+              <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
+            </div>
+          </div>
+          <div class="project-bar">
+            <div class="project-bar-info">
+              <span class="project-bar-name">Logo Explorer</span>
+              <span class="project-bar-result">Logo + typography in one view</span>
+            </div>
+            <span class="project-bar-tag">Branding</span>
+          </div>
+        </a>
+      </div>
+
       <!-- Ignite Legacy Interior Showcase -->
       <div class="showcase-strip reveal">
         <div class="showcase-item">
@@ -800,68 +864,8 @@
         </div>
       </a>
 
-      <!-- ═══ SECTION 2: BRANDING ═══ -->
-      <div class="work-section-label">Branding</div>
-
-      <!-- Font Explorer Tool — Cormorant Garamond -->
-      <a href="branding/font-explorer.html" target="_blank" class="project-card reveal font-cormorant wide">
-        <div class="project-preview-wrap">
-          <img src="screenshots/font-explorer.jpg" alt="Interactive font pairing explorer" loading="lazy">
-          <div class="project-hover">
-            <span class="hover-category">Branding & Identity</span>
-            <h3 class="hover-title">Font Pairing Explorer</h3>
-            <p class="hover-desc">Interactive tool for comparing headline and body font pairings in real time. Clients preview their brand's typography live before committing.</p>
-            <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">Tropic Sip — Font Explorer</span>
-            <span class="project-bar-result">Interactive typography tool — deliverable in every branding package</span>
-          </div>
-          <span class="project-bar-tag">Branding</span>
-        </div>
-      </a>
-
-      <!-- Color Palette Tool — Cormorant Garamond -->
-      <a href="branding/color-palette.html" target="_blank" class="project-card reveal reveal-d1 font-cormorant narrow">
-        <div class="project-preview-wrap">
-          <img src="screenshots/color-palette.jpg" alt="Premium brand palette with gold accents and glass morphism" loading="lazy">
-          <div class="project-hover">
-            <span class="hover-category">Branding & Identity</span>
-            <h3 class="hover-title">Brand Palette System</h3>
-            <p class="hover-desc">Full color system with multiple palette options, glass morphism UI, and premium dark-mode presentation. Clients toggle between options in real time.</p>
-            <span class="hover-link">Explore Palettes <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">Brand Palette System</span>
-            <span class="project-bar-result">Premium palette explorer — deliverable for every brand</span>
-          </div>
-          <span class="project-bar-tag">Branding</span>
-        </div>
-      </a>
-
-      <!-- Logo & Font Explorer — R.B. Kanangra Gardens -->
-      <a href="branding/logo-explorer.html" target="_blank" class="project-card reveal reveal-d2 font-cormorant wide">
-        <div class="project-preview-wrap">
-          <img src="screenshots/logo-explorer.jpg" alt="Interactive logo and font pairing explorer for R.B. Kanangra Gardens" loading="lazy">
-          <div class="project-hover">
-            <span class="hover-category">Branding & Identity</span>
-            <h3 class="hover-title">Logo & Font Explorer</h3>
-            <p class="hover-desc">Mix and match logo marks with curated font pairings in real time. Save combos, toggle styles, and compare against existing branding — all in one interactive tool.</p>
-            <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">R.B. Kanangra Gardens — Logo Explorer</span>
-            <span class="project-bar-result">Interactive brand direction tool — logo + typography in one view</span>
-          </div>
-          <span class="project-bar-tag">Branding</span>
-        </div>
-      </a>
+      <!-- ═══ BRANDING STACK (beside Ignite Legacy) ═══ -->
+      <!-- Moved up into the grid flow - see branding-stack div after Ignite -->
 
       <!-- ═══ SECTION 3: FREE MOCKUPS ═══ -->
       <div class="work-section-label">Free Mockups</div>
