@@ -251,6 +251,8 @@
     .project-card:hover .project-preview-wrap img { transform: scale(1.03); }
     .project-hover { position: absolute; inset: 0; background: var(--overlay); backdrop-filter: blur(6px); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; opacity: 0; transition: opacity 0.35s var(--ease); z-index: 3; }
     .project-card:hover .project-hover { opacity: 1; }
+    .project-card:hover .project-bar { opacity: 0; }
+    .project-bar { transition: opacity 0.35s var(--ease); }
     .hover-category { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
     .hover-title { font-family: var(--script); font-style: italic; font-size: 1.4rem; font-weight: 300; color: var(--sage); margin-bottom: 5px; }
     .hover-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 12px; }
