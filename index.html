@@ -240,15 +240,17 @@
     .work-header { margin-bottom: 44px; }
     .work-header .section-title { margin-bottom: 8px; }
     .work-subtitle { font-size: 0.88rem; color: var(--text-muted); max-width: 440px; line-height: 1.7; }
-    .projects-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; align-items: start; }
     .project-card { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); cursor: pointer; transition: transform 0.5s var(--ease-out), border-color 0.4s, box-shadow 0.4s; display: block; grid-column: span 4; }
     .project-card:hover { transform: translateY(-3px); border-color: var(--border-hover); box-shadow: var(--shadow-hover); }
-    .project-card.wide { grid-column: span 7; }
+    .project-card.wide { grid-column: span 9; }
     .project-card.narrow { grid-column: span 5; }
     .project-card.half { grid-column: span 6; }
-    .branding-stack { grid-column: span 5; display: flex; flex-direction: column; gap: 18px; }
-    .branding-stack .project-card { grid-column: unset; }
-    .branding-stack .project-preview-wrap { aspect-ratio: 16/8; }
+    .project-card.quarter { grid-column: span 3; }
+    .project-card.tall { display: flex; flex-direction: column; }
+    .project-card.tall .project-preview-wrap { flex: 1; aspect-ratio: unset; }
+    .project-card.tall .project-preview-wrap img { transform: scale(1.2); transform-origin: top center; }
+    .project-card.tall:hover .project-preview-wrap img { transform: scale(1.23); transform-origin: top center; }
     .project-preview-wrap { position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; background: var(--bg-subtle); }
     .project-preview-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.6s var(--ease-out); }
     .project-card:hover .project-preview-wrap img { transform: scale(1.03); }
@@ -300,10 +302,10 @@
     .gradient-preview .stack-tag { padding: 3px 9px; background: rgba(255,255,255,0.12); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-size: 0.62rem; font-weight: 600; color: rgba(255,255,255,0.9); }
 
     /* INTERIOR SHOWCASE */
-    .showcase-strip { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 4px 0 8px; }
+    .showcase-strip { grid-column: span 3; display: flex; flex-direction: column; gap: 12px; }
     .showcase-item { position: relative; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); background: var(--bg-card); transition: transform 0.4s var(--ease-out), box-shadow 0.4s; }
     .showcase-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
-    .showcase-item img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; display: block; }
+    .showcase-item img { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; display: block; }
     .showcase-label { padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; }
     .showcase-label span { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
     .showcase-label .showcase-role { color: var(--sage); }
@@ -449,10 +451,10 @@
       .projects-grid { grid-template-columns: 1fr 1fr; }
       .project-card { grid-column: span 1 !important; }
       .project-card.wide { grid-column: span 2 !important; }
-      .showcase-strip { grid-column: 1 / -1 !important; }
+      .project-card.tall { display: block !important; }
+      .project-card.tall .project-preview-wrap { aspect-ratio: 16/10 !important; flex: unset !important; }
+      .showcase-strip { grid-column: 1 / -1 !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; flex-direction: unset !important; }
       .work-section-label { margin-top: 20px; grid-column: 1 / -1 !important; }
-      .branding-stack { grid-column: span 2 !important; }
-      .branding-stack .project-preview-wrap { aspect-ratio: 16/10; }
       .process-grid { grid-template-columns: 1fr 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 36px; }
       .mid-cta-inner { flex-direction: column; text-align: center; padding: 36px 24px; }
@@ -487,6 +489,7 @@
       .trust-bar { padding: 0 20px 28px; }
       .trust-inner { flex-wrap: wrap; gap: 8px; padding: 0; overflow-x: visible; border-top: none; border-bottom: none; justify-content: center; }
       .trust-item { flex-shrink: 0; padding: 7px 14px; border: 1px solid var(--border); border-radius: 100px; background: var(--bg-elevated); }
+      .trust-extra { display: none; }
       .trust-text { font-size: 0.68rem; }
       .trust-bar-secondary { padding: 0 20px; }
       .trust-bar-secondary .trust-inner { padding: 0 0 32px; }
@@ -501,10 +504,11 @@
       .work-subtitle { font-size: 0.84rem; }
       .projects-grid { grid-template-columns: 1fr !important; gap: 16px; }
       .project-card { grid-column: span 1 !important; }
-      .branding-stack { grid-column: span 1 !important; }
+      .project-card.tall { display: block !important; }
+      .project-card.tall .project-preview-wrap { aspect-ratio: 16/10 !important; flex: unset !important; }
       .project-hover { display: none; }
       .work-section-label { grid-column: 1 / -1 !important; margin-top: 16px; font-size: 0.56rem; padding: 16px 0 10px; }
-      .showcase-strip { grid-column: 1 / -1 !important; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 0; }
+      .showcase-strip { grid-column: 1 / -1 !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; flex-direction: unset !important; gap: 6px; padding: 0; }
       .showcase-item { border-radius: var(--radius-sm); }
       .showcase-item img { aspect-ratio: 16/10; }
       .showcase-label { display: none; }
@@ -674,6 +678,8 @@
     <div class="trust-inner">
       <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span class="trust-text">Lightning-fast load times</span></div>
       <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span class="trust-text">100% vibe-coded</span></div>
+      <div class="trust-item trust-extra"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="trust-text">Platforms to polished sites</span></div>
+      <div class="trust-item trust-extra"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg><span class="trust-text">Beautiful on every device</span></div>
       <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="trust-text">No templates. Ever.</span></div>
     </div>
   </div>
@@ -691,7 +697,7 @@
       <div class="work-section-label">Custom Platforms &amp; Apps</div>
 
       <!-- Ignite Legacy — Montserrat -->
-      <a href="https://ignite-legacy-app.vercel.app" target="_blank" class="project-card reveal font-montserrat wide">
+      <a href="https://ignite-legacy-app.vercel.app" target="_blank" class="project-card reveal font-montserrat wide tall">
         <div class="project-preview-wrap">
           <img src="screenshots/ignite-legacy.jpg" alt="Ignite Legacy platform" loading="lazy">
           <div class="project-hover">
@@ -710,64 +716,6 @@
         </div>
       </a>
 
-      <!-- Branding Tools Stack -->
-      <div class="branding-stack">
-        <a href="branding/font-explorer.html" target="_blank" class="project-card reveal font-cormorant">
-          <div class="project-preview-wrap">
-            <img src="screenshots/font-explorer.jpg" alt="Interactive font pairing explorer" loading="lazy">
-            <div class="project-hover">
-              <span class="hover-category">Branding & Identity</span>
-              <h3 class="hover-title">Font Pairing Explorer</h3>
-              <p class="hover-desc">Interactive tool for comparing headline and body font pairings in real time.</p>
-              <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
-            </div>
-          </div>
-          <div class="project-bar">
-            <div class="project-bar-info">
-              <span class="project-bar-name">Font Explorer</span>
-              <span class="project-bar-result">Interactive typography tool</span>
-            </div>
-            <span class="project-bar-tag">Branding</span>
-          </div>
-        </a>
-        <a href="branding/color-palette.html" target="_blank" class="project-card reveal reveal-d1 font-cormorant">
-          <div class="project-preview-wrap">
-            <img src="screenshots/color-palette.jpg" alt="Premium brand palette" loading="lazy">
-            <div class="project-hover">
-              <span class="hover-category">Branding & Identity</span>
-              <h3 class="hover-title">Brand Palette System</h3>
-              <p class="hover-desc">Full color system with multiple palette options and premium dark-mode presentation.</p>
-              <span class="hover-link">Explore Palettes <span class="arrow">&rarr;</span></span>
-            </div>
-          </div>
-          <div class="project-bar">
-            <div class="project-bar-info">
-              <span class="project-bar-name">Brand Palette System</span>
-              <span class="project-bar-result">Premium palette explorer</span>
-            </div>
-            <span class="project-bar-tag">Branding</span>
-          </div>
-        </a>
-        <a href="branding/logo-explorer.html" target="_blank" class="project-card reveal reveal-d2 font-cormorant">
-          <div class="project-preview-wrap">
-            <img src="screenshots/logo-explorer.jpg" alt="Logo and font pairing explorer" loading="lazy">
-            <div class="project-hover">
-              <span class="hover-category">Branding & Identity</span>
-              <h3 class="hover-title">Logo & Font Explorer</h3>
-              <p class="hover-desc">Mix and match logo marks with curated font pairings. Save combos and compare.</p>
-              <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
-            </div>
-          </div>
-          <div class="project-bar">
-            <div class="project-bar-info">
-              <span class="project-bar-name">Logo Explorer</span>
-              <span class="project-bar-result">Logo + typography in one view</span>
-            </div>
-            <span class="project-bar-tag">Branding</span>
-          </div>
-        </a>
-      </div>
-
       <!-- Ignite Legacy Interior Showcase -->
       <div class="showcase-strip reveal">
         <div class="showcase-item">
@@ -785,7 +733,7 @@
       </div>
 
       <!-- Tropic Sip — Open Sans -->
-      <a href="https://tropicsip-nextjs.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-opensans narrow">
+      <a href="https://tropicsip-nextjs.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-opensans half">
         <div class="project-preview-wrap">
           <img src="screenshots/tropic-sip.jpg" alt="Tropic Sip — Bali's premium electrolytes" loading="lazy">
           <div class="project-hover">
@@ -805,7 +753,7 @@
       </a>
 
       <!-- TukTuk Tournament — Bebas Neue -->
-      <a href="https://tuktuktournament.vercel.app" target="_blank" class="project-card reveal font-bebas">
+      <a href="https://tuktuktournament.vercel.app" target="_blank" class="project-card reveal font-bebas half">
         <div class="project-preview-wrap">
           <img src="screenshots/tuktuk.jpg" alt="TukTuk Tournament" loading="lazy">
           <div class="project-hover">
@@ -825,7 +773,7 @@
       </a>
 
       <!-- Co-Pilot — Prompt -->
-      <a href="https://copilotthetravelbrand.com" target="_blank" class="project-card reveal reveal-d1 font-prompt">
+      <a href="https://copilotthetravelbrand.com" target="_blank" class="project-card reveal reveal-d1 font-prompt half">
         <div class="project-preview-wrap">
           <img src="screenshots/copilot.jpg" alt="Co-Pilot Travel Brand" loading="lazy">
           <div class="project-hover">
@@ -844,67 +792,124 @@
         </div>
       </a>
 
-      <!-- Bali Dog Rescue — DM Serif Display -->
-      <a href="bali-dog-rescue/index.html" target="_blank" class="project-card reveal font-dmserif">
+      <!-- Bali Paws Rescue — DM Serif Display -->
+      <a href="https://bali-dog-rescue.vercel.app/" target="_blank" class="project-card reveal font-dmserif half">
         <div class="project-preview-wrap">
-          <img src="screenshots/bali-dog-rescue.jpg" alt="Bali Dog Rescue" loading="lazy">
+          <img src="screenshots/bali-dog-rescue.jpg" alt="Bali Paws Rescue" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">Nonprofit</span>
-            <h3 class="hover-title">Bali Dog Rescue</h3>
+            <h3 class="hover-title">Bali Paws Rescue</h3>
             <p class="hover-desc">Emotional storytelling paired with multiple donation paths. Designed to turn compassion into action.</p>
             <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
           </div>
         </div>
         <div class="project-bar">
           <div class="project-bar-info">
-            <span class="project-bar-name">Bali Dog Rescue</span>
+            <span class="project-bar-name">Bali Paws Rescue</span>
             <span class="project-bar-result">3 donation paths to maximize giving</span>
           </div>
           <span class="project-bar-tag">Nonprofit</span>
         </div>
       </a>
 
-      <!-- ═══ BRANDING STACK (beside Ignite Legacy) ═══ -->
-      <!-- Moved up into the grid flow - see branding-stack div after Ignite -->
+      <!-- ═══ SECTION: BRANDING ═══ -->
+      <div class="work-section-label">Branding</div>
 
-      <!-- ═══ SECTION 3: FREE MOCKUPS ═══ -->
-      <div class="work-section-label">Free Mockups</div>
-
-      <!-- Berber Waves — Cormorant Garamond -->
-      <a href="Adeline/index.html" target="_blank" class="project-card reveal font-cormorant wide">
+      <a href="https://spiffy-designs-portfolio.vercel.app/branding/font-explorer.html" target="_blank" class="project-card reveal font-cormorant">
         <div class="project-preview-wrap">
-          <img src="screenshots/berber-waves.jpg" alt="Berber Waves Morocco" loading="lazy">
+          <img src="screenshots/font-explorer.jpg" alt="Interactive font pairing explorer" loading="lazy">
           <div class="project-hover">
-            <span class="hover-category">Hospitality</span>
-            <h3 class="hover-title">Berber Waves Morocco</h3>
-            <p class="hover-desc">A surf & yoga retreat website with Moroccan-inspired warmth, scroll animations, and a booking flow designed to turn browsers into guests.</p>
-            <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
+            <span class="hover-category">Branding & Identity</span>
+            <h3 class="hover-title">Font Pairing Explorer</h3>
+            <p class="hover-desc">Interactive tool for comparing headline and body font pairings in real time.</p>
+            <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
           </div>
         </div>
         <div class="project-bar">
           <div class="project-bar-info">
-            <span class="project-bar-name">Berber Waves Morocco</span>
-            <span class="project-bar-result">Booking-ready deliverable with scroll animations and Moroccan warmth</span>
+            <span class="project-bar-name">Font Explorer</span>
+            <span class="project-bar-result">Interactive typography tool</span>
           </div>
-          <span class="project-bar-tag">Hospitality</span>
+          <span class="project-bar-tag">Branding</span>
         </div>
       </a>
 
-      <!-- Paramount Dental — Inter Bold -->
-      <a href="dental-prospects/mockups/paramount-dental-web.html" target="_blank" class="project-card reveal reveal-d1 font-inter-bold narrow">
+      <a href="https://spiffy-designs-portfolio.vercel.app/branding/color-palette.html" target="_blank" class="project-card reveal reveal-d1 font-cormorant">
         <div class="project-preview-wrap">
-          <img src="screenshots/paramount-dental.jpg" alt="Paramount Dental" loading="lazy">
+          <img src="screenshots/color-palette.jpg" alt="Premium brand palette" loading="lazy">
+          <div class="project-hover">
+            <span class="hover-category">Branding & Identity</span>
+            <h3 class="hover-title">Brand Palette System</h3>
+            <p class="hover-desc">Full color system with multiple palette options and premium dark-mode presentation.</p>
+            <span class="hover-link">Explore Palettes <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Brand Palette System</span>
+            <span class="project-bar-result">Premium palette explorer</span>
+          </div>
+          <span class="project-bar-tag">Branding</span>
+        </div>
+      </a>
+
+      <a href="https://rb-kanangra-gardens.vercel.app/style-options.html#logos" target="_blank" class="project-card reveal reveal-d2 font-cormorant">
+        <div class="project-preview-wrap">
+          <img src="screenshots/logo-explorer.jpg" alt="Logo and font pairing explorer" loading="lazy">
+          <div class="project-hover">
+            <span class="hover-category">Branding & Identity</span>
+            <h3 class="hover-title">Logo & Font Explorer</h3>
+            <p class="hover-desc">Mix and match logo marks with curated font pairings. Save combos and compare.</p>
+            <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Logo Explorer</span>
+            <span class="project-bar-result">Logo + typography in one view</span>
+          </div>
+          <span class="project-bar-tag">Branding</span>
+        </div>
+      </a>
+
+      <!-- ═══ SECTION: FREE MOCKUPS ═══ -->
+      <div class="work-section-label">Free Mockups</div>
+
+      <!-- Tropic Sip Bottle Builder — Open Sans -->
+      <a href="https://tropicsip-fullsite.vercel.app/bottle-making/" target="_blank" class="project-card reveal font-opensans half">
+        <div class="project-preview-wrap">
+          <img src="screenshots/bottle-maker.jpg" alt="Tropic Sip Bottle Builder" loading="lazy">
+          <div class="project-hover">
+            <span class="hover-category">Interactive Tool</span>
+            <h3 class="hover-title">Bottle Builder</h3>
+            <p class="hover-desc">Custom bottle builder for Tropic Sip — pick bottles, lids, straps, charms, and extras with real-time preview and volume discounts. Prototyped as a mockup, now live on the full site.</p>
+            <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Tropic Sip Bottle Builder</span>
+            <span class="project-bar-result">Mockup → now live on production site</span>
+          </div>
+          <span class="project-bar-tag">E-commerce</span>
+        </div>
+      </a>
+
+      <!-- Eco Dentist — Inter Bold -->
+      <a href="https://spiffy-designs-portfolio.vercel.app/dental-prospects/mockups/eco-dentist-web.html" target="_blank" class="project-card reveal reveal-d1 font-inter-bold half">
+        <div class="project-preview-wrap">
+          <img src="screenshots/eco-dentist.jpg" alt="Eco Dentist" loading="lazy">
           <div class="project-hover">
             <span class="hover-category">Healthcare</span>
-            <h3 class="hover-title">Paramount Dental</h3>
-            <p class="hover-desc">A cosmetic dental practice redesign that showcases their beautiful transformations with the premium presentation they deserve.</p>
+            <h3 class="hover-title">Eco Dentist</h3>
+            <p class="hover-desc">A clean, modern redesign for an eco-focused dental practice — replacing an outdated 2012 site with a fresh, natural aesthetic.</p>
             <span class="hover-link">View Mockup <span class="arrow">&rarr;</span></span>
           </div>
         </div>
         <div class="project-bar">
           <div class="project-bar-info">
-            <span class="project-bar-name">Paramount Dental</span>
-            <span class="project-bar-result">Premium redesign showcasing smile transformations</span>
+            <span class="project-bar-name">Eco Dentist</span>
+            <span class="project-bar-result">Modern eco-focused dental practice redesign</span>
           </div>
           <span class="project-bar-tag">Healthcare</span>
         </div>
@@ -931,7 +936,7 @@
       </a>
 
       <!-- Wandernest — Playfair Display -->
-      <a href="wandernest/index.html" target="_blank" class="project-card reveal reveal-d1 font-playfair">
+      <a href="https://spiffy-designs-portfolio.vercel.app/wandernest/index.html" target="_blank" class="project-card reveal reveal-d1 font-playfair">
         <div class="project-preview-wrap">
           <img src="screenshots/wandernest.jpg" alt="Wandernest Stays" loading="lazy">
           <div class="project-hover">
@@ -950,28 +955,23 @@
         </div>
       </a>
 
-      <!-- Real Estate Mockup — Playfair Display -->
-      <a href="#" class="project-card reveal font-playfair">
-        <div class="project-preview-wrap gradient-preview realestate">
-          <div class="app-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Mockup</div>
-          <div class="stack-row">
-            <span class="stack-tag">Listings</span>
-            <span class="stack-tag">Virtual Tours</span>
-            <span class="stack-tag">Lead Capture</span>
-          </div>
+      <!-- Berber Waves — Cormorant Garamond -->
+      <a href="https://spiffy-designs-portfolio.vercel.app/Adeline/index.html" target="_blank" class="project-card reveal font-cormorant">
+        <div class="project-preview-wrap">
+          <img src="screenshots/berber-waves.jpg" alt="Berber Waves" loading="lazy">
           <div class="project-hover">
-            <span class="hover-category">Real Estate</span>
-            <h3 class="hover-title">Luxury Real Estate</h3>
-            <p class="hover-desc">A premium real estate concept with property listings, virtual tour integration, and lead capture designed to convert high-intent buyers.</p>
-            <span class="hover-link">View Mockup <span class="arrow">&rarr;</span></span>
+            <span class="hover-category">Hair Salon</span>
+            <h3 class="hover-title">Berber Waves</h3>
+            <p class="hover-desc">Elegant salon website with warm earth tones, textured backgrounds, and editorial styling that feels high-end without being cold.</p>
+            <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
           </div>
         </div>
         <div class="project-bar">
           <div class="project-bar-info">
-            <span class="project-bar-name">Luxury Real Estate</span>
-            <span class="project-bar-result">Premium listings with built-in lead capture</span>
+            <span class="project-bar-name">Berber Waves</span>
+            <span class="project-bar-result">Luxury salon presence</span>
           </div>
-          <span class="project-bar-tag">Real Estate</span>
+          <span class="project-bar-tag">Beauty</span>
         </div>
       </a>
 
