@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en" data-style="heritage">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo & Font Explorer — R.B. Kanangra Gardens</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=Josefin+Sans:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+/* ===================================================
+   CSS RESET & BASE
+   =================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ===================================================
+   HERITAGE PLUM PALETTE (Default)
+   =================================================== */
+:root,
+[data-style="heritage"] {
+  --bg: #F4F1ED;
+  --bg-alt: #EBE7E1;
+  --surface: #FFFFFF;
+  --surface-muted: rgba(139, 115, 85, 0.04);
+
+  --text: #2E1A47;
+  --text-secondary: #3D2A5C;
+  --text-muted: #5D536B;
+  --text-ghost: #7A7189;
+
+  --accent: #8B7355;
+  --accent-light: #A8937B;
+  --accent-glow: rgba(139, 115, 85, 0.3);
+  --accent-glow-hover: rgba(139, 115, 85, 0.45);
+  --accent-dim: rgba(139, 115, 85, 0.08);
+
+  --green: #5A7B5E;
+  --green-soft: rgba(90, 123, 94, 0.08);
+  --red-soft: rgba(176, 112, 112, 0.08);
+  --highlight: #B8977A;
+
+  --border: #DDD8D2;
+  --border-hover: rgba(139, 115, 85, 0.4);
+  --divider: #E8E4E0;
+
+  --shadow-sm: 0 2px 8px rgba(46, 26, 71, 0.04);
+  --shadow-md: 0 8px 28px rgba(46, 26, 71, 0.06);
+  --shadow-hover: 0 16px 44px rgba(46, 26, 71, 0.10);
+  --shadow-glow: 0 4px 20px rgba(139, 115, 85, 0.3);
+
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 50px;
+}
+
+/* ===================================================
+   GLOBAL LAYOUT
+   =================================================== */
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+/* ===================================================
+   SECTION LABELS
+   =================================================== */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 400;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.section-heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* ===================================================
+   ANIMATIONS
+   =================================================== */
+@keyframes logoFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================================
+   LOGO GALLERY
+   =================================================== */
+.logo-gallery {
+  display: block;
+  padding-bottom: 80px;
+}
+
+.logo-gallery-intro {
+  text-align: center;
+  padding: 48px 24px 48px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.logo-gallery-intro .section-label {
+  margin-bottom: 12px;
+}
+
+.logo-gallery-intro p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ===================================================
+   LOGO TYPOGRAPHY EXPLORER
+   =================================================== */
+
+/* Style toggles */
+.style-toggles {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 24px;
+  margin-bottom: 32px;
+}
+
+.toggle-pill {
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.toggle-pill:hover {
+  border-color: var(--border-hover);
+}
+
+.toggle-pill.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.toggle-pill i {
+  font-style: italic;
+}
+
+/* Saved combos strip */
+.saved-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px 20px;
+  border-top: 1.5px solid var(--border);
+}
+
+.saved-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.saved-header h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.saved-clear {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.saved-clear:hover {
+  color: #c0392b;
+}
+
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.saved-card {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  position: relative;
+  transition: all 0.3s ease;
+  animation: logoFadeIn 0.35s ease;
+}
+
+.saved-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.saved-card-preview {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 32px 24px;
+  background: var(--bg);
+  min-height: 100px;
+}
+
+.saved-card-preview img,
+.saved-card-preview svg {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  flex-shrink: 0;
+}
+
+.saved-card-text {
+  text-align: left;
+}
+
+.saved-card-name {
+  font-size: 24px;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.saved-card-sub {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 3px;
+}
+
+.saved-card-info {
+  padding: 14px 18px;
+  border-top: 1px solid var(--divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saved-card-fonts {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.saved-card-remove {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.saved-card-remove:hover {
+  color: #c0392b;
+  background: rgba(192, 57, 43, 0.08);
+}
+
+@media (max-width: 640px) {
+  .saved-grid {
+    grid-template-columns: 1fr;
+  }
+  .saved-card-preview {
+    padding: 24px 20px;
+  }
+  .saved-card-name {
+    font-size: 20px;
+  }
+}
+
+/* Live preview */
+.type-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 56px 40px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin: 0 auto 40px;
+  max-width: 760px;
+  min-height: 240px;
+  transition: all 0.3s ease;
+}
+
+.type-preview-mark {
+  flex-shrink: 0;
+  max-width: 120px;
+  max-height: 120px;
+  overflow: hidden;
+}
+
+.type-preview-mark img,
+.type-preview-mark svg {
+  height: 100px;
+  max-height: 100px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+.type-preview-text {
+  text-align: left;
+}
+
+.type-preview-name {
+  font-size: 36px;
+  line-height: 1.1;
+  color: var(--text);
+  transition: font-family 0.01s;
+}
+
+.type-preview-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 4px;
+  transition: font-family 0.01s;
+}
+
+.type-preview-rule {
+  width: 36px;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 1px;
+  margin-top: 10px;
+}
+
+/* Save button */
+.compare-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--surface);
+  background: var(--accent);
+  transition: all 0.25s ease;
+}
+
+.compare-btn:hover {
+  opacity: 0.9;
+  box-shadow: var(--shadow-sm);
+}
+
+.compare-btn.secondary {
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border: 1.5px solid var(--border);
+}
+
+.compare-btn.secondary:hover {
+  border-color: var(--border-hover);
+}
+
+@media (max-width: 640px) {
+  .type-preview {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 32px 24px;
+  }
+  .type-preview-text {
+    text-align: center;
+  }
+  .type-preview-rule {
+    margin: 10px auto 0;
+  }
+  .type-preview-name {
+    font-size: 28px;
+  }
+}
+
+/* ===================================================
+   LOGO CIRCLE SELECTOR + DETAIL
+   =================================================== */
+.logo-circles {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 24px;
+  max-width: 960px;
+  margin: 0 auto 48px;
+}
+
+.logo-circle-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.logo-circle-wrap:hover .logo-circle {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px);
+}
+
+.logo-circle-wrap.active .logo-circle {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+  transform: translateY(-2px);
+}
+
+.logo-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  padding: 6px;
+}
+
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.logo-circle svg {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-circle-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 84px;
+  line-height: 1.25;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logo-circle-wrap.active .logo-circle-label {
+  color: var(--accent);
+}
+
+/* Detail panel */
+.logo-detail {
+  max-width: 760px;
+  margin: 0 auto 56px;
+  padding: 0 24px;
+}
+
+.logo-detail-inner {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  animation: logoFadeIn 0.35s ease;
+}
+
+.logo-detail-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 40px;
+  min-height: 280px;
+  background: var(--bg);
+}
+
+.logo-detail-preview img {
+  max-height: 220px;
+  max-width: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.logo-detail-preview svg {
+  max-height: 200px;
+}
+
+.logo-detail-body {
+  padding: 28px 32px;
+  border-top: 1px solid var(--divider);
+}
+
+.logo-detail-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.logo-detail-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 600px;
+}
+
+.logo-detail-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.logo-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.logo-tag.current {
+  background: rgba(90, 139, 98, 0.1);
+  color: #5A8B62;
+}
+
+.logo-tag.new {
+  background: rgba(107, 63, 160, 0.1);
+  color: #6B3FA0;
+}
+
+@media (max-width: 640px) {
+  .logo-circles {
+    gap: 14px;
+    padding: 0 16px;
+  }
+  .logo-circle {
+    width: 64px;
+    height: 64px;
+  }
+  .logo-circle-label {
+    font-size: 9px;
+    max-width: 68px;
+  }
+  .logo-detail-preview {
+    padding: 36px 20px;
+    min-height: 200px;
+  }
+  .logo-detail-preview img {
+    max-height: 160px;
+  }
+  .logo-detail-body {
+    padding: 20px;
+  }
+  .logo-detail-name {
+    font-size: 19px;
+  }
+  .style-toggles {
+    gap: 6px;
+  }
+  .toggle-pill {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+  .toggle-divider {
+    display: none;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo-gallery">
+  <div class="logo-gallery-intro">
+    <div class="section-label">Logo Explorations</div>
+    <h2 class="section-heading">Finding the Right <em>Mark</em></h2>
+    <p>Click any mark to see it up close. The logo should feel as premium as the gardens Ray builds — 35 years of heritage in one mark.</p>
+  </div>
+
+  <!-- 1. Logo circles — rendered by JS -->
+  <div class="logo-circles" id="logo-circles"></div>
+
+  <div style="text-align:center;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin:-28px 0 20px;">Font Pairings</div>
+
+  <!-- 2. Font pairing circles — rendered by JS -->
+  <div class="logo-circles" id="font-circles"></div>
+
+  <!-- 3. Style toggles -->
+  <div class="style-toggles" id="style-toggles">
+    <button class="toggle-pill" data-toggle="nameUpper" onclick="toggleStyle('nameUpper')">Name Uppercase</button>
+    <button class="toggle-pill" data-toggle="nameItalic" onclick="toggleStyle('nameItalic')">Name <i>Italic</i></button>
+    <button class="toggle-pill active" data-toggle="subUpper" onclick="toggleStyle('subUpper')">Sub Uppercase</button>
+    <button class="toggle-pill" data-toggle="subItalic" onclick="toggleStyle('subItalic')">Sub <i>Italic</i></button>
+    <span class="toggle-divider" style="width:1px;height:20px;background:var(--border);margin:0 4px;"></span>
+    <button class="toggle-pill" id="toggle-current" onclick="toggleCurrent()">Show Current</button>
+  </div>
+
+  <!-- 4. Live preview -->
+  <div class="type-preview" id="type-preview">
+    <div class="type-preview-mark" id="type-preview-mark">
+      <img src="../kanangra-landscapes/new ideas /2.png" alt="Logo mark">
+    </div>
+    <div class="type-preview-text">
+      <div class="type-preview-name" id="type-name">R.B. Kanangra</div>
+      <div class="type-preview-subtitle" id="type-subtitle">Gardens</div>
+      <div class="type-preview-rule"></div>
+    </div>
+  </div>
+
+  <!-- Current branding comparison (hidden by default) -->
+  <div id="current-compare" style="display:none;text-align:center;max-width:760px;margin:-20px auto 32px;padding:20px;border:1.5px dashed var(--border);border-radius:var(--radius-lg);background:var(--bg);">
+    <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;">Current Branding</div>
+    <img src="../kanangra-landscapes/images/logo.png" alt="Current logo" style="max-width:260px;height:auto;display:block;margin:0 auto;">
+  </div>
+
+  <!-- 5. Save button -->
+  <div style="text-align:center;margin-bottom:32px;">
+    <button class="compare-btn" onclick="saveCombo()" id="save-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+      Save This Combo
+    </button>
+  </div>
+
+  <!-- 6. Description -->
+  <div id="combo-description" style="max-width:640px;margin:0 auto 48px;padding:0 24px;"></div>
+
+  <!-- 7. Saved combos — rendered by JS -->
+  <div id="saved-strip"></div>
+
+</div>
+
+<script>
+/* ===================================================
+   IMAGE PATH PREFIX
+   =================================================== */
+const IMG_PREFIX = '../kanangra-landscapes/';
+
+/* ===================================================
+   FONT PAIRINGS (curated combos)
+   =================================================== */
+const fontPairings = [
+  { name: 'Elegant',      nameF: "'Playfair Display', serif",      nameW: 500, subF: "'Inter', sans-serif",           subW: 600, subLs: '5px',
+    desc: 'Playfair Display has refined, high-contrast strokes inspired by European typographic tradition. Paired with Inter for clean, modern balance.' },
+  { name: 'Refined',      nameF: "'Cormorant Garamond', serif",    nameW: 400, subF: "'DM Sans', sans-serif",         subW: 600, subLs: '5px',
+    desc: 'Cormorant Garamond is light, graceful, and literary \u2014 like handwriting that went to finishing school. DM Sans keeps the subtitle grounded and readable.' },
+  { name: 'Organic',      nameF: "'Fraunces', serif",              nameW: 400, subF: "'DM Sans', sans-serif",         subW: 600, subLs: '5px',
+    desc: 'Fraunces has wobbly, hand-drawn curves that feel alive \u2014 organic, not corporate. DM Sans provides quiet contrast so the headline can breathe.' },
+  { name: 'Warm',         nameF: "'Lora', serif",                  nameW: 500, subF: "'Montserrat', sans-serif",      subW: 600, subLs: '5px',
+    desc: 'Lora is a well-balanced serif with soft brushstroke roots \u2014 approachable and warm. Montserrat is geometric and confident, adding structure.' },
+  { name: 'Classic',      nameF: "'Libre Baskerville', serif",     nameW: 400, subF: "'Outfit', sans-serif",          subW: 500, subLs: '5px',
+    desc: 'Libre Baskerville is a web-optimised Baskerville \u2014 timeless, dignified, English garden energy. Outfit is a clean, modern geometric sans.' },
+  { name: 'Editorial',    nameF: "'Crimson Pro', serif",           nameW: 500, subF: "'Inter', sans-serif",           subW: 600, subLs: '5px',
+    desc: 'Crimson Pro is an elegant text serif \u2014 feels like a luxury magazine masthead. Inter keeps the subtitle crisp and contemporary.' },
+  { name: 'Modern',       nameF: "'Montserrat', sans-serif",       nameW: 500, subF: "'Crimson Pro', serif",          subW: 500, subLs: '4px',
+    desc: 'Montserrat is bold, geometric, and urban \u2014 a confident sans-serif headline. Crimson Pro as the subtitle adds a touch of editorial class.' },
+  { name: 'Contemporary', nameF: "'Outfit', sans-serif",           nameW: 400, subF: "'Josefin Sans', sans-serif",    subW: 500, subLs: '6px',
+    desc: 'Outfit is clean and rounded \u2014 friendly without being childish. Josefin Sans adds a touch of vintage Scandinavian geometry to the subtitle.' },
+];
+
+let activePairingIdx = 0;
+let styleToggles = { nameUpper: false, nameItalic: false, subUpper: true, subItalic: false };
+
+function buildFontCircles() {
+  const container = document.getElementById('font-circles');
+  if (!container) return;
+
+  let html = '';
+  for (let i = 0; i < fontPairings.length; i++) {
+    const p = fontPairings[i];
+    const active = i === activePairingIdx ? ' active' : '';
+    var inner = '<div style="text-align:center;line-height:1.15;">'
+      + '<div style="font-family:' + p.nameF + ';font-weight:' + p.nameW + ';font-size:16px;color:#2E1A47;">Rk</div>'
+      + '<div style="font-family:' + p.subF + ';font-weight:' + p.subW + ';font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:#8B7355;margin-top:1px;">gardens</div>'
+      + '</div>';
+    html += '<div class="logo-circle-wrap' + active + '" data-idx="' + i + '" onclick="selectPairing(' + i + ')">'
+      + '<div class="logo-circle" style="padding:4px;display:flex;align-items:center;justify-content:center;">' + inner + '</div>'
+      + '<div class="logo-circle-label">' + p.name + '</div>'
+      + '</div>';
+  }
+  container.innerHTML = html;
+}
+
+function selectPairing(idx) {
+  activePairingIdx = idx;
+  document.querySelectorAll('#font-circles .logo-circle-wrap').forEach((el, i) => {
+    el.classList.toggle('active', i === idx);
+  });
+  updatePreview();
+  renderDetail();
+}
+
+function toggleStyle(key) {
+  styleToggles[key] = !styleToggles[key];
+  document.querySelectorAll('.toggle-pill').forEach(pill => {
+    if (pill.dataset.toggle === key) pill.classList.toggle('active', styleToggles[key]);
+  });
+  updatePreview();
+}
+
+function toggleCurrent() {
+  var box = document.getElementById('current-compare');
+  var btn = document.getElementById('toggle-current');
+  if (!box) return;
+  var showing = box.style.display !== 'none';
+  box.style.display = showing ? 'none' : 'block';
+  if (btn) btn.classList.toggle('active', !showing);
+}
+
+function updatePreview() {
+  const p = fontPairings[activePairingIdx];
+  const nameEl = document.getElementById('type-name');
+  const subEl = document.getElementById('type-subtitle');
+  if (!nameEl || !subEl) return;
+
+  nameEl.style.fontFamily = p.nameF;
+  nameEl.style.fontWeight = p.nameW;
+  nameEl.style.fontStyle = styleToggles.nameItalic ? 'italic' : 'normal';
+  nameEl.style.textTransform = styleToggles.nameUpper ? 'uppercase' : 'none';
+  nameEl.style.letterSpacing = styleToggles.nameUpper ? '2px' : '0';
+
+  subEl.style.fontFamily = p.subF;
+  subEl.style.fontWeight = p.subW;
+  subEl.style.fontStyle = styleToggles.subItalic ? 'italic' : 'normal';
+  subEl.style.textTransform = styleToggles.subUpper ? 'uppercase' : 'none';
+  subEl.style.letterSpacing = styleToggles.subUpper ? p.subLs : '1px';
+}
+
+/* ===================================================
+   LOGO CIRCLE SELECTOR
+   =================================================== */
+const logoData = [
+  {
+    name: 'Current',
+    desc: 'The existing mark \u2014 colourful concentric circles. Served well, but positioned as generic "Landscapes" rather than premium "Gardens."',
+    tags: [['Current','current'],['Raster','']],
+    thumb: '<img src="' + IMG_PREFIX + 'new ideas /current.png" alt="Current mark">',
+    preview: '<img src="' + IMG_PREFIX + 'new ideas /current.png" alt="Current mark">',
+  },
+  {
+    name: 'Lotus Gradient',
+    desc: 'Refined lotus with purple-to-teal gradient strokes. Organic, elegant line work. This is the hero direction \u2014 it says heritage without saying a word.',
+    tags: [['Proposed','new'],['Mark','']],
+    thumb: '<img src="' + IMG_PREFIX + 'new ideas /2.png" alt="Lotus">',
+    preview: '<img src="' + IMG_PREFIX + 'new ideas /2.png" alt="Lotus gradient mark">',
+  },
+  {
+    name: 'Rose Spiral',
+    desc: 'Abstract rose in plum with sage green centre. A single bold mark that works as a standalone icon \u2014 on signage, uniforms, app icons. Compact and confident.',
+    tags: [['Proposed','new'],['Mark','']],
+    thumb: '<img src="' + IMG_PREFIX + 'new ideas /1.png" alt="Rose Spiral">',
+    preview: '<img src="' + IMG_PREFIX + 'new ideas /1.png" alt="Rose spiral mark">',
+  },
+  {
+    name: 'Botanical Leaf',
+    desc: 'Paired leaf paths radiating from a central stem. Three tones \u2014 amethyst, bronze, sage \u2014 representing heritage, craft, and growth. Ultra-lightweight SVG that scales to any size.',
+    tags: [['Proposed','new'],['SVG',''],['Scalable','']],
+    thumb: '<svg viewBox="0 0 30 34" fill="none"><path d="M15 2 L15 32" stroke="#8B7355" stroke-width="1.2"/><path d="M15 6 L5 14 L15 12" stroke="#6B3FA0" stroke-width="0.9" fill="none"/><path d="M15 6 L25 14 L15 12" stroke="#6B3FA0" stroke-width="0.9" fill="none"/><path d="M15 12 L4 22 L15 19" stroke="#8B7355" stroke-width="0.9" fill="none"/><path d="M15 12 L26 22 L15 19" stroke="#8B7355" stroke-width="0.9" fill="none"/><path d="M15 19 L7 28 L15 26" stroke="#5A8B62" stroke-width="0.9" fill="none"/><path d="M15 19 L23 28 L15 26" stroke="#5A8B62" stroke-width="0.9" fill="none"/></svg>',
+    preview: 'svg-botanical-full',
+  },
+  {
+    name: 'Garden Bloom',
+    desc: 'The brushstroke flower grounded by green leaves and grass at the base. More literal, more "gardens." Could work as a hero illustration or brand mascot beyond just a logo mark.',
+    tags: [['New concept','new'],['Illustrative','']],
+    thumb: '<img src="' + IMG_PREFIX + 'new ideas /ChatGPT Image Feb 22, 2026, 07_29_57 PM.png" alt="Garden Bloom">',
+    preview: '<img src="' + IMG_PREFIX + 'new ideas /ChatGPT Image Feb 22, 2026, 07_29_57 PM.png" alt="Garden Bloom with Foliage">',
+  },
+  {
+    name: 'Violet Refined',
+    desc: 'Cleaner, more purple-dominant flower with lime green accents. Tighter strokes, more controlled energy. A more polished take on the painterly direction \u2014 still organic, but feels more "brand."',
+    tags: [['New concept','new'],['Painterly','']],
+    thumb: '<img src="' + IMG_PREFIX + 'new ideas /ChatGPT Image Feb 22, 2026, 07_31_17 PM.png" alt="Violet Bloom Refined">',
+    preview: '<img src="' + IMG_PREFIX + 'new ideas /ChatGPT Image Feb 22, 2026, 07_31_17 PM.png" alt="Violet Bloom Refined">',
+  },
+  {
+    name: 'Rainbow Petal',
+    desc: 'Vibrant multi-colour petal flower with a soft pink centre. Playful and full of life \u2014 every petal a different hue. Says "we work with every colour nature gives us."',
+    tags: [['New concept','new'],['Colourful','']],
+    thumb: '<img src="' + IMG_PREFIX + 'new ideas /rainbow.png" alt="Rainbow Petal">',
+    preview: '<img src="' + IMG_PREFIX + 'new ideas /rainbow.png" alt="Rainbow Petal Flower">',
+  },
+  {
+    name: 'Line Whisper',
+    desc: 'The lightest, most ethereal version. Strokes barely there, like a watercolour memory. Maximum elegance, minimum weight. Would pair beautifully with any of the five style directions.',
+    tags: [['New concept','new'],['Line art',''],['Minimal','']],
+    thumb: '<img src="' + IMG_PREFIX + 'new ideas /ChatGPT Image Feb 22, 2026, 07_36_44 PM.png" alt="Line Bloom Whisper">',
+    preview: '<img src="' + IMG_PREFIX + 'new ideas /ChatGPT Image Feb 22, 2026, 07_36_44 PM.png" alt="Line Bloom Whisper">',
+  },
+];
+
+let activeLogoIdx = 1; // Start on Lotus Gradient
+
+function buildLogoCircles() {
+  const container = document.getElementById('logo-circles');
+  if (!container) return;
+
+  container.innerHTML = logoData.map((logo, i) =>
+    `<div class="logo-circle-wrap${i === activeLogoIdx ? ' active' : ''}" data-idx="${i}" onclick="selectLogo(${i})">
+      <div class="logo-circle">${logo.thumb}</div>
+      <div class="logo-circle-label">${logo.name}</div>
+    </div>`
+  ).join('');
+}
+
+function selectLogo(idx) {
+  activeLogoIdx = idx;
+  const logo = logoData[idx];
+
+  document.querySelectorAll('#logo-circles .logo-circle-wrap').forEach((el, i) =>
+    el.classList.toggle('active', i === idx)
+  );
+
+  // Update the font pairing preview mark
+  const typeMark = document.getElementById('type-preview-mark');
+  if (typeMark) {
+    const hasRealImage = logo.thumb.includes('<img') || logo.thumb.includes('<svg');
+    if (hasRealImage) {
+      typeMark.innerHTML = logo.thumb;
+      typeMark.style.display = '';
+    } else {
+      typeMark.innerHTML = '';
+      typeMark.style.display = 'none';
+    }
+  }
+
+  renderDetail();
+}
+
+function renderDetail() {
+  var logo = logoData[activeLogoIdx];
+  var pairing = fontPairings[activePairingIdx];
+  var el = document.getElementById('combo-description');
+  if (!el) return;
+
+  var nameFont = pairing.nameF.replace(/'/g, '').split(',')[0].trim();
+  var subFont = pairing.subF.replace(/'/g, '').split(',')[0].trim();
+
+  el.innerHTML = '<div style="text-align:center;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Logo: ' + logo.name + '</div>'
+    + '<div style="font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:28px;">' + logo.desc + '</div>'
+    + '<div style="width:48px;height:1.5px;background:var(--border);margin:0 auto 28px;"></div>'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Fonts: ' + nameFont + ' + ' + subFont + '</div>'
+    + '<div style="font-size:15px;color:var(--text-muted);line-height:1.7;">' + pairing.desc + '</div>'
+    + '</div>';
+}
+
+/* ===================================================
+   SAVE / COMPARE COMBOS
+   =================================================== */
+let savedCombos = [];
+let comboIdCounter = 0;
+
+function saveCombo() {
+  const logo = logoData[activeLogoIdx];
+  const pairing = fontPairings[activePairingIdx];
+
+  savedCombos.push({
+    id: ++comboIdCounter,
+    logoIdx: activeLogoIdx,
+    logoName: logo.name,
+    logoThumb: logo.thumb,
+    pairingIdx: activePairingIdx,
+    pairingName: pairing.name,
+    nameF: pairing.nameF,
+    nameW: pairing.nameW,
+    subF: pairing.subF,
+    subW: pairing.subW,
+    subLs: pairing.subLs,
+    nameUpper: styleToggles.nameUpper,
+    nameItalic: styleToggles.nameItalic,
+    subUpper: styleToggles.subUpper,
+    subItalic: styleToggles.subItalic,
+  });
+
+  renderSaved();
+
+  // Brief button feedback
+  const btn = document.getElementById('save-btn');
+  if (btn) {
+    btn.textContent = '\u2713 Saved';
+    btn.style.pointerEvents = 'none';
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg> Save This Combo';
+      btn.style.pointerEvents = '';
+    }, 800);
+  }
+}
+
+function removeSaved(id) {
+  savedCombos = savedCombos.filter(c => c.id !== id);
+  renderSaved();
+}
+
+function clearAllSaved() {
+  savedCombos = [];
+  renderSaved();
+}
+
+function renderSaved() {
+  const strip = document.getElementById('saved-strip');
+  if (!strip) return;
+
+  if (savedCombos.length === 0) {
+    strip.innerHTML = '';
+    return;
+  }
+
+  const cards = savedCombos.map(c => {
+    const nameStyle = `font-family:${c.nameF};font-weight:${c.nameW};${c.nameItalic ? 'font-style:italic;' : ''}${c.nameUpper ? 'text-transform:uppercase;letter-spacing:2px;' : ''}`;
+    const subStyle = `font-family:${c.subF};font-weight:${c.subW};letter-spacing:${c.subUpper ? c.subLs : '1px'};${c.subUpper ? 'text-transform:uppercase;' : 'text-transform:none;'}${c.subItalic ? 'font-style:italic;' : ''}`;
+    const nameFontClean = c.nameF.replace(/'/g, '').split(',')[0].trim();
+    const subFontClean = c.subF.replace(/'/g, '').split(',')[0].trim();
+
+    return `<div class="saved-card">
+      <div class="saved-card-preview">
+        <div style="width:64px;height:64px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">${c.logoThumb}</div>
+        <div class="saved-card-text">
+          <div class="saved-card-name" style="${nameStyle}">R.B. Kanangra</div>
+          <div class="saved-card-sub" style="${subStyle}">Gardens</div>
+        </div>
+      </div>
+      <div class="saved-card-info">
+        <div class="saved-card-fonts">${c.logoName} &middot; ${c.pairingName}<br>${nameFontClean} + ${subFontClean}${c.nameItalic ? ' &middot; Italic' : ''}${c.nameUpper ? ' &middot; Caps' : ''}</div>
+        <button class="saved-card-remove" onclick="removeSaved(${c.id})" title="Remove">&times;</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  strip.innerHTML = `<div class="saved-section">
+    <div class="saved-header">
+      <h3>Saved Combos (${savedCombos.length})</h3>
+      <button class="saved-clear" onclick="clearAllSaved()">Clear All</button>
+    </div>
+    <div class="saved-grid">${cards}</div>
+  </div>`;
+}
+
+// Build on load
+buildFontCircles();
+updatePreview();
+buildLogoCircles();
+selectLogo(activeLogoIdx);
+</script>
+
+</body>
+</html>

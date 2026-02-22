@@ -229,6 +229,8 @@
     .trust-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
     .trust-icon-svg { width: 16px; height: 16px; flex-shrink: 0; }
     .trust-text { font-size: 0.76rem; font-weight: 600; color: var(--text-dim); }
+    .trust-bar-secondary { padding: 0 40px 0; max-width: 1200px; margin: 0 auto 0; }
+    .trust-bar-secondary .trust-inner { border-top: none; border-bottom: none; padding: 0 0 48px; justify-content: center; }
 
     .section-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
     .section-title { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 300; color: var(--text); line-height: 1.2; }
@@ -442,7 +444,8 @@
       .projects-grid { grid-template-columns: 1fr 1fr; }
       .project-card { grid-column: span 1 !important; }
       .project-card.wide { grid-column: span 2 !important; }
-      .work-section-label { margin-top: 20px; }
+      .showcase-strip { grid-column: 1 / -1 !important; }
+      .work-section-label { margin-top: 20px; grid-column: 1 / -1 !important; }
       .process-grid { grid-template-columns: 1fr 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 36px; }
       .mid-cta-inner { flex-direction: column; text-align: center; padding: 36px 24px; }
@@ -473,12 +476,13 @@
       .btn-secondary { justify-content: center; padding: 14px 24px; min-height: 48px; }
       .btn-ghost { justify-content: center; padding: 14px 20px; min-height: 48px; }
 
-      /* Trust bar: horizontal scroll */
-      .trust-bar { padding: 0 20px 36px; }
-      .trust-inner { flex-wrap: nowrap; gap: 20px; padding: 16px 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-      .trust-inner::-webkit-scrollbar { display: none; }
-      .trust-item { flex-shrink: 0; }
-      .trust-text { font-size: 0.72rem; }
+      /* Trust bar: pills */
+      .trust-bar { padding: 0 20px 28px; }
+      .trust-inner { flex-wrap: wrap; gap: 8px; padding: 0; overflow-x: visible; border-top: none; border-bottom: none; justify-content: center; }
+      .trust-item { flex-shrink: 0; padding: 7px 14px; border: 1px solid var(--border); border-radius: 100px; background: var(--bg-elevated); }
+      .trust-text { font-size: 0.68rem; }
+      .trust-bar-secondary { padding: 0 20px; }
+      .trust-bar-secondary .trust-inner { padding: 0 0 32px; }
 
       /* Section headings */
       .section-title { font-size: clamp(1.4rem, 5vw, 1.7rem); }
@@ -488,12 +492,14 @@
       #work { padding: 48px 20px; }
       .work-header { margin-bottom: 28px; }
       .work-subtitle { font-size: 0.84rem; }
-      .projects-grid { grid-template-columns: 1fr; gap: 14px; }
+      .projects-grid { grid-template-columns: 1fr !important; gap: 16px; }
       .project-card { grid-column: span 1 !important; }
       .project-hover { display: none; }
-      .work-section-label { margin-top: 16px; font-size: 0.56rem; padding: 16px 0 10px; }
-      .showcase-strip { grid-template-columns: 1fr; gap: 10px; }
-      .showcase-item img { aspect-ratio: 16/9; }
+      .work-section-label { grid-column: 1 / -1 !important; margin-top: 16px; font-size: 0.56rem; padding: 16px 0 10px; }
+      .showcase-strip { grid-column: 1 / -1 !important; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 0; }
+      .showcase-item { border-radius: var(--radius-sm); }
+      .showcase-item img { aspect-ratio: 16/10; }
+      .showcase-label { display: none; }
       .project-preview-wrap { aspect-ratio: 16/10; }
       .project-bar { padding: 14px 16px; }
       .project-bar-name { font-size: 1.05rem; }
@@ -569,10 +575,13 @@
       .hero-sub { font-size: 0.86rem; line-height: 1.7; }
       .btn-primary { padding: 15px 24px; font-size: 0.78rem; }
       .btn-ghost { padding: 12px 16px; font-size: 0.76rem; }
-      .trust-inner { gap: 16px; }
-      .trust-text { font-size: 0.68rem; }
+      .trust-inner { gap: 6px; }
+      .trust-text { font-size: 0.64rem; }
+      .trust-item { padding: 6px 12px; }
       .project-bar-name { font-size: 0.95rem; }
       .project-bar-result { font-size: 0.6rem; }
+      .showcase-strip { gap: 4px; }
+      .showcase-item { border-radius: 6px; }
       .testimonial-card { min-width: 88vw; padding: 22px 18px; }
       .testimonial-quote { font-size: 0.84rem; line-height: 1.7; }
       .mid-cta-text h3 { font-size: 1.15rem; }
@@ -592,7 +601,10 @@
       .hero h1 { font-size: 1.7rem; }
       .hero-sub { font-size: 0.82rem; }
       #work, .transform-section, .testimonials, #process, #about, #start { padding-left: 16px; padding-right: 16px; }
-      .trust-bar { padding: 0 16px 32px; }
+      .trust-bar { padding: 0 16px 24px; }
+      .trust-bar-secondary { padding: 0 16px; }
+      .trust-item { padding: 5px 10px; }
+      .trust-text { font-size: 0.62rem; }
       .mid-cta { padding: 20px 16px; }
       #contact { padding: 40px 16px 32px; }
       .testimonial-card { min-width: 90vw; }
@@ -654,8 +666,6 @@
     <div class="trust-inner">
       <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span class="trust-text">Lightning-fast load times</span></div>
       <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span class="trust-text">100% vibe-coded</span></div>
-      <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="trust-text">Platforms to polished sites</span></div>
-      <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg><span class="trust-text">Beautiful on every device</span></div>
       <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="trust-text">No templates. Ever.</span></div>
     </div>
   </div>
@@ -826,6 +836,26 @@
           <div class="project-bar-info">
             <span class="project-bar-name">Brand Palette System</span>
             <span class="project-bar-result">Premium palette explorer — deliverable for every brand</span>
+          </div>
+          <span class="project-bar-tag">Branding</span>
+        </div>
+      </a>
+
+      <!-- Logo & Font Explorer — R.B. Kanangra Gardens -->
+      <a href="branding/logo-explorer.html" target="_blank" class="project-card reveal reveal-d2 font-cormorant wide">
+        <div class="project-preview-wrap">
+          <img src="screenshots/logo-explorer.jpg" alt="Interactive logo and font pairing explorer for R.B. Kanangra Gardens" loading="lazy">
+          <div class="project-hover">
+            <span class="hover-category">Branding & Identity</span>
+            <h3 class="hover-title">Logo & Font Explorer</h3>
+            <p class="hover-desc">Mix and match logo marks with curated font pairings in real time. Save combos, toggle styles, and compare against existing branding — all in one interactive tool.</p>
+            <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">R.B. Kanangra Gardens — Logo Explorer</span>
+            <span class="project-bar-result">Interactive brand direction tool — logo + typography in one view</span>
           </div>
           <span class="project-bar-tag">Branding</span>
         </div>
@@ -1053,6 +1083,13 @@
       </div>
     </div>
   </section>
+
+  <div class="trust-bar-secondary reveal">
+    <div class="trust-inner">
+      <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="trust-text">Platforms to polished sites</span></div>
+      <div class="trust-item"><svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg><span class="trust-text">Beautiful on every device</span></div>
+    </div>
+  </div>
 
   <section id="process">
     <div class="process-header reveal">
