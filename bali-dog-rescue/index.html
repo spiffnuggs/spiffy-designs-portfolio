@@ -3,35 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[Rescue Name] — Saving Street Dogs in Bali</title>
-  <meta name="description" content="Help us rescue, rehabilitate, and rehome street dogs in Bali. Every donation saves a life." />
+  <title>Bali Paws Rescue — Saving Senior & Handicapped Street Dogs in Bali</title>
+  <meta name="description" content="Bali Paws Rescue is a registered non-profit foundation saving senior, handicapped, and abandoned street dogs in Bali. 52 dogs fed daily. See how you can help." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet" />
   <style>
     /* ========== RESET & BASE ========== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --sand: #F5F0E8;
-      --sand-dark: #E8E0D0;
-      --warm-white: #FDFBF7;
-      --charcoal: #2C2C2C;
-      --charcoal-light: #4A4A4A;
-      --terra: #C4652A;
-      --terra-dark: #A8531E;
-      --terra-light: #E8915A;
+      --sand: #F0EBE0;
+      --sand-dark: #DDD6C6;
+      --warm-white: #FAF7F0;
+      --charcoal: #0D0D0D;
+      --charcoal-light: #3D3D3D;
+      --terra: #F0C531;
+      --terra-dark: #D4AD20;
+      --terra-light: #F7D96B;
       --olive: #6B7B4C;
       --olive-dark: #556340;
-      --ocean: #3A7C8C;
-      --gold: #D4A853;
-      --gold-light: #F0D490;
-      --rose: #C47A7A;
+      --ocean: #F0C531;
+      --gold: #F0C531;
+      --gold-light: #F7D96B;
+      --gold-deep: #C49000;
+      --rose: #8C7A5A;
       --radius: 12px;
       --radius-lg: 20px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-      --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
-      --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.15);
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -45,939 +46,816 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; line-height: 1.2; }
+    /* Decorative paw prints */
+    .deco-paws {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+    }
+    .deco-paw {
+      position: absolute;
+    }
+    .deco-paw svg { width: 100%; height: 100%; }
+
+    /* Scroll progress bar */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+      z-index: 1000; transition: none;
+    }
+
+    h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; line-height: 1.1; }
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Gold shimmer on buttons */
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .btn-shimmer {
+      background: linear-gradient(110deg, var(--gold) 0%, var(--gold) 30%, #f0d890 50%, var(--gold) 70%, var(--gold) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
     }
 
     /* ========== NAVIGATION ========== */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(253, 251, 247, 0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(250, 247, 240, 0.95);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(0,0,0,0.06);
       transition: var(--transition);
     }
-
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 72px;
-    }
-
+    nav .container { display: flex; justify-content: space-between; align-items: center; height: 72px; }
     .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.4rem;
-      color: var(--charcoal);
-      letter-spacing: -0.02em;
+      display: flex; align-items: center; gap: 0;
     }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--charcoal-light);
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover { color: var(--terra); }
-
+    .nav-logo img { height: 44px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--charcoal-light); transition: var(--transition); }
+    .nav-links a:hover { color: var(--gold-deep); }
     .nav-donate {
-      background: var(--terra);
-      color: white !important;
-      padding: 10px 24px;
-      border-radius: 100px;
-      font-weight: 600 !important;
-      transition: var(--transition);
+      background: var(--terra); color: var(--charcoal) !important; padding: 10px 24px;
+      border-radius: 100px; font-weight: 600 !important; transition: var(--transition);
     }
+    .nav-donate:hover { background: var(--terra-dark) !important; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(240,197,49,0.35); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--charcoal); margin: 6px 0; transition: var(--transition); border-radius: 2px; }
 
-    .nav-donate:hover {
-      background: var(--terra-dark) !important;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(196, 101, 42, 0.3);
-    }
-
-    /* Mobile nav toggle */
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--charcoal);
-      margin: 6px 0;
-      transition: var(--transition);
-      border-radius: 2px;
-    }
-
-    /* ========== HERO ========== */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding-top: 72px;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      /* REPLACE: Add your hero image here */
-      background: linear-gradient(135deg, #D4A853 0%, #C4652A 40%, #6B7B4C 100%);
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.3) 0%,
-        rgba(0,0,0,0.15) 40%,
-        rgba(0,0,0,0.5) 100%
-      );
-    }
-
-    /* When you add a real image, use this class on .hero-bg:
-       background-image: url('images/hero.jpg');
-       and remove the gradient */
-
-    .hero .container {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 60px 24px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.25);
-      padding: 8px 20px;
-      border-radius: 100px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: white;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      color: white;
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
-    }
-
-    .hero p {
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
-      color: rgba(255,255,255,0.9);
-      max-width: 640px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
+    /* ========== BUTTONS ========== */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 16px 36px;
-      border-radius: 100px;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: var(--transition);
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px;
+      border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 1rem;
+      font-weight: 600; border: none; cursor: pointer; transition: var(--transition); text-decoration: none;
     }
+    .btn-primary { background: var(--terra); color: var(--charcoal); }
+    .btn-primary:hover { background: var(--terra-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(240,197,49,0.4); }
+    .btn-dark { background: var(--charcoal); color: white; }
+    .btn-dark:hover { background: #000; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    .btn-outline { background: transparent; color: var(--gold-deep); border: 2px solid var(--gold-deep); }
+    .btn-outline:hover { background: var(--gold); color: var(--charcoal); transform: translateY(-2px); }
+    .btn-ghost { background: rgba(255,255,255,0.12); color: white; border: 2px solid rgba(255,255,255,0.3); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: var(--charcoal); }
+    .btn-gold:hover { background: var(--terra-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(240,197,49,0.4); }
 
-    .btn-primary {
-      background: var(--terra);
-      color: white;
+    /* ========== SECTION SHARED ========== */
+    .section-header { text-align: center; max-width: 700px; margin: 0 auto 72px; }
+    .section-header .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-deep); margin-bottom: 20px; }
+    .section-header h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 20px; letter-spacing: -0.03em; }
+    .section-header p { font-size: 1.1rem; color: var(--charcoal-light); line-height: 1.8; }
+
+    /* ============================================================
+       1. HERO — Floating Card
+       ============================================================ */
+    .hero {
+      position: relative; min-height: 92vh; display: flex;
+      align-items: center; justify-content: center;
+      overflow: hidden; padding: 120px 24px 80px;
     }
-
-    .btn-primary:hover {
-      background: var(--terra-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(196, 101, 42, 0.35);
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0; background: #0D0D0D;
     }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.15);
-      color: white;
-      border: 2px solid rgba(255,255,255,0.4);
-      backdrop-filter: blur(10px);
+    .hero-bg img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: center 46.5%; transform: scale(1.15);
+      opacity: 0.55;
     }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.25);
-      border-color: rgba(255,255,255,0.6);
-      transform: translateY(-2px);
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(13,13,13,0.3);
     }
-
-    .hero-stat {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      margin-top: 60px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,0.15);
+    .hero-card-wrap {
+      position: relative; z-index: 2; width: 100%; max-width: 960px;
     }
-
-    .hero-stat-item {
-      text-align: center;
-    }
-
-    .hero-stat-number {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.4rem;
-      color: var(--gold-light);
-      line-height: 1;
-    }
-
-    .hero-stat-label {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.7);
-      margin-top: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* ========== MISSION ========== */
-    .mission {
-      padding: 120px 0;
-      background: var(--warm-white);
-    }
-
-    .mission-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .mission-image {
-      aspect-ratio: 4/5;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
+    .hero-card {
       position: relative;
-    }
-
-    .mission-image-placeholder {
-      width: 100%;
-      height: 100%;
-      background: var(--sand);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 12px;
-      color: var(--charcoal-light);
-      font-size: 0.9rem;
-    }
-
-    .mission-image-placeholder svg {
-      width: 48px;
-      height: 48px;
-      opacity: 0.4;
-    }
-
-    .mission-content .label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--terra);
-      margin-bottom: 16px;
-    }
-
-    .mission-content h2 {
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-
-    .mission-content p {
-      font-size: 1.05rem;
-      color: var(--charcoal-light);
-      margin-bottom: 20px;
-      line-height: 1.8;
-    }
-
-    .mission-content blockquote {
-      border-left: 3px solid var(--terra);
-      padding-left: 20px;
-      margin: 32px 0;
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.3rem;
-      color: var(--charcoal);
-      line-height: 1.5;
-      font-style: italic;
-    }
-
-    /* ========== IMPACT SECTION ========== */
-    .impact {
-      padding: 120px 0;
-      background: var(--sand);
-    }
-
-    .section-header {
+      background: rgba(250,247,240,0.95);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-radius: var(--radius-lg); padding: 52px 56px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
       text-align: center;
-      max-width: 640px;
-      margin: 0 auto 64px;
+    }
+    .hero-card .eyebrow {
+      font-size: 0.72rem; font-weight: 700; color: var(--gold-deep);
+      letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 20px;
+      display: inline-flex; align-items: center; gap: 16px;
+    }
+    .hero-card .eyebrow::before {
+      content: ''; width: 40px; height: 1px; background: var(--gold-deep);
+    }
+    .hero-card .eyebrow::after {
+      content: ''; width: 40px; height: 1px; background: var(--gold-deep);
+    }
+    .hero-card h1 {
+      font-size: clamp(2rem, 4vw, 3rem); color: var(--charcoal);
+      margin-bottom: 16px; letter-spacing: -0.03em; line-height: 1.1;
+    }
+    .hero-card p {
+      font-size: 1rem; color: var(--charcoal-light); line-height: 1.8;
+      margin-bottom: 32px; max-width: 560px; margin-left: auto; margin-right: auto;
+    }
+    .hero-card .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; justify-content: center; }
+    .hero-stats {
+      display: flex; gap: 48px; justify-content: center;
+      padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .hero-stats .stat-num {
+      font-family: 'DM Serif Display', serif; font-size: 1.8rem;
+      color: var(--gold-deep); line-height: 1;
+    }
+    .hero-stats .stat-label {
+      font-size: 0.68rem; color: var(--charcoal-light);
+      margin-top: 4px; text-transform: uppercase; letter-spacing: 0.08em;
     }
 
-    .section-header .label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--terra);
-      margin-bottom: 16px;
+    /* Dog stickers around card */
+    .sticker {
+      position: absolute; z-index: 3;
+      width: 56px; height: 56px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+      pointer-events: none;
     }
+    .sticker-1 { top: -24px; right: 12%; transform: rotate(12deg); }
+    .sticker-2 { bottom: -24px; left: 10%; transform: rotate(-10deg); }
 
-    .section-header h2 {
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-
-    .section-header p {
-      font-size: 1.05rem;
-      color: var(--charcoal-light);
-      line-height: 1.7;
-    }
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .impact-card {
+    /* ============================================================
+       2. KENNY'S STORY
+       ============================================================ */
+    .kenny {
+      padding: 100px 0;
       background: var(--warm-white);
-      border-radius: var(--radius-lg);
-      padding: 40px 28px;
-      text-align: center;
-      transition: var(--transition);
-      border: 1px solid transparent;
     }
-
-    .impact-card:hover {
-      transform: translateY(-4px);
+    .kenny-top {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center;
+      margin-bottom: 64px;
+    }
+    .kenny-image {
+      position: relative; border-radius: var(--radius-lg); overflow: hidden;
+      aspect-ratio: 3/4;
       box-shadow: var(--shadow-lg);
-      border-color: var(--terra-light);
     }
-
-    .impact-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 1.8rem;
+    .kenny-image img { width: 100%; height: 100%; object-fit: cover; }
+    .kenny-image::after {
+      content: ''; position: absolute; inset: 0;
+      border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius-lg);
     }
-
-    .impact-card:nth-child(1) .impact-icon { background: #FFF0E0; }
-    .impact-card:nth-child(2) .impact-icon { background: #E0F0E8; }
-    .impact-card:nth-child(3) .impact-icon { background: #E8E0F0; }
-    .impact-card:nth-child(4) .impact-icon { background: #F0E0E0; }
-
-    .impact-amount {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      color: var(--terra);
-      margin-bottom: 8px;
+    .kenny-intro .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold-deep); margin-bottom: 20px; display: inline-flex; align-items: center; gap: 16px; }
+    .kenny-intro .label::before { content: ''; width: 40px; height: 1px; background: var(--gold-deep); }
+    .kenny-intro h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 20px; letter-spacing: -0.03em; }
+    .kenny-intro p { font-size: 1rem; color: var(--charcoal-light); margin-bottom: 16px; line-height: 1.85; }
+    .kenny-intro blockquote {
+      border-left: 3px solid var(--gold); padding: 16px 0 16px 24px; margin: 24px 0 28px;
+      font-family: 'Playfair Display', 'DM Serif Display', serif;
+      font-size: 1.15rem; color: var(--charcoal); line-height: 1.5; font-style: italic;
     }
-
-    .impact-desc {
-      font-size: 0.95rem;
-      color: var(--charcoal-light);
-      line-height: 1.6;
+    .kenny-milestones {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
     }
-
-    /* ========== DOGS GALLERY ========== */
-    .gallery {
-      padding: 120px 0;
-      background: var(--warm-white);
+    .milestone {
+      background: white; border-radius: var(--radius-lg); padding: 28px 24px;
+      border: 1px solid rgba(0,0,0,0.05); transition: var(--transition);
     }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    .milestone:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .milestone-icon {
+      width: 48px; height: 48px; border-radius: 12px; display: flex;
+      align-items: center; justify-content: center; font-size: 1.4rem;
+      margin-bottom: 16px; background: rgba(240,197,49,0.12);
     }
+    .milestone h3 { font-size: 1rem; margin-bottom: 8px; line-height: 1.25; }
+    .milestone p { font-size: 0.88rem; color: var(--charcoal-light); line-height: 1.6; margin: 0; }
 
-    .gallery-item {
-      aspect-ratio: 1;
-      border-radius: var(--radius);
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
+    /* Adopt CTA */
+    .adopt-cta {
+      background: var(--sand); text-align: center; padding: 64px 24px;
+      border-top: 1px solid rgba(0,0,0,0.04);
     }
-
-    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-
-    .gallery-placeholder {
-      width: 100%;
-      height: 100%;
-      min-height: 240px;
-      background: var(--sand);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 8px;
-      color: var(--charcoal-light);
-      font-size: 0.85rem;
-      transition: var(--transition);
+    .adopt-cta-inner {
+      max-width: 600px; margin: 0 auto;
     }
-
-    .gallery-placeholder:hover {
-      background: var(--sand-dark);
+    .adopt-cta-icon { font-size: 2.4rem; margin-bottom: 16px; }
+    .adopt-cta h3 {
+      font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 12px; letter-spacing: -0.02em;
     }
-
-    .gallery-placeholder svg {
-      width: 36px;
-      height: 36px;
-      opacity: 0.35;
+    .adopt-cta p {
+      font-size: 1rem; color: var(--charcoal-light); line-height: 1.7;
+      margin-bottom: 28px;
     }
+    .adopt-cta .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-    .gallery-item-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 24px;
-      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-      color: white;
-      opacity: 0;
-      transition: var(--transition);
+    /* ============================================================
+       3. MEET THE DOGS
+       ============================================================ */
+    .dogs { padding: 100px 0; background: var(--warm-white); }
+    .dogs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .dog-card {
+      background: white; border-radius: var(--radius-lg);
+      overflow: hidden; cursor: pointer; transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
     }
+    .dog-card:hover { transform: translateY(-8px); box-shadow: 0 16px 48px rgba(240,197,49,0.15), 0 4px 16px rgba(0,0,0,0.08); border-color: var(--gold); }
+    .dog-photo { aspect-ratio: 1; overflow: hidden; position: relative; background: var(--sand); }
+    .dog-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .dog-card:hover .dog-photo img { transform: scale(1.05); }
+    .dog-photo .photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: var(--charcoal-light); font-size: 0.85rem; }
+    .dog-photo .photo-placeholder svg { width: 36px; height: 36px; opacity: 0.35; }
+    .dog-tag { position: absolute; top: 12px; left: 12px; padding: 4px 12px; border-radius: 100px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .tag-sanctuary { background: rgba(13,13,13,0.85); color: #fff; }
+    .tag-adoptable { background: rgba(240,197,49,0.92); color: #0D0D0D; }
+    .tag-new { background: rgba(240,197,49,0.92); color: #0D0D0D; }
+    .tag-medical { background: rgba(13,13,13,0.85); color: #fff; }
+    .dog-info { padding: 20px 24px 24px; }
+    .dog-info h3 { font-size: 1.2rem; margin-bottom: 4px; }
+    .dog-details { font-size: 0.82rem; color: var(--charcoal-light); margin-bottom: 10px; font-weight: 500; }
+    .dog-snippet { font-size: 0.9rem; color: var(--charcoal-light); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .dog-read-more { display: inline-flex; align-items: center; gap: 4px; margin-top: 10px; font-size: 0.85rem; font-weight: 600; color: var(--gold-deep); }
 
-    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
-
-    .gallery-item-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.2rem;
+    /* ========== DOG MODAL ========== */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      z-index: 200; display: none; align-items: center; justify-content: center;
+      padding: 24px; opacity: 0; transition: opacity 0.3s ease;
     }
-
-    .gallery-item-story {
-      font-size: 0.85rem;
-      opacity: 0.85;
-      margin-top: 4px;
+    .modal-overlay.active { display: flex; opacity: 1; }
+    .modal {
+      background: var(--warm-white); border-radius: var(--radius-lg);
+      max-width: 680px; width: 100%; max-height: 88vh; overflow-y: auto;
+      position: relative; transform: translateY(16px); transition: transform 0.3s ease;
     }
+    .modal-overlay.active .modal { transform: translateY(0); }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; width: 40px; height: 40px;
+      border-radius: 50%; border: none; background: rgba(0,0,0,0.5);
+      color: #fff; font-size: 1.4rem; cursor: pointer; display: flex;
+      align-items: center; justify-content: center; z-index: 10; transition: var(--transition); line-height: 1;
+    }
+    .modal-close:hover { background: rgba(0,0,0,0.7); }
+    .modal-photo { aspect-ratio: 16/10; background: var(--sand); border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden; }
+    .modal-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-body { padding: 32px 36px 40px; }
+    .modal-body h2 { font-size: 1.8rem; margin-bottom: 8px; }
+    .modal-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; font-size: 0.88rem; color: var(--charcoal-light); }
+    .modal-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .modal-meta svg { flex-shrink: 0; }
+    .modal-story { line-height: 1.9; color: var(--charcoal-light); margin-bottom: 28px; }
+    .modal-story p { margin-bottom: 16px; font-size: 1.02rem; }
+    .modal-story p:last-child { margin-bottom: 0; }
+    .modal-story em { color: var(--charcoal); font-style: italic; }
+    .modal-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .modal-actions .btn { padding: 14px 28px; font-size: 0.95rem; }
 
-    /* ========== DONATE SECTION ========== */
-    .donate {
-      padding: 120px 0;
+    /* ============================================================
+       4. THREE WAYS WE SAVE LIVES
+       ============================================================ */
+    .programs { padding: 100px 0; background: var(--sand); }
+    .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .program-card {
+      background: var(--sand); border-radius: var(--radius-lg); padding: 44px 32px;
+      text-align: center; transition: var(--transition); border: 1px solid transparent;
+      position: relative; overflow: hidden; cursor: pointer;
+    }
+    .program-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+    .program-card:nth-child(1)::before { background: var(--gold); }
+    .program-card:nth-child(2)::before { background: var(--charcoal); }
+    .program-card:nth-child(3)::before { background: var(--gold); }
+    .program-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--terra-light); }
+    .program-icon { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 2.2rem; }
+    .program-card:nth-child(1) .program-icon { background: rgba(240,197,49,0.12); }
+    .program-card:nth-child(2) .program-icon { background: rgba(13,13,13,0.06); }
+    .program-card:nth-child(3) .program-icon { background: rgba(240,197,49,0.12); }
+    .program-card h3 { font-size: 1.4rem; margin-bottom: 16px; }
+    .program-card p { font-size: 0.95rem; color: var(--charcoal-light); line-height: 1.7; }
+    .program-tagline { display: none; }
+
+    /* ============================================================
+       5. WHERE YOUR MONEY GOES + EVERY DONATION SAVES A LIFE
+       Combined gorgeous section
+       ============================================================ */
+    .impact-donate {
+      padding: 100px 0;
       background: var(--charcoal);
       color: white;
       position: relative;
       overflow: hidden;
     }
-
-    .donate::before {
-      content: '';
-      position: absolute;
-      top: -200px;
-      right: -200px;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(196, 101, 42, 0.15) 0%, transparent 70%);
+    .impact-donate::before {
+      content: ''; position: absolute; top: -200px; right: -200px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(240,197,49,0.1) 0%, transparent 70%);
     }
-
-    .donate .section-header h2 { color: white; }
-    .donate .section-header p { color: rgba(255,255,255,0.7); }
-    .donate .section-header .label { color: var(--gold); }
-
-    .donate-methods {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      position: relative;
-      z-index: 1;
+    .impact-donate::after {
+      content: ''; position: absolute; bottom: -300px; left: -200px;
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(240,197,49,0.06) 0%, transparent 70%);
     }
+    .impact-donate .section-header h2 { color: white; }
+    .impact-donate .section-header p { color: rgba(255,255,255,0.65); }
+    .impact-donate .section-header .label { color: var(--gold-light); }
 
-    .donate-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg);
-      padding: 40px 32px;
+    /* Center Focus Layout */
+    .focus-layout {
+      display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 24px;
+      align-items: center; position: relative; z-index: 1;
+    }
+    .side-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;
       transition: var(--transition);
     }
+    .side-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+    .side-card .sc-icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .side-card .sc-amount { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold-light); margin-bottom: 6px; }
+    .side-card .sc-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
 
-    .donate-card:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.2);
-      transform: translateY(-4px);
+    .center-card {
+      background: rgba(212,168,83,0.08); border: 2px solid var(--gold);
+      border-radius: 24px; padding: 52px 40px; text-align: center;
+      transition: var(--transition); position: relative;
+      box-shadow: 0 0 80px rgba(240,197,49,0.08), 0 0 160px rgba(240,197,49,0.04);
     }
+    .center-card:hover { transform: translateY(-4px); box-shadow: 0 0 80px rgba(240,197,49,0.15), 0 12px 40px rgba(240,197,49,0.15); }
+    .center-card .popular-tag {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--gold); color: var(--charcoal); font-size: 0.7rem;
+      font-weight: 700; padding: 4px 16px; border-radius: 100px; letter-spacing: 0.06em;
+    }
+    .center-card .cc-icon { font-size: 2.4rem; margin-bottom: 16px; }
+    .center-card .cc-amount {
+      font-family: 'DM Serif Display', serif; font-size: 3rem;
+      color: var(--gold-light); margin-bottom: 4px; line-height: 1;
+    }
+    .center-card .cc-amount small {
+      font-size: 0.4em; font-family: 'Inter', sans-serif; color: rgba(240,197,49,0.5);
+    }
+    .center-card .cc-title { font-size: 1.2rem; color: white; margin-bottom: 12px; }
+    .center-card .cc-desc { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
 
-    .donate-card-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
+    /* Any amount note */
+    .impact-any {
+      text-align: center; margin-top: 48px; position: relative; z-index: 1;
+    }
+    .impact-any p {
+      font-size: 1rem; color: rgba(255,255,255,0.4); line-height: 1.7;
+    }
+    .impact-any p strong { color: rgba(255,255,255,0.7); }
+
+    /* ============================================================
+       6. WAYS TO DONATE
+       ============================================================ */
+    .donate-methods-section {
+      padding: 80px 0;
+      background: var(--sand);
+    }
+    .donate-methods-section .section-header { margin-bottom: 48px; }
+    .wise-intro {
+      max-width: 700px; margin: 0 auto 40px; text-align: center;
+    }
+    .wise-intro p { font-size: 0.95rem; color: var(--charcoal-light); line-height: 1.7; }
+    .wise-tag {
+      display: inline-block; margin-top: 16px; padding: 14px 36px;
+      background: var(--gold); color: var(--charcoal); font-family: 'Inter', monospace;
+      font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px;
+      border-radius: 50px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .wise-tabs {
+      display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;
+      max-width: 700px; margin: 0 auto 32px;
+    }
+    .wise-tab {
+      padding: 10px 20px; border: 1px solid var(--sand-dark); border-radius: 50px;
+      background: var(--warm-white); font-family: 'Inter', sans-serif; font-size: 0.88rem;
+      font-weight: 600; cursor: pointer; transition: var(--transition); color: var(--charcoal-light);
+    }
+    .wise-tab:hover { border-color: var(--charcoal); color: var(--charcoal); }
+    .wise-tab.active { background: var(--gold); color: var(--charcoal); border-color: var(--gold); }
+    .wise-details-wrap {
+      max-width: 700px; margin: 0 auto;
+    }
+    .wise-detail {
+      display: none; background: var(--warm-white); border: 1px solid var(--sand-dark);
+      border-radius: var(--radius-lg); padding: 40px 36px;
+    }
+    .wise-detail.active { display: block; }
+    .wise-detail h3 {
+      font-size: 1.2rem; margin-bottom: 6px; color: var(--charcoal);
+    }
+    .wise-detail .wise-subtitle {
+      font-size: 0.85rem; color: var(--charcoal-light); margin-bottom: 24px;
+    }
+    .wise-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 12px 0; border-bottom: 1px solid var(--sand);
+    }
+    .wise-row:last-child { border-bottom: none; }
+    .wise-label {
+      font-size: 0.82rem; color: var(--charcoal-light); text-transform: uppercase;
+      letter-spacing: 1px; font-weight: 600;
+    }
+    .wise-value {
+      font-size: 0.95rem; color: var(--charcoal); font-weight: 600;
+      font-family: 'Inter', monospace; text-align: right;
+    }
+    .wise-value small {
+      display: block; font-size: 0.78rem; font-weight: 400; color: var(--charcoal-light);
+    }
+    .wise-bank-address {
+      margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--sand);
+      font-size: 0.82rem; color: var(--charcoal-light); line-height: 1.6;
+    }
+    .wise-bank-address strong { color: var(--charcoal); }
+    .donate-whatsapp-card {
+      max-width: 700px; margin: 24px auto 0;
+      background: var(--warm-white); border: 1px solid var(--sand-dark);
+      border-radius: var(--radius-lg); padding: 32px 36px;
+      display: flex; align-items: center; gap: 24px;
+    }
+    .donate-whatsapp-card .wa-icon {
+      width: 52px; height: 52px; border-radius: var(--radius); flex-shrink: 0;
+      background: rgba(37,211,102,0.12); display: flex; align-items: center; justify-content: center;
       font-size: 1.5rem;
     }
-
-    .donate-card:nth-child(1) .donate-card-icon { background: rgba(212, 168, 83, 0.2); }
-    .donate-card:nth-child(2) .donate-card-icon { background: rgba(58, 124, 140, 0.2); }
-    .donate-card:nth-child(3) .donate-card-icon { background: rgba(107, 123, 76, 0.2); }
-
-    .donate-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-      color: white;
+    .donate-whatsapp-card .wa-text { flex: 1; }
+    .donate-whatsapp-card .wa-text h3 { font-size: 1.1rem; margin-bottom: 4px; }
+    .donate-whatsapp-card .wa-text p { font-size: 0.88rem; color: var(--charcoal-light); line-height: 1.6; margin: 0; }
+    .donate-whatsapp-card .btn-whatsapp {
+      background: #25D366; color: white; padding: 12px 24px; border-radius: 50px;
+      font-size: 0.88rem; font-weight: 600; white-space: nowrap; transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
     }
+    .donate-whatsapp-card .btn-whatsapp:hover { background: #1fb855; }
+    .donate-note { text-align: center; margin-top: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .donate-note p { font-size: 0.88rem; color: var(--charcoal-light); line-height: 1.7; }
 
-    .donate-card p {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.7;
-      margin-bottom: 24px;
-    }
-
-    .donate-details {
-      background: rgba(0,0,0,0.2);
-      border-radius: var(--radius);
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-
-    .donate-detail-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .donate-detail-row:last-child { border-bottom: none; }
-
-    .donate-detail-label {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .donate-detail-value {
-      color: rgba(255,255,255,0.9);
-      font-weight: 600;
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 0.88rem;
-    }
-
-    .donate-card .btn {
-      width: 100%;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .donate-card .btn-primary { background: var(--terra); }
-    .donate-card .btn-primary:hover { background: var(--terra-dark); }
-
-    .donate-card .btn-wise { background: var(--ocean); }
-    .donate-card .btn-wise:hover { background: #2E6370; }
-
-    .donate-card .btn-bank { background: var(--olive); }
-    .donate-card .btn-bank:hover { background: var(--olive-dark); }
-
-    /* Quick donate strip */
-    .quick-donate {
-      margin-top: 48px;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .quick-donate p {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.9rem;
-      margin-bottom: 16px;
-    }
-
-    .quick-amounts {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .quick-amount {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 100px;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .quick-amount:hover {
-      background: var(--terra);
-      border-color: var(--terra);
-      transform: translateY(-2px);
-    }
-
-    /* ========== ABOUT / FOUNDER ========== */
-    .about {
-      padding: 120px 0;
-      background: var(--warm-white);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .about-image {
-      aspect-ratio: 3/4;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-
-    .about-content .label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--terra);
-      margin-bottom: 16px;
-    }
-
-    .about-content h2 {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-
-    .about-content p {
-      font-size: 1.05rem;
-      color: var(--charcoal-light);
-      margin-bottom: 20px;
-      line-height: 1.8;
-    }
-
-    /* ========== FAQ ========== */
-    .faq {
-      padding: 120px 0;
-      background: var(--sand);
-    }
-
-    .faq-grid {
-      max-width: 780px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--sand-dark);
-      padding: 28px 0;
-    }
-
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      background: none;
-      border: none;
-      width: 100%;
-      text-align: left;
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--charcoal);
-      padding: 0;
-    }
-
-    .faq-question span {
-      transition: var(--transition);
-      font-size: 1.4rem;
-      color: var(--terra);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-      padding-top: 16px;
-    }
-
-    .faq-item.active .faq-question span {
-      transform: rotate(45deg);
-    }
-
-    .faq-answer p {
-      font-size: 0.95rem;
-      color: var(--charcoal-light);
-      line-height: 1.8;
-    }
-
-    /* ========== CTA BANNER ========== */
-    .cta-banner {
+    /* ============================================================
+       7. HELP US BUILD A FOREVER HOME
+       ============================================================ */
+    .forever-home {
       padding: 100px 0;
-      background: var(--terra);
-      text-align: center;
+      background: var(--warm-white);
       position: relative;
       overflow: hidden;
     }
-
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      top: -100px;
-      left: -100px;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
+    .forever-home::before {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 50%; height: 100%;
+      background: linear-gradient(135deg, transparent 40%, rgba(245,240,232,1) 100%);
+      z-index: 0;
     }
-
-    .cta-banner::after {
-      content: '';
-      position: absolute;
-      bottom: -150px;
-      right: -100px;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.08);
+    .forever-grid {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px;
+      align-items: center; position: relative; z-index: 1;
     }
+    .forever-content .label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-deep); margin-bottom: 16px; }
+    .forever-content h2 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 28px; letter-spacing: -0.03em; }
+    .forever-content p { font-size: 1.05rem; color: var(--charcoal-light); margin-bottom: 20px; line-height: 1.8; }
+    .forever-list { list-style: none; margin: 28px 0; }
+    .forever-list li { padding: 8px 0 8px 28px; position: relative; color: var(--charcoal-light); font-size: 1rem; line-height: 1.7; }
+    .forever-list li::before { content: '\1F43E'; position: absolute; left: 0; font-size: 0.85rem; }
+    .forever-image { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; }
+    .forever-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 90%; }
 
+    /* ============================================================
+       8. FAQ
+       ============================================================ */
+    .faq { padding: 80px 0; background: var(--sand); }
+    .faq-grid { max-width: 780px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--sand-dark); padding: 28px 0; }
+    .faq-question {
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; background: none; border: none; width: 100%; text-align: left;
+      font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600;
+      color: var(--charcoal); padding: 0; gap: 16px;
+    }
+    .faq-question span { transition: var(--transition); font-size: 1.4rem; color: var(--gold-deep); flex-shrink: 0; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+    .faq-item.active .faq-answer { max-height: 400px; padding-top: 16px; }
+    .faq-item.active .faq-question span { transform: rotate(45deg); }
+    .faq-answer p { font-size: 0.95rem; color: var(--charcoal-light); line-height: 1.8; }
+
+    /* ============================================================
+       9. FINAL CTA
+       ============================================================ */
+    .cta-banner {
+      padding: 100px 0; background: var(--charcoal); text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-banner .cta-paws {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    }
+    .cta-banner .cta-paw {
+      position: absolute; opacity: 0.06;
+    }
+    .cta-banner .cta-paw svg { width: 100%; height: 100%; }
+    .cta-paw-1 { width: 280px; height: 280px; top: -60px; left: -40px; transform: rotate(-25deg); }
+    .cta-paw-2 { width: 200px; height: 200px; top: 20%; right: -30px; transform: rotate(15deg); }
+    .cta-paw-3 { width: 340px; height: 340px; bottom: -80px; right: 15%; transform: rotate(-10deg); opacity: 0.04 !important; }
+    .cta-paw-4 { width: 160px; height: 160px; bottom: -20px; left: 10%; transform: rotate(30deg); }
+    .cta-paw-5 { width: 120px; height: 120px; top: 15%; left: 30%; transform: rotate(-40deg); opacity: 0.035 !important; }
     .cta-banner .container { position: relative; z-index: 1; }
-
-    .cta-banner h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      color: white;
-      margin-bottom: 16px;
-    }
-
-    .cta-banner p {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.85);
-      max-width: 540px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
-    }
-
+    .cta-banner h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: white; margin-bottom: 20px; letter-spacing: -0.03em; }
+    .cta-banner p { font-size: 1.15rem; color: rgba(255,255,255,0.6); max-width: 540px; margin: 0 auto 44px; line-height: 1.8; }
     .cta-banner .btn {
-      background: white;
-      color: var(--terra);
+      background: linear-gradient(110deg, var(--gold) 0%, var(--gold) 30%, #f0d890 50%, var(--gold) 70%, var(--gold) 100%);
+      background-size: 200% 100%; animation: shimmer 3s ease-in-out infinite;
+      color: var(--charcoal); font-weight: 700; padding: 18px 48px; font-size: 1.05rem;
     }
+    .cta-banner .btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 30px rgba(240,197,49,0.35); }
 
-    .cta-banner .btn:hover {
-      background: var(--sand);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      padding: 60px 0 40px;
-      background: var(--charcoal);
-      color: rgba(255,255,255,0.5);
-    }
-
+    /* ============================================================
+       10. FOOTER
+       ============================================================ */
+    footer { padding: 60px 0 40px; background: var(--charcoal); color: rgba(255,255,255,0.5); }
     .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 32px;
+      display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 32px;
     }
-
+    .footer-brand { display: flex; flex-direction: column; align-items: center; }
     .footer-brand .nav-logo { color: white; margin-bottom: 12px; }
-
-    .footer-brand p {
-      font-size: 0.9rem;
-      max-width: 320px;
-      line-height: 1.7;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 40px;
-    }
-
-    .footer-links a {
-      font-size: 0.9rem;
-      transition: var(--transition);
-    }
-
+    .footer-brand p { font-size: 0.9rem; max-width: 480px; line-height: 1.7; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 36px; }
+    .footer-links a { font-size: 0.9rem; transition: var(--transition); }
     .footer-links a:hover { color: white; }
-
-    .footer-social {
-      display: flex;
-      gap: 12px;
-    }
-
+    .footer-social { display: flex; gap: 12px; }
     .footer-social a {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      transition: var(--transition);
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.08); display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem; transition: var(--transition);
     }
-
-    .footer-social a:hover {
-      background: var(--terra);
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    .footer-bottom {
-      text-align: center;
-      font-size: 0.82rem;
-    }
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 1024px) {
-      .impact-grid { grid-template-columns: repeat(2, 1fr); }
-      .donate-methods { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: var(--warm-white);
-        padding: 24px;
-        gap: 16px;
-        border-bottom: 1px solid rgba(0,0,0,0.06);
-        box-shadow: var(--shadow-md);
-      }
-      .nav-toggle { display: block; }
-
-      .hero-stat { gap: 24px; flex-wrap: wrap; }
-
-      .mission-grid,
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-
-      .mission-image { aspect-ratio: 16/10; }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-      .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; aspect-ratio: 16/9; }
-
-      .impact-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-      .impact-card { padding: 28px 20px; }
-
-      .footer-top { flex-direction: column; gap: 24px; }
-      .footer-links { flex-direction: column; gap: 12px; }
-    }
-
-    @media (max-width: 480px) {
-      .impact-grid { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item:nth-child(1) { grid-column: span 1; }
-
-      .hero-stat { flex-direction: column; gap: 20px; }
-
-      .quick-amounts { flex-direction: column; align-items: center; }
-      .quick-amount { width: 100%; max-width: 280px; }
-    }
+    .footer-social a:hover { background: var(--gold); color: var(--charcoal); transform: translateY(-2px); }
+    .footer-bottom { text-align: center; font-size: 0.82rem; }
 
     /* ========== ANIMATIONS ========== */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-in { opacity: 0; transform: translateY(32px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* Sticky donate button (mobile) */
     .sticky-donate {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 12px 24px;
-      background: rgba(44, 44, 44, 0.95);
-      backdrop-filter: blur(12px);
-      z-index: 99;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      padding: 12px 24px; background: rgba(13,13,13,0.97);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      z-index: 99; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .sticky-donate .btn { width: 100%; max-width: 400px; justify-content: center; padding: 14px 32px; }
+
+    /* ========== RESPONSIVE ========== */
+
+    /* ── Tablet ── */
+    @media (max-width: 1024px) {
+      .hero-bg img { object-position: center 30% !important; transform: scale(1.25) !important; }
+      .hero-bg::after { background: linear-gradient(to bottom, rgba(13,13,13,0.3) 60%, rgba(13,13,13,0.95) 100%) !important; }
+      .dogs-grid { grid-template-columns: repeat(2, 1fr); }
+      .kenny-top { gap: 40px; }
+      .kenny-milestones { grid-template-columns: repeat(2, 1fr); }
+      .forever-grid { gap: 48px; }
     }
 
-    .sticky-donate .btn {
-      width: 100%;
-      max-width: 400px;
-      justify-content: center;
-      padding: 14px 32px;
-    }
-
+    /* ── Mobile ── */
     @media (max-width: 768px) {
+      /* Base */
+      .container { padding: 0 20px; }
+      .section-header { margin-bottom: 40px; }
+      .section-header h2 { font-size: 1.8rem; }
+      .section-header p { font-size: 0.95rem; }
+
+      /* Nav — full-screen overlay */
+      nav .container { height: 60px; }
+      .nav-logo img { height: 38px; }
+      .nav-links { display: none; }
+      .nav-links.active {
+        display: flex; flex-direction: column; position: fixed; top: 0;
+        left: 0; right: 0; bottom: 0; background: var(--warm-white);
+        padding: 100px 32px 40px; gap: 8px; z-index: 99;
+        align-items: center; justify-content: center;
+      }
+      .nav-links.active li a {
+        font-size: 1.3rem; padding: 12px 0; display: block;
+      }
+      .nav-links.active .nav-donate {
+        margin-top: 12px; padding: 16px 48px; font-size: 1.1rem;
+      }
+      .nav-toggle { display: block; z-index: 101; position: relative; }
+
+      /* 1. Hero — floating card mobile */
+      .hero { min-height: 100vh; min-height: 100svh; padding: 100px 16px 60px; }
+      .hero-bg img {
+        object-position: center 30% !important; transform: scale(1.25) !important;
+      }
+      .hero-bg::after {
+        background: linear-gradient(to bottom, rgba(13,13,13,0.3) 60%, rgba(13,13,13,0.95) 100%) !important;
+      }
+      .hero-card { padding: 32px 24px; }
+      .hero-card h1 { font-size: 1.8rem; }
+      .hero-card p { font-size: 0.92rem; margin-bottom: 24px; }
+      .hero-card .actions { flex-direction: column; gap: 10px; }
+      .hero-card .actions .btn { width: 100%; justify-content: center; }
+      .hero-stats {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+        text-align: center;
+      }
+      .hero-stats > div {
+        padding: 0 8px;
+      }
+      .hero-stats > div:not(:last-child) {
+        border-right: 1px solid rgba(0,0,0,0.08);
+      }
+      .hero-stats .stat-num { font-size: 1.4rem; }
+      .hero-stats .stat-label { font-size: 0.6rem; }
+      .sticker { width: 40px; height: 40px; }
+      .sticker-1 { top: -16px; right: 8%; }
+      .sticker-2 { bottom: -16px; left: 6%; }
+
+      /* 2. Kenny's Story */
+      .kenny { padding: 64px 0; }
+      .kenny-top { grid-template-columns: 1fr; gap: 28px; margin-bottom: 40px; }
+      .kenny-image { aspect-ratio: 4/3; border-radius: 16px; }
+      .kenny-intro { text-align: center; }
+      .kenny-intro .label { justify-content: center; }
+      .kenny-intro h2 { font-size: 1.6rem; margin-bottom: 14px; }
+      .kenny-intro p { font-size: 0.92rem; margin-bottom: 12px; }
+      .kenny-intro blockquote { font-size: 1rem; margin: 20px auto 24px; padding-left: 18px; text-align: left; }
+      .kenny-milestones { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .milestone { padding: 20px 18px; text-align: center; }
+      .milestone-icon { width: 40px; height: 40px; font-size: 1.2rem; margin: 0 auto 12px; }
+      .milestone h3 { font-size: 0.92rem; }
+      .milestone p { font-size: 0.82rem; }
+
+      /* 3. Meet the Dogs — compact 2x3 grid */
+      .dogs { padding: 64px 0; }
+      .dogs-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .dog-card { border-radius: 14px; position: relative; }
+      .dog-photo { aspect-ratio: 1; }
+      .dog-info {
+        padding: 10px 12px 12px; text-align: center;
+      }
+      .dog-info h3 { font-size: 0.95rem; margin-bottom: 2px; }
+      .dog-details { display: none; }
+      .dog-snippet { display: none; }
+      .dog-read-more {
+        display: inline-flex; align-items: center; gap: 4px;
+        font-size: 0.72rem; margin-top: 4px; opacity: 0.7;
+      }
+      .dog-tag { font-size: 0.6rem; padding: 3px 8px; top: 6px; left: 6px; }
+
+      /* Dog Modal — gorgeous full-screen sheet */
+      .modal-overlay {
+        padding: 0; align-items: flex-end;
+      }
+      .modal {
+        margin: 0; border-radius: 24px 24px 0 0; max-height: 95vh;
+        width: 100%; max-width: 100%;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+      }
+      .modal::before {
+        content: ''; display: block; width: 40px; height: 4px;
+        border-radius: 2px; background: rgba(0,0,0,0.15);
+        margin: 12px auto 0;
+      }
+      .modal-photo { aspect-ratio: 4/3; }
+      .modal-body { padding: 24px 24px 40px; }
+      .modal-body h2 { font-size: 1.6rem; margin-bottom: 10px; }
+      .modal-meta { margin-bottom: 20px; }
+      .modal-story p { font-size: 0.95rem; line-height: 1.8; }
+      .modal-actions {
+        flex-direction: column; gap: 10px;
+        position: sticky; bottom: 0;
+        background: var(--warm-white); padding-top: 16px;
+        border-top: 1px solid rgba(0,0,0,0.06);
+      }
+      .modal-actions .btn { width: 100%; justify-content: center; }
+
+      /* 4. Three Ways We Save — bold visual cards */
+      .programs { padding: 64px 0; }
+      .programs-grid { grid-template-columns: 1fr; gap: 14px; max-width: none; }
+      .program-card {
+        padding: 0; text-align: left; cursor: pointer;
+        display: flex; flex-direction: row; align-items: stretch; gap: 0;
+        background: white; border-radius: 20px;
+        border: none;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03);
+        overflow: hidden;
+      }
+      .program-card:active { transform: scale(0.98); }
+      .program-card::before { display: none; }
+      .program-icon {
+        width: 90px; min-height: 90px; margin: 0; flex-shrink: 0;
+        background: linear-gradient(135deg, var(--gold), var(--terra-dark)) !important;
+        border-radius: 0;
+      }
+      .program-icon svg { width: 36px; height: 36px; stroke: white !important; }
+      .program-text { padding: 18px 20px; display: flex; flex-direction: column; justify-content: center; flex: 1; min-width: 0; }
+      .program-card h3 { font-size: 1.1rem; margin-bottom: 3px; line-height: 1.3; }
+      .program-card p { display: none; }
+      .program-tagline {
+        display: block;
+        font-size: 0.78rem; color: var(--charcoal-light); line-height: 1.4;
+      }
+      .program-card::after {
+        content: '›';
+        font-size: 1.8rem; color: var(--gold-deep); font-weight: 300;
+        display: flex; align-items: center; padding-right: 18px; flex-shrink: 0;
+      }
+
+      /* 5. Impact / Donate — Center Focus */
+      .impact-donate { padding: 64px 0; }
+      .focus-layout { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .center-card { order: 1; grid-column: 1 / -1; padding: 40px 28px; }
+      .center-card .cc-amount { font-size: 2.4rem; }
+      .center-card .cc-desc { font-size: 0.9rem; }
+      .side-card { padding: 20px 16px; }
+      .side-card .sc-amount { font-size: 1.3rem; }
+      .impact-any { margin-top: 28px; }
+      .impact-any p { font-size: 0.92rem; }
+
+      /* 6. Ways to Donate / Wise */
+      .donate-methods-section { padding: 64px 0; }
+      .wise-tag { font-size: 1.2rem; padding: 12px 28px; }
+      .wise-tabs { gap: 6px; }
+      .wise-tab { padding: 8px 14px; font-size: 0.8rem; }
+      .wise-detail { padding: 24px 20px; }
+      .wise-detail h3 { font-size: 1.05rem; }
+      .wise-row { flex-direction: column; gap: 2px; padding: 10px 0; }
+      .wise-label { font-size: 0.75rem; }
+      .wise-value { text-align: left; font-size: 0.9rem; }
+      .wise-bank-address { font-size: 0.78rem; }
+      .donate-whatsapp-card {
+        flex-direction: column; text-align: center; padding: 24px 20px; gap: 16px;
+      }
+      .donate-whatsapp-card .btn-whatsapp { width: 100%; justify-content: center; padding: 14px 24px; }
+
+      /* 7. Forever Home */
+      .forever-home { padding: 64px 0; }
+      .forever-grid { grid-template-columns: 1fr; gap: 32px; }
+      .forever-content { text-align: center; }
+      .forever-content h2 { font-size: 1.8rem; }
+      .forever-content p { font-size: 0.95rem; }
+      .forever-list { text-align: left; display: inline-block; }
+      .forever-list li { font-size: 0.92rem; }
+      .forever-image { border-radius: 16px; }
+
+      /* 8. FAQ */
+      .faq { padding: 64px 0; }
+      .faq-question { font-size: 0.98rem; }
+      .faq-answer p { font-size: 0.9rem; }
+      .faq-item { padding: 20px 0; }
+
+      /* 9. Final CTA */
+      .cta-banner { padding: 64px 0; }
+      .cta-banner h2 { font-size: 1.8rem; }
+      .cta-banner p { font-size: 1rem; margin-bottom: 28px; }
+      .cta-banner .btn { width: 100%; max-width: 320px; justify-content: center; }
+
+      /* 10. Footer */
+      footer { padding: 40px 0 100px; }
+      .footer-top { flex-direction: column; align-items: center; text-align: center; gap: 20px; padding-bottom: 24px; margin-bottom: 20px; }
+      .footer-brand { display: flex; flex-direction: column; align-items: center; }
+      .footer-brand .nav-logo { margin-bottom: 12px; }
+      .footer-brand p { font-size: 0.85rem; max-width: 300px; }
+      .footer-links { flex-direction: row; flex-wrap: wrap; gap: 8px 20px; justify-content: center; }
+      .footer-links a { font-size: 0.85rem; }
+      .footer-bottom { font-size: 0.75rem; }
+
+      /* Sticky donate */
       .sticky-donate { display: block; }
-      footer { padding-bottom: 80px; }
+      .sticky-donate .btn { padding: 14px 24px; font-size: 0.95rem; }
+
+      /* Buttons base */
+      .btn { padding: 14px 28px; font-size: 0.92rem; }
+    }
+
+    /* ── Small phones ── */
+    @media (max-width: 380px) {
+      .container { padding: 0 16px; }
+      .hero-card h1 { font-size: 1.5rem; }
+      .hero-card { padding: 28px 20px; }
+      .hero-stats .stat-num { font-size: 1.2rem; }
+      .hero-stats .stat-label { font-size: 0.55rem; }
+      .sticker { width: 34px; height: 34px; }
+      .dogs-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .wise-tab { padding: 7px 12px; font-size: 0.75rem; }
+      .section-header h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -986,14 +864,17 @@
   <!-- ===== NAVIGATION ===== -->
   <nav>
     <div class="container">
-      <!-- TODO: Replace with rescue name -->
-      <a href="#" class="nav-logo">[Rescue Name]</a>
+      <a href="#" class="nav-logo">
+        <img src="logo/logo.png" alt="Bali Paws Rescue" />
+      </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#mission">Our Mission</a></li>
+        <li><a href="#kenny">Kenneth's Story</a></li>
         <li><a href="#dogs">The Dogs</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#programs">How We Help</a></li>
+        <li><a href="#impact">Your Impact</a></li>
+        <li><a href="#forever-home">New Shelter</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#donate" class="nav-donate">Donate Now</a></li>
+        <li><a href="#impact" class="nav-donate">Get Involved</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -1001,383 +882,875 @@
     </div>
   </nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <!-- TODO: Replace with hero image — ideally a wide shot of him with the dogs -->
-    <!-- To add image: set background-image on .hero-bg in CSS above -->
-    <div class="hero-bg"></div>
-    <div class="container">
-      <div class="hero-badge">Bali, Indonesia</div>
-      <!-- TODO: Replace with rescue name -->
-      <h1>Every Street Dog<br>Deserves a Second Chance</h1>
-      <!-- TODO: Update with his actual story hook -->
-      <p>One American in Bali. 50 rescued dogs. Zero giving up. Help us keep them safe, fed, and loved.</p>
-      <div class="hero-actions">
-        <a href="#donate" class="btn btn-primary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          Donate Now
-        </a>
-        <a href="#mission" class="btn btn-secondary">Our Story</a>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-item">
-          <!-- TODO: Update numbers -->
-          <div class="hero-stat-number">50+</div>
-          <div class="hero-stat-label">Dogs Rescued</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="hero-stat-number">X</div>
-          <div class="hero-stat-label">Years in Bali</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="hero-stat-number">XX</div>
-          <div class="hero-stat-label">Dogs Rehomed</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== MISSION ===== -->
-  <section class="mission" id="mission">
-    <div class="container">
-      <div class="mission-grid fade-in">
-        <div class="mission-image">
-          <!-- TODO: Replace placeholder with real photo -->
-          <div class="mission-image-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span>Add photo here</span>
-            <span style="font-size: 0.8rem; opacity: 0.6;">Recommended: Him with the dogs</span>
+  <!-- ============================================================
+       1. HERO — Floating Card
+       ============================================================ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="photos/kenny2.jpeg" alt="Kenneth — founder of Bali Paws Rescue" id="heroImg" />
+    </div>
+    <div class="hero-card-wrap">
+      <span class="sticker sticker-1"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="rgba(240,197,49,0.15)"/></svg></span>
+      <span class="sticker sticker-2"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><circle cx="9" cy="7.5" r="1.8" fill="rgba(240,197,49,0.15)"/><circle cx="15" cy="7.5" r="1.8" fill="rgba(240,197,49,0.15)"/><circle cx="6.5" cy="12" r="1.8" fill="rgba(240,197,49,0.15)"/><circle cx="17.5" cy="12" r="1.8" fill="rgba(240,197,49,0.15)"/><ellipse cx="12" cy="17.5" rx="4" ry="3" fill="rgba(240,197,49,0.15)"/></svg></span>
+      <div class="hero-card">
+        <div class="eyebrow">Bali Paws Rescue</div>
+        <h1>Every Dog Deserves a Fighting Chance</h1>
+        <p>We rescue, rehabilitate, and rehome Bali's forgotten street dogs &mdash; the senior, the handicapped, the ones the world walked past.</p>
+        <div class="actions">
+          <a href="#impact" class="btn btn-shimmer" style="color:var(--charcoal); font-weight:700;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Get Involved
+          </a>
+          <a href="#dogs" class="btn btn-outline">Meet Our Dogs</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">52</div>
+            <div class="stat-label">Dogs Fed Daily</div>
+          </div>
+          <div>
+            <div class="stat-num">52</div>
+            <div class="stat-label">In Our Care</div>
+          </div>
+          <div>
+            <div class="stat-num">$2.50</div>
+            <div class="stat-label">Feeds All / Day</div>
           </div>
         </div>
-        <div class="mission-content">
-          <div class="label">Our Mission</div>
-          <!-- TODO: Update with real story -->
-          <h2>A Home for the Forgotten Dogs of Bali</h2>
-          <p>Bali's streets are full of dogs that have been abandoned, injured, or born into hardship. What started as one man helping one dog has grown into a full-time rescue operation caring for over 50 dogs.</p>
-          <p>Every dog gets veterinary care, proper nutrition, shelter, and — most importantly — love. Our goal is to rehabilitate and rehome as many as we can, while providing a permanent sanctuary for those who need it.</p>
-          <blockquote>
-            <!-- TODO: Add his actual quote -->
-            "I came to Bali for a new life. I didn't expect to find my purpose in the eyes of a street dog."
-          </blockquote>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       2. KENNY'S STORY (with origin woven in)
+       ============================================================ -->
+  <section class="kenny" id="kenny" style="position:relative; overflow:hidden;">
+    <div class="deco-paws">
+      <div class="deco-paw" style="width:180px;height:180px;top:-30px;right:5%;transform:rotate(20deg);opacity:0.04;"><svg viewBox="0 0 24 24" fill="var(--charcoal)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="deco-paw" style="width:120px;height:120px;bottom:10%;left:3%;transform:rotate(-15deg);opacity:0.03;"><svg viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+    </div>
+    <div class="container">
+      <div class="kenny-top">
+        <div class="kenny-image fade-in">
+          <img src="photos/kenny.jpeg" alt="Kenneth holding a rescued puppy in Bali" loading="lazy" />
+        </div>
+        <div class="kenny-intro fade-in">
+          <div class="label">Meet Kenneth</div>
+          <h2>One Hand. 52 Dogs.<br>Every Single Day.</h2>
+          <p>At 18, Kenneth survived a brain aneurysm and a stroke &mdash; and lost the use of one hand. Doctors told him what he couldn't do. He's spent every day since proving them wrong.</p>
+          <p>Now approaching 58, he feeds 52 dogs every morning alone. One good hand, his forearm, and a refusal to quit. No staff. No days off. Every dollar goes directly to the dogs.</p>
+          <blockquote>"They don't care that I only have one hand. They just know I show up."</blockquote>
+          <a href="https://wa.me/628873702095?text=I%20want%20to%20help%20Bali%20Paws%20Rescue" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Support Kenneth's Mission
+          </a>
+        </div>
+      </div>
+
+      <div class="kenny-milestones">
+        <div class="milestone fade-in">
+          <div class="milestone-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4 2.5 5.5S9 17 9 19h6c0-2 .5-3 1.5-4.5S19 11.5 19 9a7 7 0 0 0-7-7z"/><line x1="9" y1="19" x2="9" y2="22"/><line x1="15" y1="19" x2="15" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/></svg></div>
+          <h3>Survived the Impossible</h3>
+          <p>Brain aneurysm and stroke at 18. Lost the use of one hand. Never let it stop him.</p>
+        </div>
+        <div class="milestone fade-in">
+          <div class="milestone-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg></div>
+          <h3>First Rescue, 2019</h3>
+          <p>A handicapped dog nobody wanted. He built it a cart. The moment it rolled through the yard &mdash; everything changed.</p>
+        </div>
+        <div class="milestone fade-in">
+          <div class="milestone-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M6 8H5a4 4 0 0 0 0 8h1"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="9" y1="8" x2="9" y2="16"/><line x1="15" y1="8" x2="15" y2="16"/></svg></div>
+          <h3>57 Shelter, 40 Street</h3>
+          <p>Every morning, alone. Hauls food, cleans kennels, treats wounds. One arm. No excuses. No days off.</p>
+        </div>
+        <div class="milestone fade-in">
+          <div class="milestone-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h3>The Ones Nobody Wants</h3>
+          <p>Senior, handicapped, blind, broken. Custom wheelchairs for paralyzed dogs. He takes the hardest cases first.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== YOUR IMPACT ===== -->
-  <section class="impact" id="impact">
+
+  <!-- ============================================================
+       3. MEET THE DOGS
+       ============================================================ -->
+  <section class="dogs" id="dogs" style="position:relative; overflow:hidden;">
+    <div class="deco-paws">
+      <div class="deco-paw" style="width:220px;height:220px;top:5%;right:-40px;transform:rotate(35deg);opacity:0.03;"><svg viewBox="0 0 24 24" fill="var(--charcoal)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="deco-paw" style="width:150px;height:150px;bottom:8%;left:-20px;transform:rotate(-22deg);opacity:0.025;"><svg viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="deco-paw" style="width:100px;height:100px;top:45%;left:8%;transform:rotate(50deg);opacity:0.02;"><svg viewBox="0 0 24 24" fill="var(--charcoal)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+    </div>
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="label">Meet the Family</div>
+        <h2>52 Dogs. 52 Second Chances.</h2>
+        <p>Click on any dog to read their full story. Every one of them survived something &mdash; and every one of them is proof that love wins.</p>
+      </div>
+      <div class="dogs-grid">
+
+        <!-- TEDDY -->
+        <div class="dog-card fade-in" onclick="openModal('teddy')">
+          <div class="dog-photo">
+            <img src="photos/tan-dog.jpg" alt="Teddy" loading="lazy">
+            <span class="dog-tag tag-sanctuary">Sanctuary</span>
+          </div>
+          <div class="dog-info">
+            <h3>Teddy</h3>
+            <div class="dog-details">Adult &bull; Male &bull; Sanctuary Resident</div>
+            <div class="dog-snippet">Teddy lost his eye to abuse. Someone hit him so many times his lens detached. But his spirit? Completely unbreakable.</div>
+            <span class="dog-read-more">Read Teddy's story &rarr;</span>
+          </div>
+        </div>
+
+        <!-- INDY -->
+        <div class="dog-card fade-in" onclick="openModal('indy')">
+          <div class="dog-photo">
+            <img src="photos/church-dog.jpg" alt="Indiana (Indy) at the vet" loading="lazy">
+            <span class="dog-tag tag-medical">Under Medical Care</span>
+          </div>
+          <div class="dog-info">
+            <h3>Indiana (Indy)</h3>
+            <div class="dog-details">Adult &bull; Broken Back &bull; Recovering</div>
+            <div class="dog-snippet">Hit by a car and left to drag himself by his front paws for days. Nobody helped. Now he's getting a wheelchair.</div>
+            <span class="dog-read-more">Read Indy's story &rarr;</span>
+          </div>
+        </div>
+
+        <!-- PIA -->
+        <div class="dog-card fade-in" onclick="openModal('pia')">
+          <div class="dog-photo">
+            <img src="photos/benny.jpg" alt="Pia" loading="lazy">
+            <span class="dog-tag tag-adoptable">Adoptable</span>
+          </div>
+          <div class="dog-info">
+            <h3>Pia</h3>
+            <div class="dog-details">Puppy &bull; Female &bull; Brindle</div>
+            <div class="dog-snippet">Dumped with her sisters Tia and Lia. A friend found the three puppies and called Ken &mdash; he never says no.</div>
+            <span class="dog-read-more">Read Pia's story &rarr;</span>
+          </div>
+        </div>
+
+        <!-- TIA -->
+        <div class="dog-card fade-in" onclick="openModal('tia')">
+          <div class="dog-photo">
+            <img src="photos/eddie.jpg" alt="Tia" loading="lazy">
+            <span class="dog-tag tag-adoptable">Adoptable</span>
+          </div>
+          <div class="dog-info">
+            <h3>Tia</h3>
+            <div class="dog-details">Puppy &bull; Female &bull; Brindle</div>
+            <div class="dog-snippet">One of three sisters dumped and abandoned. The gentle soul of the trio &mdash; where Pia leads, Tia follows.</div>
+            <span class="dog-read-more">Read Tia's story &rarr;</span>
+          </div>
+        </div>
+
+        <!-- MITSY -->
+        <div class="dog-card fade-in" onclick="openModal('mitsy')">
+          <div class="dog-photo">
+            <img src="photos/elder.jpg" alt="Mitsy" loading="lazy">
+            <span class="dog-tag tag-sanctuary">Sanctuary</span>
+          </div>
+          <div class="dog-info">
+            <h3>Mitsy</h3>
+            <div class="dog-details">14 Years Old &bull; 95% Blind &bull; Sanctuary</div>
+            <div class="dog-snippet">Found starving and alone in a warung. She barked at Ken as he walked by &mdash; and he couldn't walk away.</div>
+            <span class="dog-read-more">Read Mitsy's story &rarr;</span>
+          </div>
+        </div>
+
+        <!-- SUGAR -->
+        <div class="dog-card fade-in" onclick="openModal('sugar')">
+          <div class="dog-photo">
+            <img src="photos/sugar2.jpg" alt="Sugar — three-legged sanctuary dog" loading="lazy">
+            <span class="dog-tag tag-sanctuary">Sanctuary</span>
+          </div>
+          <div class="dog-info">
+            <h3>Sugar</h3>
+            <div class="dog-details">Male &bull; Amputee &bull; Sanctuary Resident</div>
+            <div class="dog-snippet">Hit by a motorbike and left screaming on the street. Lost a leg but never lost his spirit.</div>
+            <span class="dog-read-more">Read Sugar's story &rarr;</span>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- Adopt CTA -->
+      <div class="adopt-cta-inner fade-in" style="margin-top: 64px; text-align: center;">
+        <div class="adopt-cta-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="1.8"/><circle cx="15" cy="7.5" r="1.8"/><circle cx="6.5" cy="12" r="1.8"/><circle cx="17.5" cy="12" r="1.8"/><ellipse cx="12" cy="17.5" rx="4" ry="3"/></svg></div>
+        <h3 style="font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 12px;">These 6 Are Just the Beginning</h3>
+        <p style="font-size: 1rem; color: var(--charcoal-light); line-height: 1.7; max-width: 520px; margin: 0 auto 28px;">We have <strong>50+ dogs</strong> at the shelter waiting to meet you. Big ones, tiny ones, goofy ones, calm ones &mdash; your pawfect match is here. Come visit or message us to find them.</p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://wa.me/628873702095?text=I'm%20interested%20in%20adopting%20a%20dog!" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            Message Us About Adopting
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===== DOG MODALS ===== -->
+
+  <!-- TEDDY MODAL -->
+  <div class="modal-overlay" id="modal-teddy" onclick="closeModal(event,'teddy')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(event,'teddy')">&times;</button>
+      <div class="modal-photo"><img src="photos/tan-dog.jpg" alt="Teddy" loading="lazy"></div>
+      <div class="modal-body">
+        <h2>Teddy</h2>
+        <div class="modal-meta">
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Sanctuary Resident</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7.5" r="1.5"/><circle cx="15" cy="7.5" r="1.5"/><circle cx="6.5" cy="12" r="1.5"/><circle cx="17.5" cy="12" r="1.5"/><ellipse cx="12" cy="17.5" rx="3.5" ry="2.5"/></svg> Adult Male</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg> Ongoing Care</span>
+        </div>
+        <div class="modal-story">
+          <p>Teddy came to us missing part of his eye. The lens had detached &mdash; not from disease, not from an accident &mdash; but from being hit on the back of the head too many times by someone who was supposed to care for him.</p>
+          <p>When he arrived, he was scared of hands. Flinched at sudden movements. Wouldn't make eye contact with his one remaining good eye.</p>
+          <p>That was then.</p>
+          <p>Today, Teddy is one of the most affectionate dogs in our sanctuary. He greets every visitor with a full-body wiggle. He sleeps on soft blankets. He eats warm food. And he will never, ever be hit again.</p>
+          <p>Part of his eye had to be surgically removed. He'll need ongoing veterinary care for the rest of his life. But what Teddy gives back in love &mdash; in trust, after everything that was done to him &mdash; is more than we could ever measure.</p>
+        </div>
+        <div class="modal-actions">
+          <a href="#impact" class="btn btn-primary" onclick="closeModal(event,'teddy')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Sponsor Teddy
+          </a>
+          <a href="https://wa.me/628873702095?text=About Teddy" class="btn btn-outline">Ask About Teddy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDY MODAL -->
+  <div class="modal-overlay" id="modal-indy" onclick="closeModal(event,'indy')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(event,'indy')">&times;</button>
+      <div class="modal-photo"><img src="photos/church-dog.jpg" alt="Indiana (Indy)" loading="lazy"></div>
+      <div class="modal-body">
+        <h2>Indiana (Indy)</h2>
+        <div class="modal-meta">
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg> Under Medical Care</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7.5" r="1.5"/><circle cx="15" cy="7.5" r="1.5"/><circle cx="6.5" cy="12" r="1.5"/><circle cx="17.5" cy="12" r="1.5"/><ellipse cx="12" cy="17.5" rx="3.5" ry="2.5"/></svg> Broken Back</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Condition Stable</span>
+        </div>
+        <div class="modal-story">
+          <p>Indy was hit by a car. It broke his back. And then nobody helped him.</p>
+          <p>For days, he dragged himself by his front paws. His back legs wouldn't work. He pulled his body across the ground, leaving a trail of blood behind him. Flies were eating his open wounds. People walked past. Cars drove past. Nobody stopped.</p>
+          <p>A couple found him and couldn't look away. They brought him to us, and then went further &mdash; fundraising over $1,000 so far to cover his medical bills. Strangers who became angels.</p>
+          <p>Today, Indy is stable. He's at the vet. He's being rehabilitated. And we're building him a wheelchair so he can move again &mdash; not by dragging himself through the dirt, but rolling through the yard with his head up and his tail going.</p>
+          <p>This is what Bali Paws Rescue does. The dogs nobody else will touch. The ones with broken backs and blood on the pavement. We pick them up. We put them back together. And we never, ever look the other way.</p>
+        </div>
+        <div class="modal-actions">
+          <a href="#impact" class="btn btn-primary" onclick="closeModal(event,'indy')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Help With Indy's Care
+          </a>
+          <a href="https://wa.me/628873702095?text=I'd%20like%20updates%20on%20Indy" class="btn btn-outline">Get Updates on Indy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIA MODAL -->
+  <div class="modal-overlay" id="modal-pia" onclick="closeModal(event,'pia')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(event,'pia')">&times;</button>
+      <div class="modal-photo"><img src="photos/benny.jpg" alt="Pia" loading="lazy"></div>
+      <div class="modal-body">
+        <h2>Pia</h2>
+        <div class="modal-meta">
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Adoptable</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7.5" r="1.5"/><circle cx="15" cy="7.5" r="1.5"/><circle cx="6.5" cy="12" r="1.5"/><circle cx="17.5" cy="12" r="1.5"/><ellipse cx="12" cy="17.5" rx="3.5" ry="2.5"/></svg> Puppy &bull; Female &bull; Brindle</span>
+        </div>
+        <div class="modal-story">
+          <p>Pia was one of three sisters &mdash; Pia, Tia, and Lia &mdash; found dumped and abandoned. A friend discovered the tiny puppies and reached out to Ken for help. And Ken? He never refuses puppies or handicapped dogs. That's just who he is.</p>
+          <p>So he took all three. Pia is the bold one &mdash; first to investigate a new toy, first to greet you at the gate, first to steal her sister's food when she thinks nobody's watching. A total character with a personality bigger than she is.</p>
+          <p>Pia is healthy, vaccinated, and absolutely ready for her forever home. She'd do best with another dog for company &mdash; ideally Tia, but we understand if you can only take one.</p>
+        </div>
+        <div class="modal-actions">
+          <a href="https://wa.me/628873702095?text=Adopting Pia" class="btn btn-primary">Inquire About Adoption</a>
+          <a href="#impact" class="btn btn-outline" onclick="closeModal(event,'pia')">Sponsor Pia</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIA MODAL -->
+  <div class="modal-overlay" id="modal-tia" onclick="closeModal(event,'tia')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(event,'tia')">&times;</button>
+      <div class="modal-photo"><img src="photos/eddie.jpg" alt="Tia" loading="lazy"></div>
+      <div class="modal-body">
+        <h2>Tia</h2>
+        <div class="modal-meta">
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Adoptable</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7.5" r="1.5"/><circle cx="15" cy="7.5" r="1.5"/><circle cx="6.5" cy="12" r="1.5"/><circle cx="17.5" cy="12" r="1.5"/><ellipse cx="12" cy="17.5" rx="3.5" ry="2.5"/></svg> Puppy &bull; Female &bull; Brindle</span>
+        </div>
+        <div class="modal-story">
+          <p>Tia, Pia, and Lia were dumped together &mdash; three tiny sisters, abandoned and left to fend for themselves. When a friend found them, they called Ken. He never says no to puppies, and he wasn't about to start.</p>
+          <p>Tia is the gentle one. Where Pia charges ahead, Tia hangs back and watches first. Then, once she decides you're safe, she melts into your lap like she's always belonged there. She sleeps curled up against Pia every night &mdash; the quiet soul of the trio.</p>
+          <p>Tia is healthy, vaccinated, and ready for a calm, loving forever home. Bonus points if Pia can come too &mdash; these two are something special together.</p>
+        </div>
+        <div class="modal-actions">
+          <a href="https://wa.me/628873702095?text=Adopting Tia" class="btn btn-primary">Inquire About Adoption</a>
+          <a href="#impact" class="btn btn-outline" onclick="closeModal(event,'tia')">Sponsor Tia</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MITSY MODAL -->
+  <div class="modal-overlay" id="modal-mitsy" onclick="closeModal(event,'mitsy')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(event,'mitsy')">&times;</button>
+      <div class="modal-photo"><img src="photos/elder.jpg" alt="Mitsy" loading="lazy"></div>
+      <div class="modal-body">
+        <h2>Mitsy</h2>
+        <div class="modal-meta">
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Sanctuary</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7.5" r="1.5"/><circle cx="15" cy="7.5" r="1.5"/><circle cx="6.5" cy="12" r="1.5"/><circle cx="17.5" cy="12" r="1.5"/><ellipse cx="12" cy="17.5" rx="3.5" ry="2.5"/></svg> 14 Years Old</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> 95% Blind</span>
+        </div>
+        <div class="modal-story">
+          <p>Mitsy was hiding in a warung, starving and scared, with no one knowing where she came from. One day, Ken was walking by and she started barking at him. Not aggressive &mdash; more like she was calling out. Like she knew he was the one who would help.</p>
+          <p>He took her home that day. She turned out to be a wonderful dog &mdash; gentle, grateful, full of quiet love.</p>
+          <p>Now at 14 years old and 95% blind, Mitsy can only tell the difference between light and dark. The world is mostly shadows now. But every single morning, when the sun comes through the shelter and hits that warm patch on the floor, Mitsy finds it. Lies down right in it. And that tail starts going.</p>
+          <p>This is what our sanctuary program is for. Not every dog gets adopted. Not every dog gets a fairy-tale ending. But every dog deserves to feel the sun on their face, a full belly, and gentle hands. That's what we give Mitsy. Every day.</p>
+        </div>
+        <div class="modal-actions">
+          <a href="#impact" class="btn btn-primary" onclick="closeModal(event,'mitsy')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Support Mitsy
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUGAR MODAL -->
+  <div class="modal-overlay" id="modal-sugar" onclick="closeModal(event,'sugar')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(event,'sugar')">&times;</button>
+      <div class="modal-photo">
+        <img src="photos/sugar2.jpg" alt="Sugar" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="modal-body">
+        <h2>Sugar</h2>
+        <div class="modal-meta">
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Sanctuary</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7.5" r="1.5"/><circle cx="15" cy="7.5" r="1.5"/><circle cx="6.5" cy="12" r="1.5"/><circle cx="17.5" cy="12" r="1.5"/><ellipse cx="12" cy="17.5" rx="3.5" ry="2.5"/></svg> Male &bull; Amputee</span>
+        </div>
+        <div class="modal-story">
+          <p>In November 2023, Sugar was hit by a motorbike and thrown onto the street. A local street feeder found him screaming in pain and rushed him to the vet.</p>
+          <p>Ken knew right away &mdash; this dog was handicapped. And his response? &ldquo;Of course I'll take him.&rdquo; That's just how Ken operates. The harder the case, the faster he says yes.</p>
+          <p>By 2024, Sugar's injured leg was dragging and causing him constant pain. The decision was made to amputate &mdash; and it was the best thing that ever happened to him. Freed from that damaged leg, Sugar came alive.</p>
+          <p>Today, Sugar is doing great. Three legs, zero complaints. He runs, he plays, he greets every visitor like they're the most important person in the world. He doesn't know he's supposed to be limited. Nobody told him, and nobody plans to.</p>
+        </div>
+        <div class="modal-actions">
+          <a href="#impact" class="btn btn-primary" onclick="closeModal(event,'sugar')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Support Sugar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cinematic photo break -->
+
+  <!-- ============================================================
+       4. THREE WAYS WE SAVE LIVES
+       ============================================================ -->
+  <section class="programs" id="programs" style="position:relative; overflow:hidden;">
+    <div class="deco-paws">
+      <div class="deco-paw" style="width:200px;height:200px;top:-40px;left:8%;transform:rotate(-18deg);opacity:0.035;"><svg viewBox="0 0 24 24" fill="var(--charcoal)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="deco-paw" style="width:140px;height:140px;bottom:-20px;right:6%;transform:rotate(25deg);opacity:0.03;"><svg viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+    </div>
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="label">What We Do</div>
+        <h2>Three Ways We Save Lives</h2>
+        <p>Every program exists because a dog needed it to survive. Here's how we make a difference, every single day.</p>
+      </div>
+      <div class="programs-grid fade-in">
+        <div class="program-card" onclick="openModal('feeding')">
+          <div class="program-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3"/><path d="M7 10c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3"/><path d="M14 10H10"/><path d="M7 14c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3"/><path d="M17 14c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3"/><path d="M10 14h4"/><line x1="10" y1="10" x2="10" y2="14"/><line x1="14" y1="10" x2="14" y2="14"/></svg></div>
+          <div class="program-text">
+            <h3>Street Feeding</h3>
+            <span class="program-tagline">40+ dogs fed daily across Bali</span>
+            <p>Every day, we feed over 40 street dogs across our area of Bali who have no one else looking out for them. Local resorts and restaurants &mdash; including Nanuk in Pecatu &mdash; donate food, and we make sure it reaches the dogs who need it most. No dog in our area goes hungry.</p>
+          </div>
+        </div>
+        <div class="program-card" onclick="openModal('homes')">
+          <div class="program-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="program-text">
+            <h3>Happy Homes</h3>
+            <span class="program-tagline">Rescue to forever family</span>
+            <p>Our rehoming program matches rescued dogs with loving forever families. Every dog is vetted, vaccinated, and nursed back to health before they meet their new people. We follow up to make sure every match is a good one. The goal is always a happy home.</p>
+          </div>
+        </div>
+        <div class="program-card" onclick="openModal('sanctuary')">
+          <div class="program-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="program-text">
+            <h3>Sanctuary</h3>
+            <span class="program-tagline">Lifelong care for special needs</span>
+            <p>For senior and handicapped dogs who may never find a traditional home, our sanctuary provides permanent, loving care. Custom carts for paralyzed dogs. No stairs. Soft beds. Gentle hands. Dignity and comfort for the rest of their lives. Our oldest resident is 14.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Modals -->
+  <div class="modal-overlay" id="modal-feeding" onclick="closeModal(event, 'feeding')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(event, 'feeding')">&times;</button>
+      <div class="modal-body">
+        <div style="width:64px;height:64px;border-radius:50%;background:rgba(240,197,49,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3"/><path d="M7 10c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3"/><path d="M14 10H10"/><path d="M7 14c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3"/><path d="M17 14c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3"/><path d="M10 14h4"/><line x1="10" y1="10" x2="10" y2="14"/><line x1="14" y1="10" x2="14" y2="14"/></svg>
+        </div>
+        <h2 style="text-align:center;">Street Feeding</h2>
+        <div class="modal-story">
+          <p>Every day, we feed over 40 street dogs across our area of Bali who have no one else looking out for them.</p>
+          <p>Local resorts and restaurants &mdash; including Nanuk in Pecatu &mdash; donate food, and we make sure it reaches the dogs who need it most.</p>
+          <p><em>No dog in our area goes hungry.</em></p>
+          <p>It costs just <strong>$2.50 to feed all 52 dogs for an entire day</strong>. Most of the food is donated, so every dollar stretches incredibly far.</p>
+        </div>
+        <div class="modal-actions">
+          <a href="#donate" class="btn btn-gold" onclick="closeModal(event, 'feeding')">Help Feed Them</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-homes" onclick="closeModal(event, 'homes')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(event, 'homes')">&times;</button>
+      <div class="modal-body">
+        <div style="width:64px;height:64px;border-radius:50%;background:rgba(240,197,49,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h2 style="text-align:center;">Happy Homes</h2>
+        <div class="modal-story">
+          <p>Our rehoming program matches rescued dogs with loving forever families.</p>
+          <p>Every dog is vetted, vaccinated, and nursed back to health before they meet their new people. We follow up to make sure every match is a good one.</p>
+          <p><em>The goal is always a happy home.</em></p>
+          <p>Want to adopt? We have <strong>50+ dogs</strong> looking for their perfect match. Message us to come meet them.</p>
+        </div>
+        <div class="modal-actions">
+          <a href="https://wa.me/628873702095?text=I'm interested in adopting a dog!" class="btn btn-gold" target="_blank" rel="noopener">Message About Adopting</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-sanctuary" onclick="closeModal(event, 'sanctuary')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal(event, 'sanctuary')">&times;</button>
+      <div class="modal-body">
+        <div style="width:64px;height:64px;border-radius:50%;background:rgba(240,197,49,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h2 style="text-align:center;">Sanctuary</h2>
+        <div class="modal-story">
+          <p>For senior and handicapped dogs who may never find a traditional home, our sanctuary provides permanent, loving care.</p>
+          <p>Custom carts for paralyzed dogs. No stairs. Soft beds. Gentle hands. Dignity and comfort for the rest of their lives.</p>
+          <p><em>Our oldest resident is 14 years old.</em></p>
+          <p>You can <strong>sponsor a sanctuary dog for $25/month</strong> and get their name, photos, and regular updates.</p>
+        </div>
+        <div class="modal-actions">
+          <a href="#donate" class="btn btn-gold" onclick="closeModal(event, 'sanctuary')">Sponsor a Sanctuary Dog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       5. WHERE YOUR MONEY GOES + EVERY DONATION SAVES A LIFE
+       ============================================================ -->
+  <section class="impact-donate" id="impact">
+    <div class="deco-paws">
+      <div class="deco-paw" style="width:250px;height:250px;top:-50px;left:-30px;transform:rotate(-30deg);opacity:0.05;"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,1)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="deco-paw" style="width:180px;height:180px;bottom:5%;right:-20px;transform:rotate(18deg);opacity:0.04;"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,1)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="deco-paw" style="width:100px;height:100px;top:40%;right:20%;transform:rotate(-45deg);opacity:0.03;"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,1)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+    </div>
     <div class="container">
       <div class="section-header fade-in">
         <div class="label">Your Impact</div>
-        <h2>See Where Your Money Goes</h2>
-        <p>Every dollar is stretched as far as possible. Here's what your donation provides:</p>
+        <h2>Every Act of Kindness Saves a Life</h2>
       </div>
-      <div class="impact-grid fade-in">
-        <!-- TODO: Update amounts and descriptions with real costs -->
-        <div class="impact-card">
-          <div class="impact-icon">&#x1F35A;</div>
-          <div class="impact-amount">$10</div>
-          <div class="impact-desc">Feeds one dog for a full week with quality nutrition</div>
+
+      <div class="focus-layout fade-in">
+        <div class="side-card">
+          <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3"/><path d="M7 10c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3"/><path d="M14 10H10"/><path d="M7 14c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3"/><path d="M17 14c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3"/><path d="M10 14h4"/><line x1="10" y1="10" x2="10" y2="14"/><line x1="14" y1="10" x2="14" y2="14"/></svg></div>
+          <div class="sc-amount">$2.50</div>
+          <div class="sc-desc">Feeds all 52 dogs for an entire day</div>
         </div>
-        <div class="impact-card">
-          <div class="impact-icon">&#x1FA7A;</div>
-          <div class="impact-amount">$25</div>
-          <div class="impact-desc">Covers a full veterinary checkup and basic treatment</div>
+
+        <div class="center-card">
+          <div class="popular-tag">MOST POPULAR</div>
+          <div class="cc-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div class="cc-amount">$25 <small>/mo</small></div>
+          <div class="cc-title">Sponsor a Dog</div>
+          <div class="cc-desc">Pick a dog. Get their name, photos, and regular updates. Know exactly who you're helping and watch them thrive.</div>
         </div>
-        <div class="impact-card">
-          <div class="impact-icon">&#x1F489;</div>
-          <div class="impact-amount">$50</div>
-          <div class="impact-desc">Vaccinates and sterilizes one dog to prevent suffering</div>
+
+        <div class="side-card">
+          <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="sc-amount">$75+</div>
+          <div class="sc-desc">Covers a full rescue &mdash; vet, surgery, rehab</div>
         </div>
-        <div class="impact-card">
-          <div class="impact-icon">&#x1F3E0;</div>
-          <div class="impact-amount">$100</div>
-          <div class="impact-desc">Rescues and rehabilitates one dog from the streets</div>
-        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px; position: relative; z-index: 1;" class="fade-in">
+        <a href="#donate" class="btn btn-gold" style="padding: 18px 48px; font-size: 1.1rem;">Sponsor a Dog Now</a>
+      </div>
+
+      <div class="impact-any fade-in">
+        <p>These are just examples. <strong>Any amount helps</strong> &mdash; $1, $5, $500 &mdash; it all goes straight to the dogs.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== DOG GALLERY ===== -->
-  <section class="gallery" id="dogs">
+
+  <!-- ============================================================
+       6. WAYS TO DONATE
+       ============================================================ -->
+  <section class="donate-methods-section" id="donate" style="position:relative; overflow:hidden;">
+    <div class="deco-paws">
+      <div class="deco-paw" style="width:190px;height:190px;top:5%;left:-30px;transform:rotate(22deg);opacity:0.03;"><svg viewBox="0 0 24 24" fill="var(--charcoal)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="deco-paw" style="width:130px;height:130px;bottom:-15px;right:10%;transform:rotate(-35deg);opacity:0.025;"><svg viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+    </div>
     <div class="container">
       <div class="section-header fade-in">
-        <div class="label">Meet the Pack</div>
-        <h2>50 Stories. 50 Second Chances.</h2>
-        <p>Every one of these dogs was rescued from Bali's streets. Tap to meet them.</p>
+        <div class="label">Join Us</div>
+        <h2>Ways to Help</h2>
+        <p>Send directly via Wise &mdash; low fees, fast transfers, and more of your support reaches the dogs.</p>
       </div>
-      <div class="gallery-grid fade-in">
-        <!-- TODO: Replace placeholders with real dog photos -->
-        <!-- To add images: replace the .gallery-placeholder div with an <img> tag -->
-        <!-- and optionally add the .gallery-item-overlay for name/story -->
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span>Featured dog photo</span>
+
+      <div class="wise-intro fade-in">
+        <p>Already have Wise? Just send directly to:</p>
+        <div class="wise-tag">@kennethm819</div>
+        <p style="margin-top:12px; font-size:0.85rem; color:var(--charcoal-light);">Don't have the Wise app? Use the bank details below to transfer from your bank.</p>
+      </div>
+
+      <div class="wise-tabs fade-in">
+        <button class="wise-tab active" data-currency="usd">$ USD</button>
+        <button class="wise-tab" data-currency="gbp">&pound; GBP</button>
+        <button class="wise-tab" data-currency="eur">&euro; EUR</button>
+        <button class="wise-tab" data-currency="aud">A$ AUD</button>
+        <button class="wise-tab" data-currency="cad">C$ CAD</button>
+      </div>
+
+      <div class="wise-details-wrap fade-in">
+        <!-- USD -->
+        <div class="wise-detail active" id="wise-usd">
+          <h3>USD — US Dollar</h3>
+          <p class="wise-subtitle">Domestic transfer from the US, or international via SWIFT</p>
+          <div class="wise-row">
+            <span class="wise-label">Name</span>
+            <span class="wise-value">Kenneth Michael Mason</span>
           </div>
-          <!-- Example overlay — uncomment and customize per dog:
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-name">Luna</div>
-            <div class="gallery-item-story">Found injured on the roadside, now our happiest girl</div>
+          <div class="wise-row">
+            <span class="wise-label">Account Number</span>
+            <span class="wise-value">564104441126161</span>
           </div>
-          -->
+          <div class="wise-row">
+            <span class="wise-label">Account Type</span>
+            <span class="wise-value">Deposit</span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">Routing Number</span>
+            <span class="wise-value">084009519 <small>Wire &amp; ACH</small></span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">Swift / BIC</span>
+            <span class="wise-value">TRWIUS35XXX <small>From outside the US</small></span>
+          </div>
+          <div class="wise-bank-address"><strong>Bank:</strong> Wise US Inc, 108 W 13th St, Wilmington, DE, 19801, United States</div>
         </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span>Dog photo</span>
+
+        <!-- GBP -->
+        <div class="wise-detail" id="wise-gbp">
+          <h3>GBP — British Pound</h3>
+          <p class="wise-subtitle">Domestic transfer from the UK, or international via SWIFT</p>
+          <div class="wise-row">
+            <span class="wise-label">Name</span>
+            <span class="wise-value">Kenneth Michael Mason</span>
           </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span>Dog photo</span>
+          <div class="wise-row">
+            <span class="wise-label">Account Number</span>
+            <span class="wise-value">54781999</span>
           </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span>Dog photo</span>
+          <div class="wise-row">
+            <span class="wise-label">Sort Code</span>
+            <span class="wise-value">60-84-64</span>
           </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span>Dog photo</span>
+          <div class="wise-row">
+            <span class="wise-label">IBAN</span>
+            <span class="wise-value">GB85 TRWI 6084 6454 7819 99</span>
           </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span>Dog photo</span>
+          <div class="wise-row">
+            <span class="wise-label">Swift / BIC</span>
+            <span class="wise-value">TRWIGB2LXXX <small>From outside the UK</small></span>
           </div>
+          <div class="wise-bank-address"><strong>Bank:</strong> Wise Payments Limited, Worship Square, 65 Clifton Street, London, EC2A 4JE, United Kingdom</div>
         </div>
+
+        <!-- EUR -->
+        <div class="wise-detail" id="wise-eur">
+          <h3>EUR — Euro</h3>
+          <p class="wise-subtitle">Domestic transfer from SEPA, or international via SWIFT</p>
+          <div class="wise-row">
+            <span class="wise-label">Name</span>
+            <span class="wise-value">Kenneth Michael Mason</span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">IBAN</span>
+            <span class="wise-value">BE42 9679 7000 8854</span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">Swift / BIC</span>
+            <span class="wise-value">TRWIBEB1XXX <small>From outside SEPA</small></span>
+          </div>
+          <div class="wise-bank-address"><strong>Bank:</strong> Wise, Rue du Tr&ocirc;ne 100, 3rd floor, Brussels, 1050, Belgium</div>
+        </div>
+
+        <!-- AUD -->
+        <div class="wise-detail" id="wise-aud">
+          <h3>AUD — Australian Dollar</h3>
+          <p class="wise-subtitle">Domestic transfer from Australia, or international via SWIFT</p>
+          <div class="wise-row">
+            <span class="wise-label">Name</span>
+            <span class="wise-value">Kenneth Michael Mason</span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">Account Number</span>
+            <span class="wise-value">241476652</span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">BSB Code</span>
+            <span class="wise-value">774-001</span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">Swift / BIC</span>
+            <span class="wise-value">TRWIAUS1XXX <small>From outside Australia</small></span>
+          </div>
+          <div class="wise-bank-address"><strong>Bank:</strong> Wise Australia Pty Ltd, Suite 1, Level 11, 66 Goulburn Street, Sydney, NSW, 2000, Australia</div>
+        </div>
+
+        <!-- CAD -->
+        <div class="wise-detail" id="wise-cad">
+          <h3>CAD — Canadian Dollar</h3>
+          <p class="wise-subtitle">Domestic transfer from Canada, or international via SWIFT</p>
+          <div class="wise-row">
+            <span class="wise-label">Name</span>
+            <span class="wise-value">Kenneth Michael Mason</span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">Account Number</span>
+            <span class="wise-value">200117526135</span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">Institution Number</span>
+            <span class="wise-value">621</span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">Transit Number</span>
+            <span class="wise-value">16001</span>
+          </div>
+          <div class="wise-row">
+            <span class="wise-label">Swift / BIC</span>
+            <span class="wise-value">TRWICAW1XXX <small>From outside Canada</small></span>
+          </div>
+          <div class="wise-bank-address"><strong>Bank:</strong> Wise Payments Canada Inc., 99 Bank Street, Suite 1420, Ottawa, ON, K1P 1H4, Canada</div>
+        </div>
+      </div>
+
+      <div class="donate-whatsapp-card fade-in">
+        <div class="wa-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <div class="wa-text">
+          <h3>Questions? We're Here.</h3>
+          <p>Wise not available in your country? No problem &mdash; message us and we'll figure it out together.</p>
+        </div>
+        <a href="https://wa.me/628873702095?text=I'd%20like%20to%20help%20Bali%20Paws%20Rescue" class="btn-whatsapp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+
+      <div class="donate-note fade-in">
+        <p>Bali Paws Rescue is a legally registered non-profit foundation in Indonesia. 100% of your support goes directly to the dogs. If you need documentation for tax purposes, <a href="https://wa.me/628873702095" style="color:var(--terra);">reach out</a> and we'll provide it.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== DONATE ===== -->
-  <section class="donate" id="donate">
+
+  <!-- ============================================================
+       7. HELP US BUILD A FOREVER HOME
+       ============================================================ -->
+  <section class="forever-home" id="forever-home" style="position:relative; overflow:hidden;">
+    <div class="deco-paws">
+      <div class="deco-paw" style="width:160px;height:160px;top:10%;right:3%;transform:rotate(40deg);opacity:0.03;"><svg viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="deco-paw" style="width:200px;height:200px;bottom:-40px;left:-30px;transform:rotate(-12deg);opacity:0.025;"><svg viewBox="0 0 24 24" fill="var(--charcoal)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+    </div>
     <div class="container">
-      <div class="section-header fade-in">
-        <div class="label">Support the Rescue</div>
-        <h2>Every Donation Saves a Life</h2>
-        <p>Choose whichever method is easiest for you. Every cent goes directly to the dogs.</p>
-      </div>
-
-      <div class="donate-methods fade-in">
-
-        <!-- PAYPAL / PAYMENT LINK -->
-        <div class="donate-card">
-          <div class="donate-card-icon">&#x1F4B3;</div>
-          <h3>PayPal / Card</h3>
-          <p>Quick and easy — donate with your credit card, debit card, or PayPal balance.</p>
-          <!-- TODO: Replace # with actual PayPal.me link or payment link -->
-          <a href="#" class="btn btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            Donate via PayPal
-          </a>
-        </div>
-
-        <!-- WISE -->
-        <div class="donate-card">
-          <div class="donate-card-icon">&#x1F30D;</div>
-          <h3>Wise (TransferWise)</h3>
-          <p>Low fees for international transfers. Send in any currency — we receive more of your gift.</p>
-          <div class="donate-details">
-            <!-- TODO: Fill in actual Wise details -->
-            <div class="donate-detail-row">
-              <span class="donate-detail-label">Name</span>
-              <span class="donate-detail-value">[Full Name]</span>
-            </div>
-            <div class="donate-detail-row">
-              <span class="donate-detail-label">Email</span>
-              <span class="donate-detail-value">[wise@email.com]</span>
-            </div>
-            <div class="donate-detail-row">
-              <span class="donate-detail-label">Currency</span>
-              <span class="donate-detail-value">USD / IDR</span>
-            </div>
+      <div class="forever-grid fade-in">
+        <div class="forever-content">
+          <div class="label">Our Biggest Dream</div>
+          <h2>Help Us Build Their Forever Home</h2>
+          <p>Right now, our dogs have a roof over their heads at our current shelter in Jimbaran. But we're building something bigger &mdash; a brand new sanctuary in Jembrana, just 250 meters from the beach, with proper buildings, dedicated medical space, and room for even more rescues.</p>
+          <p>The land is secured. The plans are ready. Now we need to build it. Every contribution to our building fund gets us one step closer to opening the doors and giving these dogs the home they truly deserve.</p>
+          <p>Once the new shelter is complete, volunteers will be able to stay on-site and help with the dogs hands-on. Real rescue work &mdash; feeding, walking, socializing, medical care. And the beach is a 3-minute walk.</p>
+          <ul class="forever-list">
+            <li>Sponsor the new Jembrana sanctuary build</li>
+            <li>Volunteer at our current shelter in Jimbaran</li>
+            <li>Help with daily feeding and care routines</li>
+            <li>Walk, socialize, and love the dogs</li>
+            <li>Assist with medical care and rehabilitation</li>
+            <li>Share our story on social media</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
+            <a href="https://wa.me/628873702095?text=I'd%20like%20to%20sponsor%20the%20New%20Shelter%20Build" class="btn btn-gold">Sponsor the Build</a>
+            <a href="https://wa.me/628873702095?text=Volunteering at Bali Paws Rescue" class="btn btn-outline">Inquire About Volunteering</a>
           </div>
-          <!-- TODO: Replace # with Wise payment link if available -->
-          <a href="#" class="btn btn-wise">Send via Wise</a>
         </div>
-
-        <!-- INDONESIAN BANK -->
-        <div class="donate-card">
-          <div class="donate-card-icon">&#x1F3E6;</div>
-          <h3>Indonesian Bank Transfer</h3>
-          <p>For local donors or those with IDR. Direct bank transfer with zero platform fees.</p>
-          <div class="donate-details">
-            <!-- TODO: Fill in actual bank details -->
-            <div class="donate-detail-row">
-              <span class="donate-detail-label">Bank</span>
-              <span class="donate-detail-value">[Bank Name]</span>
-            </div>
-            <div class="donate-detail-row">
-              <span class="donate-detail-label">Account #</span>
-              <span class="donate-detail-value">[XXXX-XXXX-XXXX]</span>
-            </div>
-            <div class="donate-detail-row">
-              <span class="donate-detail-label">Account Name</span>
-              <span class="donate-detail-value">[Account Holder]</span>
-            </div>
-            <div class="donate-detail-row">
-              <span class="donate-detail-label">SWIFT</span>
-              <span class="donate-detail-value">[SWIFT Code]</span>
-            </div>
-          </div>
-          <a href="#" class="btn btn-bank">Copy Bank Details</a>
-        </div>
-
-      </div>
-
-      <!-- Quick amounts -->
-      <div class="quick-donate fade-in">
-        <p>Or choose a quick amount via PayPal:</p>
-        <div class="quick-amounts">
-          <!-- TODO: Replace # with amount-specific PayPal links or a single link -->
-          <a href="#" class="quick-amount">$10</a>
-          <a href="#" class="quick-amount">$25</a>
-          <a href="#" class="quick-amount">$50</a>
-          <a href="#" class="quick-amount">$100</a>
-          <a href="#" class="quick-amount">$250</a>
+        <div class="forever-image">
+          <img src="photos/shelter-veranda.jpg" alt="Dog relaxing at the shelter veranda" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== ABOUT THE FOUNDER ===== -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid fade-in">
-        <div class="about-image">
-          <!-- TODO: Replace with photo of him -->
-          <div class="mission-image-placeholder" style="height:100%">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span>Photo of the founder</span>
-          </div>
-        </div>
-        <div class="about-content">
-          <div class="label">The Man Behind the Mission</div>
-          <!-- TODO: Replace with his real name and story -->
-          <h2>Meet [His Name]</h2>
-          <p>[His story — how he ended up in Bali, what made him start rescuing dogs, what his day-to-day looks like. This is the emotional heart of the page. 2-3 paragraphs.]</p>
-          <p>[Second paragraph about the challenges — the costs, the logistics, why donations matter so much. Be honest and real.]</p>
-          <a href="#donate" class="btn btn-primary" style="margin-top: 12px;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            Help His Mission
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq">
+  <!-- ============================================================
+       8. FAQ
+       ============================================================ -->
+  <section class="faq" id="faq" style="position:relative; overflow:hidden;">
+    <div class="deco-paws">
+      <div class="deco-paw" style="width:170px;height:170px;top:-30px;right:8%;transform:rotate(-28deg);opacity:0.03;"><svg viewBox="0 0 24 24" fill="var(--charcoal)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="deco-paw" style="width:110px;height:110px;bottom:10%;left:5%;transform:rotate(32deg);opacity:0.025;"><svg viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+    </div>
     <div class="container">
       <div class="section-header fade-in">
         <div class="label">Questions</div>
         <h2>Frequently Asked</h2>
       </div>
       <div class="faq-grid fade-in">
-        <!-- TODO: Update FAQs with real answers -->
         <div class="faq-item">
-          <button class="faq-question">
-            Where does my money go?
-            <span>+</span>
-          </button>
+          <button class="faq-question">Where does my money go?<span>+</span></button>
           <div class="faq-answer">
-            <p>100% of donations go directly to the dogs — food, veterinary care, shelter maintenance, and emergency rescues. There are no admin salaries or overhead costs. [Update with specifics.]</p>
+            <p>100% of your support goes directly to the dogs &mdash; food, veterinary care, medications, shelter maintenance, and emergency rescues. There are no paid staff, no office rent, no admin overhead. It costs just $2.50 per day to feed all 52 dogs (most food is contributed by local resorts and restaurants). New rescues often require thousands in medical bills. Your money goes exactly where it should: to the animals.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
-            Can I adopt a dog from Bali?
-            <span>+</span>
-          </button>
+          <button class="faq-question">Can I adopt a dog?<span>+</span></button>
           <div class="faq-answer">
-            <p>[Fill in — is international adoption possible? What's the process? Costs and logistics?]</p>
+            <p><strong>In Bali:</strong> Absolutely. Adopting locally is straightforward &mdash; we'll make sure the dog is healthy, vaccinated, and ready for their new home. Reach out and we'll match you with the perfect pup.</p>
+            <p style="margin-top:10px;"><strong>Outside of Bali:</strong> International adoption is possible but involves some complex regulations for dogs leaving Indonesia. The best thing to do is <a href="https://wa.me/628873702095?text=I'm%20interested%20in%20adopting%20a%20dog%20from%20Bali%20Paws%20Rescue" style="color:var(--terra)">give us a call or WhatsApp</a> so we can walk you through the process and figure out the best path together.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
-            Can I sponsor a specific dog?
-            <span>+</span>
-          </button>
+          <button class="faq-question">Can I sponsor a specific dog?<span>+</span></button>
           <div class="faq-answer">
-            <p>[Fill in — do you offer sponsorships? Monthly amount? Do sponsors get updates/photos?]</p>
+            <p>Yes! For $25/month you can sponsor a specific dog and receive regular updates, photos, and stories about their progress. It's the most personal way to help. <a href="https://wa.me/628873702095?text=I'd%20like%20to%20sponsor%20a%20dog%20at%20Bali%20Paws%20Rescue" style="color:var(--terra)">Message us on WhatsApp</a> and let us know which dog has captured your heart &mdash; or let us match you with one who needs a champion.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
-            Can I volunteer?
-            <span>+</span>
-          </button>
+          <button class="faq-question">Can I volunteer at the shelter?<span>+</span></button>
           <div class="faq-answer">
-            <p>[Fill in — do you accept volunteers? What's the process? Any requirements?]</p>
+            <p>We're currently building our new sanctuary in Jembrana, which will have dedicated rooms for volunteers. Our current shelter is in Jimbaran. We hope to open the new one soon! Once it's ready, you'll be able to stay on-site and help with the dogs hands-on &mdash; feeding, walking, socializing, medical care. The beach is 250 meters away. <a href="https://wa.me/628873702095?text=I'm%20interested%20in%20volunteering%20at%20Bali%20Paws%20Rescue" style="color:var(--terra)">Send us a message</a> to get on the list.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
-            Is this a registered nonprofit?
-            <span>+</span>
-          </button>
+          <button class="faq-question">Is Bali Paws Rescue a registered nonprofit?<span>+</span></button>
           <div class="faq-answer">
-            <p>[Fill in — registration status, tax deductibility, any legal structure details.]</p>
+            <p>Yes. Bali Paws Rescue is a legally registered non-profit foundation in Indonesia (Yayasan). We operate transparently and every dollar is accounted for. We're happy to provide documentation to any donor who requests it.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What's the best way to help?<span>+</span></button>
+          <div class="faq-answer">
+            <p>You can sponsor a dog, help with food costs, or contribute to a rescue via Wise in USD, GBP, EUR, AUD, and CAD &mdash; all the account details are on our <a href="#donate" style="color:var(--terra)">Ways to Help</a> section. Wise is fast, has low fees, and means more of your support reaches the dogs. If Wise doesn't work for you, no worries &mdash; just <a href="https://wa.me/628873702095?text=I'd%20like%20to%20help%20Bali%20Paws%20Rescue" style="color:var(--terra)">reach out on WhatsApp</a> and we'll figure something out together.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CTA BANNER ===== -->
+
+  <!-- ============================================================
+       9. FINAL CTA
+       ============================================================ -->
   <section class="cta-banner">
+    <div class="cta-paws">
+      <div class="cta-paw cta-paw-1"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,1)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="cta-paw cta-paw-2"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,1)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="cta-paw cta-paw-3"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,1)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="cta-paw cta-paw-4"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,1)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+      <div class="cta-paw cta-paw-5"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,1)" stroke="none"><circle cx="9" cy="7.5" r="2.2"/><circle cx="15" cy="7.5" r="2.2"/><circle cx="6" cy="12.5" r="2.2"/><circle cx="18" cy="12.5" r="2.2"/><ellipse cx="12" cy="18" rx="4.5" ry="3.5"/></svg></div>
+    </div>
     <div class="container fade-in">
       <h2>They Can't Ask for Help.<br>But You Can Give It.</h2>
-      <p>50 dogs are counting on people like you. Even a small donation makes a real difference.</p>
-      <a href="#donate" class="btn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        Donate Now
-      </a>
+      <p>52 dogs are counting on people like you. Sponsor, adopt, volunteer, or just come say hello &mdash; every bit of love changes a life.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="#impact" class="btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Get Involved
+        </a>
+        <a href="https://wa.me/628873702095?text=I'm%20interested%20in%20adopting%20a%20dog!" class="btn" style="background: white; color: var(--charcoal);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7.5" r="1.5"/><circle cx="15" cy="7.5" r="1.5"/><circle cx="6.5" cy="12" r="1.5"/><circle cx="17.5" cy="12" r="1.5"/><ellipse cx="12" cy="17.5" rx="3.5" ry="2.5"/></svg> Adopt a Dog
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+
+  <!-- ============================================================
+       10. FOOTER
+       ============================================================ -->
   <footer>
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <!-- TODO: Replace with rescue name -->
-          <div class="nav-logo">[Rescue Name]</div>
-          <p>Rescuing, rehabilitating, and rehoming Bali's street dogs. Based in Bali, Indonesia.</p>
+          <div class="nav-logo"><img src="logo/logo.png" alt="Bali Paws Rescue" /></div>
+          <p>A registered non-profit foundation rescuing, rehabilitating, and rehoming Bali's street dogs. Focused on senior and handicapped animals. Based in southern Bali, Indonesia.</p>
         </div>
         <div class="footer-links">
-          <a href="#mission">Mission</a>
+          <a href="#kenny">Kenneth's Story</a>
           <a href="#dogs">The Dogs</a>
-          <a href="#donate">Donate</a>
-          <a href="#about">About</a>
+          <a href="#programs">How We Help</a>
+          <a href="#impact">Get Involved</a>
+          <a href="#forever-home">New Shelter</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="footer-social">
-          <!-- TODO: Add real social links -->
-          <a href="#" aria-label="Instagram">&#x1F4F7;</a>
-          <a href="#" aria-label="Facebook">&#x1F310;</a>
-          <a href="#" aria-label="YouTube">&#x25B6;</a>
+          <a href="https://www.instagram.com/balipawsrescue" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61570024424102" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
         </div>
       </div>
       <div class="footer-bottom">
-        <!-- TODO: Replace with real name/org -->
-        <p>&copy; 2026 [Rescue Name]. All rights reserved. Made with love in Bali.</p>
+        <p>&copy; 2026 Bali Paws Rescue. All rights reserved. Made with love in Bali.</p>
+        <p style="margin-top: 8px; font-size: 10px;">Made by <a href="mailto:info@spiffydesigns.dev" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;">Spiffy Designs</a></p>
       </div>
     </div>
   </footer>
 
   <!-- ===== STICKY MOBILE DONATE ===== -->
   <div class="sticky-donate" id="stickyDonate">
-    <a href="#donate" class="btn btn-primary">
+    <a href="#impact" class="btn btn-primary">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      Donate Now
+      Help a Dog
     </a>
   </div>
 
@@ -1385,13 +1758,19 @@
     // Mobile nav toggle
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // Close nav on link click
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    // Wise currency tabs
+    document.querySelectorAll('.wise-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.wise-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.wise-detail').forEach(d => d.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('wise-' + tab.dataset.currency).classList.add('active');
+      });
     });
 
     // FAQ accordion
@@ -1399,49 +1778,59 @@
       btn.addEventListener('click', () => {
         const item = btn.parentElement;
         const wasActive = item.classList.contains('active');
-        // Close all
         document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-        // Toggle current
         if (!wasActive) item.classList.add('active');
       });
     });
 
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    // Modal system
+    function openModal(id) {
+      const modal = document.getElementById('modal-' + id);
+      if (modal) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    }
+    function closeModal(event, id) {
+      event.stopPropagation();
+      const modal = document.getElementById('modal-' + id);
+      if (modal) { modal.classList.remove('active'); document.body.style.overflow = ''; }
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
+        document.body.style.overflow = '';
+      }
+    });
 
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      document.getElementById('scrollProgress').style.width = scrolled + '%';
+    });
+
+    // Scroll reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Force hero image position on mobile
+    if (window.innerWidth <= 1024) {
+      const heroImg = document.getElementById('heroImg');
+      if (heroImg) {
+        heroImg.style.objectPosition = 'center 30%';
+        heroImg.style.transform = 'scale(1.25)';
+      }
+    }
 
     // Show/hide sticky donate on mobile
     const stickyDonate = document.getElementById('stickyDonate');
-    const donateSection = document.getElementById('donate');
-
+    const impactSection = document.getElementById('impact');
     const stickyObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         stickyDonate.style.transform = entry.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
         stickyDonate.style.transition = 'transform 0.3s ease';
       });
     }, { threshold: 0.1 });
-
-    stickyObserver.observe(donateSection);
-
-    // Copy bank details functionality
-    document.querySelector('.btn-bank')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      const details = e.target.closest('.donate-card').querySelectorAll('.donate-detail-value');
-      const text = Array.from(details).map(d => d.textContent).join('\n');
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = e.target.closest('.btn') || e.target;
-        const original = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(() => { btn.textContent = original; }, 2000);
-      });
-    });
+    stickyObserver.observe(impactSection);
   </script>
 
 </body>

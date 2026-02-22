@@ -1,0 +1,2942 @@
+<!DOCTYPE html>
+<html lang="en" data-style="heritage" data-view="styles">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R.B. Kanangra Gardens — Brand Directions</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=Josefin+Sans:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════
+   CSS RESET & BASE
+   ═══════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ═══════════════════════════════════════════════════
+   DIRECTION A: HERITAGE PLUM
+   Classic • Authoritative • 35 Years of Trust
+   ═══════════════════════════════════════════════════ */
+[data-style="heritage"] {
+  --bg: #F4F1ED;
+  --bg-alt: #EBE7E1;
+  --surface: #FFFFFF;
+  --surface-muted: rgba(139, 115, 85, 0.04);
+
+  --text: #2E1A47;
+  --text-secondary: #3D2A5C;
+  --text-muted: #5D536B;
+  --text-ghost: #7A7189;
+
+  --accent: #8B7355;
+  --accent-light: #A8937B;
+  --accent-glow: rgba(139, 115, 85, 0.3);
+  --accent-glow-hover: rgba(139, 115, 85, 0.45);
+  --accent-dim: rgba(139, 115, 85, 0.08);
+
+  --green: #5A7B5E;
+  --green-soft: rgba(90, 123, 94, 0.08);
+  --red-soft: rgba(176, 112, 112, 0.08);
+  --highlight: #B8977A;
+
+  --border: #DDD8D2;
+  --border-hover: rgba(139, 115, 85, 0.4);
+  --divider: #E8E4E0;
+
+  --shadow-sm: 0 2px 8px rgba(46, 26, 71, 0.04);
+  --shadow-md: 0 8px 28px rgba(46, 26, 71, 0.06);
+  --shadow-hover: 0 16px 44px rgba(46, 26, 71, 0.10);
+  --shadow-glow: 0 4px 20px rgba(139, 115, 85, 0.3);
+
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 50px;
+
+  --hero-gradient: linear-gradient(180deg, rgba(16,8,32,0.55) 0%, rgba(26,14,46,0.25) 50%, rgba(16,8,32,0.72) 100%);
+  --hero-text: #FFFFFF;
+  --hero-subtitle: rgba(255,255,255,0.85);
+  --dark-section-bg: #2E1A47;
+  --dark-section-text: #F4F1ED;
+  --dark-section-muted: rgba(244,241,237,0.7);
+  --dark-card-bg: rgba(255,255,255,0.06);
+  --dark-card-border: rgba(255,255,255,0.1);
+
+  --orb1: rgba(139, 115, 85, 0.12);
+  --orb2: rgba(90, 123, 94, 0.08);
+
+  --direction-name: "Heritage Plum";
+  --direction-desc: "Classic authority meets botanical warmth";
+}
+
+/* ═══════════════════════════════════════════════════
+   DIRECTION B: VERDANT ESTATE
+   Botanical • Immersive • Nature-Forward
+   ═══════════════════════════════════════════════════ */
+[data-style="verdant"] {
+  --bg: #F7F5F0;
+  --bg-alt: #EDE9E0;
+  --surface: #FFFFFF;
+  --surface-muted: rgba(62, 88, 58, 0.04);
+
+  --text: #1B2E1D;
+  --text-secondary: #2D4A30;
+  --text-muted: #5C6E5A;
+  --text-ghost: #8A9688;
+
+  --accent: #3E5A3A;
+  --accent-light: #5A7B56;
+  --accent-glow: rgba(62, 90, 58, 0.3);
+  --accent-glow-hover: rgba(62, 90, 58, 0.45);
+  --accent-dim: rgba(62, 90, 58, 0.06);
+
+  --green: #3E5A3A;
+  --green-soft: rgba(62, 90, 58, 0.06);
+  --red-soft: rgba(176, 112, 112, 0.06);
+  --highlight: #C9A96E;
+
+  --border: #D8D4CA;
+  --border-hover: rgba(62, 90, 58, 0.35);
+  --divider: #E4E0D8;
+
+  --shadow-sm: 0 2px 8px rgba(27, 46, 29, 0.04);
+  --shadow-md: 0 8px 28px rgba(27, 46, 29, 0.06);
+  --shadow-hover: 0 16px 44px rgba(27, 46, 29, 0.10);
+  --shadow-glow: 0 4px 20px rgba(62, 90, 58, 0.3);
+
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --radius: 16px;
+  --radius-lg: 22px;
+  --radius-pill: 50px;
+
+  --hero-gradient: linear-gradient(180deg, rgba(18,30,16,0.5) 0%, rgba(27,46,29,0.2) 45%, rgba(18,30,16,0.7) 100%);
+  --hero-text: #FFFFFF;
+  --hero-subtitle: rgba(255,255,255,0.88);
+  --dark-section-bg: #1B2E1D;
+  --dark-section-text: #F0EDE6;
+  --dark-section-muted: rgba(240,237,230,0.65);
+  --dark-card-bg: rgba(255,255,255,0.05);
+  --dark-card-border: rgba(255,255,255,0.08);
+
+  --orb1: rgba(62, 90, 58, 0.1);
+  --orb2: rgba(201, 169, 110, 0.08);
+
+  --direction-name: "Verdant Estate";
+  --direction-desc: "Walk into a botanical garden";
+}
+
+/* ═══════════════════════════════════════════════════
+   DIRECTION C: STONE & COPPER
+   Architectural • Modern • Magazine-Worthy
+   ═══════════════════════════════════════════════════ */
+[data-style="stone"] {
+  --bg: #FAF8F5;
+  --bg-alt: #F0ECE6;
+  --surface: #FFFFFF;
+  --surface-muted: rgba(180, 108, 72, 0.04);
+
+  --text: #2A2520;
+  --text-secondary: #3E3830;
+  --text-muted: #6B6358;
+  --text-ghost: #9A9184;
+
+  --accent: #B46C48;
+  --accent-light: #CA8A66;
+  --accent-glow: rgba(180, 108, 72, 0.3);
+  --accent-glow-hover: rgba(180, 108, 72, 0.45);
+  --accent-dim: rgba(180, 108, 72, 0.06);
+
+  --green: #6B8F5E;
+  --green-soft: rgba(107, 143, 94, 0.06);
+  --red-soft: rgba(176, 112, 112, 0.06);
+  --highlight: #D4A870;
+
+  --border: #E0D8CE;
+  --border-hover: rgba(180, 108, 72, 0.35);
+  --divider: #E8E2DA;
+
+  --shadow-sm: 0 2px 8px rgba(42, 37, 32, 0.04);
+  --shadow-md: 0 8px 28px rgba(42, 37, 32, 0.06);
+  --shadow-hover: 0 16px 44px rgba(42, 37, 32, 0.10);
+  --shadow-glow: 0 4px 20px rgba(180, 108, 72, 0.3);
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 50px;
+
+  --hero-gradient: linear-gradient(180deg, rgba(32,28,22,0.45) 0%, rgba(42,37,32,0.15) 45%, rgba(32,28,22,0.72) 100%);
+  --hero-text: #FFFFFF;
+  --hero-subtitle: rgba(255,255,255,0.9);
+  --dark-section-bg: #2A2520;
+  --dark-section-text: #F5F0EA;
+  --dark-section-muted: rgba(245,240,234,0.65);
+  --dark-card-bg: rgba(255,255,255,0.05);
+  --dark-card-border: rgba(255,255,255,0.1);
+
+  --orb1: rgba(180, 108, 72, 0.1);
+  --orb2: rgba(107, 143, 94, 0.06);
+
+  --direction-name: "Stone & Copper";
+  --direction-desc: "Modern architecture meets living earth";
+}
+
+/* ═══════════════════════════════════════════════════
+   DIRECTION D: ROYAL VIOLET
+   Amethyst • Elevated • Wisteria at Twilight
+   ═══════════════════════════════════════════════════ */
+[data-style="violet"] {
+  --bg: #F6F3F9;
+  --bg-alt: #EDE8F4;
+  --surface: #FFFFFF;
+  --surface-muted: rgba(107, 63, 160, 0.04);
+
+  --text: #1E0E35;
+  --text-secondary: #2E1A47;
+  --text-muted: #6B5A7A;
+  --text-ghost: #9488A2;
+
+  --accent: #6B3FA0;
+  --accent-light: #8B65BF;
+  --accent-glow: rgba(107, 63, 160, 0.3);
+  --accent-glow-hover: rgba(107, 63, 160, 0.45);
+  --accent-dim: rgba(107, 63, 160, 0.07);
+
+  --green: #5A8B62;
+  --green-soft: rgba(90, 139, 98, 0.07);
+  --red-soft: rgba(176, 112, 112, 0.07);
+  --highlight: #B89EDB;
+
+  --border: #DDD6E8;
+  --border-hover: rgba(107, 63, 160, 0.35);
+  --divider: #E6E0EE;
+
+  --shadow-sm: 0 2px 8px rgba(30, 14, 53, 0.04);
+  --shadow-md: 0 8px 28px rgba(30, 14, 53, 0.06);
+  --shadow-hover: 0 16px 44px rgba(30, 14, 53, 0.10);
+  --shadow-glow: 0 4px 20px rgba(107, 63, 160, 0.3);
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 50px;
+
+  --hero-gradient: linear-gradient(180deg, rgba(20,8,40,0.55) 0%, rgba(30,14,53,0.2) 45%, rgba(20,8,40,0.72) 100%);
+  --hero-text: #FFFFFF;
+  --hero-subtitle: rgba(255,255,255,0.88);
+  --dark-section-bg: #1E0E35;
+  --dark-section-text: #F2EEF6;
+  --dark-section-muted: rgba(242,238,246,0.65);
+  --dark-card-bg: rgba(255,255,255,0.06);
+  --dark-card-border: rgba(255,255,255,0.1);
+
+  --orb1: rgba(107, 63, 160, 0.12);
+  --orb2: rgba(90, 139, 98, 0.08);
+
+  --direction-name: "Royal Violet";
+  --direction-desc: "Wisteria at twilight — purple grandeur with living green";
+}
+
+/* ═══════════════════════════════════════════════════
+   DIRECTION E: PETAL & SKY
+   Peony • Hydrangea • English Garden in Full Bloom
+   ═══════════════════════════════════════════════════ */
+[data-style="petal"] {
+  --bg: #FBF7F8;
+  --bg-alt: #F3ECF0;
+  --surface: #FFFFFF;
+  --surface-muted: rgba(172, 94, 124, 0.04);
+
+  --text: #1C2A42;
+  --text-secondary: #2D4060;
+  --text-muted: #647A94;
+  --text-ghost: #94A3B6;
+
+  --accent: #B4627E;
+  --accent-light: #CC8A9E;
+  --accent-glow: rgba(180, 98, 126, 0.3);
+  --accent-glow-hover: rgba(180, 98, 126, 0.45);
+  --accent-dim: rgba(180, 98, 126, 0.07);
+
+  --green: #6A9B7E;
+  --green-soft: rgba(106, 155, 126, 0.07);
+  --red-soft: rgba(180, 98, 126, 0.07);
+  --highlight: #8DB4CC;
+
+  --border: #E4D8DE;
+  --border-hover: rgba(180, 98, 126, 0.35);
+  --divider: #ECE2E7;
+
+  --shadow-sm: 0 2px 8px rgba(28, 42, 66, 0.04);
+  --shadow-md: 0 8px 28px rgba(28, 42, 66, 0.06);
+  --shadow-hover: 0 16px 44px rgba(28, 42, 66, 0.10);
+  --shadow-glow: 0 4px 20px rgba(180, 98, 126, 0.3);
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --radius: 16px;
+  --radius-lg: 22px;
+  --radius-pill: 50px;
+
+  --hero-gradient: linear-gradient(180deg, rgba(18,26,42,0.5) 0%, rgba(28,42,66,0.18) 45%, rgba(18,26,42,0.7) 100%);
+  --hero-text: #FFFFFF;
+  --hero-subtitle: rgba(255,255,255,0.88);
+  --dark-section-bg: #1C2A42;
+  --dark-section-text: #F5F0F2;
+  --dark-section-muted: rgba(245,240,242,0.65);
+  --dark-card-bg: rgba(255,255,255,0.05);
+  --dark-card-border: rgba(255,255,255,0.1);
+
+  --orb1: rgba(180, 98, 126, 0.1);
+  --orb2: rgba(141, 180, 204, 0.08);
+
+  --direction-name: "Petal & Sky";
+  --direction-desc: "Peony pink meets hydrangea blue — a garden in full bloom";
+}
+
+/* ═══════════════════════════════════════════════════
+   GLOBAL LAYOUT
+   ═══════════════════════════════════════════════════ */
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 60px 0;
+  position: relative;
+  transition: background 0.6s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   STYLE SELECTOR (Fixed top bar)
+   ═══════════════════════════════════════════════════ */
+.style-selector {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  transition: border-color 0.6s ease, background 0.6s ease;
+}
+
+.selector-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 16px;
+}
+
+.selector-brand {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text);
+  white-space: nowrap;
+  transition: color 0.6s ease;
+}
+
+.selector-brand span {
+  color: var(--accent);
+  transition: color 0.6s ease;
+}
+
+.selector-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  transition: background 0.6s ease;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.selector-tabs::-webkit-scrollbar { display: none; }
+
+.style-tab {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.style-tab:hover {
+  color: var(--text);
+}
+
+.style-tab.active {
+  background: var(--surface);
+  color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.selector-by {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-ghost);
+  white-space: nowrap;
+  transition: color 0.6s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   DIRECTION BANNER
+   ═══════════════════════════════════════════════════ */
+.direction-banner {
+  margin-top: 64px;
+  padding: 32px 24px;
+  text-align: center;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--divider);
+  transition: background 0.6s ease;
+}
+
+.direction-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  transition: color 0.6s ease;
+}
+
+.direction-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 6px;
+  transition: color 0.6s ease, font-family 0.01s;
+}
+
+[data-style="verdant"] .direction-title {
+  font-weight: 300;
+  font-size: clamp(24px, 4vw, 36px);
+}
+
+[data-style="stone"] .direction-title,
+[data-style="violet"] .direction-title {
+  font-weight: 500;
+}
+
+[data-style="petal"] .direction-title {
+  font-weight: 400;
+  font-size: clamp(24px, 4vw, 36px);
+}
+
+.direction-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.6s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   PALETTE PREVIEW
+   ═══════════════════════════════════════════════════ */
+.palette-section {
+  background: var(--bg);
+  padding: 48px 0;
+}
+
+.palette-grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.swatch {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--surface);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.swatch:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.swatch-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-ghost);
+  text-align: center;
+  margin-top: 8px;
+}
+
+.font-preview {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 24px 0;
+}
+
+.font-sample {
+  text-align: center;
+}
+
+.font-sample-display {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+  transition: color 0.6s ease, font-family 0.01s;
+}
+
+[data-style="verdant"] .font-sample-display {
+  font-weight: 300;
+}
+
+[data-style="violet"] .font-sample-display {
+  font-weight: 500;
+}
+
+[data-style="petal"] .font-sample-display {
+  font-weight: 400;
+}
+
+.font-sample-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  transition: color 0.6s ease;
+}
+
+.font-sample-name {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-ghost);
+  margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════════ */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--dark-section-bg);
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background: url('poolamazing.png') center 35% / cover no-repeat;
+  transition: transform 8s ease;
+}
+
+.hero:hover .hero-image {
+  transform: scale(1.03);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--hero-gradient);
+  transition: background 0.8s ease;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 0 24px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--highlight);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.3s forwards;
+  transition: color 0.6s ease;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 400;
+  color: var(--hero-text);
+  line-height: 1.08;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.5s forwards;
+  transition: font-family 0.01s;
+}
+
+[data-style="verdant"] .hero h1 {
+  font-weight: 300;
+  font-size: clamp(38px, 7vw, 72px);
+  letter-spacing: -0.5px;
+}
+
+[data-style="stone"] .hero h1,
+[data-style="violet"] .hero h1 {
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+
+[data-style="petal"] .hero h1 {
+  font-weight: 400;
+  font-size: clamp(36px, 6.5vw, 68px);
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--highlight);
+  transition: color 0.6s ease;
+}
+
+.hero-subtitle {
+  font-size: clamp(15px, 2vw, 18px);
+  color: var(--hero-subtitle);
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto 32px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.7s forwards;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  box-shadow: var(--shadow-glow);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.9s forwards;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow), 0 8px 32px rgba(46, 26, 71, 0.2);
+}
+
+.hero-cta svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+
+.hero-cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* Wave divider at hero bottom */
+.hero-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 48px;
+}
+
+/* ═══════════════════════════════════════════════════
+   TRUST BAR
+   ═══════════════════════════════════════════════════ */
+.trust-bar {
+  background: var(--bg);
+  padding: 28px 0;
+  border-bottom: 1px solid var(--divider);
+  transition: background 0.6s ease, border-color 0.6s ease;
+}
+
+.trust-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.trust-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.6s ease;
+}
+
+.trust-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--accent);
+  transition: stroke 0.6s ease;
+}
+
+.trust-number {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1;
+  transition: color 0.6s ease, font-family 0.01s;
+}
+
+.trust-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+  transition: color 0.6s ease;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--divider);
+  transition: background 0.6s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION LABELS (The Spiffy Signature)
+   ═══════════════════════════════════════════════════ */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 16px;
+  transition: color 0.6s ease;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 400;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  transition: color 0.6s ease, font-family 0.01s;
+}
+
+[data-style="verdant"] .section-heading {
+  font-weight: 300;
+  font-size: clamp(26px, 4.5vw, 48px);
+}
+
+[data-style="stone"] .section-heading,
+[data-style="violet"] .section-heading {
+  font-weight: 500;
+}
+
+[data-style="petal"] .section-heading {
+  font-weight: 400;
+  font-size: clamp(26px, 4.5vw, 46px);
+}
+
+.section-heading em {
+  font-style: italic;
+  color: var(--accent);
+  transition: color 0.6s ease;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+  transition: color 0.6s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   SERVICES CARDS
+   ═══════════════════════════════════════════════════ */
+.services-section {
+  background: var(--surface);
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+  transition: background 0.6s ease, border-color 0.6s ease;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-dim), rgba(139,115,85,0.12));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: background 0.6s ease;
+}
+
+.service-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.6s ease;
+}
+
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 8px;
+  transition: color 0.6s ease, font-family 0.01s;
+}
+
+[data-style="stone"] .service-card h3,
+[data-style="violet"] .service-card h3 {
+  font-weight: 500;
+}
+
+[data-style="petal"] .service-card h3 {
+  font-weight: 400;
+  font-size: 19px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  transition: color 0.6s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   TRANSFORMATION (Before/After)
+   ═══════════════════════════════════════════════════ */
+.transform-section {
+  background: var(--bg);
+  transition: background 0.6s ease;
+}
+
+.transform-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.transform-row {
+  display: grid;
+  grid-template-columns: 1fr 36px 1fr;
+  gap: 0;
+  align-items: center;
+}
+
+.transform-before {
+  background: var(--red-soft);
+  border: 1px solid rgba(176, 112, 112, 0.15);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: background 0.6s ease, border-color 0.6s ease;
+}
+
+.transform-before .transform-tag {
+  color: #B07070;
+}
+
+.transform-after {
+  background: var(--surface);
+  border: 1px solid rgba(90, 123, 94, 0.25);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: 0 0 16px rgba(90, 123, 94, 0.06);
+  transition: background 0.6s ease, border-color 0.6s ease;
+}
+
+.transform-after .transform-tag {
+  color: var(--green);
+}
+
+.transform-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  transition: color 0.6s ease;
+}
+
+.transform-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  transition: color 0.6s ease;
+}
+
+.transform-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transform-arrow svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--green);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ═══════════════════════════════════════════════════
+   DARK SECTION (One per page)
+   ═══════════════════════════════════════════════════ */
+.dark-section {
+  background: var(--dark-section-bg);
+  color: var(--dark-section-text);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+.dark-section .section-label {
+  color: var(--highlight);
+}
+
+.dark-section .section-heading {
+  color: var(--dark-section-text);
+}
+
+.dark-section .section-heading em {
+  color: var(--highlight);
+}
+
+.dark-section .section-subtitle {
+  color: var(--dark-section-muted);
+}
+
+.dark-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.dark-orb-1 {
+  width: 400px;
+  height: 400px;
+  top: -15%;
+  right: -8%;
+  background: var(--orb1);
+}
+
+.dark-orb-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -10%;
+  left: -5%;
+  background: var(--orb2);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.process-card {
+  background: var(--dark-card-bg);
+  border: 1px solid var(--dark-card-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.process-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.process-step {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--highlight);
+  line-height: 1;
+  margin-bottom: 12px;
+  transition: color 0.6s ease, font-family 0.01s;
+}
+
+.process-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--dark-section-text);
+  margin-bottom: 8px;
+  transition: color 0.6s ease, font-family 0.01s;
+}
+
+[data-style="stone"] .process-card h3,
+[data-style="violet"] .process-card h3 {
+  font-weight: 500;
+}
+
+[data-style="petal"] .process-card h3 {
+  font-weight: 400;
+}
+
+.process-card p {
+  font-size: 14px;
+  color: var(--dark-section-muted);
+  line-height: 1.65;
+}
+
+/* ═══════════════════════════════════════════════════
+   TESTIMONIAL SECTION
+   ═══════════════════════════════════════════════════ */
+.testimonials-section {
+  background: var(--surface);
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+  transition: background 0.6s ease, border-color 0.6s ease;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  transition: all 0.25s ease;
+}
+
+.testimonial-quote {
+  font-size: 20px;
+  font-family: var(--font-display);
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 12px;
+  transition: color 0.6s ease;
+}
+
+.testimonial-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-style: italic;
+  transition: color 0.6s ease;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  transition: color 0.6s ease;
+}
+
+.testimonial-role {
+  font-size: 11px;
+  color: var(--text-ghost);
+  transition: color 0.6s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   CTA SECTION
+   ═══════════════════════════════════════════════════ */
+.cta-section {
+  background: var(--bg-alt);
+  text-align: center;
+  transition: background 0.6s ease;
+}
+
+.cta-section .section-heading {
+  margin-bottom: 8px;
+}
+
+.cta-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  transition: color 0.6s ease;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: var(--shadow-glow);
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow), 0 12px 40px rgba(46, 26, 71, 0.15);
+}
+
+.cta-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.cta-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════ */
+.footer {
+  background: var(--dark-section-bg);
+  color: var(--dark-section-muted);
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 13px;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--dark-section-text);
+  margin-bottom: 8px;
+  transition: color 0.6s ease, font-family 0.01s;
+}
+
+.footer-brand em {
+  font-style: italic;
+  color: var(--highlight);
+}
+
+.footer a {
+  color: var(--highlight);
+  transition: opacity 0.2s;
+}
+
+.footer a:hover {
+  opacity: 0.8;
+}
+
+/* ═══════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  section { padding: 80px 0; }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  section { padding: 100px 0; }
+
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-hover);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-hover);
+  }
+}
+
+/* Mobile selector adjustments */
+@media (max-width: 768px) {
+  .selector-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 0;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .selector-brand { display: none; }
+  .selector-by { display: none; }
+
+  .selector-tabs {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 4px 2px;
+  }
+
+  .style-tab {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .direction-banner {
+    margin-top: 60px;
+  }
+
+  .trust-items {
+    gap: 16px;
+  }
+
+  .trust-divider {
+    display: none;
+  }
+
+  .transform-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .transform-arrow {
+    transform: rotate(90deg);
+    padding: 4px 0;
+  }
+
+  .swatch {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+  }
+}
+
+@media (hover: none) {
+  .service-card:active { transform: scale(0.98); }
+  .testimonial-card:active { transform: scale(0.98); }
+  .process-card:active { transform: scale(0.98); }
+  .hero-cta:active { transform: scale(0.96); }
+  .cta-btn:active { transform: scale(0.96); }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════════
+   VIEW TOGGLING — Styles vs Logos
+   ═══════════════════════════════════════════════════ */
+[data-view="logos"] .page-content { display: none; }
+[data-view="logos"] .logo-gallery { display: block; }
+[data-view="styles"] .logo-gallery { display: none; }
+[data-view="styles"] .page-content { display: block; }
+
+/* ═══════════════════════════════════════════════════
+   LOGO GALLERY
+   ═══════════════════════════════════════════════════ */
+.logo-gallery {
+  display: none;
+  padding-bottom: 80px;
+}
+
+.logo-gallery-intro {
+  text-align: center;
+  padding: 100px 24px 48px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.logo-gallery-intro .section-label {
+  margin-bottom: 12px;
+}
+
+.logo-gallery-intro p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.logo-grid {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.logo-card {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: var(--surface);
+}
+
+.logo-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
+}
+
+.logo-card-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.logo-card-preview.light-bg {
+  background: #F4F1ED;
+}
+
+.logo-card-preview.dark-bg {
+  background: linear-gradient(145deg, #1E0E35, #2E1A47);
+}
+
+.logo-card-preview.white-bg {
+  background: #FFFFFF;
+}
+
+.logo-card-preview.cream-bg {
+  background: #F6F3F9;
+}
+
+.logo-card-preview img {
+  max-height: 140px;
+  max-width: 320px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.logo-card-preview svg {
+  max-height: 140px;
+}
+
+.logo-card-info {
+  padding: 20px 24px;
+  border-top: 1px solid var(--divider);
+  background: var(--bg);
+}
+
+.logo-card-name {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.logo-card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.logo-card-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.logo-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.logo-tag.current {
+  background: rgba(90, 139, 98, 0.1);
+  color: #5A8B62;
+}
+
+.logo-tag.new {
+  background: rgba(107, 63, 160, 0.1);
+  color: #6B3FA0;
+}
+
+/* Two-up layout */
+.logo-grid-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* SVG logo hover */
+.logo-card-preview .logo-svg-wrap {
+  transition: transform 0.4s ease;
+}
+.logo-card:hover .logo-svg-wrap {
+  transform: scale(1.03);
+}
+
+/* Paint-drag specific */
+.paint-drag-preview {
+  background: linear-gradient(135deg, #F4F1ED 0%, #EDE8F4 100%);
+}
+
+@media (min-width: 768px) {
+  .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .logo-grid-pair {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .logo-card-full {
+    grid-column: 1 / -1;
+  }
+  .logo-card-full .logo-card-preview {
+    min-height: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo-card-preview {
+    min-height: 260px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   LOGO TYPOGRAPHY EXPLORER
+   ═══════════════════════════════════════════════════ */
+/* Style toggles */
+.style-toggles {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 24px;
+  margin-bottom: 32px;
+}
+
+.toggle-pill {
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.toggle-pill:hover {
+  border-color: var(--border-hover);
+}
+
+.toggle-pill.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.toggle-pill i {
+  font-style: italic;
+}
+
+/* Saved combos strip */
+.saved-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px 20px;
+  border-top: 1.5px solid var(--border);
+}
+
+.saved-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.saved-header h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.saved-clear {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.saved-clear:hover {
+  color: #c0392b;
+}
+
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.saved-card {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  position: relative;
+  transition: all 0.3s ease;
+  animation: logoFadeIn 0.35s ease;
+}
+
+.saved-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.saved-card-preview {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 32px 24px;
+  background: var(--bg);
+  min-height: 100px;
+}
+
+.saved-card-preview img,
+.saved-card-preview svg {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  flex-shrink: 0;
+}
+
+.saved-card-text {
+  text-align: left;
+}
+
+.saved-card-name {
+  font-size: 24px;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.saved-card-sub {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 3px;
+}
+
+.saved-card-info {
+  padding: 14px 18px;
+  border-top: 1px solid var(--divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saved-card-fonts {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.saved-card-remove {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.saved-card-remove:hover {
+  color: #c0392b;
+  background: rgba(192, 57, 43, 0.08);
+}
+
+@media (max-width: 640px) {
+  .saved-grid {
+    grid-template-columns: 1fr;
+  }
+  .saved-card-preview {
+    padding: 24px 20px;
+  }
+  .saved-card-name {
+    font-size: 20px;
+  }
+}
+
+/* Live preview */
+.type-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 56px 40px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin: 0 auto 40px;
+  max-width: 760px;
+  min-height: 240px;
+  transition: all 0.3s ease;
+}
+
+.type-preview-mark {
+  flex-shrink: 0;
+  max-width: 120px;
+  max-height: 120px;
+  overflow: hidden;
+}
+
+.type-preview-mark img,
+.type-preview-mark svg {
+  height: 100px;
+  max-height: 100px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+.type-preview-text {
+  text-align: left;
+}
+
+.type-preview-name {
+  font-size: 36px;
+  line-height: 1.1;
+  color: var(--text);
+  transition: font-family 0.01s;
+}
+
+.type-preview-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 4px;
+  transition: font-family 0.01s;
+}
+
+.type-preview-rule {
+  width: 36px;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  border-radius: 1px;
+  margin-top: 10px;
+}
+
+/* Save button */
+
+.compare-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--surface);
+  background: var(--accent);
+  transition: all 0.25s ease;
+}
+
+.compare-btn:hover {
+  opacity: 0.9;
+  box-shadow: var(--shadow-sm);
+}
+
+.compare-btn.secondary {
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border: 1.5px solid var(--border);
+}
+
+.compare-btn.secondary:hover {
+  border-color: var(--border-hover);
+}
+
+@media (max-width: 640px) {
+  .type-preview {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 32px 24px;
+  }
+  .type-preview-text {
+    text-align: center;
+  }
+  .type-preview-rule {
+    margin: 10px auto 0;
+  }
+  .type-preview-name {
+    font-size: 28px;
+  }
+  .font-pill {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   LOGO CIRCLE SELECTOR + DETAIL
+   ═══════════════════════════════════════════════════ */
+.logo-circles {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 24px;
+  max-width: 960px;
+  margin: 0 auto 48px;
+}
+
+.logo-circle-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.logo-circle-wrap:hover .logo-circle {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px);
+}
+
+.logo-circle-wrap.active .logo-circle {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+  transform: translateY(-2px);
+}
+
+.logo-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  padding: 6px;
+}
+
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.logo-circle svg {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-circle-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 84px;
+  line-height: 1.25;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logo-circle-wrap.active .logo-circle-label {
+  color: var(--accent);
+}
+
+/* Detail panel */
+.logo-detail {
+  max-width: 760px;
+  margin: 0 auto 56px;
+  padding: 0 24px;
+}
+
+.logo-detail-inner {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  animation: logoFadeIn 0.35s ease;
+}
+
+@keyframes logoFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo-detail-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 40px;
+  min-height: 280px;
+  background: var(--bg);
+}
+
+.logo-detail-preview img {
+  max-height: 220px;
+  max-width: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.logo-detail-preview svg {
+  max-height: 200px;
+}
+
+.logo-detail-body {
+  padding: 28px 32px;
+  border-top: 1px solid var(--divider);
+}
+
+.logo-detail-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.logo-detail-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 600px;
+}
+
+.logo-detail-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .logo-circles {
+    gap: 14px;
+    padding: 0 16px;
+  }
+  .logo-circle {
+    width: 64px;
+    height: 64px;
+  }
+  .logo-circle-label {
+    font-size: 9px;
+    max-width: 68px;
+  }
+  .logo-detail-preview {
+    padding: 36px 20px;
+    min-height: 200px;
+  }
+  .logo-detail-preview img {
+    max-height: 160px;
+  }
+  .logo-detail-body {
+    padding: 20px;
+  }
+  .logo-detail-name {
+    font-size: 19px;
+  }
+  .style-toggles {
+    gap: 6px;
+  }
+  .toggle-pill {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+  .toggle-divider {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     STYLE SELECTOR BAR
+     ═══════════════════════════════════════════════════ -->
+<nav class="style-selector" role="navigation" aria-label="Style direction selector">
+  <div class="selector-inner">
+    <div class="selector-brand">R.B. Kanangra <span>Gardens</span></div>
+    <div class="selector-tabs" role="tablist">
+      <button class="style-tab active" role="tab" data-target="heritage" aria-selected="true">Heritage Plum</button>
+      <button class="style-tab" role="tab" data-target="verdant" aria-selected="false">Verdant Estate</button>
+      <button class="style-tab" role="tab" data-target="stone" aria-selected="false">Stone &amp; Copper</button>
+      <button class="style-tab" role="tab" data-target="violet" aria-selected="false">Royal Violet</button>
+      <button class="style-tab" role="tab" data-target="petal" aria-selected="false">Petal &amp; Sky</button>
+      <span style="width:1px;height:20px;background:var(--border);flex-shrink:0;margin:0 2px"></span>
+      <button class="style-tab" role="tab" data-target="logos" aria-selected="false" style="background: none;">Logos</button>
+    </div>
+    <div class="selector-by">Spiffy Designs</div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     DIRECTION BANNER
+     ═══════════════════════════════════════════════════ -->
+<div class="direction-banner">
+  <div class="direction-label" id="dir-label">DIRECTION A</div>
+  <h2 class="direction-title" id="dir-title">Heritage Plum</h2>
+  <p class="direction-subtitle" id="dir-subtitle">Classic authority meets botanical warmth</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     LOGO GALLERY (hidden by default, shown when Logos tab active)
+     ═══════════════════════════════════════════════════ -->
+<div class="logo-gallery">
+  <div class="logo-gallery-intro">
+    <div class="section-label">Logo Explorations</div>
+    <h2 class="section-heading">Finding the Right <em>Mark</em></h2>
+    <p>Click any mark to see it up close. The logo should feel as premium as the gardens Ray builds — 35 years of heritage in one mark.</p>
+  </div>
+
+  <!-- 1. Logo circles — rendered by JS -->
+  <div class="logo-circles" id="logo-circles"></div>
+
+  <div style="text-align:center;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin:-28px 0 20px;">Font Pairings</div>
+
+  <!-- 2. Font pairing circles — rendered by JS -->
+  <div class="logo-circles" id="font-circles"></div>
+
+  <!-- 3. Style toggles -->
+  <div class="style-toggles" id="style-toggles">
+    <button class="toggle-pill" data-toggle="nameUpper" onclick="toggleStyle('nameUpper')">Name Uppercase</button>
+    <button class="toggle-pill" data-toggle="nameItalic" onclick="toggleStyle('nameItalic')">Name <i>Italic</i></button>
+    <button class="toggle-pill active" data-toggle="subUpper" onclick="toggleStyle('subUpper')">Sub Uppercase</button>
+    <button class="toggle-pill" data-toggle="subItalic" onclick="toggleStyle('subItalic')">Sub <i>Italic</i></button>
+    <span class="toggle-divider" style="width:1px;height:20px;background:var(--border);margin:0 4px;"></span>
+    <button class="toggle-pill" id="toggle-current" onclick="toggleCurrent()">Show Current</button>
+  </div>
+
+  <!-- 4. Live preview -->
+  <div class="type-preview" id="type-preview">
+    <div class="type-preview-mark" id="type-preview-mark">
+      <img src="new ideas /2.png" alt="Logo mark">
+    </div>
+    <div class="type-preview-text">
+      <div class="type-preview-name" id="type-name">R.B. Kanangra</div>
+      <div class="type-preview-subtitle" id="type-subtitle">Gardens</div>
+      <div class="type-preview-rule"></div>
+    </div>
+  </div>
+
+  <!-- Current branding comparison (hidden by default) -->
+  <div id="current-compare" style="display:none;text-align:center;max-width:760px;margin:-20px auto 32px;padding:20px;border:1.5px dashed var(--border);border-radius:var(--radius-lg);background:var(--bg);">
+    <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;">Current Branding</div>
+    <img src="images/logo.png" alt="Current logo" style="max-width:260px;height:auto;display:block;margin:0 auto;">
+  </div>
+
+  <!-- 5. Save button -->
+  <div style="text-align:center;margin-bottom:32px;">
+    <button class="compare-btn" onclick="saveCombo()" id="save-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+      Save This Combo
+    </button>
+  </div>
+
+  <!-- 6. Description (new element, avoids broken .logo-detail) -->
+  <div id="combo-description" style="max-width:640px;margin:0 auto 48px;padding:0 24px;"></div>
+
+  <!-- 7. Saved combos — rendered by JS -->
+  <div id="saved-strip"></div>
+
+</div>
+
+<div class="page-content">
+<!-- ═══════════════════════════════════════════════════
+     PALETTE PREVIEW
+     ═══════════════════════════════════════════════════ -->
+<section class="palette-section">
+  <div class="container">
+    <div class="section-label">Colour Palette</div>
+    <div class="palette-grid" id="palette-grid">
+      <!-- Filled by JS -->
+    </div>
+    <div class="font-preview">
+      <div class="font-sample">
+        <div class="font-sample-display">Kanangra Gardens</div>
+        <div class="font-sample-name" id="font-display-name">DM Serif Display</div>
+      </div>
+      <div class="font-sample">
+        <div class="font-sample-body">Body text that feels like a conversation, never a brochure. Clean, quiet, readable.</div>
+        <div class="font-sample-name" id="font-body-name">Inter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO SECTION
+     ═══════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-image" role="img" aria-label="Stunning pool garden maintained by R.B. Kanangra Gardens"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Sydney's Trusted Garden Specialists — Est. 1990</div>
+    <h1>R.B. Kanangra <em>Gardens</em></h1>
+    <p class="hero-subtitle">35 years of genuine care for Sydney's finest residences, body corporate grounds, and commercial spaces.</p>
+    <a href="#services" class="hero-cta">
+      See Our Work
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none" fill="none">
+      <path d="M0 48h1440V24C1320 4 1200 40 1080 32 960 24 840 8 720 16 600 24 480 40 360 32 240 24 120 8 0 16V48z" fill="var(--bg)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     TRUST BAR
+     ═══════════════════════════════════════════════════ -->
+<div class="trust-bar">
+  <div class="trust-items">
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <div>
+        <div class="trust-number">35</div>
+        <div class="trust-label">Years in operation</div>
+      </div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div>
+        <div class="trust-number">9</div>
+        <div class="trust-label">Dedicated team members</div>
+      </div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div>
+        <div class="trust-number">20+</div>
+        <div class="trust-label">Year client relationships</div>
+      </div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div>
+        <div class="trust-number">Body Corp</div>
+        <div class="trust-label">Strata specialists</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     SERVICES
+     ═══════════════════════════════════════════════════ -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="section-label reveal">What We Care For</div>
+    <h2 class="section-heading reveal delay-1">Gardens That Speak <em>Volumes</em></h2>
+    <p class="section-subtitle reveal delay-2">From apartment complexes to private estates, we bring 35 years of artistry to every leaf, path, and poolside.</p>
+
+    <div class="services-grid">
+      <div class="service-card reveal delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3>Body Corporate</h3>
+        <p>Strata grounds, common areas, and building entries maintained to the highest standard. Our speciality for decades.</p>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Residential Gardens</h3>
+        <p>Front entries, backyards, and everything in between. Designed for beauty and built to last through every season.</p>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-4h6v4"/><path d="M3 20h2"/><path d="M19 20h2"/></svg>
+        </div>
+        <h3>Commercial Spaces</h3>
+        <p>Office courtyards, retail frontages, and corporate gardens. First impressions that reflect the quality inside.</p>
+      </div>
+      <div class="service-card reveal delay-4">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2"/><path d="M12 21v2"/><path d="M4.22 4.22l1.42 1.42"/><path d="M18.36 18.36l1.42 1.42"/><path d="M1 12h2"/><path d="M21 12h2"/><path d="M4.22 19.78l1.42-1.42"/><path d="M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <h3>Pool Surrounds</h3>
+        <p>Lush, resort-style poolside gardens that transform everyday spaces into retreats. Drainage, planting, and design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     TRANSFORMATION (Before → After)
+     ═══════════════════════════════════════════════════ -->
+<section class="transform-section">
+  <div class="container">
+    <div class="section-label reveal">The Difference</div>
+    <h2 class="section-heading reveal delay-1">From Ordinary to <em>Extraordinary</em></h2>
+    <p class="section-subtitle reveal delay-2">35 years of transformations. Here's what changes when Kanangra Gardens steps in.</p>
+
+    <div class="transform-grid">
+      <div class="transform-row reveal delay-1">
+        <div class="transform-before">
+          <div class="transform-tag">Before</div>
+          <div class="transform-text">Overgrown common areas that residents apologise for</div>
+        </div>
+        <div class="transform-arrow">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14" stroke-linecap="round"/><path d="m12 5 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="transform-after">
+          <div class="transform-tag">After</div>
+          <div class="transform-text">Grounds so pristine they add value to every unit in the building</div>
+        </div>
+      </div>
+
+      <div class="transform-row reveal delay-2">
+        <div class="transform-before">
+          <div class="transform-tag">Before</div>
+          <div class="transform-text">Rotating contractors who don't know the site or its history</div>
+        </div>
+        <div class="transform-arrow">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14" stroke-linecap="round"/><path d="m12 5 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="transform-after">
+          <div class="transform-tag">After</div>
+          <div class="transform-text">The same trusted team for decades — they know every plant by name</div>
+        </div>
+      </div>
+
+      <div class="transform-row reveal delay-3">
+        <div class="transform-before">
+          <div class="transform-tag">Before</div>
+          <div class="transform-text">A website that looks like every other mow-and-blow operation</div>
+        </div>
+        <div class="transform-arrow">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14" stroke-linecap="round"/><path d="m12 5 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="transform-after">
+          <div class="transform-tag">After</div>
+          <div class="transform-text">A brand as premium as the work — strata committees see it and call immediately</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     DARK SECTION — How It Works
+     ═══════════════════════════════════════════════════ -->
+<section class="dark-section">
+  <div class="dark-orb dark-orb-1"></div>
+  <div class="dark-orb dark-orb-2"></div>
+  <div class="container">
+    <div class="section-label reveal">How We Work</div>
+    <h2 class="section-heading reveal delay-1">From First Call to <em>Flourishing</em></h2>
+    <p class="section-subtitle reveal delay-2">A process refined over 35 years. No surprises, no shortcuts.</p>
+
+    <div class="process-grid">
+      <div class="process-card reveal delay-1">
+        <div class="process-step">01</div>
+        <h3>Site Assessment</h3>
+        <p>We walk the grounds with you. Understand the soil, the light, the history. Every garden has a story — we listen first.</p>
+      </div>
+      <div class="process-card reveal delay-2">
+        <div class="process-step">02</div>
+        <h3>Garden Plan</h3>
+        <p>A detailed plan tailored to your property. Species selection, seasonal rhythms, maintenance schedules. No guesswork.</p>
+      </div>
+      <div class="process-card reveal delay-3">
+        <div class="process-step">03</div>
+        <h3>Transformation</h3>
+        <p>Our team brings the plan to life. Planting, hardscaping, irrigation. Executed with three decades of precision.</p>
+      </div>
+      <div class="process-card reveal delay-4">
+        <div class="process-step">04</div>
+        <h3>Ongoing Care</h3>
+        <p>Gardens grow. So does our relationship. Regular visits, seasonal adjustments, and a team that knows your site by heart.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     TESTIMONIALS
+     ═══════════════════════════════════════════════════ -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-label reveal">What They Say</div>
+    <h2 class="section-heading reveal delay-1">Trusted by <em>Committees</em> &amp; Homeowners Alike</h2>
+    <p class="section-subtitle reveal delay-2">Decades of relationships, built one garden at a time.</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal delay-1">
+        <div class="testimonial-quote">&ldquo;</div>
+        <p class="testimonial-text">Ray's team has maintained our building's grounds for over 15 years. They're not just gardeners — they're custodians. Our property values reflect it.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="testimonial-name">Margaret Chen</div>
+            <div class="testimonial-role">Strata Committee Chair, Mosman</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-2">
+        <div class="testimonial-quote">&ldquo;</div>
+        <p class="testimonial-text">We tried three landscapers before Kanangra. The difference is night and day. They actually care about the garden long after the invoice is paid.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">D</div>
+          <div>
+            <div class="testimonial-name">David Thornton</div>
+            <div class="testimonial-role">Building Manager, North Sydney</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-3">
+        <div class="testimonial-quote">&ldquo;</div>
+        <p class="testimonial-text">Our pool area went from embarrassing to resort-level. Neighbours stop to compliment it. Ray's work speaks for itself — 20 years and counting.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sandra & Paul Webb</div>
+            <div class="testimonial-role">Homeowners, Neutral Bay</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FINAL CTA
+     ═══════════════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="container-narrow">
+    <div class="section-label reveal">Let's Begin</div>
+    <h2 class="section-heading reveal delay-1">Ready for Grounds That <em>Impress?</em></h2>
+    <p class="cta-desc reveal delay-2">Whether you're a strata committee, property manager, or homeowner — the conversation starts here.</p>
+    <a href="#" class="cta-btn reveal delay-3">
+      Get in Touch
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+</div><!-- /.page-content -->
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-brand">R.B. Kanangra <em>Gardens</em></div>
+  <p>Sydney's trusted garden specialists since 1990</p>
+  <p style="margin-top: 16px; font-size: 11px; opacity: 0.5;">Brand directions prepared by <a href="#">Spiffy Designs</a></p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   STYLE SWITCHING
+   ═══════════════════════════════════════════════════ */
+const directions = {
+  heritage: {
+    label: 'DIRECTION A',
+    title: 'Heritage Plum',
+    subtitle: 'Classic authority meets botanical warmth',
+    displayFont: 'DM Serif Display',
+    bodyFont: 'Inter',
+    palette: [
+      { color: '#F4F1ED', name: 'Vellum' },
+      { color: '#2E1A47', name: 'Plum' },
+      { color: '#8B7355', name: 'Bronze' },
+      { color: '#A8937B', name: 'Bronze Lt' },
+      { color: '#5A7B5E', name: 'Garden' },
+      { color: '#5D536B', name: 'Heather' },
+      { color: '#EBE7E1', name: 'Stone' },
+      { color: '#FFFFFF', name: 'Surface' }
+    ]
+  },
+  verdant: {
+    label: 'DIRECTION B',
+    title: 'Verdant Estate',
+    subtitle: 'Walk into a botanical garden',
+    displayFont: 'Cormorant Garamond',
+    bodyFont: 'DM Sans',
+    palette: [
+      { color: '#F7F5F0', name: 'Linen' },
+      { color: '#1B2E1D', name: 'Forest' },
+      { color: '#3E5A3A', name: 'Moss' },
+      { color: '#5A7B56', name: 'Fern' },
+      { color: '#C9A96E', name: 'Gold' },
+      { color: '#5C6E5A', name: 'Sage' },
+      { color: '#EDE9E0', name: 'Parchment' },
+      { color: '#FFFFFF', name: 'Surface' }
+    ]
+  },
+  stone: {
+    label: 'DIRECTION C',
+    title: 'Stone & Copper',
+    subtitle: 'Modern architecture meets living earth',
+    displayFont: 'Playfair Display',
+    bodyFont: 'Inter',
+    palette: [
+      { color: '#FAF8F5', name: 'Warm Wht' },
+      { color: '#2A2520', name: 'Charcoal' },
+      { color: '#B46C48', name: 'Copper' },
+      { color: '#CA8A66', name: 'Copper Lt' },
+      { color: '#6B8F5E', name: 'Olive' },
+      { color: '#D4A870', name: 'Honey' },
+      { color: '#F0ECE6', name: 'Sandstone' },
+      { color: '#FFFFFF', name: 'Surface' }
+    ]
+  },
+  violet: {
+    label: 'DIRECTION D',
+    title: 'Royal Violet',
+    subtitle: 'Wisteria at twilight — purple grandeur with living green',
+    displayFont: 'Playfair Display',
+    bodyFont: 'Inter',
+    palette: [
+      { color: '#F6F3F9', name: 'Mist' },
+      { color: '#1E0E35', name: 'Midnight' },
+      { color: '#6B3FA0', name: 'Amethyst' },
+      { color: '#8B65BF', name: 'Wisteria' },
+      { color: '#5A8B62', name: 'Sage' },
+      { color: '#B89EDB', name: 'Lavender' },
+      { color: '#EDE8F4', name: 'Iris' },
+      { color: '#FFFFFF', name: 'Surface' }
+    ]
+  },
+  petal: {
+    label: 'DIRECTION E',
+    title: 'Petal & Sky',
+    subtitle: 'Peony pink meets hydrangea blue — a garden in full bloom',
+    displayFont: 'Fraunces',
+    bodyFont: 'DM Sans',
+    palette: [
+      { color: '#FBF7F8', name: 'Blush' },
+      { color: '#1C2A42', name: 'Twilight' },
+      { color: '#B4627E', name: 'Peony' },
+      { color: '#CC8A9E', name: 'Rose' },
+      { color: '#6A9B7E', name: 'Garden' },
+      { color: '#8DB4CC', name: 'Hydrangea' },
+      { color: '#F3ECF0', name: 'Petal' },
+      { color: '#FFFFFF', name: 'Surface' }
+    ]
+  }
+};
+
+const tabs = document.querySelectorAll('.style-tab');
+const html = document.documentElement;
+const banner = document.querySelector('.direction-banner');
+
+function switchStyle(style) {
+  // Handle Logos view
+  if (style === 'logos') {
+    html.setAttribute('data-view', 'logos');
+    banner.style.display = 'none';
+    tabs.forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.target === 'logos');
+      tab.setAttribute('aria-selected', tab.dataset.target === 'logos');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  // Style view
+  html.setAttribute('data-view', 'styles');
+  html.setAttribute('data-style', style);
+  banner.style.display = '';
+  const dir = directions[style];
+
+  // Update banner
+  document.getElementById('dir-label').textContent = dir.label;
+  document.getElementById('dir-title').textContent = dir.title;
+  document.getElementById('dir-subtitle').textContent = dir.subtitle;
+
+  // Update font names
+  document.getElementById('font-display-name').textContent = dir.displayFont;
+  document.getElementById('font-body-name').textContent = dir.bodyFont;
+
+  // Update palette swatches
+  const grid = document.getElementById('palette-grid');
+  grid.innerHTML = dir.palette.map(s =>
+    `<div><div class="swatch" style="background:${s.color};${s.color === '#FFFFFF' ? 'border: 2px solid #E8E4E0;' : ''}"></div><div class="swatch-label">${s.name}</div></div>`
+  ).join('');
+
+  // Update tabs
+  tabs.forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.target === style);
+    tab.setAttribute('aria-selected', tab.dataset.target === style);
+  });
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => switchStyle(tab.dataset.target));
+});
+
+// Initialize palette on load
+switchStyle('heritage');
+
+/* ═══════════════════════════════════════════════════
+   FONT PAIRINGS (curated combos)
+   ═══════════════════════════════════════════════════ */
+const fontPairings = [
+  { name: 'Elegant',      nameF: "'Playfair Display', serif",      nameW: 500, subF: "'Inter', sans-serif",           subW: 600, subLs: '5px',
+    desc: 'Playfair Display has refined, high-contrast strokes inspired by European typographic tradition. Paired with Inter for clean, modern balance.' },
+  { name: 'Refined',      nameF: "'Cormorant Garamond', serif",    nameW: 400, subF: "'DM Sans', sans-serif",         subW: 600, subLs: '5px',
+    desc: 'Cormorant Garamond is light, graceful, and literary — like handwriting that went to finishing school. DM Sans keeps the subtitle grounded and readable.' },
+  { name: 'Organic',      nameF: "'Fraunces', serif",              nameW: 400, subF: "'DM Sans', sans-serif",         subW: 600, subLs: '5px',
+    desc: 'Fraunces has wobbly, hand-drawn curves that feel alive — organic, not corporate. DM Sans provides quiet contrast so the headline can breathe.' },
+  { name: 'Warm',         nameF: "'Lora', serif",                  nameW: 500, subF: "'Montserrat', sans-serif",      subW: 600, subLs: '5px',
+    desc: 'Lora is a well-balanced serif with soft brushstroke roots — approachable and warm. Montserrat is geometric and confident, adding structure.' },
+  { name: 'Classic',      nameF: "'Libre Baskerville', serif",     nameW: 400, subF: "'Outfit', sans-serif",          subW: 500, subLs: '5px',
+    desc: 'Libre Baskerville is a web-optimised Baskerville — timeless, dignified, English garden energy. Outfit is a clean, modern geometric sans.' },
+  { name: 'Editorial',    nameF: "'Crimson Pro', serif",           nameW: 500, subF: "'Inter', sans-serif",           subW: 600, subLs: '5px',
+    desc: 'Crimson Pro is an elegant text serif — feels like a luxury magazine masthead. Inter keeps the subtitle crisp and contemporary.' },
+  { name: 'Modern',       nameF: "'Montserrat', sans-serif",       nameW: 500, subF: "'Crimson Pro', serif",          subW: 500, subLs: '4px',
+    desc: 'Montserrat is bold, geometric, and urban — a confident sans-serif headline. Crimson Pro as the subtitle adds a touch of editorial class.' },
+  { name: 'Contemporary', nameF: "'Outfit', sans-serif",           nameW: 400, subF: "'Josefin Sans', sans-serif",    subW: 500, subLs: '6px',
+    desc: 'Outfit is clean and rounded — friendly without being childish. Josefin Sans adds a touch of vintage Scandinavian geometry to the subtitle.' },
+];
+
+let activePairingIdx = 0;
+let styleToggles = { nameUpper: false, nameItalic: false, subUpper: true, subItalic: false };
+// nameUpper: false = title case, true = UPPERCASE
+// subUpper: true = GARDENS, false = Gardens
+
+function buildFontCircles() {
+  const container = document.getElementById('font-circles');
+  if (!container) return;
+
+  let html = '';
+  for (let i = 0; i < fontPairings.length; i++) {
+    const p = fontPairings[i];
+    const active = i === activePairingIdx ? ' active' : '';
+    var inner = '<div style="text-align:center;line-height:1.15;">'
+      + '<div style="font-family:' + p.nameF + ';font-weight:' + p.nameW + ';font-size:16px;color:#2E1A47;">Rk</div>'
+      + '<div style="font-family:' + p.subF + ';font-weight:' + p.subW + ';font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:#8B7355;margin-top:1px;">gardens</div>'
+      + '</div>';
+    html += '<div class="logo-circle-wrap' + active + '" data-idx="' + i + '" onclick="selectPairing(' + i + ')">'
+      + '<div class="logo-circle" style="padding:4px;display:flex;align-items:center;justify-content:center;">' + inner + '</div>'
+      + '<div class="logo-circle-label">' + p.name + '</div>'
+      + '</div>';
+  }
+  container.innerHTML = html;
+}
+
+function selectPairing(idx) {
+  activePairingIdx = idx;
+  document.querySelectorAll('#font-circles .logo-circle-wrap').forEach((el, i) => {
+    el.classList.toggle('active', i === idx);
+  });
+  updatePreview();
+  renderDetail();
+}
+
+function toggleStyle(key) {
+  styleToggles[key] = !styleToggles[key];
+  document.querySelectorAll('.toggle-pill').forEach(pill => {
+    if (pill.dataset.toggle === key) pill.classList.toggle('active', styleToggles[key]);
+  });
+  updatePreview();
+}
+
+function toggleCurrent() {
+  var box = document.getElementById('current-compare');
+  var btn = document.getElementById('toggle-current');
+  if (!box) return;
+  var showing = box.style.display !== 'none';
+  box.style.display = showing ? 'none' : 'block';
+  if (btn) btn.classList.toggle('active', !showing);
+}
+
+function updatePreview() {
+  const p = fontPairings[activePairingIdx];
+  const nameEl = document.getElementById('type-name');
+  const subEl = document.getElementById('type-subtitle');
+  if (!nameEl || !subEl) return;
+
+  nameEl.style.fontFamily = p.nameF;
+  nameEl.style.fontWeight = p.nameW;
+  nameEl.style.fontStyle = styleToggles.nameItalic ? 'italic' : 'normal';
+  nameEl.style.textTransform = styleToggles.nameUpper ? 'uppercase' : 'none';
+  nameEl.style.letterSpacing = styleToggles.nameUpper ? '2px' : '0';
+
+  subEl.style.fontFamily = p.subF;
+  subEl.style.fontWeight = p.subW;
+  subEl.style.fontStyle = styleToggles.subItalic ? 'italic' : 'normal';
+  subEl.style.textTransform = styleToggles.subUpper ? 'uppercase' : 'none';
+  subEl.style.letterSpacing = styleToggles.subUpper ? p.subLs : '1px';
+}
+
+// Build on load
+buildFontCircles();
+updatePreview();
+
+/* ═══════════════════════════════════════════════════
+   LOGO CIRCLE SELECTOR
+   ═══════════════════════════════════════════════════ */
+const logoData = [
+  {
+    name: 'Current',
+    desc: 'The existing mark — colourful concentric circles. Served well, but positioned as generic "Landscapes" rather than premium "Gardens."',
+    tags: [['Current','current'],['Raster','']],
+    thumb: '<img src="new ideas /current.png" alt="Current mark">',
+    preview: '<img src="new ideas /current.png" alt="Current mark">',
+  },
+  {
+    name: 'Lotus Gradient',
+    desc: 'Refined lotus with purple-to-teal gradient strokes. Organic, elegant line work. This is the hero direction — it says heritage without saying a word.',
+    tags: [['Proposed','new'],['Mark','']],
+    thumb: '<img src="new ideas /2.png" alt="Lotus">',
+    preview: '<img src="new ideas /2.png" alt="Lotus gradient mark">',
+  },
+  {
+    name: 'Rose Spiral',
+    desc: 'Abstract rose in plum with sage green centre. A single bold mark that works as a standalone icon — on signage, uniforms, app icons. Compact and confident.',
+    tags: [['Proposed','new'],['Mark','']],
+    thumb: '<img src="new ideas /1.png" alt="Rose Spiral">',
+    preview: '<img src="new ideas /1.png" alt="Rose spiral mark">',
+  },
+  {
+    name: 'Botanical Leaf',
+    desc: 'Paired leaf paths radiating from a central stem. Three tones — amethyst, bronze, sage — representing heritage, craft, and growth. Ultra-lightweight SVG that scales to any size.',
+    tags: [['Proposed','new'],['SVG',''],['Scalable','']],
+    thumb: '<svg viewBox="0 0 30 34" fill="none"><path d="M15 2 L15 32" stroke="#8B7355" stroke-width="1.2"/><path d="M15 6 L5 14 L15 12" stroke="#6B3FA0" stroke-width="0.9" fill="none"/><path d="M15 6 L25 14 L15 12" stroke="#6B3FA0" stroke-width="0.9" fill="none"/><path d="M15 12 L4 22 L15 19" stroke="#8B7355" stroke-width="0.9" fill="none"/><path d="M15 12 L26 22 L15 19" stroke="#8B7355" stroke-width="0.9" fill="none"/><path d="M15 19 L7 28 L15 26" stroke="#5A8B62" stroke-width="0.9" fill="none"/><path d="M15 19 L23 28 L15 26" stroke="#5A8B62" stroke-width="0.9" fill="none"/></svg>',
+    preview: 'svg-botanical-full',
+  },
+  {
+    name: 'Garden Bloom',
+    desc: 'The brushstroke flower grounded by green leaves and grass at the base. More literal, more "gardens." Could work as a hero illustration or brand mascot beyond just a logo mark.',
+    tags: [['New concept','new'],['Illustrative','']],
+    thumb: '<img src="new ideas /ChatGPT Image Feb 22, 2026, 07_29_57 PM.png" alt="Garden Bloom">',
+    preview: '<img src="new ideas /ChatGPT Image Feb 22, 2026, 07_29_57 PM.png" alt="Garden Bloom with Foliage">',
+  },
+  {
+    name: 'Violet Refined',
+    desc: 'Cleaner, more purple-dominant flower with lime green accents. Tighter strokes, more controlled energy. A more polished take on the painterly direction — still organic, but feels more "brand."',
+    tags: [['New concept','new'],['Painterly','']],
+    thumb: '<img src="new ideas /ChatGPT Image Feb 22, 2026, 07_31_17 PM.png" alt="Violet Bloom Refined">',
+    preview: '<img src="new ideas /ChatGPT Image Feb 22, 2026, 07_31_17 PM.png" alt="Violet Bloom Refined">',
+  },
+  {
+    name: 'Rainbow Petal',
+    desc: 'Vibrant multi-colour petal flower with a soft pink centre. Playful and full of life — every petal a different hue. Says "we work with every colour nature gives us."',
+    tags: [['New concept','new'],['Colourful','']],
+    thumb: '<img src="new ideas /rainbow.png" alt="Rainbow Petal">',
+    preview: '<img src="new ideas /rainbow.png" alt="Rainbow Petal Flower">',
+  },
+  {
+    name: 'Line Whisper',
+    desc: 'The lightest, most ethereal version. Strokes barely there, like a watercolour memory. Maximum elegance, minimum weight. Would pair beautifully with any of the five style directions.',
+    tags: [['New concept','new'],['Line art',''],['Minimal','']],
+    thumb: '<img src="new ideas /ChatGPT Image Feb 22, 2026, 07_36_44 PM.png" alt="Line Bloom Whisper">',
+    preview: '<img src="new ideas /ChatGPT Image Feb 22, 2026, 07_36_44 PM.png" alt="Line Bloom Whisper">',
+  },
+];
+
+let activeLogoIdx = 1; // Start on Lotus Gradient
+
+function buildLogoCircles() {
+  const container = document.getElementById('logo-circles');
+  if (!container) return;
+
+  container.innerHTML = logoData.map((logo, i) =>
+    `<div class="logo-circle-wrap${i === activeLogoIdx ? ' active' : ''}" data-idx="${i}" onclick="selectLogo(${i})">
+      <div class="logo-circle">${logo.thumb}</div>
+      <div class="logo-circle-label">${logo.name}</div>
+    </div>`
+  ).join('');
+}
+
+function selectLogo(idx) {
+  activeLogoIdx = idx;
+  const logo = logoData[idx];
+
+  document.querySelectorAll('#logo-circles .logo-circle-wrap').forEach((el, i) =>
+    el.classList.toggle('active', i === idx)
+  );
+
+  // Update the font pairing preview mark
+  const typeMark = document.getElementById('type-preview-mark');
+  if (typeMark) {
+    const hasRealImage = logo.thumb.includes('<img') || logo.thumb.includes('<svg');
+    if (hasRealImage) {
+      typeMark.innerHTML = logo.thumb;
+      typeMark.style.display = '';
+    } else {
+      typeMark.innerHTML = '';
+      typeMark.style.display = 'none';
+    }
+  }
+
+  renderDetail();
+}
+
+function renderDetail() {
+  var logo = logoData[activeLogoIdx];
+  var pairing = fontPairings[activePairingIdx];
+  var el = document.getElementById('combo-description');
+  if (!el) return;
+
+  var nameFont = pairing.nameF.replace(/'/g, '').split(',')[0].trim();
+  var subFont = pairing.subF.replace(/'/g, '').split(',')[0].trim();
+
+  el.innerHTML = '<div style="text-align:center;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Logo: ' + logo.name + '</div>'
+    + '<div style="font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:28px;">' + logo.desc + '</div>'
+    + '<div style="width:48px;height:1.5px;background:var(--border);margin:0 auto 28px;"></div>'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Fonts: ' + nameFont + ' + ' + subFont + '</div>'
+    + '<div style="font-size:15px;color:var(--text-muted);line-height:1.7;">' + pairing.desc + '</div>'
+    + '</div>';
+}
+
+/* ═══════════════════════════════════════════════════
+   SAVE / COMPARE COMBOS
+   ═══════════════════════════════════════════════════ */
+let savedCombos = [];
+let comboIdCounter = 0;
+
+function saveCombo() {
+  const logo = logoData[activeLogoIdx];
+  const pairing = fontPairings[activePairingIdx];
+
+  savedCombos.push({
+    id: ++comboIdCounter,
+    logoIdx: activeLogoIdx,
+    logoName: logo.name,
+    logoThumb: logo.thumb,
+    pairingIdx: activePairingIdx,
+    pairingName: pairing.name,
+    nameF: pairing.nameF,
+    nameW: pairing.nameW,
+    subF: pairing.subF,
+    subW: pairing.subW,
+    subLs: pairing.subLs,
+    nameUpper: styleToggles.nameUpper,
+    nameItalic: styleToggles.nameItalic,
+    subUpper: styleToggles.subUpper,
+    subItalic: styleToggles.subItalic,
+  });
+
+  renderSaved();
+
+  // Brief button feedback
+  const btn = document.getElementById('save-btn');
+  if (btn) {
+    btn.textContent = '✓ Saved';
+    btn.style.pointerEvents = 'none';
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg> Save This Combo';
+      btn.style.pointerEvents = '';
+    }, 800);
+  }
+}
+
+function removeSaved(id) {
+  savedCombos = savedCombos.filter(c => c.id !== id);
+  renderSaved();
+}
+
+function clearAllSaved() {
+  savedCombos = [];
+  renderSaved();
+}
+
+function renderSaved() {
+  const strip = document.getElementById('saved-strip');
+  if (!strip) return;
+
+  if (savedCombos.length === 0) {
+    strip.innerHTML = '';
+    return;
+  }
+
+  const cards = savedCombos.map(c => {
+    const nameStyle = `font-family:${c.nameF};font-weight:${c.nameW};${c.nameItalic ? 'font-style:italic;' : ''}${c.nameUpper ? 'text-transform:uppercase;letter-spacing:2px;' : ''}`;
+    const subStyle = `font-family:${c.subF};font-weight:${c.subW};letter-spacing:${c.subUpper ? c.subLs : '1px'};${c.subUpper ? 'text-transform:uppercase;' : 'text-transform:none;'}${c.subItalic ? 'font-style:italic;' : ''}`;
+    const nameFontClean = c.nameF.replace(/'/g, '').split(',')[0].trim();
+    const subFontClean = c.subF.replace(/'/g, '').split(',')[0].trim();
+
+    return `<div class="saved-card">
+      <div class="saved-card-preview">
+        <div style="width:64px;height:64px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">${c.logoThumb}</div>
+        <div class="saved-card-text">
+          <div class="saved-card-name" style="${nameStyle}">R.B. Kanangra</div>
+          <div class="saved-card-sub" style="${subStyle}">Gardens</div>
+        </div>
+      </div>
+      <div class="saved-card-info">
+        <div class="saved-card-fonts">${c.logoName} &middot; ${c.pairingName}<br>${nameFontClean} + ${subFontClean}${c.nameItalic ? ' &middot; Italic' : ''}${c.nameUpper ? ' &middot; Caps' : ''}</div>
+        <button class="saved-card-remove" onclick="removeSaved(${c.id})" title="Remove">&times;</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  strip.innerHTML = `<div class="saved-section">
+    <div class="saved-header">
+      <h3>Saved Combos (${savedCombos.length})</h3>
+      <button class="saved-clear" onclick="clearAllSaved()">Clear All</button>
+    </div>
+    <div class="saved-grid">${cards}</div>
+  </div>`;
+}
+
+// Build on load
+buildLogoCircles();
+selectLogo(activeLogoIdx);
+
+/* ═══════════════════════════════════════════════════
+   SCROLL REVEAL
+   ═══════════════════════════════════════════════════ */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
