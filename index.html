@@ -37,11 +37,11 @@
     "founder": {
       "@type": "Person",
       "name": "Sydney",
-      "email": "sydneyzuckerman1@gmail.com"
+      "email": "spiff@spiffydesigns.dev"
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "sydneyzuckerman1@gmail.com",
+      "email": "spiff@spiffydesigns.dev",
       "contactType": "customer service",
       "availableLanguage": "English"
     },
@@ -113,7 +113,7 @@
         "name": "How do I contact Spiffy Designs?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can reach Sydney via the contact form on the website or by emailing sydneyzuckerman1@gmail.com."
+          "text": "You can reach Sydney via the contact form on the website or by emailing spiff@spiffydesigns.dev."
         }
       },
       {
@@ -169,6 +169,7 @@
     }
 
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    html { overflow-x: hidden; }
     body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; line-height: 1.65; overflow-x: hidden; transition: background 0.5s ease, color 0.4s ease; }
     a { color: inherit; text-decoration: none; }
     h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 400; line-height: 1.2; }
@@ -240,8 +241,9 @@
     .work-header { margin-bottom: 44px; }
     .work-header .section-title { margin-bottom: 8px; }
     .work-subtitle { font-size: 0.88rem; color: var(--text-muted); max-width: 440px; line-height: 1.7; }
-    .projects-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; align-items: start; }
-    .project-card { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); cursor: pointer; transition: transform 0.5s var(--ease-out), border-color 0.4s, box-shadow 0.4s; display: block; grid-column: span 4; }
+    .projects-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; align-items: stretch; }
+    .project-card { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); cursor: pointer; transition: transform 0.5s var(--ease-out), border-color 0.4s, box-shadow 0.4s; display: flex; flex-direction: column; grid-column: span 4; }
+    .project-preview-wrap + .project-bar { margin-top: auto; }
     .project-card:hover { transform: translateY(-3px); border-color: var(--border-hover); box-shadow: var(--shadow-hover); }
     .project-card.wide { grid-column: span 9; }
     .project-card.narrow { grid-column: span 5; }
@@ -272,22 +274,22 @@
     .project-bar-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); padding: 3px 10px; border: 1px solid var(--border); border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
 
     /* Per-project fonts — title = heading font, desc/result = body font */
-    .font-cormorant .hover-title, .font-cormorant .project-bar-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; }
-    .font-cormorant .hover-desc, .font-cormorant .project-bar-result { font-family: 'Inter', sans-serif; }
-    .font-bebas .hover-title, .font-bebas .project-bar-name { font-family: 'Bebas Neue', sans-serif; font-style: normal; font-weight: 400; letter-spacing: 0.06em; font-size: 1.5rem; }
+    .font-cormorant .hover-title, .font-cormorant .project-bar-name, .font-cormorant .lightbox-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; }
+    .font-cormorant .hover-desc, .font-cormorant .project-bar-result, .font-cormorant .lightbox-desc { font-family: 'Inter', sans-serif; }
+    .font-bebas .hover-title, .font-bebas .project-bar-name, .font-bebas .lightbox-title { font-family: 'Bebas Neue', sans-serif; font-style: normal; font-weight: 400; letter-spacing: 0.06em; font-size: 1.5rem; }
     .font-bebas .project-bar-name { font-size: 1.2rem; }
-    .font-bebas .hover-desc, .font-bebas .project-bar-result { font-family: 'Inter', sans-serif; }
-    .font-prompt .hover-title, .font-prompt .project-bar-name { font-family: 'Prompt', sans-serif; font-style: normal; font-weight: 600; }
-    .font-prompt .hover-desc, .font-prompt .project-bar-result { font-family: 'Prompt', sans-serif; font-weight: 400; }
-    .font-playfair .hover-title, .font-playfair .project-bar-name { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; }
-    .font-playfair .hover-desc, .font-playfair .project-bar-result { font-family: 'Inter', sans-serif; }
-    .font-opensans .hover-title, .font-opensans .project-bar-name { font-family: 'Open Sans', sans-serif; font-style: normal; font-weight: 700; }
-    .font-opensans .hover-desc, .font-opensans .project-bar-result { font-family: 'Open Sans', sans-serif; font-weight: 400; }
-    .font-dmserif .hover-title, .font-dmserif .project-bar-name { font-family: 'DM Serif Display', serif; font-style: normal; font-weight: 400; }
-    .font-dmserif .hover-desc, .font-dmserif .project-bar-result { font-family: 'Inter', sans-serif; }
-    .font-inter-bold .hover-title, .font-inter-bold .project-bar-name { font-family: 'Inter', sans-serif; font-style: normal; font-weight: 700; letter-spacing: -0.01em; }
-    .font-montserrat .hover-title, .font-montserrat .project-bar-name { font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: 600; }
-    .font-montserrat .hover-desc, .font-montserrat .project-bar-result { font-family: 'Montserrat', sans-serif; font-weight: 400; }
+    .font-bebas .hover-desc, .font-bebas .project-bar-result, .font-bebas .lightbox-desc { font-family: 'Inter', sans-serif; }
+    .font-prompt .hover-title, .font-prompt .project-bar-name, .font-prompt .lightbox-title { font-family: 'Prompt', sans-serif; font-style: normal; font-weight: 600; }
+    .font-prompt .hover-desc, .font-prompt .project-bar-result, .font-prompt .lightbox-desc { font-family: 'Prompt', sans-serif; font-weight: 400; }
+    .font-playfair .hover-title, .font-playfair .project-bar-name, .font-playfair .lightbox-title { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; }
+    .font-playfair .hover-desc, .font-playfair .project-bar-result, .font-playfair .lightbox-desc { font-family: 'Inter', sans-serif; }
+    .font-opensans .hover-title, .font-opensans .project-bar-name, .font-opensans .lightbox-title { font-family: 'Open Sans', sans-serif; font-style: normal; font-weight: 700; }
+    .font-opensans .hover-desc, .font-opensans .project-bar-result, .font-opensans .lightbox-desc { font-family: 'Open Sans', sans-serif; font-weight: 400; }
+    .font-dmserif .hover-title, .font-dmserif .project-bar-name, .font-dmserif .lightbox-title { font-family: 'DM Serif Display', serif; font-style: normal; font-weight: 400; }
+    .font-dmserif .hover-desc, .font-dmserif .project-bar-result, .font-dmserif .lightbox-desc { font-family: 'Inter', sans-serif; }
+    .font-inter-bold .hover-title, .font-inter-bold .project-bar-name, .font-inter-bold .lightbox-title { font-family: 'Inter', sans-serif; font-style: normal; font-weight: 700; letter-spacing: -0.01em; }
+    .font-montserrat .hover-title, .font-montserrat .project-bar-name, .font-montserrat .lightbox-title { font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: 600; }
+    .font-montserrat .hover-desc, .font-montserrat .project-bar-result, .font-montserrat .lightbox-desc { font-family: 'Montserrat', sans-serif; font-weight: 400; }
 
     .gradient-preview { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
     .gradient-preview.tuktuk { background: linear-gradient(135deg, #FF6B35 0%, #F7931E 40%, #004E89 100%); }
@@ -309,6 +311,39 @@
     .showcase-label { padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; }
     .showcase-label span { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
     .showcase-label .showcase-role { color: var(--sage); }
+
+    /* LIGHTBOX */
+    .lightbox-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.94); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 16px; animation: fadeIn 0.25s ease; overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch; box-sizing: border-box; }
+    .lightbox-card { background: var(--bg-card); border-radius: 16px; overflow: hidden; max-width: 420px; width: calc(100% - 32px); max-height: 90vh; overflow-y: auto; overflow-x: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); animation: fadeUp 0.3s ease; box-sizing: border-box; }
+    .lightbox-card img { width: 100%; display: block; object-fit: cover; object-position: top; }
+    .lightbox-info { padding: 20px 22px 24px; overflow: hidden; word-wrap: break-word; }
+    .lightbox-category { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .lightbox-title { font-family: var(--script); font-style: italic; font-size: 1.3rem; font-weight: 300; color: var(--sage); margin-bottom: 8px; }
+    .lightbox-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
+    .lightbox-visit { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 100px; cursor: pointer; text-decoration: none; transition: opacity 0.2s; -webkit-tap-highlight-color: transparent; }
+    .lightbox-visit:active { opacity: 0.8; }
+    .lightbox-visit svg { width: 14px; height: 14px; }
+    .lightbox-close { position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); -webkit-tap-highlight-color: transparent; }
+    .lightbox-close:active { background: rgba(255,255,255,0.25); }
+
+    /* LIGHTBOX — multi-image column */
+    .lightbox-gallery { background: var(--bg-card); border-radius: 16px; overflow: hidden; max-width: 420px; width: calc(100% - 32px); max-height: 90vh; overflow-y: auto; overflow-x: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); animation: fadeUp 0.3s ease; box-sizing: border-box; }
+    .lightbox-gallery-header { padding: 20px 22px 12px; }
+    .lightbox-gallery-title { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--sage); }
+    .lightbox-gallery-sub { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .lightbox-gallery-img { width: 100%; display: block; border-bottom: 1px solid var(--border); }
+    .lightbox-gallery-img:last-child { border-bottom: none; }
+    .lightbox-gallery-label { padding: 10px 22px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+    .lightbox-gallery-label span { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+    .lightbox-gallery-label .gallery-role { color: var(--sage); }
+
+    /* TAP HINT (mobile only) */
+    .tap-hint { display: none; }
+    @media (max-width: 768px) {
+      .tap-hint { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 0 4px; grid-column: 1 / -1; }
+      .tap-hint svg { width: 16px; height: 16px; color: var(--accent); opacity: 0.7; flex-shrink: 0; }
+      .tap-hint span { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); opacity: 0.7; }
+    }
 
     /* NOW → AFTER */
     .transform-section { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
@@ -376,8 +411,9 @@
     .service-chip:hover { background: var(--accent-dim); color: var(--accent); }
 
     /* INTAKE FORM */
-    #start { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
-    .intake-card { background: var(--bg-card); border: 1.5px solid var(--accent); border-radius: 20px; padding: 48px; position: relative; overflow: hidden; box-shadow: var(--shadow-md); }
+    #start { padding: 72px 40px; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
+    .intake-card { background: var(--bg-card); border: 1.5px solid var(--accent); border-radius: 20px; padding: 48px; position: relative; overflow: hidden; box-shadow: var(--shadow-md); box-sizing: border-box; }
+    .intake-form { box-sizing: border-box; }
     .intake-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--rose)); }
     .intake-header { text-align: center; margin-bottom: 36px; }
     .intake-header .section-title { margin-bottom: 8px; }
@@ -389,6 +425,7 @@
     .form-group input, .form-group select, .form-group textarea {
       padding: 12px 16px; background: var(--bg-subtle); border: 1.5px solid var(--border); border-radius: var(--radius-sm);
       font-family: var(--sans); font-size: 0.85rem; color: var(--text); transition: border-color 0.3s; outline: none; resize: vertical;
+      width: 100%; box-sizing: border-box;
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
     .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-light); }
@@ -448,12 +485,7 @@
 
     /* RESPONSIVE — TABLET */
     @media (max-width: 1024px) {
-      .projects-grid { grid-template-columns: 1fr 1fr; }
-      .project-card { grid-column: span 1 !important; }
-      .project-card.wide { grid-column: span 2 !important; }
-      .project-card.tall { display: block !important; }
-      .project-card.tall .project-preview-wrap { aspect-ratio: 16/10 !important; flex: unset !important; }
-      .showcase-strip { grid-column: 1 / -1 !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; flex-direction: unset !important; }
+      .projects-grid { gap: 14px; }
       .work-section-label { margin-top: 20px; grid-column: 1 / -1 !important; }
       .process-grid { grid-template-columns: 1fr 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -498,25 +530,25 @@
       .section-title { font-size: clamp(1.4rem, 5vw, 1.7rem); }
       .section-label { font-size: 0.6rem; }
 
-      /* Projects: single column, touch-friendly (no hover overlay) */
-      #work { padding: 48px 20px; }
-      .work-header { margin-bottom: 28px; }
-      .work-subtitle { font-size: 0.84rem; }
-      .projects-grid { grid-template-columns: 1fr !important; gap: 16px; }
-      .project-card { grid-column: span 1 !important; }
-      .project-card.tall { display: block !important; }
-      .project-card.tall .project-preview-wrap { aspect-ratio: 16/10 !important; flex: unset !important; }
+      /* Projects: keep desktop grid layout, just smaller — hide text, show action buttons */
+      #work { padding: 32px 12px; }
+      .work-header { margin-bottom: 24px; }
+      .work-subtitle { font-size: 0.82rem; }
+      .projects-grid { grid-template-columns: repeat(12, 1fr) !important; gap: 8px; }
+      .project-card { grid-column: span 4 !important; border-radius: 8px; }
+      .project-card.wide { grid-column: span 9 !important; }
+      .project-card.narrow { grid-column: span 5 !important; }
+      .project-card.half { grid-column: span 6 !important; }
+      .project-card.quarter { grid-column: span 3 !important; }
+      .project-card.tall { display: flex !important; flex-direction: column !important; }
+      .project-card.tall .project-preview-wrap { flex: 1 !important; aspect-ratio: unset !important; }
       .project-hover { display: none; }
-      .work-section-label { grid-column: 1 / -1 !important; margin-top: 16px; font-size: 0.56rem; padding: 16px 0 10px; }
-      .showcase-strip { grid-column: 1 / -1 !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; flex-direction: unset !important; gap: 6px; padding: 0; }
-      .showcase-item { border-radius: var(--radius-sm); }
-      .showcase-item img { aspect-ratio: 16/10; }
+      .project-bar { display: none; }
+      .work-section-label { grid-column: 1 / -1 !important; margin-top: 8px; font-size: 0.46rem; padding: 10px 0 6px; }
+      .showcase-strip { grid-column: span 3 !important; display: flex !important; flex-direction: column !important; gap: 6px; }
+      .showcase-item { border-radius: 6px; }
+      .showcase-item img { aspect-ratio: 16/9; }
       .showcase-label { display: none; }
-      .project-preview-wrap { aspect-ratio: 16/10; }
-      .project-bar { padding: 14px 16px; }
-      .project-bar-name { font-size: 1.05rem; }
-      .project-bar-result { font-size: 0.64rem; line-height: 1.45; margin-top: 3px; }
-      .project-bar-tag { font-size: 0.56rem; padding: 4px 10px; }
 
       /* Before/After: vertical stack */
       .transform-section { padding: 48px 20px; }
@@ -590,8 +622,7 @@
       .trust-inner { gap: 6px; }
       .trust-text { font-size: 0.64rem; }
       .trust-item { padding: 6px 12px; }
-      .project-bar-name { font-size: 0.95rem; }
-      .project-bar-result { font-size: 0.6rem; }
+      .projects-grid { gap: 6px; }
       .showcase-strip { gap: 4px; }
       .showcase-item { border-radius: 6px; }
       .testimonial-card { min-width: 88vw; padding: 22px 18px; }
@@ -644,7 +675,7 @@
           <span class="toggle-icons"><svg class="toggle-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="toggle-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
         </button>
       </li>
-      <li><a href="#start" class="nav-cta-pill">Let's Talk</a></li>
+      <li><a href="mailto:spiff@spiffydesigns.dev?subject=New%20Project%20Inquiry" class="nav-cta-pill">Let's Talk</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
@@ -653,7 +684,7 @@
     <a href="#work" class="mobile-link">Work</a>
     <a href="#process" class="mobile-link">Process</a>
     <a href="#about" class="mobile-link">About</a>
-    <a href="#start" class="mobile-link mobile-cta">Let's Talk</a>
+    <a href="mailto:spiff@spiffydesigns.dev?subject=New%20Project%20Inquiry" class="mobile-link mobile-cta">Let's Talk</a>
   </div>
 
   <section class="hero">
@@ -669,7 +700,7 @@
       From full-stack platforms with payments, dashboards, and real-time data to polished websites — vibe-coded, thoughtfully designed, and built to perform.
     </p>
     <div class="hero-actions">
-      <a href="#start" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Get in Touch</a>
+      <a href="mailto:spiff@spiffydesigns.dev?subject=New%20Project%20Inquiry" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Get in Touch</a>
       <a href="#work" class="btn-ghost">See the work <svg class="btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </section>
@@ -694,6 +725,10 @@
     <div class="projects-grid">
 
       <!-- ═══ SECTION 1: CUSTOM PLATFORMS & APPS ═══ -->
+      <div class="tap-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15.5V13a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v4a8 8 0 0 1-8 8h-1a8 8 0 0 1-5.66-2.34L3.5 18.82a1.5 1.5 0 0 1 0-2.12h0a1.5 1.5 0 0 1 2.12 0L8 19V7a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v6"/></svg>
+        <span>Tap any project to explore</span>
+      </div>
       <div class="work-section-label">Custom Platforms &amp; Apps</div>
 
       <!-- Ignite Legacy — Montserrat -->
@@ -815,58 +850,58 @@
       <!-- ═══ SECTION: BRANDING ═══ -->
       <div class="work-section-label">Branding</div>
 
-      <a href="https://spiffy-designs-portfolio.vercel.app/branding/font-explorer.html" target="_blank" class="project-card reveal font-cormorant">
+      <a href="https://rb-kanangra-gardens.vercel.app/style-options.html#logos" target="_blank" class="project-card reveal font-cormorant">
         <div class="project-preview-wrap">
-          <img src="screenshots/font-explorer.jpg" alt="Interactive font pairing explorer" loading="lazy">
+          <img src="screenshots/rbk-branding.png" alt="R.B. Kanangra Gardens brand identity" loading="lazy" style="object-fit: cover; object-position: center; background: #fff; transform: scale(1.4); transform-origin: center center;">
           <div class="project-hover">
             <span class="hover-category">Branding & Identity</span>
-            <h3 class="hover-title">Font Pairing Explorer</h3>
-            <p class="hover-desc">Interactive tool for comparing headline and body font pairings in real time.</p>
-            <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
+            <h3 class="hover-title">R.B. Kanangra Gardens</h3>
+            <p class="hover-desc">Full brand identity for a premium landscaping business — logo design, typography system, and cohesive visual language.</p>
+            <span class="hover-link">View Branding <span class="arrow">&rarr;</span></span>
           </div>
         </div>
         <div class="project-bar">
           <div class="project-bar-info">
-            <span class="project-bar-name">Font Explorer</span>
-            <span class="project-bar-result">Interactive typography tool</span>
+            <span class="project-bar-name">R.B. Kanangra Gardens</span>
+            <span class="project-bar-result">Full brand identity system</span>
           </div>
           <span class="project-bar-tag">Branding</span>
         </div>
       </a>
 
-      <a href="https://spiffy-designs-portfolio.vercel.app/branding/color-palette.html" target="_blank" class="project-card reveal reveal-d1 font-cormorant">
+      <a href="https://spiffy-designs-portfolio.vercel.app/branding/font-explorer.html" target="_blank" class="project-card reveal reveal-d1 font-opensans">
         <div class="project-preview-wrap">
-          <img src="screenshots/color-palette.jpg" alt="Premium brand palette" loading="lazy">
+          <img src="screenshots/tropic2.png" alt="Tropic Sip branding" loading="lazy">
           <div class="project-hover">
-            <span class="hover-category">Branding & Identity</span>
-            <h3 class="hover-title">Brand Palette System</h3>
-            <p class="hover-desc">Full color system with multiple palette options and premium dark-mode presentation.</p>
-            <span class="hover-link">Explore Palettes <span class="arrow">&rarr;</span></span>
+            <span class="hover-category">Branding & Packaging</span>
+            <h3 class="hover-title">Tropic Sip</h3>
+            <p class="hover-desc">Complete packaging design for Bali's #1 electrolyte brand — sachet box layout, nutrition panels, and retail-ready artwork.</p>
+            <span class="hover-link">View Brand <span class="arrow">&rarr;</span></span>
           </div>
         </div>
         <div class="project-bar">
           <div class="project-bar-info">
-            <span class="project-bar-name">Brand Palette System</span>
-            <span class="project-bar-result">Premium palette explorer</span>
+            <span class="project-bar-name">Tropic Sip</span>
+            <span class="project-bar-result">Packaging design for retail launch</span>
           </div>
-          <span class="project-bar-tag">Branding</span>
+          <span class="project-bar-tag">Packaging</span>
         </div>
       </a>
 
-      <a href="https://rb-kanangra-gardens.vercel.app/style-options.html#logos" target="_blank" class="project-card reveal reveal-d2 font-cormorant">
+      <a href="https://ignite-legacy-app.vercel.app" target="_blank" class="project-card reveal reveal-d2 font-montserrat">
         <div class="project-preview-wrap">
-          <img src="screenshots/logo-explorer.jpg" alt="Logo and font pairing explorer" loading="lazy">
+          <img src="screenshots/ignitelegacy-branding.jpeg" alt="Ignite Legacy brand identity" loading="lazy" style="object-position: center;">
           <div class="project-hover">
             <span class="hover-category">Branding & Identity</span>
-            <h3 class="hover-title">Logo & Font Explorer</h3>
-            <p class="hover-desc">Mix and match logo marks with curated font pairings. Save combos and compare.</p>
-            <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
+            <h3 class="hover-title">Ignite Legacy</h3>
+            <p class="hover-desc">Bold, cinematic brand mark for a coaching platform — refined typography with a warm gold accent that signals ambition and legacy.</p>
+            <span class="hover-link">View Brand <span class="arrow">&rarr;</span></span>
           </div>
         </div>
         <div class="project-bar">
           <div class="project-bar-info">
-            <span class="project-bar-name">Logo Explorer</span>
-            <span class="project-bar-result">Logo + typography in one view</span>
+            <span class="project-bar-name">Ignite Legacy</span>
+            <span class="project-bar-result">Cinematic coaching brand</span>
           </div>
           <span class="project-bar-tag">Branding</span>
         </div>
@@ -875,68 +910,8 @@
       <!-- ═══ SECTION: FREE MOCKUPS ═══ -->
       <div class="work-section-label">Free Mockups</div>
 
-      <!-- Tropic Sip Bottle Builder — Open Sans -->
-      <a href="https://tropicsip-fullsite.vercel.app/bottle-making/" target="_blank" class="project-card reveal font-opensans half">
-        <div class="project-preview-wrap">
-          <img src="screenshots/bottle-maker.jpg" alt="Tropic Sip Bottle Builder" loading="lazy">
-          <div class="project-hover">
-            <span class="hover-category">Interactive Tool</span>
-            <h3 class="hover-title">Bottle Builder</h3>
-            <p class="hover-desc">Custom bottle builder for Tropic Sip — pick bottles, lids, straps, charms, and extras with real-time preview and volume discounts. Prototyped as a mockup, now live on the full site.</p>
-            <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">Tropic Sip Bottle Builder</span>
-            <span class="project-bar-result">Mockup → now live on production site</span>
-          </div>
-          <span class="project-bar-tag">E-commerce</span>
-        </div>
-      </a>
-
-      <!-- Eco Dentist — Inter Bold -->
-      <a href="https://spiffy-designs-portfolio.vercel.app/dental-prospects/mockups/eco-dentist-web.html" target="_blank" class="project-card reveal reveal-d1 font-inter-bold half">
-        <div class="project-preview-wrap">
-          <img src="screenshots/eco-dentist.jpg" alt="Eco Dentist" loading="lazy">
-          <div class="project-hover">
-            <span class="hover-category">Healthcare</span>
-            <h3 class="hover-title">Eco Dentist</h3>
-            <p class="hover-desc">A clean, modern redesign for an eco-focused dental practice — replacing an outdated 2012 site with a fresh, natural aesthetic.</p>
-            <span class="hover-link">View Mockup <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">Eco Dentist</span>
-            <span class="project-bar-result">Modern eco-focused dental practice redesign</span>
-          </div>
-          <span class="project-bar-tag">Healthcare</span>
-        </div>
-      </a>
-
-      <!-- Kanangra — DM Serif Display -->
-      <a href="https://rb-kanangra-gardens.vercel.app/mockups/rb-kanangra-gardens-v4.html" target="_blank" class="project-card reveal font-dmserif">
-        <div class="project-preview-wrap">
-          <img src="screenshots/kanangra.jpg" alt="Kanangra Landscapes" loading="lazy">
-          <div class="project-hover">
-            <span class="hover-category">Local Business</span>
-            <h3 class="hover-title">Kanangra Landscapes</h3>
-            <p class="hover-desc">A landscaping business site that builds trust quickly and guides visitors straight to requesting a quote.</p>
-            <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="project-bar-info">
-            <span class="project-bar-name">Kanangra Landscapes</span>
-            <span class="project-bar-result">Quote requests from day one</span>
-          </div>
-          <span class="project-bar-tag">Local Business</span>
-        </div>
-      </a>
-
       <!-- Wandernest — Playfair Display -->
-      <a href="https://spiffy-designs-portfolio.vercel.app/wandernest/index.html" target="_blank" class="project-card reveal reveal-d1 font-playfair">
+      <a href="https://spiffy-designs-portfolio.vercel.app/wandernest/index.html" target="_blank" class="project-card reveal font-playfair half">
         <div class="project-preview-wrap">
           <img src="screenshots/wandernest.jpg" alt="Wandernest Stays" loading="lazy">
           <div class="project-hover">
@@ -956,7 +931,7 @@
       </a>
 
       <!-- Berber Waves — Cormorant Garamond -->
-      <a href="https://spiffy-designs-portfolio.vercel.app/Adeline/index.html" target="_blank" class="project-card reveal font-cormorant">
+      <a href="https://spiffy-designs-portfolio.vercel.app/Adeline/index.html" target="_blank" class="project-card reveal reveal-d1 font-cormorant half">
         <div class="project-preview-wrap">
           <img src="screenshots/berber-waves.jpg" alt="Berber Waves" loading="lazy">
           <div class="project-hover">
@@ -972,6 +947,66 @@
             <span class="project-bar-result">Luxury salon presence</span>
           </div>
           <span class="project-bar-tag">Beauty</span>
+        </div>
+      </a>
+
+      <!-- Eco Dentist — Inter Bold -->
+      <a href="https://spiffy-designs-portfolio.vercel.app/dental-prospects/mockups/eco-dentist-web.html" target="_blank" class="project-card reveal font-inter-bold">
+        <div class="project-preview-wrap">
+          <img src="screenshots/eco-dentist.jpg" alt="Eco Dentist" loading="lazy">
+          <div class="project-hover">
+            <span class="hover-category">Healthcare</span>
+            <h3 class="hover-title">Eco Dentist</h3>
+            <p class="hover-desc">A clean, modern redesign for an eco-focused dental practice — replacing an outdated 2012 site with a fresh, natural aesthetic.</p>
+            <span class="hover-link">View Mockup <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Eco Dentist</span>
+            <span class="project-bar-result">Modern eco-focused dental practice redesign</span>
+          </div>
+          <span class="project-bar-tag">Healthcare</span>
+        </div>
+      </a>
+
+      <!-- Kanangra — DM Serif Display -->
+      <a href="https://rb-kanangra-gardens.vercel.app/mockups/rb-kanangra-gardens-v4.html" target="_blank" class="project-card reveal reveal-d1 font-dmserif">
+        <div class="project-preview-wrap">
+          <img src="screenshots/kanangra.jpg" alt="Kanangra Landscapes" loading="lazy">
+          <div class="project-hover">
+            <span class="hover-category">Local Business</span>
+            <h3 class="hover-title">Kanangra Landscapes</h3>
+            <p class="hover-desc">A landscaping business site that builds trust quickly and guides visitors straight to requesting a quote.</p>
+            <span class="hover-link">View Project <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Kanangra Landscapes</span>
+            <span class="project-bar-result">Quote requests from day one</span>
+          </div>
+          <span class="project-bar-tag">Local Business</span>
+        </div>
+      </a>
+
+      <!-- Tropic Sip Bottle Builder — Open Sans -->
+      <a href="https://tropicsip-fullsite.vercel.app/bottle-making/" target="_blank" class="project-card reveal font-opensans">
+        <div class="project-preview-wrap">
+          <img src="screenshots/bottle-builder.png" alt="Tropic Sip Bottle Builder" loading="lazy">
+          <div class="project-hover">
+            <span class="hover-category">Interactive Tool</span>
+            <h3 class="hover-title">Bottle Builder</h3>
+            <p class="hover-desc">Custom bottle builder for Tropic Sip — pick bottles, lids, straps, charms, and extras with real-time preview and volume discounts. Prototyped as a mockup, now live on the full site.</p>
+            <span class="hover-link">Try the Tool <span class="arrow">&rarr;</span></span>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="project-bar-info">
+            <span class="project-bar-name">Tropic Sip Bottle Builder</span>
+            <span class="project-bar-result">Mockup → now live on production site</span>
+          </div>
+          <span class="project-bar-tag">E-commerce</span>
         </div>
       </a>
 
@@ -1043,7 +1078,7 @@
         <h3>Let's build something <span class="accent">together</span></h3>
         <p>Every project starts with a conversation. Tell me what's not working and we'll figure out a solution that fits your business and your budget.</p>
       </div>
-      <a href="#start" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Start a Project</a>
+      <a href="mailto:spiff@spiffydesigns.dev?subject=New%20Project%20Inquiry" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Start a Project</a>
     </div>
   </div>
 
@@ -1166,12 +1201,7 @@
         <h2 class="section-title">Tell me about what you're building</h2>
         <p class="intake-sub">Fill this out and I'll get back to you within 24 hours. No commitment, just a conversation.</p>
       </div>
-      <form class="intake-form" id="intakeForm" action="https://formsubmit.co/sydneyzuckerman1@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Project Inquiry — Spiffy Designs">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://spiffy-designs-portfolio.vercel.app/?sent=true">
-        <input type="text" name="_honey" style="display:none">
+      <form class="intake-form" id="intakeForm">
         <div class="form-group">
           <label for="fname">Your Name</label>
           <input type="text" id="fname" name="Name" placeholder="Jane Smith" required>
@@ -1224,10 +1254,10 @@
         Prefer to skip the form? Reach out directly — I'd love to hear from you.
       </p>
       <div class="contact-actions">
-        <a href="mailto:sydneyzuckerman1@gmail.com?subject=New%20Project%20Inquiry" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email Me</a>
+        <a href="mailto:spiff@spiffydesigns.dev?subject=New%20Project%20Inquiry" class="btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email Me</a>
       </div>
       <div class="contact-detail">
-        <a href="mailto:sydneyzuckerman1@gmail.com">sydneyzuckerman1@gmail.com</a>
+        <a href="mailto:spiff@spiffydesigns.dev">spiff@spiffydesigns.dev</a>
       </div>
     </div>
   </section>
@@ -1268,14 +1298,24 @@
       setTimeout(() => { wi = (wi + 1) % words.length; rw.textContent = words[wi]; rw.style.opacity = '1'; rw.style.transform = 'translateY(0)'; }, 280);
     }, 2800);
 
-    // SUCCESS MESSAGE (after form redirect back)
-    if (window.location.search.includes('sent=true')) {
-      const form = document.getElementById('intakeForm');
-      if (form) {
-        form.innerHTML = '<div style="text-align:center;padding:40px 20px;"><h3 style="color:var(--accent);margin-bottom:12px;">Message sent!</h3><p style="color:var(--text-muted);">I\'ll get back to you within 24 hours.</p></div>';
-        form.closest('.intake-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
+    // FORM → MAILTO
+    document.getElementById('intakeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('fname').value || '';
+      var biz = document.getElementById('fbusiness').value || '';
+      var type = document.getElementById('ftype').value || '';
+      var budget = document.getElementById('fbudget').value || '';
+      var details = document.getElementById('fdetails').value || '';
+      var subject = 'New Project Inquiry' + (biz ? ' — ' + biz : '');
+      var body = 'Hi Spiffy!\n\n';
+      if (name) body += 'Name: ' + name + '\n';
+      if (biz) body += 'Business: ' + biz + '\n';
+      if (type) body += 'Project Type: ' + type + '\n';
+      if (budget) body += 'Budget: ' + budget + '\n';
+      if (details) body += '\nDetails:\n' + details + '\n';
+      body += '\n---\nSent from spiffydesigns.dev';
+      window.open('mailto:spiff@spiffydesigns.dev?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body), '_blank');
+    });
 
     // HAMBURGER MENU
     const hamburger = document.getElementById('hamburger');
@@ -1293,7 +1333,89 @@
       });
     });
 
-    // Screenshots loaded via <img> tags — no iframes needed
+    // MOBILE LIGHTBOX — tap card to open rich preview popup
+    (function() {
+      // Showcase strip — open all 3 in a column lightbox
+      document.querySelectorAll('.showcase-strip').forEach(function(strip) {
+        strip.style.cursor = 'pointer';
+        strip.addEventListener('click', function(e) {
+          if (window.innerWidth > 768) return;
+          var items = strip.querySelectorAll('.showcase-item');
+          var html = '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+            '<div class="lightbox-gallery">' +
+            '<div class="lightbox-gallery-header">' +
+            '<div class="lightbox-gallery-sub">Inside the Platform</div>' +
+            '<div class="lightbox-gallery-title">Ignite Legacy</div>' +
+            '</div>';
+          items.forEach(function(item) {
+            var img = item.querySelector('img');
+            var label = item.querySelector('.showcase-label span');
+            var role = item.querySelector('.showcase-role');
+            html += '<img class="lightbox-gallery-img" src="' + img.src + '" alt="' + (img.alt || '') + '">';
+            if (label) {
+              html += '<div class="lightbox-gallery-label"><span>' + label.textContent + '</span>' +
+                (role ? '<span class="gallery-role">' + role.textContent + '</span>' : '') + '</div>';
+            }
+          });
+          html += '</div>';
+          var lb = document.createElement('div');
+          lb.className = 'lightbox-overlay';
+          lb.innerHTML = html;
+          lb.addEventListener('click', function(ev) { if (ev.target === lb) lb.remove(); });
+          lb.querySelector('.lightbox-close').addEventListener('click', function() { lb.remove(); });
+          document.body.appendChild(lb);
+        });
+      });
+
+      document.querySelectorAll('.project-card').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+          if (window.innerWidth > 768) return; // desktop uses normal hover + click
+          e.preventDefault();
+
+          var img = card.querySelector('.project-preview-wrap > img');
+          var hover = card.querySelector('.project-hover');
+          var bar = card.querySelector('.project-bar');
+          var category = hover?.querySelector('.hover-category')?.textContent || '';
+          var title = hover?.querySelector('.hover-title')?.textContent || bar?.querySelector('.project-bar-name')?.textContent || '';
+          var desc = hover?.querySelector('.hover-desc')?.textContent || '';
+          var linkText = hover?.querySelector('.hover-link')?.childNodes[0]?.textContent?.trim() || 'Visit Site';
+          var href = card.href;
+          var imgSrc = img?.src || '';
+
+          // Get font class from card
+          var fontClass = '';
+          card.classList.forEach(function(c) { if (c.startsWith('font-')) fontClass = c; });
+
+          var imgStyle = img?.getAttribute('style') || '';
+
+          var lb = document.createElement('div');
+          lb.className = 'lightbox-overlay';
+          lb.innerHTML =
+            '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+            '<div class="lightbox-card ' + fontClass + '">' +
+              '<img src="' + imgSrc + '" alt="' + title + '"' + (imgStyle ? ' style="' + imgStyle + '"' : '') + '>' +
+              '<div class="lightbox-info">' +
+                (category ? '<div class="lightbox-category">' + category + '</div>' : '') +
+                '<h3 class="lightbox-title">' + title + '</h3>' +
+                (desc ? '<p class="lightbox-desc">' + desc + '</p>' : '') +
+                '<a href="' + href + '" target="_blank" rel="noopener" class="lightbox-visit">' +
+                  linkText +
+                  ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
+                '</a>' +
+              '</div>' +
+            '</div>';
+
+          // Close on backdrop click
+          lb.addEventListener('click', function(ev) {
+            if (ev.target === lb) lb.remove();
+          });
+          // Close button
+          lb.querySelector('.lightbox-close').addEventListener('click', function() { lb.remove(); });
+
+          document.body.appendChild(lb);
+        });
+      });
+    })();
   </script>
 
 </body>
