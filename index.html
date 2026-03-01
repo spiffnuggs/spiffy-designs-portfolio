@@ -1345,15 +1345,21 @@
 
     // SUCCESS MESSAGE (after FormSubmit redirect back)
     if (window.location.search.includes('sent=true')) {
+      // Clean URL immediately so refresh/shared link shows fresh form
+      history.replaceState(null, '', window.location.pathname);
       // Skip reveal animations so page doesn't scatter
       document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
       var form = document.getElementById('intakeForm');
-      if (form) {
+      var formCard = form ? form.closest('.intake-card') : null;
+      if (form && formCard) {
+        var originalForm = form.outerHTML;
         form.innerHTML = '<div style="text-align:center;padding:40px 20px;"><h3 style="font-family:var(--serif);color:var(--accent);margin-bottom:12px;">Message sent!</h3><p style="color:var(--text-muted);font-size:0.9rem;">I\'ll get back to you within 24 hours.</p></div>';
-        form.closest('.intake-card').scrollIntoView({ behavior: 'instant', block: 'center' });
+        formCard.scrollIntoView({ behavior: 'instant', block: 'center' });
+        // Restore form after 4 seconds so next visitor can use it
+        setTimeout(function() {
+          form.outerHTML = originalForm;
+        }, 4000);
       }
-      // Clean up URL
-      history.replaceState(null, '', window.location.pathname);
     }
 
     // PROCESS STEP POPUP (mobile)
