@@ -1313,14 +1313,17 @@
       setTimeout(() => { wi = (wi + 1) % words.length; rw.textContent = words[wi]; rw.style.opacity = '1'; rw.style.transform = 'translateY(0)'; }, 280);
     }, 2800);
 
-    // FORM → MAILTO
     // SUCCESS MESSAGE (after FormSubmit redirect back)
     if (window.location.search.includes('sent=true')) {
+      // Skip reveal animations so page doesn't scatter
+      document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
       var form = document.getElementById('intakeForm');
       if (form) {
         form.innerHTML = '<div style="text-align:center;padding:40px 20px;"><h3 style="font-family:var(--serif);color:var(--accent);margin-bottom:12px;">Message sent!</h3><p style="color:var(--text-muted);font-size:0.9rem;">I\'ll get back to you within 24 hours.</p></div>';
-        form.closest('.intake-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        form.closest('.intake-card').scrollIntoView({ behavior: 'instant', block: 'center' });
       }
+      // Clean up URL
+      history.replaceState(null, '', window.location.pathname);
     }
 
     // TESTIMONIAL AUTO-ROTATE (mobile only)
