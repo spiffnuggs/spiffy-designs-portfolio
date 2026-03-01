@@ -399,6 +399,8 @@
     .step-num { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; color: var(--accent); margin-bottom: 12px; line-height: 1; }
     .step-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--text); margin-bottom: 5px; }
     .step-desc { font-size: 0.76rem; color: var(--text-muted); line-height: 1.6; }
+    .process-tap-hint { display: none; }
+    .process-popup-overlay { display: none; }
 
     /* ABOUT */
     #about { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
@@ -587,12 +589,28 @@
       .testimonial-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); border: none; padding: 0; cursor: pointer; transition: background 0.3s; }
       .testimonial-dot.active { background: var(--accent); }
 
-      /* Process: vertical stack */
+      /* Process: 2x2 tap grid */
       #process { padding: 48px 20px; }
-      .process-grid { grid-template-columns: 1fr; gap: 1px; border-radius: var(--radius); }
-      .process-step { padding: 22px 20px; }
-      .step-num { font-size: 1.3rem; margin-bottom: 8px; }
-      .step-desc { font-size: 0.78rem; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 2px; border-radius: var(--radius); }
+      .process-step { padding: 28px 16px; text-align: center; cursor: pointer; position: relative; }
+      .process-step::after { content: ''; position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 20px; height: 3px; border-radius: 2px; background: var(--accent); opacity: 0.4; transition: opacity 0.3s; }
+      .process-step:active::after { opacity: 1; }
+      .step-num { font-size: 1.8rem; margin-bottom: 6px; }
+      .step-title { font-size: 1rem; }
+      .step-desc { display: none; }
+      .process-tap-hint { display: block; text-align: center; font-size: 0.72rem; color: var(--text-muted); margin-top: 14px; letter-spacing: 0.03em; }
+
+      /* Process popup overlay */
+      .process-popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 9999; align-items: center; justify-content: center; padding: 24px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+      .process-popup-overlay.open { display: flex; }
+      .process-popup { background: var(--bg-card); border-radius: 20px; padding: 36px 28px 32px; max-width: 340px; width: 100%; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.2); animation: popIn 0.35s var(--ease); overflow: hidden; }
+      .process-popup::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent), #f4a261, var(--accent)); }
+      .process-popup-num { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 4px; }
+      .process-popup-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 14px; }
+      .process-popup-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; }
+      .process-popup-close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 1.3rem; color: var(--text-muted); cursor: pointer; padding: 4px; line-height: 1; }
+      .process-popup-icon { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #f4a261); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: #fff; font-size: 1.1rem; }
+      @keyframes popIn { from { opacity: 0; transform: scale(0.9) translateY(12px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 
       /* About */
       #about { padding: 20px 20px 48px; }
@@ -1174,6 +1192,18 @@
         <div class="step-desc">Tested on every device, deployed, and ready to welcome your customers. Plus ongoing support whenever you need it.</div>
       </div>
     </div>
+    <div class="process-tap-hint">tap to explore</div>
+
+    <!-- Process popup (mobile) -->
+    <div class="process-popup-overlay" id="processPopup">
+      <div class="process-popup">
+        <button class="process-popup-close" aria-label="Close">&times;</button>
+        <div class="process-popup-icon" id="popupIcon"></div>
+        <div class="process-popup-num" id="popupNum"></div>
+        <div class="process-popup-title" id="popupTitle"></div>
+        <div class="process-popup-desc" id="popupDesc"></div>
+      </div>
+    </div>
   </section>
 
   <section id="about">
@@ -1325,6 +1355,31 @@
       // Clean up URL
       history.replaceState(null, '', window.location.pathname);
     }
+
+    // PROCESS STEP POPUP (mobile)
+    (function() {
+      var overlay = document.getElementById('processPopup');
+      if (!overlay) return;
+      var icons = ['&#10022;', '&#9998;', '&#9000;', '&#9889;'];
+      var steps = document.querySelectorAll('.process-step');
+      steps.forEach(function(step, i) {
+        step.addEventListener('click', function() {
+          if (window.innerWidth > 768) return;
+          document.getElementById('popupIcon').innerHTML = icons[i];
+          document.getElementById('popupNum').textContent = step.querySelector('.step-num').textContent;
+          document.getElementById('popupTitle').textContent = step.querySelector('.step-title').textContent;
+          document.getElementById('popupDesc').textContent = step.querySelector('.step-desc').textContent;
+          overlay.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target.closest('.process-popup-close')) {
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    })();
 
     // TESTIMONIAL AUTO-ROTATE (mobile only)
     (function() {
