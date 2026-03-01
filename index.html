@@ -396,12 +396,16 @@
 
     /* ABOUT */
     #about { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-    .about-left .section-title { margin-bottom: 20px; }
-    .about-left p { font-size: 0.92rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 16px; }
-    .about-left .highlight { color: var(--text); font-weight: 600; }
-    .about-left .coral { color: var(--accent); }
-    .about-right { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .about-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 56px; align-items: center; max-width: 960px; }
+    .about-photo { position: relative; }
+    .about-photo img { width: 100%; border-radius: 20px; object-fit: cover; object-position: 60% center; aspect-ratio: 3/4; box-shadow: var(--shadow-md); }
+    .about-photo::after { content: ''; position: absolute; bottom: -12px; right: -12px; width: 60%; height: 60%; border: 2px solid var(--accent); border-radius: 20px; z-index: -1; opacity: 0.3; }
+    .about-text .section-title { margin-bottom: 20px; }
+    .about-text p { font-size: 0.92rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 16px; }
+    .about-text .highlight { color: var(--text); font-weight: 600; }
+    .about-text .coral { color: var(--accent); }
+    .about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 24px; }
+    .about-stats .stat-card { padding: 16px 12px; text-align: center; }
     .stat-card { padding: 22px 18px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); transition: border-color 0.3s; box-shadow: var(--shadow-sm); }
     .stat-card:hover { border-color: var(--border-hover); }
     .stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 4px; }
@@ -488,7 +492,7 @@
       .projects-grid { gap: 14px; }
       .work-section-label { margin-top: 20px; grid-column: 1 / -1 !important; }
       .process-grid { grid-template-columns: 1fr 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       .mid-cta-inner { flex-direction: column; text-align: center; padding: 36px 24px; }
       .mid-cta-text p { margin: 0 auto; }
       .transform-grid { grid-template-columns: 1fr; }
@@ -524,7 +528,7 @@
       .trust-extra { display: none; }
       .trust-text { font-size: 0.68rem; }
       .trust-bar-secondary { padding: 0 20px; }
-      .trust-bar-secondary .trust-inner { padding: 0 0 32px; }
+      .trust-bar-secondary .trust-inner { padding: 0 0 32px; flex-direction: row; flex-wrap: nowrap; justify-content: center; gap: 8px; }
 
       /* Section headings */
       .section-title { font-size: clamp(1.4rem, 5vw, 1.7rem); }
@@ -569,10 +573,13 @@
 
       /* Testimonials: swipeable cards */
       .testimonials { padding: 48px 20px; }
-      .testimonial-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 12px; scrollbar-width: none; }
-      .testimonial-grid::-webkit-scrollbar { display: none; }
-      .testimonial-card { min-width: 82vw; scroll-snap-align: start; flex-shrink: 0; padding: 24px 20px; }
-      .testimonial-quote { font-size: 0.86rem; }
+      .testimonial-grid { display: block; position: relative; min-height: 200px; }
+      .testimonial-card, .testimonial-card.reveal.visible { position: absolute; inset: 0; opacity: 0 !important; transform: translateX(12px) !important; transition: opacity 0.4s ease, transform 0.4s ease; pointer-events: none; padding: 22px 20px; aspect-ratio: unset; }
+      .testimonial-card.active, .testimonial-card.active.reveal.visible { opacity: 1 !important; transform: translateX(0) !important; pointer-events: auto; position: relative; }
+      .testimonial-quote { font-size: 0.84rem; line-height: 1.65; margin-bottom: 14px; }
+      .testimonial-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+      .testimonial-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); border: none; padding: 0; cursor: pointer; transition: background 0.3s; }
+      .testimonial-dot.active { background: var(--accent); }
 
       /* Process: vertical stack */
       #process { padding: 48px 20px; }
@@ -582,13 +589,14 @@
       .step-desc { font-size: 0.78rem; }
 
       /* About */
-      #about { padding: 48px 20px; }
+      #about { padding: 20px 20px 48px; }
       .about-grid { grid-template-columns: 1fr; gap: 28px; }
-      .about-left p { font-size: 0.88rem; }
-      .about-right { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .stat-card { padding: 18px 14px; }
+      .about-photo { max-width: 280px; margin: 0 auto; }
+      .about-photo::after { bottom: -8px; right: -8px; }
+      .about-text p { font-size: 0.88rem; }
+      .about-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .about-stats .stat-card { padding: 14px 10px; }
       .stat-num { font-size: 1.6rem; }
-      .services-list { grid-template-columns: 1fr 1fr; }
 
       /* Intake form: 16px font prevents iOS zoom */
       #start { padding: 48px 20px; }
@@ -625,8 +633,8 @@
       .projects-grid { gap: 6px; }
       .showcase-strip { gap: 4px; }
       .showcase-item { border-radius: 6px; }
-      .testimonial-card { min-width: 88vw; padding: 22px 18px; }
-      .testimonial-quote { font-size: 0.84rem; line-height: 1.7; }
+      .testimonial-card { padding: 22px 18px; }
+      .testimonial-quote { font-size: 0.82rem; line-height: 1.65; }
       .mid-cta-text h3 { font-size: 1.15rem; }
       .mid-cta-inner { padding: 28px 20px; }
       .stat-num { font-size: 1.4rem; }
@@ -650,7 +658,7 @@
       .trust-text { font-size: 0.62rem; }
       .mid-cta { padding: 20px 16px; }
       #contact { padding: 40px 16px 32px; }
-      .testimonial-card { min-width: 90vw; }
+      .testimonial-card { padding: 20px 16px; }
       .stat-card { padding: 14px 10px; }
       .stat-num { font-size: 1.3rem; }
       .intake-card { padding: 24px 16px; }
@@ -768,7 +776,7 @@
       </div>
 
       <!-- Tropic Sip — Open Sans -->
-      <a href="https://tropicsip-nextjs.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-opensans half">
+      <a href="https://tropicsip-fullsite.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-opensans half">
         <div class="project-preview-wrap">
           <img src="screenshots/tropic-sip.jpg" alt="Tropic Sip — Bali's premium electrolytes" loading="lazy">
           <div class="project-hover">
@@ -850,9 +858,9 @@
       <!-- ═══ SECTION: BRANDING ═══ -->
       <div class="work-section-label">Branding</div>
 
-      <a href="https://rb-kanangra-gardens.vercel.app/style-options.html#logos" target="_blank" class="project-card reveal font-cormorant">
+      <a href="https://gardens-rbk.vercel.app#logos" target="_blank" class="project-card reveal font-cormorant">
         <div class="project-preview-wrap">
-          <img src="screenshots/rbk-branding.png" alt="R.B. Kanangra Gardens brand identity" loading="lazy" style="object-fit: cover; object-position: center; background: #fff; transform: scale(1.4); transform-origin: center center;">
+          <img src="screenshots/rbk-branding.png" alt="R.B. Kanangra Gardens brand identity" loading="lazy" style="object-fit: contain; object-position: center; background: #fff; padding: 12px; transform: scale(1.4); transform-origin: center center;">
           <div class="project-hover">
             <span class="hover-category">Branding & Identity</span>
             <h3 class="hover-title">R.B. Kanangra Gardens</h3>
@@ -869,7 +877,7 @@
         </div>
       </a>
 
-      <a href="https://spiffy-designs-portfolio.vercel.app/branding/font-explorer.html" target="_blank" class="project-card reveal reveal-d1 font-opensans">
+      <a href="branding/font-explorer.html" target="_blank" class="project-card reveal reveal-d1 font-opensans">
         <div class="project-preview-wrap">
           <img src="screenshots/tropic2.png" alt="Tropic Sip branding" loading="lazy">
           <div class="project-hover">
@@ -888,7 +896,7 @@
         </div>
       </a>
 
-      <a href="https://ignite-legacy-app.vercel.app" target="_blank" class="project-card reveal reveal-d2 font-montserrat">
+      <a href="https://branding-three-sand.vercel.app/" target="_blank" class="project-card reveal reveal-d2 font-montserrat">
         <div class="project-preview-wrap">
           <img src="screenshots/ignitelegacy-branding.jpeg" alt="Ignite Legacy brand identity" loading="lazy" style="object-position: center;">
           <div class="project-hover">
@@ -911,7 +919,7 @@
       <div class="work-section-label">Free Mockups</div>
 
       <!-- Wandernest — Playfair Display -->
-      <a href="https://spiffy-designs-portfolio.vercel.app/wandernest/index.html" target="_blank" class="project-card reveal font-playfair half">
+      <a href="wandernest/index.html" target="_blank" class="project-card reveal font-playfair half">
         <div class="project-preview-wrap">
           <img src="screenshots/wandernest.jpg" alt="Wandernest Stays" loading="lazy">
           <div class="project-hover">
@@ -931,7 +939,7 @@
       </a>
 
       <!-- Berber Waves — Cormorant Garamond -->
-      <a href="https://spiffy-designs-portfolio.vercel.app/Adeline/index.html" target="_blank" class="project-card reveal reveal-d1 font-cormorant half">
+      <a href="Adeline/index.html" target="_blank" class="project-card reveal reveal-d1 font-cormorant half">
         <div class="project-preview-wrap">
           <img src="screenshots/berber-waves.jpg" alt="Berber Waves" loading="lazy">
           <div class="project-hover">
@@ -951,7 +959,7 @@
       </a>
 
       <!-- Eco Dentist — Inter Bold -->
-      <a href="https://spiffy-designs-portfolio.vercel.app/dental-prospects/mockups/eco-dentist-web.html" target="_blank" class="project-card reveal font-inter-bold">
+      <a href="dental-prospects/mockups/eco-dentist-web.html" target="_blank" class="project-card reveal font-inter-bold">
         <div class="project-preview-wrap">
           <img src="screenshots/eco-dentist.jpg" alt="Eco Dentist" loading="lazy">
           <div class="project-hover">
@@ -971,7 +979,7 @@
       </a>
 
       <!-- Kanangra — DM Serif Display -->
-      <a href="https://rb-kanangra-gardens.vercel.app/mockups/rb-kanangra-gardens-v4.html" target="_blank" class="project-card reveal reveal-d1 font-dmserif">
+      <a href="https://ray-project-gardens.vercel.app" target="_blank" class="project-card reveal reveal-d1 font-dmserif">
         <div class="project-preview-wrap">
           <img src="screenshots/kanangra.jpg" alt="Kanangra Landscapes" loading="lazy">
           <div class="project-hover">
@@ -1102,12 +1110,12 @@
       </div>
       <div class="testimonial-card reveal reveal-d1">
         <div class="testimonial-stars"><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg><svg viewBox="0 0 20 20" fill="var(--accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z"/></svg></div>
-        <p class="testimonial-quote">"I felt completely seen throughout the whole process. She took my rough idea, asked the right questions, and came back with something better than I could have imagined."</p>
+        <p class="testimonial-quote">"She built my brand from nothing — logo, colours, the whole identity. Now she handles my website updates every quarter so I can focus on the jobs. I just send her what I need and it's done."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">A</div>
+          <div class="testimonial-avatar">R</div>
           <div class="testimonial-info">
-            <span class="testimonial-name">Adeline</span>
-            <span class="testimonial-role">Berber Waves — Surf & Yoga Retreat</span>
+            <span class="testimonial-name">Ray</span>
+            <span class="testimonial-role">R.B. Kanangra Gardens — Landscaping</span>
           </div>
         </div>
       </div>
@@ -1122,6 +1130,7 @@
           </div>
         </div>
       </div>
+      <div class="testimonial-dots"></div>
     </div>
   </section>
 
@@ -1163,7 +1172,10 @@
 
   <section id="about">
     <div class="about-grid">
-      <div class="about-left reveal">
+      <div class="about-photo reveal">
+        <img src="screenshots/sydney-about.png" alt="Sydney — Spiffy Designs">
+      </div>
+      <div class="about-text reveal reveal-d1">
         <div class="section-label">About</div>
         <h2 class="section-title">Built businesses. Then built the tech.</h2>
         <p>
@@ -1173,21 +1185,13 @@
           So I learned to build. And then I couldn't stop.
         </p>
         <p>
-          Now I build for other business owners who are exactly where I've been — buried in admin, duct-taping tools together, spending more time on the stuff they hate than the work they actually love. I find the right solution, build it custom, and <span class="highlight">hand back their time</span>. More customers served. More hours with family and friends. Less of the work that makes you want to throw your laptop.
+          Now I build for other business owners who are exactly where I've been — buried in admin, duct-taping tools together, spending more time on the stuff they hate than the work they actually love. I find the right solution, build it custom, and <span class="highlight">hand back their time</span>.
         </p>
-      </div>
-      <div class="about-right reveal reveal-d2">
-        <div class="stat-card"><div class="stat-num">&lt;2s</div><div class="stat-label">Load Times</div></div>
-        <div class="stat-card"><div class="stat-num">9+</div><div class="stat-label">Industries</div></div>
-        <div class="stat-card"><div class="stat-num">0</div><div class="stat-label">Templates Used</div></div>
-        <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Vibe-Coded</div></div>
-        <div class="services-list">
-          <div class="service-chip">Web Design</div>
-          <div class="service-chip">Full-Stack Platforms</div>
-          <div class="service-chip">E-commerce</div>
-          <div class="service-chip">Branding & Identity</div>
-          <div class="service-chip">Custom Dashboards</div>
-          <div class="service-chip">Brand Revamps</div>
+        <div class="about-stats">
+          <div class="stat-card"><div class="stat-num">&lt;2s</div><div class="stat-label">Load Times</div></div>
+          <div class="stat-card"><div class="stat-num">9+</div><div class="stat-label">Industries</div></div>
+          <div class="stat-card"><div class="stat-num">0</div><div class="stat-label">Templates Used</div></div>
+          <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Vibe-Coded</div></div>
         </div>
       </div>
     </div>
@@ -1201,7 +1205,12 @@
         <h2 class="section-title">Tell me about what you're building</h2>
         <p class="intake-sub">Fill this out and I'll get back to you within 24 hours. No commitment, just a conversation.</p>
       </div>
-      <form class="intake-form" id="intakeForm">
+      <form class="intake-form" id="intakeForm" action="https://formsubmit.co/spiff@spiffydesigns.dev" method="POST">
+        <input type="hidden" name="_subject" value="New Project Inquiry — Spiffy Designs">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://spiffydesigns.dev/?sent=true">
+        <input type="text" name="_honey" style="display:none">
         <div class="form-group">
           <label for="fname">Your Name</label>
           <input type="text" id="fname" name="Name" placeholder="Jane Smith" required>
@@ -1226,10 +1235,10 @@
           <label for="fbudget">Budget Range</label>
           <select id="fbudget" name="Budget">
             <option value="">Choose one...</option>
-            <option value="Under $1,000">Under $1,000</option>
-            <option value="$1,000 – $3,000">$1,000 – $3,000</option>
-            <option value="$3,000 – $6,000">$3,000 – $6,000</option>
-            <option value="$6,000+">$6,000+</option>
+            <option value="Under $1,500">Under $1,500</option>
+            <option value="$1,500 – $5,000">$1,500 – $5,000</option>
+            <option value="$5,000 – $10,000">$5,000 – $10,000</option>
+            <option value="$10,000+">$10,000+</option>
             <option value="Let's discuss">Let's discuss</option>
           </select>
         </div>
@@ -1299,23 +1308,71 @@
     }, 2800);
 
     // FORM → MAILTO
-    document.getElementById('intakeForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var name = document.getElementById('fname').value || '';
-      var biz = document.getElementById('fbusiness').value || '';
-      var type = document.getElementById('ftype').value || '';
-      var budget = document.getElementById('fbudget').value || '';
-      var details = document.getElementById('fdetails').value || '';
-      var subject = 'New Project Inquiry' + (biz ? ' — ' + biz : '');
-      var body = 'Hi Spiffy!\n\n';
-      if (name) body += 'Name: ' + name + '\n';
-      if (biz) body += 'Business: ' + biz + '\n';
-      if (type) body += 'Project Type: ' + type + '\n';
-      if (budget) body += 'Budget: ' + budget + '\n';
-      if (details) body += '\nDetails:\n' + details + '\n';
-      body += '\n---\nSent from spiffydesigns.dev';
-      window.open('mailto:spiff@spiffydesigns.dev?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body), '_blank');
-    });
+    // SUCCESS MESSAGE (after FormSubmit redirect back)
+    if (window.location.search.includes('sent=true')) {
+      var form = document.getElementById('intakeForm');
+      if (form) {
+        form.innerHTML = '<div style="text-align:center;padding:40px 20px;"><h3 style="font-family:var(--serif);color:var(--accent);margin-bottom:12px;">Message sent!</h3><p style="color:var(--text-muted);font-size:0.9rem;">I\'ll get back to you within 24 hours.</p></div>';
+        form.closest('.intake-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // TESTIMONIAL AUTO-ROTATE (mobile only)
+    (function() {
+      var grid = document.querySelector('.testimonial-grid');
+      var cards = grid.querySelectorAll('.testimonial-card');
+      var dotsWrap = grid.querySelector('.testimonial-dots');
+      if (!cards.length || !dotsWrap) return;
+      var current = 0;
+      var interval;
+
+      // Build dots
+      cards.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Testimonial ' + (i + 1));
+        dot.addEventListener('click', function() { goTo(i); resetTimer(); });
+        dotsWrap.appendChild(dot);
+      });
+
+      function goTo(idx) {
+        cards[current].classList.remove('active');
+        dotsWrap.children[current].classList.remove('active');
+        current = idx;
+        cards[current].classList.add('active');
+        dotsWrap.children[current].classList.add('active');
+        // Update container height to match active card
+        grid.style.minHeight = cards[current].offsetHeight + 'px';
+      }
+
+      function next() { goTo((current + 1) % cards.length); }
+
+      function startTimer() { interval = setInterval(function() { if (window.innerWidth <= 768) next(); }, 3000); }
+      function resetTimer() { clearInterval(interval); startTimer(); }
+
+      // Init: activate first card on mobile
+      function init() {
+        if (window.innerWidth <= 768) {
+          cards[0].classList.add('active');
+          grid.style.minHeight = cards[0].offsetHeight + 'px';
+          startTimer();
+        }
+      }
+
+      // Handle resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          clearInterval(interval);
+          cards.forEach(function(c) { c.classList.remove('active'); });
+          grid.style.minHeight = '';
+        } else if (!document.querySelector('.testimonial-card.active')) {
+          current = 0;
+          init();
+        }
+      });
+
+      init();
+    })();
 
     // HAMBURGER MENU
     const hamburger = document.getElementById('hamburger');
@@ -1335,7 +1392,7 @@
 
     // MOBILE LIGHTBOX — tap card to open rich preview popup
     (function() {
-      // Showcase strip — open all 3 in a column lightbox
+      // Showcase strip — mobile: open all 3 in a gallery lightbox (original behavior)
       document.querySelectorAll('.showcase-strip').forEach(function(strip) {
         strip.style.cursor = 'pointer';
         strip.addEventListener('click', function(e) {
@@ -1361,6 +1418,27 @@
           var lb = document.createElement('div');
           lb.className = 'lightbox-overlay';
           lb.innerHTML = html;
+          lb.addEventListener('click', function(ev) { if (ev.target === lb) lb.remove(); });
+          lb.querySelector('.lightbox-close').addEventListener('click', function() { lb.remove(); });
+          document.body.appendChild(lb);
+        });
+      });
+
+      // Showcase items — desktop: click individual image to open it large
+      document.querySelectorAll('.showcase-item').forEach(function(item) {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', function(e) {
+          if (window.innerWidth <= 768) return;
+          e.stopPropagation();
+          var img = item.querySelector('img');
+          if (!img) return;
+          var label = item.querySelector('.showcase-label span');
+          var role = item.querySelector('.showcase-role');
+          var lb = document.createElement('div');
+          lb.className = 'lightbox-overlay';
+          lb.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+            '<img src="' + img.src + '" alt="' + (img.alt || '') + '" style="max-width:90vw; max-height:85vh; border-radius:12px; box-shadow:0 24px 80px rgba(0,0,0,0.5); object-fit:contain;">' +
+            (label ? '<div style="text-align:center; margin-top:12px; color:#fff; font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; opacity:0.7;">' + label.textContent + (role ? ' &middot; ' + role.textContent : '') + '</div>' : '');
           lb.addEventListener('click', function(ev) { if (ev.target === lb) lb.remove(); });
           lb.querySelector('.lightbox-close').addEventListener('click', function() { lb.remove(); });
           document.body.appendChild(lb);
